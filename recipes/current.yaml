@@ -1,6 +1,18 @@
 # molt baseline recipe — search seed. Agent edits recipes/current.yaml (a copy of this).
 # Rendered by runner/render_quant_cmd.py into: llama-quantize --imatrix ... --tensor-type <pat>=<type> ...
-# Size model: gate/up IQ2_XXS 66.4 GB + down Q2_K 41.3 GB + rest Q8/F16 10.5 GB ~= 118 GB.
+# Size model: gate/up IQ2_XXS 66.4 GB + down Q2_K 41.3 GB + rest Q8 10.5 GB ~= 118 GB.
+#
+# MATCH SEMANTICS (verified in llama-quant.cpp 2026-07-02): patterns are tried in ORDER and
+# the FIRST regex_search hit wins. Patterns below are written to be NON-OVERLAPPING so order
+# can never silently reassign a group (e.g. never use ".*gate.*" — it would swallow
+# ffn_gate_exps, 66 GB of routed experts, if it ever moved above them).
+#
+# Tensor-name ground truth (read from the Q8_0 master, 1098 tensors):
+#   routed experts:  blk.N.ffn_{gate,up,down}_exps.weight
+#   shared experts:  blk.N.ffn_{gate,up,down}_shexp.weight + blk.N.ffn_gate_inp_shexp.weight
+#   router:          blk.N.ffn_gate_inp.weight
+#   attention/GDN:   blk.N.attn_*.weight (incl. attn_gate), blk.N.linear_attn_*.weight
+#   NO vision tensors exist — the BF16->GGUF conversion is text-only (vision rule removed).
 
 source_gguf: models/Ornith-Q8_0.gguf
 imatrix: models/imatrix-agentic.dat
@@ -8,6 +20,7 @@ size_budget_gb: 121
 
 tensor_types:
   # routed experts — the 97.4% — the only thing that gets aggressive treatment
+  # ("_exps" is exclusive to routed experts; "_shexp" tensors do NOT contain these substrings)
   - pattern: "ffn_gate_exps"
     type: iq2_xxs
   - pattern: "ffn_up_exps"
@@ -21,12 +34,12 @@ tensor_types:
   # fragile set = DeepReinforce FP8 ignore list. Q8_0 floor. Do not lower.
   - pattern: "token_embd|output\\.weight"
     type: q8_0
-  - pattern: "attn_.*|linear_attn_.*"
+  - pattern: "attn_.*|linear_attn_.*"      # attention, gated-delta-net (incl. attn_gate)
     type: q8_0
-  - pattern: ".*gate.*|shared_expert.*"    # router gates + shared experts
+  - pattern: "ffn_gate_inp"                # router gates (also matches ffn_gate_inp_shexp)
     type: q8_0
-  - pattern: "mm\\.|v\\..*"                # vision tower
-    type: f16
+  - pattern: "_shexp"                      # shared experts (gate/up/down + their gate)
+    type: q8_0
 
-fallback_type: q8_0
+fallback_type: q8_0     # anything unmatched floors at Q8_0 — the safety net for new names
 requantize_from_q8: true    # source is Q8_0 master, --allow-requantize

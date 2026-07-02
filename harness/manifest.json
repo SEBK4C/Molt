@@ -27,6 +27,6 @@
  "tests/test_bfcl.py": "268ee7e4831ebaaf7dc01d6d1ea6c1921b6241e0ab710e21a4e051ac1bc025d6",
  "tests/test_evalplus.py": "61fc5ddd4831a6994f34568db9fb72799147e730980ee876403bc90aadb1fd5b",
  "tests/test_nested.py": "1b5f026a134b1567fe591ebee832fcb7363e9d3522a8030ea31e9b41d069b09f",
- "tests/test_render_and_manifest.py": "ff1e8513d20504cbbd3492ad2447e191d3f33d17cc65a70546fe16c3b38979b3",
+ "tests/test_render_and_manifest.py": "0b168267520593dd338d87fd9f2dc7798c064f73fe0261cf0b9234f55aa0d46b",
  "tests/test_tau.py": "65fd68e7365a3c4880efbb268c3ba5215895506a4f6ea1d252690659dcf328a8"
 }

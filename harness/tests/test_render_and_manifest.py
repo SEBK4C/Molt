@@ -25,7 +25,10 @@ def test_render_baseline_recipe():
     assert "--imatrix models/imatrix-agentic.dat" in cmd
     assert "--tensor-type ffn_gate_exps=iq2_xxs" in cmd
     assert "--tensor-type ffn_down_exps=q2_k" in cmd
-    assert "'.*gate.*|shared_expert.*=q8_0'" in cmd  # regex needing shell quoting
+    assert "--tensor-type ffn_gate_inp=q8_0" in cmd   # router floor
+    assert "--tensor-type _shexp=q8_0" in cmd         # shared-expert floor (real names!)
+    assert "'attn_.*|linear_attn_.*=q8_0'" in cmd     # regex needing shell quoting
+    assert ".*gate.*" not in cmd                      # over-broad pattern must never return
     assert cmd.rstrip().endswith("&& mv models/ornith-molt-000.gguf.part models/ornith-molt-000.gguf")
     assert " Q8_0 32 " in cmd  # fallback type + threads positionals
 
