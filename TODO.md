@@ -1,6 +1,8 @@
 # molt TODO — single source of truth for cross-session state
 
-Last updated: 2026-07-02 ~02:3x local by bootstrap agent (session 1).
+Last updated: 2026-07-02 03:15 local by bootstrap agent (session 1) — skeleton COMPLETE,
+committed as d3a827b; download + auto-chain running detached. See notes/bootstrap-2026-07-02.md
+for the session summary + HUMAN command block.
 **Update states the moment they change.** A fresh instance with zero chat history resumes from
 this file + `notes/` alone (see `resume.md`): reconcile every claim here against disk/processes
 first, trust disk over checklist.
@@ -50,10 +52,15 @@ States: `[pending]` `[in-progress]` `[blocked: <on-what>]` `[done]` `[HUMAN]` (p
   restarts the retry script if it dies, runs D2 verify on completion, updates D1/D2 lines here).
   Session-scoped: if this line is stale (no dl-watch.log updates for >1 h and download still
   running), a successor instance re-adopts the watch itself per resume.md §2.
-- **D2 [blocked: D1]** Verify download: `uv run python scripts/verify_download.py` — file count +
-  per-file sizes vs `/mnt/proxmox/llm-serve/models/ornith-397b/hf-tree.json` (saved snapshot of HF
-  API tree @ revision above), sha256 where LFS metadata provides it (`--deep`, ~1–2 h). est 5 min
-  shallow / 2 h deep. Deep verify REQUIRED before HG2 (deleting anything) or P1 sign-off.
+- **D2 [blocked: D1]** Verify download: `.venv/bin/python scripts/verify_download.py` — count +
+  per-file sizes vs `/mnt/proxmox/llm-serve/models/ornith-397b/hf-tree.json` (snapshot @ pinned
+  revision), sha256 of every LFS file with `--deep` (~1–2 h). Babysitter runs both on completion.
+  Deep verify REQUIRED before HG2 deletion; shallow suffices to start P1 (convert crashes loudly
+  on corrupt safetensors, and deep runs in parallel anyway).
+- **D3 [in-progress]** Auto-chain trigger: tmux `molt:chain` pane PID 126556 waits for the
+  download COMPLETE marker, then runs `scripts/post_download_chain.sh` (P1→P4) with 3 attempts,
+  10 min apart (each attempt re-gates on shallow verify). Log notes/logs/molt-chain.log.
+  So P1–P4 need NO human/agent action tonight; P5 stays gated on HG4.
 
 ## INF — Infrastructure (unblocks everything else)
 
@@ -170,17 +177,14 @@ States: `[pending]` `[in-progress]` `[blocked: <on-what>]` `[done]` `[HUMAN]` (p
   land before that). Until then the provisional manifest is authoritative.
 
 ### SK-F corpora (needed for P2/P3)
-- **SK-F1 [in-progress]** `corpora/build_imatrix_corpus.py` + `corpus_lib.py` + `recipes/imatrix.yaml`.
+- **SK-F1 [done]** (v1) `corpora/imatrix.txt` = 16.0 MB: glaive 6.7 + local-code 5.3 (vendor
+  llama.cpp + repo sources — fallback) + synthetic tool-syntax 4.0 (held-out seed 20260702+555).
   DISCOVERY 03:00: `Salesforce/xlam-function-calling-60k` AND `bigcode/the-stack-smol` are
-  **gated** datasets → HUMAN gate HG6 (accept terms on HF account). v1 corpus runs NOW with
-  glaive (public, 10 MB) + local-code fallback (vendor/llama.cpp + repo sources) + synthetic
-  tool-syntax (held-out seed 20260702+555); weights renormalize automatically. After HG6:
-  rerun both builders (pre-P2 = free; post-P2 = Tier-C-style redo). tmux `molt:corpora`,
-  log notes/logs/molt-corpora.log.
-- **SK-F2 [in-progress]** `corpora/build_kld_heldout.py` — ~2 MB, disjoint by construction
-  (same shuffle seed; imatrix eats from front, heldout from back; asserted). First run failed
-  the disjointness assert (synthetic pool too small) — fixed by 3× pool (front slice unchanged);
-  rerunning.
+  **gated** → HUMAN gate HG6; after HG6, rerun both builders for the richer v2 mix
+  (pre-P2 = free swap; post-P2 = Tier-C-style imatrix redo). Log notes/logs/molt-corpora.log.
+- **SK-F2 [done]** (v1) `corpora/kld_heldout.txt` = 1.99 MB, disjoint by construction (same
+  shuffle seed, imatrix from front / heldout from back, hard-asserted; two assert-failures on
+  pool sizes were fixed by enlarging pools — front slices stay deterministic).
 
 ## HG — HUMAN gates (prepared, NEVER executed by the agent)
 
