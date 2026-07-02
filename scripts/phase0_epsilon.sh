@@ -43,4 +43,12 @@ done
 echo "[phase0] FINAL manifest freeze (includes epsilon.txt + refs as they now stand)"
 .venv/bin/python harness/manifest.py --write
 runner/score.sh --verify-only
-echo "[phase0] DONE. Session-ready: git checkout -b molt/$(date +%Y%m%d); then start the agent per program.md"
+
+# the frozen contract + calibration ARE cross-session memory — commit them (main branch;
+# session branches fork from here)
+git add harness/manifest.json harness/manifest.meta.json harness/epsilon.txt experiments.jsonl
+git commit -m "Phase-0: epsilon calibrated, FINAL harness manifest freeze
+
+Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>" || echo "[phase0] git commit skipped (nothing staged?)"
+
+echo "[phase0] DONE. Session-ready: run scripts/session_preflight.sh, then git checkout -b molt/$(date +%Y%m%d) and start the agent per program.md"
