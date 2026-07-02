@@ -2,14 +2,15 @@
 # One arg (or arg value-pair) per line; comments/blank lines stripped by the runner.
 # The runner supplies: -m <gguf> --host 127.0.0.1 --port <port> --alias molt.
 -ngl 99
-# ALL experts CPU-side for first light. Phase-0 run 1 taught the layer-split gotcha:
-# --n-cpu-moe N puts the GPU-expert layers at the TAIL (N..59), and the default even layer
-# split hands the whole tail to GPU1 -> 25.7 GiB on one 24 GB card -> OOM (see
-# notes/logs/serve-phase0-1.log). Walking experts onto the GPUs NEEDS a matching
-# --tensor-split (boundary inside the expert region), e.g.:
-#   --n-cpu-moe 54 -ts 54,6   (~6 expert layers on GPU1 tail, GPU0 takes 54 lean layers)
-# That's Tier-A experiment #1. Non-expert-only load: ~8 GB/card incl. KV + scratch.
---cpu-moe
+# Expert placement (the layer-split gotcha, learned at Phase-0 run 1: --n-cpu-moe N puts
+# GPU-expert layers at the TAIL N..59; without a matching -ts the even layer split dumps the
+# whole expert tail on GPU1 -> 25.7 GiB OOM). Current config = Tier-A #1 executed during
+# Phase-0 gate tuning: 8 expert layers (52-59, ~14.3 GB) + 8 lean layers on GPU1 (~21.5 GB
+# total), 52 lean layers on GPU0 (~14.5 GB). Prefill ladder measured: cpu-moe ub2048 129 ->
+# ub8192 209 t/s (saturated); this split targets the G5=250 gate by offloading ~13% of
+# expert FLOPs. Fallback if OOM: --cpu-moe alone (G2-safe, 209 t/s).
+--n-cpu-moe 52
+-ts 52,8
 # batch geometry: prefill cost on this box = (streams of CPU-resident expert weights) —
 # bigger ubatch = fewer streams per token (P2 lesson; Phase-0 run 1 measured 129 t/s prefill
 # at ub 2048 cold — ub 4096 halves per-token streaming cost). Tier-A tunable.
