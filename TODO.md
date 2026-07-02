@@ -251,6 +251,10 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
   goal.") runs in the CURRENT session only (in-memory; gone if the session exits — do not
   expect it in a fresh instance). Each tick: reconcile TODO vs disk, then fix the
   highest-value defect found. Tick 1 (05:18–05:3xZ) caught the P1 phantom-MTP defect above.
+  Tick 2 (05:49–05:5xZ): hardened `g45_throughput` — timings-absent responses previously
+  zeroed prefill → guaranteed false G5 fail; now falls back to a measured probe
+  (`cache_prompt:false`, max_tokens=1) + derived decode. Provisional manifest regenerated
+  (still 30 files), 54/54 tests, verify-only green. Re-convert ~88% at tick end.
 
 ## Notes / decision log
 

@@ -41,11 +41,13 @@ def manifest_ok():
     return True, None
 
 
-def chat(server, messages, tools=None, max_tokens=1024, temperature=0.0):
+def chat(server, messages, tools=None, max_tokens=1024, temperature=0.0, extra=None):
     body = {"model": "molt", "messages": messages, "temperature": temperature,
             "max_tokens": max_tokens}
     if tools:
         body["tools"] = tools
+    if extra:
+        body.update(extra)  # llama-server extensions, e.g. {"cache_prompt": False}
     req = urllib.request.Request(f"{server}/v1/chat/completions",
                                  data=json.dumps(body).encode(),
                                  headers={"Content-Type": "application/json"})
@@ -85,15 +87,28 @@ def g3_smoke(server):
 
 
 def g45_throughput(server):
-    """decode/prefill t/s @32K: prefill fixed 32K-token doc, greedy 512 gen."""
+    """decode/prefill t/s @32K: prefill fixed 32K-token doc, greedy 512 gen.
+
+    Primary source: llama-server's response `timings` object. Fallback (timings absent —
+    must never silently zero the G5 gate): a dedicated prefill probe with cache_prompt=false
+    and max_tokens=1 measures prefill wall-time directly; decode is then derived from the
+    main request's wall-time minus the prefill estimate."""
     doc = open(f"{H}/prompts/ctx32k.txt").read()
+    msgs = [{"role": "user", "content": doc + "\nSummarize."}]
     t0 = time.time()
-    out = chat(server, [{"role": "user", "content": doc + "\nSummarize."}], max_tokens=512)
+    out = chat(server, msgs, max_tokens=512)
     dt = time.time() - t0
     u = out.get("usage", {})
     tim = out.get("timings", {})  # server timings preferred when present
-    decode = tim.get("predicted_per_second") or (u.get("completion_tokens", 0) / max(dt, 1e-9))
-    prefill = tim.get("prompt_per_second", 0.0)
+    decode = tim.get("predicted_per_second")
+    prefill = tim.get("prompt_per_second")
+    if not decode or not prefill:
+        t1 = time.time()
+        probe = chat(server, msgs, max_tokens=1, extra={"cache_prompt": False})
+        dt_pre = max(time.time() - t1, 1e-9)
+        ptoks = probe.get("usage", {}).get("prompt_tokens") or u.get("prompt_tokens", 0)
+        prefill = prefill or ptoks / dt_pre
+        decode = decode or (u.get("completion_tokens", 0) / max(dt - dt_pre, 1e-9))
     return decode, prefill
 
 
