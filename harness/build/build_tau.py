@@ -96,7 +96,7 @@ def add(cid, domain, state, script, intended, note):
                  "system": RETAIL_SYSTEM if domain == "retail" else AIRLINE_SYSTEM,
                  "tools": RETAIL_TOOLS if domain == "retail" else AIRLINE_TOOLS,
                  "initial_state": state, "user_script": script,
-                 "max_steps": 16, "max_tokens": 1024, "note": note},
+                 "max_steps": 16, "max_tokens": 2048, "note": note},
         "ref": {"final_state": ref}})
 
 

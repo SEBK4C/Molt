@@ -55,11 +55,16 @@ else
   #   richer remix is a Tier-C experiment later, not tonight's blocker.
   # --parse-special: corpus embeds the chat template's special tokens; calibrate on real ids.
   # gpu_lock with-gpus: flock + wait-for-idle (never kills anything that grabs the cards back).
+  # -b/-ub 4096 (batch = ubatch = 8 chunks): the pass cost is EXPERT-WEIGHT STREAMING, not
+  # compute — 411 GB >> 85 GB page cache, and every ubatch re-streams the whole model. Default
+  # ubatch 512 => 4 streams per 2048-batch (measured: 1.6 TB read/pass, 421 s). ubatch 4096
+  # => ONE stream per 8 chunks => ~30 streams total. --no-warmup skips one extra full stream.
   rm -f "$M/imatrix-agentic.dat.part"
   nice -n 15 ionice -c3 runner/gpu_lock.sh with-gpus \
     "$LCPP/build/bin/llama-imatrix" -m "$M/Ornith-Q8_0.gguf" \
     -f corpora/imatrix.txt -o "$M/imatrix-agentic.dat.part" \
-    -ngl 99 --n-cpu-moe 60 --chunks 240 --parse-special -t 32 -tb 32 \
+    -ngl 99 --n-cpu-moe 60 --chunks 240 -b 4096 -ub 4096 --no-warmup \
+    --parse-special -t 32 -tb 32 \
     2>&1 | tee notes/logs/p2-imatrix.log
   mv "$M/imatrix-agentic.dat.part" "$M/imatrix-agentic.dat"
   step "P2 done"

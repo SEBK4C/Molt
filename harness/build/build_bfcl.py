@@ -128,7 +128,7 @@ def main():
             q = r["question"]
             messages = q[0] if q and isinstance(q[0], list) else q
             case = {"id": f"bfcl_{r['id']}", "stratum": label,
-                    "messages": messages, "max_tokens": 1024}
+                    "messages": messages, "max_tokens": 2048}
             if r.get("function"):
                 case["tools"] = conv_tools(r["function"])
             ref = conv_ground_truth(gts[r["id"]]) if has_gt else {"expect": "no_call"}

@@ -113,7 +113,7 @@ def main():
         test_code = TEMPLATE.format(safety=SAFETY_HEADER, marker=CANDIDATE_MARKER,
                                     eq=EQ_HELPER, inputs=inputs, expected=expected,
                                     atol=p.get("atol", 0) or 0, entry=p["entry_point"])
-        cases.append({"id": cid, "max_tokens": 1280,
+        cases.append({"id": cid, "max_tokens": 4096,
                       "messages": [{"role": "user", "content":
                           "Complete the following Python function. Reply with a single "
                           "```python code block containing the COMPLETE function definition "

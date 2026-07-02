@@ -73,11 +73,14 @@ def g3_smoke(server):
     for p in prompts:
         try:
             out = chat(server, p["messages"], p.get("tools"),
-                       max_tokens=p.get("max_tokens", 512))
-            txt = json.dumps(out["choices"][0]["message"], ensure_ascii=False)
+                       max_tokens=p.get("max_tokens", 1024))
+            msg = out["choices"][0]["message"]
+            txt = json.dumps(msg, ensure_ascii=False)
         except Exception:
             return False
-        if not txt or len(txt) < 8:
+        # a healthy reply has visible content OR a tool call; thinking that exhausts the
+        # budget leaves content empty -> that IS a smoke failure (think-loop collapse)
+        if not (msg.get("content") or "").strip() and not msg.get("tool_calls"):
             return False
         if p.get("expect_no_nan", True) and re.search(r"\b(nan|inf)\b", txt, re.I):
             return False

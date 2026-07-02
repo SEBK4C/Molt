@@ -1,7 +1,7 @@
 [
  {
   "id": "humaneval_0",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -11,7 +11,7 @@
  },
  {
   "id": "humaneval_1",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -21,7 +21,7 @@
  },
  {
   "id": "humaneval_10",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -31,7 +31,7 @@
  },
  {
   "id": "humaneval_100",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -41,7 +41,7 @@
  },
  {
   "id": "humaneval_101",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -51,7 +51,7 @@
  },
  {
   "id": "humaneval_102",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -61,7 +61,7 @@
  },
  {
   "id": "humaneval_103",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -71,7 +71,7 @@
  },
  {
   "id": "humaneval_104",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -81,7 +81,7 @@
  },
  {
   "id": "humaneval_105",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -91,7 +91,7 @@
  },
  {
   "id": "humaneval_106",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -101,7 +101,7 @@
  },
  {
   "id": "humaneval_107",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -111,7 +111,7 @@
  },
  {
   "id": "humaneval_108",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -121,7 +121,7 @@
  },
  {
   "id": "humaneval_109",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -131,7 +131,7 @@
  },
  {
   "id": "humaneval_11",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -141,7 +141,7 @@
  },
  {
   "id": "humaneval_110",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -151,7 +151,7 @@
  },
  {
   "id": "humaneval_111",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -161,7 +161,7 @@
  },
  {
   "id": "humaneval_112",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -171,7 +171,7 @@
  },
  {
   "id": "humaneval_113",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -181,7 +181,7 @@
  },
  {
   "id": "humaneval_114",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -191,7 +191,7 @@
  },
  {
   "id": "humaneval_115",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -201,7 +201,7 @@
  },
  {
   "id": "humaneval_116",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -211,7 +211,7 @@
  },
  {
   "id": "humaneval_117",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -221,7 +221,7 @@
  },
  {
   "id": "humaneval_118",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -231,7 +231,7 @@
  },
  {
   "id": "humaneval_119",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -241,7 +241,7 @@
  },
  {
   "id": "humaneval_12",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -251,7 +251,7 @@
  },
  {
   "id": "humaneval_120",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -261,7 +261,7 @@
  },
  {
   "id": "humaneval_121",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -271,7 +271,7 @@
  },
  {
   "id": "humaneval_122",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -281,7 +281,7 @@
  },
  {
   "id": "humaneval_123",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -291,7 +291,7 @@
  },
  {
   "id": "humaneval_124",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -301,7 +301,7 @@
  },
  {
   "id": "humaneval_125",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -311,7 +311,7 @@
  },
  {
   "id": "humaneval_126",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -321,7 +321,7 @@
  },
  {
   "id": "humaneval_127",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -331,7 +331,7 @@
  },
  {
   "id": "humaneval_128",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -341,7 +341,7 @@
  },
  {
   "id": "humaneval_129",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -351,7 +351,7 @@
  },
  {
   "id": "humaneval_13",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -361,7 +361,7 @@
  },
  {
   "id": "humaneval_130",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -371,7 +371,7 @@
  },
  {
   "id": "humaneval_131",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -381,7 +381,7 @@
  },
  {
   "id": "humaneval_132",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -391,7 +391,7 @@
  },
  {
   "id": "humaneval_133",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -401,7 +401,7 @@
  },
  {
   "id": "humaneval_134",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -411,7 +411,7 @@
  },
  {
   "id": "humaneval_135",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -421,7 +421,7 @@
  },
  {
   "id": "humaneval_136",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -431,7 +431,7 @@
  },
  {
   "id": "humaneval_137",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -441,7 +441,7 @@
  },
  {
   "id": "humaneval_138",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -451,7 +451,7 @@
  },
  {
   "id": "humaneval_139",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -461,7 +461,7 @@
  },
  {
   "id": "humaneval_14",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -471,7 +471,7 @@
  },
  {
   "id": "humaneval_140",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -481,7 +481,7 @@
  },
  {
   "id": "humaneval_141",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -491,7 +491,7 @@
  },
  {
   "id": "humaneval_142",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -501,7 +501,7 @@
  },
  {
   "id": "humaneval_143",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -511,7 +511,7 @@
  },
  {
   "id": "humaneval_144",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -521,7 +521,7 @@
  },
  {
   "id": "humaneval_145",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -531,7 +531,7 @@
  },
  {
   "id": "humaneval_146",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -541,7 +541,7 @@
  },
  {
   "id": "humaneval_147",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -551,7 +551,7 @@
  },
  {
   "id": "humaneval_148",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -561,7 +561,7 @@
  },
  {
   "id": "humaneval_149",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -571,7 +571,7 @@
  },
  {
   "id": "humaneval_15",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -581,7 +581,7 @@
  },
  {
   "id": "humaneval_150",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -591,7 +591,7 @@
  },
  {
   "id": "humaneval_151",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -601,7 +601,7 @@
  },
  {
   "id": "humaneval_152",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -611,7 +611,7 @@
  },
  {
   "id": "humaneval_153",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -621,7 +621,7 @@
  },
  {
   "id": "humaneval_154",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -631,7 +631,7 @@
  },
  {
   "id": "humaneval_155",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -641,7 +641,7 @@
  },
  {
   "id": "humaneval_156",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -651,7 +651,7 @@
  },
  {
   "id": "humaneval_157",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -661,7 +661,7 @@
  },
  {
   "id": "humaneval_158",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -671,7 +671,7 @@
  },
  {
   "id": "humaneval_159",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -681,7 +681,7 @@
  },
  {
   "id": "humaneval_16",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -691,7 +691,7 @@
  },
  {
   "id": "humaneval_160",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -701,7 +701,7 @@
  },
  {
   "id": "humaneval_161",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -711,7 +711,7 @@
  },
  {
   "id": "humaneval_162",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -721,7 +721,7 @@
  },
  {
   "id": "humaneval_163",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -731,7 +731,7 @@
  },
  {
   "id": "humaneval_17",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -741,7 +741,7 @@
  },
  {
   "id": "humaneval_18",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -751,7 +751,7 @@
  },
  {
   "id": "humaneval_19",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -761,7 +761,7 @@
  },
  {
   "id": "humaneval_2",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -771,7 +771,7 @@
  },
  {
   "id": "humaneval_20",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -781,7 +781,7 @@
  },
  {
   "id": "humaneval_21",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -791,7 +791,7 @@
  },
  {
   "id": "humaneval_22",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -801,7 +801,7 @@
  },
  {
   "id": "humaneval_23",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -811,7 +811,7 @@
  },
  {
   "id": "humaneval_24",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -821,7 +821,7 @@
  },
  {
   "id": "humaneval_25",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -831,7 +831,7 @@
  },
  {
   "id": "humaneval_26",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -841,7 +841,7 @@
  },
  {
   "id": "humaneval_27",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -851,7 +851,7 @@
  },
  {
   "id": "humaneval_28",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -861,7 +861,7 @@
  },
  {
   "id": "humaneval_29",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -871,7 +871,7 @@
  },
  {
   "id": "humaneval_3",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -881,7 +881,7 @@
  },
  {
   "id": "humaneval_30",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -891,7 +891,7 @@
  },
  {
   "id": "humaneval_31",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -901,7 +901,7 @@
  },
  {
   "id": "humaneval_32",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -911,7 +911,7 @@
  },
  {
   "id": "humaneval_33",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -921,7 +921,7 @@
  },
  {
   "id": "humaneval_34",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -931,7 +931,7 @@
  },
  {
   "id": "humaneval_35",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -941,7 +941,7 @@
  },
  {
   "id": "humaneval_36",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -951,7 +951,7 @@
  },
  {
   "id": "humaneval_37",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -961,7 +961,7 @@
  },
  {
   "id": "humaneval_38",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -971,7 +971,7 @@
  },
  {
   "id": "humaneval_39",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -981,7 +981,7 @@
  },
  {
   "id": "humaneval_4",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -991,7 +991,7 @@
  },
  {
   "id": "humaneval_40",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1001,7 +1001,7 @@
  },
  {
   "id": "humaneval_41",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1011,7 +1011,7 @@
  },
  {
   "id": "humaneval_42",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1021,7 +1021,7 @@
  },
  {
   "id": "humaneval_43",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1031,7 +1031,7 @@
  },
  {
   "id": "humaneval_44",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1041,7 +1041,7 @@
  },
  {
   "id": "humaneval_45",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1051,7 +1051,7 @@
  },
  {
   "id": "humaneval_46",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1061,7 +1061,7 @@
  },
  {
   "id": "humaneval_47",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1071,7 +1071,7 @@
  },
  {
   "id": "humaneval_48",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1081,7 +1081,7 @@
  },
  {
   "id": "humaneval_49",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1091,7 +1091,7 @@
  },
  {
   "id": "humaneval_5",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1101,7 +1101,7 @@
  },
  {
   "id": "humaneval_50",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1111,7 +1111,7 @@
  },
  {
   "id": "humaneval_51",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1121,7 +1121,7 @@
  },
  {
   "id": "humaneval_52",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1131,7 +1131,7 @@
  },
  {
   "id": "humaneval_53",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1141,7 +1141,7 @@
  },
  {
   "id": "humaneval_54",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1151,7 +1151,7 @@
  },
  {
   "id": "humaneval_55",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1161,7 +1161,7 @@
  },
  {
   "id": "humaneval_56",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1171,7 +1171,7 @@
  },
  {
   "id": "humaneval_57",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1181,7 +1181,7 @@
  },
  {
   "id": "humaneval_58",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1191,7 +1191,7 @@
  },
  {
   "id": "humaneval_59",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1201,7 +1201,7 @@
  },
  {
   "id": "humaneval_6",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1211,7 +1211,7 @@
  },
  {
   "id": "humaneval_60",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1221,7 +1221,7 @@
  },
  {
   "id": "humaneval_61",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1231,7 +1231,7 @@
  },
  {
   "id": "humaneval_62",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1241,7 +1241,7 @@
  },
  {
   "id": "humaneval_63",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1251,7 +1251,7 @@
  },
  {
   "id": "humaneval_64",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1261,7 +1261,7 @@
  },
  {
   "id": "humaneval_65",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1271,7 +1271,7 @@
  },
  {
   "id": "humaneval_66",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1281,7 +1281,7 @@
  },
  {
   "id": "humaneval_67",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1291,7 +1291,7 @@
  },
  {
   "id": "humaneval_68",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1301,7 +1301,7 @@
  },
  {
   "id": "humaneval_69",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1311,7 +1311,7 @@
  },
  {
   "id": "humaneval_7",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1321,7 +1321,7 @@
  },
  {
   "id": "humaneval_70",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1331,7 +1331,7 @@
  },
  {
   "id": "humaneval_71",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1341,7 +1341,7 @@
  },
  {
   "id": "humaneval_72",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1351,7 +1351,7 @@
  },
  {
   "id": "humaneval_73",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1361,7 +1361,7 @@
  },
  {
   "id": "humaneval_74",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1371,7 +1371,7 @@
  },
  {
   "id": "humaneval_75",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1381,7 +1381,7 @@
  },
  {
   "id": "humaneval_76",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1391,7 +1391,7 @@
  },
  {
   "id": "humaneval_77",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1401,7 +1401,7 @@
  },
  {
   "id": "humaneval_78",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1411,7 +1411,7 @@
  },
  {
   "id": "humaneval_79",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1421,7 +1421,7 @@
  },
  {
   "id": "humaneval_8",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1431,7 +1431,7 @@
  },
  {
   "id": "humaneval_80",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1441,7 +1441,7 @@
  },
  {
   "id": "humaneval_81",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1451,7 +1451,7 @@
  },
  {
   "id": "humaneval_82",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1461,7 +1461,7 @@
  },
  {
   "id": "humaneval_83",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1471,7 +1471,7 @@
  },
  {
   "id": "humaneval_84",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1481,7 +1481,7 @@
  },
  {
   "id": "humaneval_85",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1491,7 +1491,7 @@
  },
  {
   "id": "humaneval_86",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1501,7 +1501,7 @@
  },
  {
   "id": "humaneval_87",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1511,7 +1511,7 @@
  },
  {
   "id": "humaneval_88",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1521,7 +1521,7 @@
  },
  {
   "id": "humaneval_89",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1531,7 +1531,7 @@
  },
  {
   "id": "humaneval_9",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1541,7 +1541,7 @@
  },
  {
   "id": "humaneval_90",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1551,7 +1551,7 @@
  },
  {
   "id": "humaneval_91",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1561,7 +1561,7 @@
  },
  {
   "id": "humaneval_92",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1571,7 +1571,7 @@
  },
  {
   "id": "humaneval_93",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1581,7 +1581,7 @@
  },
  {
   "id": "humaneval_94",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1591,7 +1591,7 @@
  },
  {
   "id": "humaneval_95",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1601,7 +1601,7 @@
  },
  {
   "id": "humaneval_96",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1611,7 +1611,7 @@
  },
  {
   "id": "humaneval_97",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1621,7 +1621,7 @@
  },
  {
   "id": "humaneval_98",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",
@@ -1631,7 +1631,7 @@
  },
  {
   "id": "humaneval_99",
-  "max_tokens": 1280,
+  "max_tokens": 4096,
   "messages": [
    {
     "role": "user",

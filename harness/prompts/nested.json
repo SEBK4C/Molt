@@ -2,7 +2,7 @@
  {
   "id": "nested_000_deep_uniform",
   "family": "deep_uniform",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -26,7 +26,7 @@
  {
   "id": "nested_001_deep_uniform",
   "family": "deep_uniform",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -50,7 +50,7 @@
  {
   "id": "nested_002_deep_uniform",
   "family": "deep_uniform",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -74,7 +74,7 @@
  {
   "id": "nested_003_deep_uniform",
   "family": "deep_uniform",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -98,7 +98,7 @@
  {
   "id": "nested_004_deep_uniform",
   "family": "deep_uniform",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -122,7 +122,7 @@
  {
   "id": "nested_005_deep_uniform",
   "family": "deep_uniform",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -146,7 +146,7 @@
  {
   "id": "nested_006_deep_uniform",
   "family": "deep_uniform",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -170,7 +170,7 @@
  {
   "id": "nested_007_deep_uniform",
   "family": "deep_uniform",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -194,7 +194,7 @@
  {
   "id": "nested_008_deep_uniform",
   "family": "deep_uniform",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -218,7 +218,7 @@
  {
   "id": "nested_009_deep_uniform",
   "family": "deep_uniform",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -242,7 +242,7 @@
  {
   "id": "nested_010_deep_mixed",
   "family": "deep_mixed",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -266,7 +266,7 @@
  {
   "id": "nested_011_deep_mixed",
   "family": "deep_mixed",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -290,7 +290,7 @@
  {
   "id": "nested_012_deep_mixed",
   "family": "deep_mixed",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -314,7 +314,7 @@
  {
   "id": "nested_013_deep_mixed",
   "family": "deep_mixed",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -338,7 +338,7 @@
  {
   "id": "nested_014_deep_mixed",
   "family": "deep_mixed",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -362,7 +362,7 @@
  {
   "id": "nested_015_deep_mixed",
   "family": "deep_mixed",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -386,7 +386,7 @@
  {
   "id": "nested_016_deep_mixed",
   "family": "deep_mixed",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -410,7 +410,7 @@
  {
   "id": "nested_017_deep_mixed",
   "family": "deep_mixed",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -434,7 +434,7 @@
  {
   "id": "nested_018_deep_mixed",
   "family": "deep_mixed",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -458,7 +458,7 @@
  {
   "id": "nested_019_deep_mixed",
   "family": "deep_mixed",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -482,7 +482,7 @@
  {
   "id": "nested_020_escapes",
   "family": "escapes",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -506,7 +506,7 @@
  {
   "id": "nested_021_escapes",
   "family": "escapes",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -530,7 +530,7 @@
  {
   "id": "nested_022_escapes",
   "family": "escapes",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -554,7 +554,7 @@
  {
   "id": "nested_023_escapes",
   "family": "escapes",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -578,7 +578,7 @@
  {
   "id": "nested_024_escapes",
   "family": "escapes",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -602,7 +602,7 @@
  {
   "id": "nested_025_escapes",
   "family": "escapes",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -626,7 +626,7 @@
  {
   "id": "nested_026_escapes",
   "family": "escapes",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -650,7 +650,7 @@
  {
   "id": "nested_027_escapes",
   "family": "escapes",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -674,7 +674,7 @@
  {
   "id": "nested_028_escapes",
   "family": "escapes",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -698,7 +698,7 @@
  {
   "id": "nested_029_escapes",
   "family": "escapes",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -722,7 +722,7 @@
  {
   "id": "nested_030_unicode_keys",
   "family": "unicode_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -746,7 +746,7 @@
  {
   "id": "nested_031_unicode_keys",
   "family": "unicode_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -770,7 +770,7 @@
  {
   "id": "nested_032_unicode_keys",
   "family": "unicode_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -794,7 +794,7 @@
  {
   "id": "nested_033_unicode_keys",
   "family": "unicode_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -818,7 +818,7 @@
  {
   "id": "nested_034_unicode_keys",
   "family": "unicode_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -842,7 +842,7 @@
  {
   "id": "nested_035_unicode_keys",
   "family": "unicode_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -866,7 +866,7 @@
  {
   "id": "nested_036_unicode_keys",
   "family": "unicode_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -890,7 +890,7 @@
  {
   "id": "nested_037_unicode_keys",
   "family": "unicode_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -914,7 +914,7 @@
  {
   "id": "nested_038_unicode_keys",
   "family": "unicode_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -938,7 +938,7 @@
  {
   "id": "nested_039_unicode_keys",
   "family": "unicode_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -962,7 +962,7 @@
  {
   "id": "nested_040_unicode_values",
   "family": "unicode_values",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -986,7 +986,7 @@
  {
   "id": "nested_041_unicode_values",
   "family": "unicode_values",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1010,7 +1010,7 @@
  {
   "id": "nested_042_unicode_values",
   "family": "unicode_values",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1034,7 +1034,7 @@
  {
   "id": "nested_043_unicode_values",
   "family": "unicode_values",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1058,7 +1058,7 @@
  {
   "id": "nested_044_unicode_values",
   "family": "unicode_values",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1082,7 +1082,7 @@
  {
   "id": "nested_045_unicode_values",
   "family": "unicode_values",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1106,7 +1106,7 @@
  {
   "id": "nested_046_unicode_values",
   "family": "unicode_values",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1130,7 +1130,7 @@
  {
   "id": "nested_047_unicode_values",
   "family": "unicode_values",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1154,7 +1154,7 @@
  {
   "id": "nested_048_unicode_values",
   "family": "unicode_values",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1178,7 +1178,7 @@
  {
   "id": "nested_049_unicode_values",
   "family": "unicode_values",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1202,7 +1202,7 @@
  {
   "id": "nested_050_wide_64_args",
   "family": "wide_64_args",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1226,7 +1226,7 @@
  {
   "id": "nested_051_wide_64_args",
   "family": "wide_64_args",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1250,7 +1250,7 @@
  {
   "id": "nested_052_wide_64_args",
   "family": "wide_64_args",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1274,7 +1274,7 @@
  {
   "id": "nested_053_wide_64_args",
   "family": "wide_64_args",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1298,7 +1298,7 @@
  {
   "id": "nested_054_wide_64_args",
   "family": "wide_64_args",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1322,7 +1322,7 @@
  {
   "id": "nested_055_wide_64_args",
   "family": "wide_64_args",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1346,7 +1346,7 @@
  {
   "id": "nested_056_wide_64_args",
   "family": "wide_64_args",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1370,7 +1370,7 @@
  {
   "id": "nested_057_wide_64_args",
   "family": "wide_64_args",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1394,7 +1394,7 @@
  {
   "id": "nested_058_wide_64_args",
   "family": "wide_64_args",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1418,7 +1418,7 @@
  {
   "id": "nested_059_wide_64_args",
   "family": "wide_64_args",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1442,7 +1442,7 @@
  {
   "id": "nested_060_big_numbers",
   "family": "big_numbers",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1466,7 +1466,7 @@
  {
   "id": "nested_061_big_numbers",
   "family": "big_numbers",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1490,7 +1490,7 @@
  {
   "id": "nested_062_big_numbers",
   "family": "big_numbers",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1514,7 +1514,7 @@
  {
   "id": "nested_063_big_numbers",
   "family": "big_numbers",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1538,7 +1538,7 @@
  {
   "id": "nested_064_big_numbers",
   "family": "big_numbers",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1562,7 +1562,7 @@
  {
   "id": "nested_065_big_numbers",
   "family": "big_numbers",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1586,7 +1586,7 @@
  {
   "id": "nested_066_big_numbers",
   "family": "big_numbers",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1610,7 +1610,7 @@
  {
   "id": "nested_067_big_numbers",
   "family": "big_numbers",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1634,7 +1634,7 @@
  {
   "id": "nested_068_big_numbers",
   "family": "big_numbers",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1658,7 +1658,7 @@
  {
   "id": "nested_069_big_numbers",
   "family": "big_numbers",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1682,7 +1682,7 @@
  {
   "id": "nested_070_floats",
   "family": "floats",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1706,7 +1706,7 @@
  {
   "id": "nested_071_floats",
   "family": "floats",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1730,7 +1730,7 @@
  {
   "id": "nested_072_floats",
   "family": "floats",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1754,7 +1754,7 @@
  {
   "id": "nested_073_floats",
   "family": "floats",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1778,7 +1778,7 @@
  {
   "id": "nested_074_floats",
   "family": "floats",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1802,7 +1802,7 @@
  {
   "id": "nested_075_floats",
   "family": "floats",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1826,7 +1826,7 @@
  {
   "id": "nested_076_floats",
   "family": "floats",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1850,7 +1850,7 @@
  {
   "id": "nested_077_floats",
   "family": "floats",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1874,7 +1874,7 @@
  {
   "id": "nested_078_floats",
   "family": "floats",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1898,7 +1898,7 @@
  {
   "id": "nested_079_floats",
   "family": "floats",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1922,7 +1922,7 @@
  {
   "id": "nested_080_empty_structures",
   "family": "empty_structures",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1946,7 +1946,7 @@
  {
   "id": "nested_081_empty_structures",
   "family": "empty_structures",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1970,7 +1970,7 @@
  {
   "id": "nested_082_empty_structures",
   "family": "empty_structures",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -1994,7 +1994,7 @@
  {
   "id": "nested_083_empty_structures",
   "family": "empty_structures",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -2018,7 +2018,7 @@
  {
   "id": "nested_084_empty_structures",
   "family": "empty_structures",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -2042,7 +2042,7 @@
  {
   "id": "nested_085_empty_structures",
   "family": "empty_structures",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -2066,7 +2066,7 @@
  {
   "id": "nested_086_empty_structures",
   "family": "empty_structures",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -2090,7 +2090,7 @@
  {
   "id": "nested_087_empty_structures",
   "family": "empty_structures",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -2114,7 +2114,7 @@
  {
   "id": "nested_088_empty_structures",
   "family": "empty_structures",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -2138,7 +2138,7 @@
  {
   "id": "nested_089_empty_structures",
   "family": "empty_structures",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -2162,7 +2162,7 @@
  {
   "id": "nested_090_lookalike_keys",
   "family": "lookalike_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -2186,7 +2186,7 @@
  {
   "id": "nested_091_lookalike_keys",
   "family": "lookalike_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -2210,7 +2210,7 @@
  {
   "id": "nested_092_lookalike_keys",
   "family": "lookalike_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -2234,7 +2234,7 @@
  {
   "id": "nested_093_lookalike_keys",
   "family": "lookalike_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -2258,7 +2258,7 @@
  {
   "id": "nested_094_lookalike_keys",
   "family": "lookalike_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -2282,7 +2282,7 @@
  {
   "id": "nested_095_lookalike_keys",
   "family": "lookalike_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -2306,7 +2306,7 @@
  {
   "id": "nested_096_lookalike_keys",
   "family": "lookalike_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -2330,7 +2330,7 @@
  {
   "id": "nested_097_lookalike_keys",
   "family": "lookalike_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -2354,7 +2354,7 @@
  {
   "id": "nested_098_lookalike_keys",
   "family": "lookalike_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",
@@ -2378,7 +2378,7 @@
  {
   "id": "nested_099_lookalike_keys",
   "family": "lookalike_keys",
-  "max_tokens": 2048,
+  "max_tokens": 4096,
   "tools": [
    {
     "type": "function",

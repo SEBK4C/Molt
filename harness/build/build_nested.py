@@ -138,7 +138,7 @@ def main():
             args = fn(rng, i)
             cid = f"nested_{n:03d}_{fam}"
             payload = json.dumps(args, ensure_ascii=False, indent=2)
-            cases.append({"id": cid, "family": fam, "max_tokens": 2048,
+            cases.append({"id": cid, "family": fam, "max_tokens": 4096,
                           "tools": [TOOL],
                           "messages": [{"role": "user",
                                         "content": PROMPT.format(payload=payload)}]})

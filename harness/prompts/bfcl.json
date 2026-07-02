@@ -8,7 +8,7 @@
     "content": "Can you find me the latest information about air quality index and pollution data for Chicago?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -44,7 +44,7 @@
     "content": "What's the total worth in euro of Messi according to latest data?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -81,7 +81,7 @@
     "content": "What is the coefficient of determination (R-squared) for a model using engine size and fuel economy variables to predict car_price with a dataset in path C:/data/cars.csv?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -126,7 +126,7 @@
     "content": "Calculate the BMI (Body Mass Index) of a person who weighs 70kg and is 1.75m tall."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -163,7 +163,7 @@
     "content": "Can you generate a travel itinerary for a 7-day trip to Tokyo with a daily budget of $200 focusing on urban exploration, then do the same for a 10-day trip to Paris with a daily budget of $150 focusing on history, followed by a 5-day trip to Sydney with a daily budget of $100 focusing on nature, and finally a 12-day trip to Rome with a daily budget of $180 focusing on culture?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -216,7 +216,7 @@
     "content": "What were the stock prices of Apple Inc. listed on NASDAQ and Microsoft Corporation listed on NYSE for the past 10 and 15 days respectively?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -257,7 +257,7 @@
     "content": "Tell me a cooking recipe for 'Lasagne Bolognese' for serving 4 people and another one for 'Caesar Salad' for serving 2 people"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -294,7 +294,7 @@
     "content": "How many championships did Michael Jordan win in his NBA career?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -339,7 +339,7 @@
     "content": "Who is the best singer in Jazz"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -381,7 +381,7 @@
     "content": "When was the declaration of independence signed?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -423,7 +423,7 @@
     "content": "Find the nearest parking lot within 2 miles of Central Park in New York."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -464,7 +464,7 @@
     "content": "What is the humidity level in Miami, Florida in the upcoming 7 days?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -505,7 +505,7 @@
     "content": "Find a nearby restaurant that serves vegan food in Los Angeles."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -551,7 +551,7 @@
     "content": "What's my Big Five Personality trait scores given that I am efficient, organized, easy going and compassionate?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -595,7 +595,7 @@
     "content": "What is the combined circumference of four circles, where the first circle has a radius of 5m, the second circle has a radius of 10m, the third circle has a radius of 15m, and the fourth circle has a radius of 20m, and I want the output in meters?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -631,7 +631,7 @@
     "content": "\"In a physics experiment, you are given two charges. The first charge is 5 coulombs and is placed at a distance of 2 meters from the point where the electric field is being measured. The second charge is 3 coulombs and is placed at a distance of 4 meters from the same point. The experiment is conducted in a vacuum. Can you calculate the electric field produced by each charge at the point of measurement by invoking the 'calculate_electric_field' function?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -672,7 +672,7 @@
     "content": "Search for a Chicken Noodle Soup recipe and a Vegan Salad recipe."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -715,7 +715,7 @@
     "content": "What was the casualty number of the Battle of Waterloo?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -751,7 +751,7 @@
     "content": "What is the highest grossing movie of all time?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -792,7 +792,7 @@
     "content": "Who is the author of the book 'Pride and Prejudice'?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -834,7 +834,7 @@
     "content": "Find the latest court case between Apple and Samsung occured in USA."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -876,7 +876,7 @@
     "content": "Calculate the derivative of the function 2x^2 at x = 1."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -917,7 +917,7 @@
     "content": "Generate a melody in C major scale, starting with the note C4, 16 measures long, at 120 beats per minute."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -963,7 +963,7 @@
     "content": "Search for ongoing lawsuits related to the company 'Google' filed after January 1, 2021 in California."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1014,7 +1014,7 @@
     "content": "You are working in a lab and you have a sealed container with a gauge pressure of 2.5 atm. You are located at sea level where the atmospheric pressure is 1 atm. However, you need to transport the container to a high-altitude location where the atmospheric pressure is 0.85 atm. What will be the absolute pressure of the container at sea level and at the high-altitude location?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1050,7 +1050,7 @@
     "content": "\"Can you help me calculate the discounted cash flow of a bond? I have a bond with an annual coupon payment of $50, a time frame of 5 years, and a discount rate of 5%. Also, the face value of the bond is $1000. I would like to know the discounted cash flow for this bond. After that, I want to compare it with another bond that has an annual coupon payment of $60, a time frame of 7 years, and a discount rate of 4%, with the same face value of $1000. Can you calculate the discounted cash flow for this second bond as well?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1096,7 +1096,7 @@
     "content": "How to save game progress at stage 7 in easy mode and stage 3 in hard mode?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1142,7 +1142,7 @@
     "content": "Who was the most famous composers in United States."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1182,7 +1182,7 @@
     "content": "Who won the Grammy Award for Best Album in 2017?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1223,7 +1223,7 @@
     "content": "Who won the most valuable player in last season's basketball game?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1265,7 +1265,7 @@
     "content": "Find all the major achievements of the footballer Lionel Messi."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1305,7 +1305,7 @@
     "content": "Perform a two-sample t-test on my experiment data of Control [10, 15, 12, 14, 11] and Treated [18, 16, 17, 20, 22] group with alpha equals to 0.05"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1353,7 +1353,7 @@
     "content": "What is the temperature in celsius and humidity level of Tokyo, Japan right now?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1394,7 +1394,7 @@
     "content": "Calculate the Compound Annual Growth Rate (CAGR) for an initial investment of $2000, final value of $3000 in a period of 4 years."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1436,7 +1436,7 @@
     "content": "What's the driving distance between New York and Washington DC, and between Los Angeles and San Francisco with optional parameter shortest route enabled?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1478,7 +1478,7 @@
     "content": "Find a supermarket in New York City that opens 24 hours and another one in San Diego that offers home delivery."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1523,7 +1523,7 @@
     "content": "What is the prime factorization of the number 4567 and the number 7890, if we want the results to be returned in a 'dictionary' format?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1559,7 +1559,7 @@
     "content": "What is the meaning of 'Hello' in French?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1600,7 +1600,7 @@
     "content": "Find a bakery that sells sourdough bread in Chicago."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1641,7 +1641,7 @@
     "content": "What is the probability of getting a face card in a standard deck?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1688,7 +1688,7 @@
     "content": "Find me the record of Tom Brady in the 2020 NFL season."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1729,7 +1729,7 @@
     "content": "Calculate the speed of an object in km/h if it traveled 450 meters in 20 seconds."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1770,7 +1770,7 @@
     "content": "Get me the top 10 landmark cases in constitutional law in China."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1811,7 +1811,7 @@
     "content": "Shuffle a deck of cards, and draw 3 cards from the top."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1843,7 +1843,7 @@
     "content": "Calculate the Present Value of an investment paying $1000 per year, with an interest rate of 5%, for 10, 20 and 30 years."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1885,7 +1885,7 @@
     "content": "\"Can you help me identify the bird species I saw during my recent trip? The first one was a small bird with a vibrant blue color that I spotted in a forest. The second one was a large bird with a mix of black colors that I saw near a lake. The third one was a medium-sized bird with a brown color that I noticed in a desert. Lastly, the fourth one was a large bird with a green color that I observed in a tropical rainforest. What could these birds be?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1932,7 +1932,7 @@
     "content": "What were the closing stock prices for Microsoft and Apple on NASDAQ on the dates 2022-01-01 and 2022-02-01?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -1973,7 +1973,7 @@
     "content": "Calculate the volume of the sphere with radius 3 units."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2014,7 +2014,7 @@
     "content": "What's the lowest score in the Flappy Bird game?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2055,7 +2055,7 @@
     "content": "What is the ranking of a football team?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2096,7 +2096,7 @@
     "content": "What year was the law of universal gravitation published by Isaac Newton?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2137,7 +2137,7 @@
     "content": "Find the top five organic bananas brands on the basis of rating from Whole Foods store."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2177,7 +2177,7 @@
     "content": "Find the working hours and ticket price of The British Museum for this weekend, Jun.20,2023."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2227,7 +2227,7 @@
     "content": "Find the area of a triangle with a base of 10 units and height of 5 units."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2268,7 +2268,7 @@
     "content": "What is the current temperature and humidity in New York, Los Angeles, London and Tokyo, if I want to include both temperature and humidity in the results?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2308,7 +2308,7 @@
     "content": "\"An experiment was conducted where two objects were dropped from different heights without air resistance. The first object had an initial velocity of 0 m/s and was dropped from a height of 10 meters. The second object had an initial velocity of 5 m/s and was dropped from a height of 20 meters. Assuming the gravitational acceleration to be 9.8 m/s^2, can you calculate the final speed of both objects?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2349,7 +2349,7 @@
     "content": "\"Can you help me find the greatest common divisor of the following pairs of integers: (45, 60) and (81, 63)? Please use the number_theory.gcd function to compute this.\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2386,7 +2386,7 @@
     "content": "Retrieve me some stock news"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2432,7 +2432,7 @@
     "content": "What is the frequency of gene variant rs7412 in the European population?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2473,7 +2473,7 @@
     "content": "Find the duration of flight between Los Angeles and Miami."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2515,7 +2515,7 @@
     "content": "What was Albert Einstein's contribution to science on March 17, 1915?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2556,7 +2556,7 @@
     "content": "What is the area of a triangle with base of 10 units and height of 5 units?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2593,7 +2593,7 @@
     "content": "Predict the growth of forest in Yellowstone National Park for the next 5 years including human impact."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2634,7 +2634,7 @@
     "content": "Find the highest score achieved by any player in the online game 'Overwatch' on PC globally."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2675,7 +2675,7 @@
     "content": "\"Could you calculate the area under the curve for the function 'x^3' between x values of 2 and 5 using the 'trapezoid' method of numerical integration, and then do the same calculation but using the 'simpson' method? After that, could you repeat these calculations but for the function '2x^2+3x-1' between x values of -1 and 3?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2721,7 +2721,7 @@
     "content": "\"Could you use the 'predict_house_price' function to compare the estimated prices of four different houses? The first house is located in New York, has 3 bedrooms, 2 bathrooms, and an area of 1500 square feet. The second house is in Los Angeles, with 4 bedrooms, 3 bathrooms, and an area of 2000 square feet. The third house is in Chicago, with 2 bedrooms, 1 bathroom, and an area of 1200 square feet. The fourth house is in Miami, with 3 bedrooms, 2 bathrooms, and an area of 1800 square feet.\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2768,7 +2768,7 @@
     "content": "What are the RGB and HEX color values for navy, purple and maroon? "
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2812,7 +2812,7 @@
     "content": "What are the most common chords in a pop song?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2849,7 +2849,7 @@
     "content": "Which colors should I mix to get a specific color shade?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2891,7 +2891,7 @@
     "content": "Who are in the cricket matches scheduled for today?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2932,7 +2932,7 @@
     "content": "Get weather information for New York, USA for the next 3 days with details."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -2974,7 +2974,7 @@
     "content": "What's the retail price of a Fender American Professional II Stratocaster in Rosewood Finish?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3016,7 +3016,7 @@
     "content": "Calculate the batting average for a baseball player who has 180 hits and 600 at-bats. Round to 3 decimals."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3057,7 +3057,7 @@
     "content": "What is the probability of drawing a heart card from a deck of 52 cards?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3099,7 +3099,7 @@
     "content": "What was the Treaty of Paris about? Also, what was the importance of Magna Carta in history?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3140,7 +3140,7 @@
     "content": "\"A team of scientists is conducting an experiment involving a circular loop carrying an electric current. They have two different setups for this experiment. In the first setup, the loop has a radius of 0.5 meters and is carrying a current of 10 Amperes. In the second setup, the loop has a radius of 1 meter and is carrying a current of 15 Amperes. They want to compare the magnetic fields produced at the center of the loop in both setups. They assume the magnetic permeability to be the same as in free space in both cases. Can you calculate the magnetic fields for both setups using the 'calculate_magnetic_field' function and tell them which setup produces a stronger magnetic field?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3181,7 +3181,7 @@
     "content": "Fetch the details of the ancient empires Persian Empire and Mauryan Empire with their religious history and influences."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3218,7 +3218,7 @@
     "content": "Can you tell me a machine to bake a chocolate cake?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3262,7 +3262,7 @@
     "content": "What is the Eiffel Tower's height in feet?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3315,7 +3315,7 @@
     "content": "Find the best character to use against a dragon in DragonSlayer game."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3362,7 +3362,7 @@
     "content": "Retrieve the full historyof Buddhism"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3400,7 +3400,7 @@
     "content": "Get the highest scoring player of game 'Valorant' in 2022 season."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3437,7 +3437,7 @@
     "content": "Calculate the molecular weight of Glucose (C6H12O6) in grams/mole."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3474,7 +3474,7 @@
     "content": "Find me the sculptures of Michelangelo with material Marble in Rome, Italy."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3515,7 +3515,7 @@
     "content": "What are the proteins found in the cell compartments of the nucleus, mitochondria, and cytoplasm, and can you also provide a brief description of each protein?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3552,7 +3552,7 @@
     "content": "What is the distance in miles between the celestial bodies Mars and Venus, and then between Mars and Jupiter, given that the function 'calculate_distance' requires the names of the two celestial bodies and the unit of measurement?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3593,7 +3593,7 @@
     "content": "A scientist is conducting an experiment involving two different substances. The first substance has a mass of 10 kilograms and occupies a volume of 2 cubic meters. The second substance has a mass of 15 kilograms and occupies a volume of 3 cubic meters. The scientist wants to compare the densities of these two substances in kg/m³. Can you help the scientist calculate the densities of these two substances using the 'calculate_density' function?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3634,7 +3634,7 @@
     "content": "What is the slope of the line which is perpendicular to the line with the equation y = 3x + 2?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3678,7 +3678,7 @@
     "content": "How long will it take to travel from San Francisco to Los Angeles by car?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3720,7 +3720,7 @@
     "content": "Find the volume of a cone with base radius 3 cm and height 5 cm."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3762,7 +3762,7 @@
     "content": "Calculate the compound interest of an investment of $10,000 at an interest rate of 5% compounded yearly for 10 years."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3808,7 +3808,7 @@
     "content": "Get 5 latest news on Bitcoin in US"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3849,7 +3849,7 @@
     "content": "Who was the victim in the case docket numbered 2022/AL2562 in California?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3891,7 +3891,7 @@
     "content": "Find the value of a vintage Super Mario Bros. game from 1985 like new."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3939,7 +3939,7 @@
     "content": "\"John is a geometry teacher who is preparing a quiz for his students. He has drawn two triangles on the board. The first triangle has a base of 10 units and a height of 5 units. The second triangle has a base of 8 units and a height of 6 units. John wants to know the total area of the two triangles combined. Can you help him calculate this?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -3976,7 +3976,7 @@
     "content": "\"Can you calculate the return on equity for two companies? The first company has a net income of $1,000,000, shareholder's equity of $5,000,000, and paid dividends of $200,000. The second company has a net income of $2,000,000, shareholder's equity of $10,000,000, but did not pay any dividends.\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4017,7 +4017,7 @@
     "content": "In a game of Pokemon GO, what moves can a Pikachu learn? Also, check if Bulbasaur can learn a specific move named 'Solar Beam'."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4053,7 +4053,7 @@
     "content": "What is the quickest way to get to Tokyo from London by plane?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4095,7 +4095,7 @@
     "content": "What is the current time in Sydney, Australia?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4140,7 +4140,7 @@
     "content": "What's the neurological impact of sports on human brain?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4181,7 +4181,7 @@
     "content": "Find the statistical significance between two set of variables, dataset_A with the values 12, 24, 36 and dataset_B with the values 15, 30, 45."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4228,7 +4228,7 @@
     "content": "Convert time 3pm from New York time zone to London time zone."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4270,7 +4270,7 @@
     "content": "Calculate the final velocity of an object falling from a 150 meter building, assuming initial velocity is zero."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4310,7 +4310,7 @@
     "content": "Calculate the discounted cash flow of a bond that is giving a coupon payment of $100 annually for next 5 years with discount rate 4%."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4356,7 +4356,7 @@
     "content": "What are the protein sequences encoded by the BRCA1 and BRCA2 genes in Homo sapiens and Pan troglodytes (chimpanzee)?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4393,7 +4393,7 @@
     "content": "What are the prime factors of the number 4567 and 7890, and can you provide these in a formatted string as well as an array?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4430,7 +4430,7 @@
     "content": "\"Could you please calculate the future value of my investments? I have invested $5000 in Apple Inc. (AAPL) and expect an annual return of 7% over the next 5 years. I have also invested $8000 in Microsoft Corporation (MSFT) with an expected annual return of 6% for the next 7 years. Lastly, I have invested $10000 in Amazon.com, Inc. (AMZN) expecting an annual return of 8% for the next 10 years.\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4477,7 +4477,7 @@
     "content": "What are the top five flower species for pollination in South America?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4518,7 +4518,7 @@
     "content": "Retrieve the average house price in california"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4563,7 +4563,7 @@
     "content": "What's the penalty for burglary in California?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4600,7 +4600,7 @@
     "content": "Calculate the projected return on a $5000 investment in ABC company's stock, if the expected annual growth rate is 6% and the holding period is 5 years."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4646,7 +4646,7 @@
     "content": "Predict whether a person with weight 150lbs and height 5ft 10in who is lightly active will get type 2 diabetes."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4695,7 +4695,7 @@
     "content": "Calculate the expected evolutionary fitness of a creature, with trait A contributing to 40% of the fitness and trait B contributing 60%, if trait A has a value of 0.8 and trait B a value of 0.7."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4738,7 +4738,7 @@
     "content": "Check if any Hilton Hotel is available for two adults in Paris from 2023 April 4th to April 8th?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4790,7 +4790,7 @@
     "content": "What is the shortest distance between New York and Los Angeles using a bus as the preferred mode of public transportation, and then what is the shortest distance if we allow transfer between different modes of transportation?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4835,7 +4835,7 @@
     "content": "What is the angle between the hour and minute hands of a clock at 3:15, rounded to 2 decimal places, and how does this compare to the angle at 8:20 and 11:50, both also rounded to 2 decimal places?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4876,7 +4876,7 @@
     "content": "What is the coefficient of determination (R squared) of a regression model if we use the dataset located at \"/user/home/datasets/finance.csv\", with 'income', 'age' and 'education' as the independent variables and 'credit_score' as the dependent variable, and then repeat the same process with 'income', 'age' and 'credit_score' as the independent variables and 'education' as the dependent variable?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4921,7 +4921,7 @@
     "content": "Which online bookstore sells 'To Kill a Mockingbird'?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -4963,7 +4963,7 @@
     "content": "What's the judgement in case XYZ?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5004,7 +5004,7 @@
     "content": "Who has the highest number of hearts in a game of poker?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5045,7 +5045,7 @@
     "content": "Calculate the derivative of the function 3x^2 + 2x - 1."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5081,7 +5081,7 @@
     "content": "Find a historical law case about fraud from 2010 to 2015."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5123,7 +5123,7 @@
     "content": "What are the names of proteins found in the plasma membrane?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5160,7 +5160,7 @@
     "content": "Get the shortest driving distance between New York, USA and Miami, USA."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5206,7 +5206,7 @@
     "content": "Build a decision tree classifier model with gini criterion, maximum depth of 5 and random state of 1, another with entropy criterion, maximum depth of 10 and random state of 1."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5248,7 +5248,7 @@
     "content": "What is the temperature right now and for the next three hours in Seattle and Los Angeles?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5285,7 +5285,7 @@
     "content": "What is the results of the factorial of 5, the factorial of 7, and the factorial of 9?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5317,7 +5317,7 @@
     "content": "How to increase the population of deer in a forest?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5359,7 +5359,7 @@
     "content": "Who won the game of Monopoly last night?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5400,7 +5400,7 @@
     "content": "Who created the sculpture 'The Thinker'?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5438,7 +5438,7 @@
     "content": "Find the details about the musical instrument 'Violin' from 'Stradivarius' maker, made in the year 1721."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5480,7 +5480,7 @@
     "content": "Find me the average price and ratings of piano from Yamaha."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5528,7 +5528,7 @@
     "content": "Give me detail information about stocks of Apple Inc."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5569,7 +5569,7 @@
     "content": "How much will 20000 Japanese Yen be in United States Dollar?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5611,7 +5611,7 @@
     "content": "You are planning to build three triangular gardens in your backyard. The first garden has a base of 10 meters and a height of 5 meters, the second garden has a base of 15 meters and a height of 7 meters, and the third garden has a base of 20 meters and a height of 10 meters. What is the total area of the three gardens?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5648,7 +5648,7 @@
     "content": "Can you help me find vegan restaurants in Los Angeles, CA that are open until at least 22:00, and then do the same for San Francisco, CA and Seattle, WA?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5685,7 +5685,7 @@
     "content": "What is the total area of three circles, where the first circle has a radius of 5 meters, the second circle has a radius of 10 meters, and the third circle has a radius of 15 meters, all measured in meters?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5722,7 +5722,7 @@
     "content": "What is the seating capacity of Camp Nou Stadium?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5764,7 +5764,7 @@
     "content": "Who won the chess tournament in 2015?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5811,7 +5811,7 @@
     "content": "What's the total number of possible arrangements in a chess game?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5882,7 +5882,7 @@
     "content": "Find the current world rank of a Tennis player, Serena Williams."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5924,7 +5924,7 @@
     "content": "What is the carbon footprint of a gas-powered vehicle driving 1500 miles in a year?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -5965,7 +5965,7 @@
     "content": "Find the top rated modern sculpture exhibition happening in New York in the upcoming month."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6015,7 +6015,7 @@
     "content": "Calculate the duration between two notes of 440Hz and 880Hz frequency based on harmonic rhythm."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6056,7 +6056,7 @@
     "content": "Can you provide me with the fastest route from my home in San Francisco to my office in Palo Alto and then a scenic route from Palo Alto to the Golden Gate Bridge in San Francisco, and finally the fastest route back to my home from the Golden Gate Bridge?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6101,7 +6101,7 @@
     "content": "What is the total distance in kilometers if you were to travel from the Eiffel Tower in Paris (48.8584° N, 2.2945° E) to the Colosseum in Rome (41.8902° N, 12.4922° E), then to the Acropolis in Athens (37.9715° N, 23.7257° E), and finally to the Pyramids of Giza in Egypt (29.9792° N, 31.1342° E)?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6149,7 +6149,7 @@
     "content": "You have four sets of numbers: the first set is [23, 45, 67, 89], the second set is [12, 34, 56, 78], the third set is [98, 76, 54, 32], and the fourth set is [87, 65, 43, 21]. Can you calculate the average of each set of numbers?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6184,7 +6184,7 @@
     "content": "Identify the type of blood cells responsible for clotting."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6226,7 +6226,7 @@
     "content": "What is the common ancestor of lion and zebra?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6262,7 +6262,7 @@
     "content": "Where is the closest Italian restaurant?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6304,7 +6304,7 @@
     "content": "Who discovered Gravity and what was the method used?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6340,7 +6340,7 @@
     "content": "Given patient with id 546382, retrieve their brain MRI report with the status 'concluded'."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6392,7 +6392,7 @@
     "content": "Find the Greatest Common Divisor (GCD) of two numbers, say 36 and 48."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6429,7 +6429,7 @@
     "content": "What are the coordinates of the neuron in a rat's all part of the brain that produces GABA neurotransmitters?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6467,7 +6467,7 @@
     "content": "\"Can you plot two sine waves for me? The first one should have a frequency of 5 Hz, starting from 0 radians and ending at 10 radians, with an amplitude of 2 and a phase shift of 1 radian. The second one should have a frequency of 10 Hz, starting from 0 radians and ending at 20 radians, with an amplitude of 3 and a phase shift of 2 radians.\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6517,7 +6517,7 @@
     "content": "What are the annual carbon emissions produced by a gasoline vehicle, a diesel vehicle, and an electric vehicle if they each drive 15,000 miles per year, using the default emission factor for the gasoline vehicle, an emission factor of 2.7 for the diesel vehicle, and an emission factor of 0 for the electric vehicle?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6558,7 +6558,7 @@
     "content": "Can you predict the price of a house with an area of 2500 square feet, 3 rooms, constructed in the year 2000, and located in New York, and then compare it with the price of a similar house but with an area of 3000 square feet, constructed in the year 2005, and located in Los Angeles? Finally, predict the price of a third house with an area of 2000 square feet, 2 rooms, constructed in the year 1995, and located in Chicago."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6605,7 +6605,7 @@
     "content": "What defines scientist"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6652,7 +6652,7 @@
     "content": "How to solve the quadratic equation with coefficients 2, 3 and 4?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6702,7 +6702,7 @@
     "content": "Mix the color #FAEBD7 with #00FFFF, what is the new color?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6743,7 +6743,7 @@
     "content": "Book a hotel room with king size bed in Los Angeles for 2 nights starting from 15th October,2023."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6795,7 +6795,7 @@
     "content": "Find the estimated travel time by car from San Francisco to Los Angeles with stops at Santa Barbara and Monterey."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6839,7 +6839,7 @@
     "content": "'Get stock price of Apple for the last 5 days in NASDAQ.'"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6880,7 +6880,7 @@
     "content": "Book a single room at a pet friendly hotel near Manhattan, New York for 3 nights starting from March 10th, 2023."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6941,7 +6941,7 @@
     "content": "Check if the player with id 3142 in team RocketLeague has achieved top scorer status in seasons 2017, 2018 and 2019."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -6982,7 +6982,7 @@
     "content": "What is the average temperature in New York for the past 7 days in Fahrenheit and how does it compare to the average temperature in Los Angeles for the same period in Celsius?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7023,7 +7023,7 @@
     "content": "\"Can you help me calculate the compound interest for my savings? I initially invested $5000 as the principal amount. The bank offers an annual interest rate of 2.5%. I plan to keep my money in the bank for 10 years. Also, the interest is compounded quarterly, so it's compounded 4 times in a year. Can you calculate the compound interest I would get for the first 2 years, first 3 years and first 5 years?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7069,7 +7069,7 @@
     "content": "What were the most impactful cases handled by law firm ABC in the year 2020?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7111,7 +7111,7 @@
     "content": "What is the rate of return for a business with $15000 total revenue and $22000 total cost."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7152,7 +7152,7 @@
     "content": "Which place in Paris that is most famous?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7210,7 +7210,7 @@
     "content": "Send an email to John Doe at john.doe@example.com with the subject 'Meeting' and body 'Let's meet at 10 AM tomorrow'."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7260,7 +7260,7 @@
     "content": "Book a direct flight from San Francisco to London for 2022-04-27 afternoon"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7310,7 +7310,7 @@
     "content": "Calculate the final velocity of an object, knowing that it started from rest, accelerated at a rate of 9.8 m/s^2 for a duration of 5 seconds."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7352,7 +7352,7 @@
     "content": "Find me the most recent art sculpture by James Plensa with detailed description."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7388,7 +7388,7 @@
     "content": "\"In a game of basketball, a player has a 60% chance of making a successful shot. In a particular match, the player attempts 10 shots. What is the probability that the player makes exactly 6 successful shots? Now, consider a different scenario where the player's success rate drops to 50% but the number of attempts remains the same. What is the probability of making exactly 6 successful shots in this scenario? Finally, consider a third scenario where the player's success rate remains at 50% but the number of attempts increases to 15. What is the probability of making exactly 6 successful shots in this third scenario?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7430,7 +7430,7 @@
     "content": "What is the shortest driving distance in miles from New York City to Los Angeles and then from Los Angeles to Miami, considering that you have to return to New York City from Miami?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7471,7 +7471,7 @@
     "content": "\"Can you calculate the highest common factor of the pair of numbers (45, 60) and then use that result to find the highest common factor with another pair of numbers (90, 120)? Please also find the highest common factor of the pair (36, 48) and then find the highest common factor of that result with the pair (72, 96).\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7508,7 +7508,7 @@
     "content": "Who is the teacher for the upcoming lectures?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7550,7 +7550,7 @@
     "content": "Find the integral of x^3 from 1 to 5"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7582,7 +7582,7 @@
     "content": "What are the calories of a Big Mac?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7623,7 +7623,7 @@
     "content": "Calculate the balance of a mutual fund given a total investment of $50000 with a 5% annual yield after 3 years."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7665,7 +7665,7 @@
     "content": "What is the musical scale associated with C sharp major?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7702,7 +7702,7 @@
     "content": "Get concert details for the artist Beyonce performing in San Diego next month (April 2022)."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7743,7 +7743,7 @@
     "content": "Retrieve cases from 2020 about theft crimes in Los Angeles, California"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7785,7 +7785,7 @@
     "content": "Can you fetch the latest news on the topic of \"Climate Change\" and \"Artificial Intelligence\", each with 5 articles, and specifically for the region \"Europe\"?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7826,7 +7826,7 @@
     "content": "\"A car starts with an initial velocity of 15 m/s accelerates at a rate of 3.5 m/s^2 for a time of 7 seconds. What is the displacement of this car? Now, consider a second car that starts with an initial velocity of 20 m/s and accelerates at a rate of 2 m/s^2 for a time of 10 seconds. What is the displacement of the second car? Finally, a third car with an initial velocity of 25 m/s travels for a time of 8 seconds without any acceleration. What is the displacement of the third car?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7868,7 +7868,7 @@
     "content": "\"In a board game, you have a six-sided die. You are curious about the probability of rolling a 4 three times in a row. After that, you want to know the probability of rolling a 2 twice in a row. Finally, you wonder what the probability would be if the die had 8 sides and you wanted to roll a 7 two times in a row. Can you calculate these probabilities?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7909,7 +7909,7 @@
     "content": "What does the color purple represent in computer vision?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7951,7 +7951,7 @@
     "content": "Find out about traffic laws in Texas."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -7992,7 +7992,7 @@
     "content": "What is the mating process of Lions?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8034,7 +8034,7 @@
     "content": "Give me a brief on movie 'Interstellar'"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8071,7 +8071,7 @@
     "content": "Fetch me the list of IMAX movie releases in theaters near LA for the next week."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8112,7 +8112,7 @@
     "content": "Identify a small green bird in forest."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8158,7 +8158,7 @@
     "content": "When was the signing of the Treaty of Lisbon?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8194,7 +8194,7 @@
     "content": "Find the list of TV shows and their ratings on Netflix for 'Friends', and Hulu for 'The Office' and 'Stranger Things' and sort by its rating"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8238,7 +8238,7 @@
     "content": "\"Can you calculate the area of two circles, one with a radius of 5 meters and the other with a radius of 10 meters, and then compare the two areas to determine which circle is larger and by how much?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8274,7 +8274,7 @@
     "content": "What is the current price per ounce of gold, silver, platinum, and palladium?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8311,7 +8311,7 @@
     "content": "How do I find the angle of the force for a given momentum?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8352,7 +8352,7 @@
     "content": "What are the different properties of Hydrogen?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8389,7 +8389,7 @@
     "content": "What is the final price of a product after a 25% discount and 10% sales tax has been applied?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8431,7 +8431,7 @@
     "content": "Check the amount of protein, calories and carbs in an avocado from Walmart."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8483,7 +8483,7 @@
     "content": "What's the timing and location for The Weeknd's concert happening in December?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8525,7 +8525,7 @@
     "content": "Get the exchange rate from British pounds to Japanese yen with the fee 0.02 included."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8567,7 +8567,7 @@
     "content": "Find average batting score of a cricketer, Virat Kohli for past 10 matches"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8608,7 +8608,7 @@
     "content": "\"Can you help me calculate the energy required for a phase change? I have a science experiment where I am first melting 500 grams of ice at 0 degrees Celsius, then I am freezing it back. After that, I am vaporizing the same mass of water at 100 degrees Celsius and then condensing it back to liquid state. The substance I am using for this experiment is water. Can you tell me how much energy is required or released during each of these phase changes?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8649,7 +8649,7 @@
     "content": "What is the type of the genetic mutation that has the SNP ID 'rs123456' in the species 'Homo sapiens' and the SNP ID 'rs7891011' in the species 'Canis lupus familiaris' (Dog)?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8685,7 +8685,7 @@
     "content": "\"Can you help me find the roots of two quadratic equations? The first equation is 3x^2 + 4x + 2 = 0, where 'a' is the coefficient of x^2, 'b' is the coefficient of x, and 'c' is the constant term. The second equation is 5x^2 - 7x + 3 = 0, where 'a' is the coefficient of x^2, 'b' is the coefficient of x, and 'c' is the constant term.\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8727,7 +8727,7 @@
     "content": "What type of instrument is a cello?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8770,7 +8770,7 @@
     "content": "Who won the last world cup in football?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8812,7 +8812,7 @@
     "content": "How long would it take to travel from Boston to New York by car?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8854,7 +8854,7 @@
     "content": "How many Canadian dollars can I get for 500 US dollars?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8896,7 +8896,7 @@
     "content": "Find me a classical concert this weekend in Los Angeles with cheap tickets."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8957,7 +8957,7 @@
     "content": "Calculate the magnetic field strength 10 meters away from a long wire carrying a current of 20 Amperes."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -8998,7 +8998,7 @@
     "content": "Convert 150 Euros to Canadian dollars."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9040,7 +9040,7 @@
     "content": "You are a data analyst and you have been given two 2x2 contingency tables representing the results of a survey conducted in two different cities. The first table is [45, 55, 35, 65] and the second table is [30, 70, 50, 50]. You are asked to perform a Chi-Squared test for independence on both tables to determine if there is a significant relationship between the variables in each city. Use a significance level of 0.05 for both tests. Can you tell if there is a significant relationship in each city based on the Chi-Squared test results?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9079,7 +9079,7 @@
     "content": "\"Can you compute the derivative of the function 3x^2 + 2x - 1 at the value 5, where the variable present in the function is 'x', and then compute the derivative of the function 4y^3 - 3y^2 + 2y - 1 at the value 3, where the variable present in the function is 'y'?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9121,7 +9121,7 @@
     "content": "\"Can you calculate the speed of a car that traveled a distance of 500 meters in 25 seconds and provide the answer in km/h? Also, can you calculate the speed of a bicycle that traveled a distance of 1000 meters in 200 seconds and provide the answer in m/s? Lastly, can you calculate the speed of a train that traveled a distance of 10000 meters in 600 seconds and provide the answer in km/h?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9162,7 +9162,7 @@
     "content": "Who was the scientist that proposed the special theory of relativity?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9194,7 +9194,7 @@
     "content": "What's the composition of species in my backyard garden in Boston?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9236,7 +9236,7 @@
     "content": "Find me restaurants in London"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9286,7 +9286,7 @@
     "content": "Get current Gold price per ounce."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9323,7 +9323,7 @@
     "content": "Create an itinerary for a 7 days trip to Tokyo with daily budgets not exceeding $100 and prefer exploring nature."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9376,7 +9376,7 @@
     "content": "What is the probability of getting a full house in poker?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9413,7 +9413,7 @@
     "content": "What is the final speed of an object dropped from rest after falling for 5 seconds if we neglect air resistance?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9453,7 +9453,7 @@
     "content": "\"Can you provide me with the details of the lawsuit case with the case number '12345ABC', which was initiated in the year 2018 and filed in the New York court jurisdiction? Also, can you retrieve the same information for another lawsuit case with the case number '67890XYZ', initiated in the year 2019 and filed in the California court jurisdiction?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9497,7 +9497,7 @@
     "content": "Find two movie theatres near San Diego with availability for Tenet at 5 pm and No Time To Die at 7:30 pm."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9549,7 +9549,7 @@
     "content": "\"Could you calculate the genetic similarity between a human and a chimpanzee, and then between a human and a gorilla, using their DNA sequences? Please provide the results in both percentage and fraction formats.\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9590,7 +9590,7 @@
     "content": "What is the area under the curve of the function f(x) = 3x^2 from x = 1 to x = 5?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9627,7 +9627,7 @@
     "content": "How is the air quality in Los Angeles right now?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9668,7 +9668,7 @@
     "content": "Solve for the roots of the equation 3x^2 - 2x - 5."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9711,7 +9711,7 @@
     "content": "Calculate the final velocity of a vehicle after accelerating at 2 meters/second^2 for a duration of 5 seconds, starting from a speed of 10 meters/second."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9753,7 +9753,7 @@
     "content": "I would like to book a single room for two nights at The Plaza hotel."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9795,7 +9795,7 @@
     "content": "Calculate the cell density in a sample with an optical density of 0.6, where the experiment dilution is 5 times."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9836,7 +9836,7 @@
     "content": "Estimate the population of pandas in the wild in China."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9877,7 +9877,7 @@
     "content": "Show me all individuals who were convicted for money laundering from San Francisco in 2019 and ones convicted for the same in Texas in 2018"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9919,7 +9919,7 @@
     "content": "Check the hotel room availability for 'Queens Hotel' in Berlin, Germany from March 10, 2022 to March 20, 2022 and for 'Royal Hotel' in Paris, France from April 5, 2022 to April 15, 2022."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -9966,7 +9966,7 @@
     "content": "Can you generate four different DNA sequences each with a length of 500, where the first sequence has a preference for nucleotide 'A', the second sequence has a preference for nucleotide 'T', the third sequence has a preference for nucleotide 'C', and the fourth sequence has a preference for nucleotide 'G'?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10012,7 +10012,7 @@
     "content": "Find the best Sushi restaurant in Los Angeles."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10053,7 +10053,7 @@
     "content": "Calculate the standard deviation of the null hypothesis test with a sample mean of 98.2, standard deviation of 1.4, and sample size of 40 for a population mean of 98.6."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10104,7 +10104,7 @@
     "content": "Calculate the probability of getting a head when flipping a coin."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10144,7 +10144,7 @@
     "content": "Who was the U.S. president during the Civil War?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10180,7 +10180,7 @@
     "content": "Book a hotel room at the Plaza Hotel in New York for 3 nights starting from 1st June 2022"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10232,7 +10232,7 @@
     "content": "What is the final velocity of a vehicle that started from rest and accelerated at 4 m/s^2 for a distance of 300 meters?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10273,7 +10273,7 @@
     "content": "Give me the schedule of Manchester United for the next 6 games in Premier League."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10319,7 +10319,7 @@
     "content": "Find me all the classical concerts near Berlin and Paris happening next Friday, and I am interested only in those with available parking."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10377,7 +10377,7 @@
     "content": "\"Could you calculate the Body Mass Index (BMI) for four individuals? The first person weighs 75 kilograms and is 180 centimeters tall, the second person weighs 60 kilograms and is 165 centimeters tall, the third person weighs 80 kilograms and is 175 centimeters tall, and the fourth person weighs 90 kilograms and is 185 centimeters tall. Please use the metric system for all calculations.\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10418,7 +10418,7 @@
     "content": "Can you find me any upcoming rock and jazz concerts for the next month in San Francisco, California and New York, New York?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10460,7 +10460,7 @@
     "content": "Find me an ice cream store"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10507,7 +10507,7 @@
     "content": "Calculate the prime factors of 100."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10554,7 +10554,7 @@
     "content": "Who played in La Liga?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10595,7 +10595,7 @@
     "content": "Calculate the energy (in Joules) absorbed or released during the phase change of 100g of water from liquid to steam at its boiling point."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10636,7 +10636,7 @@
     "content": "Find the distance between New York and Boston, accounting for terrain."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10677,7 +10677,7 @@
     "content": "Calculate the velocity of a car that travels a distance of 50 kilometers for a duration of 2 hours?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10718,7 +10718,7 @@
     "content": "How to obtain the detailed case information of the 'R vs Adams' legal case?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10755,7 +10755,7 @@
     "content": "\"Imagine you are conducting an experiment with two different objects. The first object is accelerated at a rate of 5 m/s^2 and travels a distance of 100 meters. The second object is accelerated at a rate of 10 m/s^2 and travels a distance of 200 meters. Both objects start from rest. Can you calculate the final velocity of each object using the kinematics.final_velocity_from_distance function?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10796,7 +10796,7 @@
     "content": "I want to order a large pepperoni pizza and a chicken Caesar salad from Whole Foods at the downtown location and then another order of the same items from the uptown location."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10846,7 +10846,7 @@
     "content": "\"Can you help me find the roots of two quadratic equations? The first equation has coefficients of x squared, x, and the constant term as 5, 6, and 1 respectively. The second equation has coefficients of x squared, x, and the constant term as 3, 2, and 1 respectively. Can you solve these equations using the 'solve_quadratic_equation' function?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10888,7 +10888,7 @@
     "content": "What is the largest planet in the universe?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10930,7 +10930,7 @@
     "content": "What's the mass of an electron?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -10971,7 +10971,7 @@
     "content": "What is the current time in New York City?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11007,7 +11007,7 @@
     "content": "Get me data on average precipitation in the Amazon rainforest for the last six months."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11049,7 +11049,7 @@
     "content": "Find the highest common factor of 36 and 24."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11086,7 +11086,7 @@
     "content": "How many calories in the Beef Lasagna Recipe from Foodnetwork.com?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11127,7 +11127,7 @@
     "content": "Get directions from Sydney to Melbourne using the fastest route."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11172,7 +11172,7 @@
     "content": "Compute the Pythagorean Theorem of two side lengths: 3 and 4, 5 and 12."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11209,7 +11209,7 @@
     "content": "What would be the projected population growth of Japan and India in the next 10 and 20 years respectively, considering the current growth rate, and how would these projections change if we consider a growth rate of 1.5% for Japan and 2.1% for India instead of the current growth rate?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11250,7 +11250,7 @@
     "content": "\"Imagine you are a drone operator. You are currently operating a drone that is at a point (5, 7) in the sky. You are asked to move the drone to a new point (10, 15). After reaching the new point, you are again asked to move the drone to another point (20, 25). Can you calculate the total distance the drone has traveled using the Euclidean norm method?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11291,7 +11291,7 @@
     "content": "What's the average temperature for Los Angeles in December?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11332,7 +11332,7 @@
     "content": "Where is the nearest pharmacy in Los Angeles?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11374,7 +11374,7 @@
     "content": "Give me the MTBI of my friend."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11427,7 +11427,7 @@
     "content": "Find the nearest park with a tennis court in London."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11472,7 +11472,7 @@
     "content": "Who discovered the neutron? Give me detail information."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11509,7 +11509,7 @@
     "content": "Find the rating and player count of the board game 'Ticket to Ride'."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11560,7 +11560,7 @@
     "content": "Calculate the electric field at a point 3 meters away from a charge of 2 coulombs."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11601,7 +11601,7 @@
     "content": "What's the current most played Pop song and also find me the current most played Rock song in Australia."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11642,7 +11642,7 @@
     "content": "\"Can you calculate the time it would take for light to travel from Earth to a newly discovered exoplanet that is 4.22 light years away, then to another exoplanet that is 6.1 light years from the first one, and finally back to Earth which is 5.88 light years from the second exoplanet? Assume the speed of light in vacuum is 299792458 m/s.\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11678,7 +11678,7 @@
     "content": "Provide me the major events during the presidency of Abraham Lincoln and George Washington."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11720,7 +11720,7 @@
     "content": "Calculate how much nurtient a cactus in Arizona needs weekly in the summer."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11767,7 +11767,7 @@
     "content": "What are the best Crime-Thriller movies of 2020?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11812,7 +11812,7 @@
     "content": "Can I report noise complaint to my local council in city of Atlanta?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11853,7 +11853,7 @@
     "content": "Analyze the DNA sequence 'AGTCGATCGAACGTACGTACG' for any potential substitution mutations based on a reference sequence 'AGTCCATCGAACGTACGTACG'."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11899,7 +11899,7 @@
     "content": "Find the high and low temperatures, humidity, and precipitation for London, United Kingdom for the next 3 days."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11949,7 +11949,7 @@
     "content": "Find the price of a used Gibson Les Paul guitar in excellent condition in the Chicago area."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -11996,7 +11996,7 @@
     "content": "Find the most followed person on twitter who tweets about psychology related to behaviour and group dynamics."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -12039,7 +12039,7 @@
     "content": "\"John, who weighs 85 kilograms and is 1.8 meters tall, and his friend Sarah, who weighs 60 kilograms and is 1.65 meters tall, are having a debate about their health. They decide to calculate their Body Mass Index (BMI) to settle the argument. Later, they meet their friend Mike, who weighs 75 kilograms and is 1.7 meters tall, and they decide to calculate his BMI as well. Can you help them calculate their BMIs?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -12076,7 +12076,7 @@
     "content": "What are the precipitation statistics for the Amazon rainforest for the last six months, the last year, and the last five years?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -12118,7 +12118,7 @@
     "content": "\"Can you help me calculate the quarterly dividend per share for my company? We have just paid out a total of $5,000,000 in dividends and currently have 2,000,000 outstanding shares. Also, I am considering a scenario where we might increase our total payout to $6,000,000 while keeping the same number of outstanding shares. What would be the quarterly dividend per share in that case? And what if we also increase our outstanding shares to 2,500,000 while keeping the total payout at $6,000,000?\""
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -12156,7 +12156,7 @@
     "content": "Find a pet-friendly train station in Miami"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -12197,7 +12197,7 @@
     "content": "Who establish laws and orders in Ancient Greek."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -12238,7 +12238,7 @@
     "content": "Who is the most assist player in Premier League?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -12280,7 +12280,7 @@
     "content": "Calculate the return of investment of a bank's savings account with a deposit of $1000, annual interest rate of 3% for 1 year."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -12322,7 +12322,7 @@
     "content": "What are the career stats of basketball player LeBron James?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -12358,7 +12358,7 @@
     "content": "Create a histogram for student scores with the following data: 85, 90, 88, 92, 86, 89, 91 and set bin range to 5."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -12398,7 +12398,7 @@
     "content": "Calculate the compound interest for an initial principal amount of $10000, with an annual interest rate of 5% and the number of times interest applied per time period is 4 and the time the money is invested for 10 years."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -12444,7 +12444,7 @@
     "content": "What were the 'Open', 'Close', 'High', and 'Low' stock prices for Microsoft and Apple over the past 30 days?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -12485,7 +12485,7 @@
     "content": "Can you give me 95% confidence interval for a sample mean with standard deviation of 10, sample size of 50 and sample mean of 25? And can you do the same but for a sample size of 150 instead?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -12531,7 +12531,7 @@
     "content": "Fetch the population of New York City, NY,  and Los Angeles, CA from US Census Database, and also get the population data for Alaska state and USA"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -12573,7 +12573,7 @@
     "content": "Find the favorite restaurant in London."
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -12614,7 +12614,7 @@
     "content": "How can I apply Evolutionary Algorithm in game Artificial Intelligence?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
@@ -12660,7 +12660,7 @@
     "content": "What's the mass of an electron?"
    }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 2048,
   "tools": [
    {
     "type": "function",
