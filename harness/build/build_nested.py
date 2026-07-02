@@ -15,10 +15,40 @@ import random
 H = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SEED = 20260702
 
-TOOL = {"type": "function", "function": {
-    "name": "submit_payload",
-    "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
-    "parameters": {"type": "object", "additionalProperties": True}}}
+# Each case ships a schema mirroring its exact payload: llama-server grammar-constrains tool
+# calls from the schema, and a propertyless/additionalProperties:true schema collapses the
+# grammar to '{}' (Phase-0 discovery: nested scored 0/25 with the model FORCED to emit empty
+# args). Real tools ship real schemas; the stress stays on VALUE fidelity.
+def schema_for(v):
+    if isinstance(v, bool):
+        return {"type": "boolean"}
+    if v is None:
+        return {"type": "null"}
+    if isinstance(v, int):
+        return {"type": "integer"}
+    if isinstance(v, float):
+        return {"type": "number"}
+    if isinstance(v, str):
+        return {"type": "string"}
+    if isinstance(v, dict):
+        return {"type": "object",
+                "properties": {k: schema_for(x) for k, x in v.items()},
+                "required": list(v.keys()),
+                "additionalProperties": False}
+    if isinstance(v, list):
+        subs = {json.dumps(schema_for(x), sort_keys=True) for x in v}
+        items = [json.loads(s) for s in sorted(subs)]
+        it = items[0] if len(items) == 1 else {"anyOf": items}
+        return {"type": "array", "items": it,
+                "minItems": len(v), "maxItems": len(v)}
+    raise TypeError(type(v))
+
+
+def tool_for(args):
+    return {"type": "function", "function": {
+        "name": "submit_payload",
+        "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+        "parameters": schema_for(args)}}
 
 WORDS = "alpha beta gamma delta epsilon zeta eta theta iota kappa lam mu nu xi omicron pi rho".split()
 
@@ -139,7 +169,7 @@ def main():
             cid = f"nested_{n:03d}_{fam}"
             payload = json.dumps(args, ensure_ascii=False, indent=2)
             cases.append({"id": cid, "family": fam, "max_tokens": 4096,
-                          "tools": [TOOL],
+                          "tools": [tool_for(args)],
                           "messages": [{"role": "user",
                                         "content": PROMPT.format(payload=payload)}]})
             refs[cid] = {"name": "submit_payload", "arguments": args}
