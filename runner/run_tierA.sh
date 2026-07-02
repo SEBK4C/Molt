@@ -24,9 +24,10 @@ done
 [ -n "$GGUF" ] || GGUF=$(cat serve/current.gguf)
 PORT=${MOLT_PORT:-9021}
 SRV_BIN=${MOLT_LLAMA_SERVER:-vendor/llama.cpp/build/bin/llama-server}
-# full-S wall time with thinking enabled is unmeasured until Phase-0; default generously so
-# the auto-P5 path can't die by timeout at its final step (tighten after Phase-0 measures it)
-if [ -z "$MODE" ]; then TIMEOUT=${MOLT_EVAL_TIMEOUT:-14400}; else TIMEOUT=${MOLT_EVAL_TIMEOUT:-2700}; fi
+# full-S wall time with thinking enabled at 13.5 t/s decode is plausibly 6-10 h (Phase-0
+# run-1 pace); ceiling must exceed it or auto-P5 dies at its final step. Tighten after
+# Phase-0 publishes real wall times.
+if [ -z "$MODE" ]; then TIMEOUT=${MOLT_EVAL_TIMEOUT:-36000}; else TIMEOUT=${MOLT_EVAL_TIMEOUT:-2700}; fi
 
 # 1. referee integrity first — a tampered harness auto-fails everything
 runner/score.sh --verify-only
