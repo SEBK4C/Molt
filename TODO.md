@@ -198,7 +198,11 @@ States: `[pending]` `[in-progress]` `[blocked: <on-what>]` `[done]` `[HUMAN]` (p
   - **HG1-prep [done]** script written + 3 mock tests green
     (`.venv/bin/python -m pytest scripts/test_endpoint_mock.py -q`): mock goldens for all 4
     suites, refuse-without---confirm-spend, dry-run cost print.
-- **HG2 [HUMAN]** Any deletion > 50 GB. Two queued candidates:
+- **HG2 [HUMAN]** Any deletion > 50 GB. ⚠ PRECONDITION for (b): serve/current.args still
+  points at models/hf-bf16/chat_template.jinja — the template is now COPIED to
+  serve/chat_template.jinja (committed), and the args path must be flipped to it AFTER
+  Phase-0 completes (config frozen during ε replication). Do not run (b) before that flip.
+  Two queued candidates:
   (a) the defective first convert (421 GB), safe to delete as soon as the fixed canonical
       Ornith-Q8_0.gguf passes its tokenize sanity:
       `rm /mnt/proxmox/llm-serve/models/ornith-397b/Ornith-Q8_0.BAD-phantom-mtp.gguf`
