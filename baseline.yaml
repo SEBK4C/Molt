@@ -1,0 +1,32 @@
+# molt baseline recipe — search seed. Agent edits recipes/current.yaml (a copy of this).
+# Rendered by runner/render_quant_cmd.py into: llama-quantize --imatrix ... --tensor-type <pat>=<type> ...
+# Size model: gate/up IQ2_XXS 66.4 GB + down Q2_K 41.3 GB + rest Q8/F16 10.5 GB ~= 118 GB.
+
+source_gguf: models/Ornith-Q8_0.gguf
+imatrix: models/imatrix-agentic.dat
+size_budget_gb: 121
+
+tensor_types:
+  # routed experts — the 97.4% — the only thing that gets aggressive treatment
+  - pattern: "ffn_gate_exps"
+    type: iq2_xxs
+  - pattern: "ffn_up_exps"
+    type: iq2_xxs
+  - pattern: "ffn_down_exps"
+    type: q2_k            # KLD sweeps: down-proj is where quality dies; never IQ2 here
+  # candidate first Tier-B move (commented seed for the agent):
+  # - pattern: "blk\\.(5[4-9])\\..*ffn_down_exps"   # last 6 layers
+  #   type: q4_k          # +~3 GB
+
+  # fragile set = DeepReinforce FP8 ignore list. Q8_0 floor. Do not lower.
+  - pattern: "token_embd|output\\.weight"
+    type: q8_0
+  - pattern: "attn_.*|linear_attn_.*"
+    type: q8_0
+  - pattern: ".*gate.*|shared_expert.*"    # router gates + shared experts
+    type: q8_0
+  - pattern: "mm\\.|v\\..*"                # vision tower
+    type: f16
+
+fallback_type: q8_0
+requantize_from_q8: true    # source is Q8_0 master, --allow-requantize
