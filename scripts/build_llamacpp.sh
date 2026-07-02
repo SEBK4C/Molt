@@ -14,7 +14,7 @@ fi
 cmake -S "$LCPP" -B "$LCPP/build" -DGGML_CUDA=ON -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_CUDA_ARCHITECTURES=89 -DLLAMA_CURL=OFF
 cmake --build "$LCPP/build" -j"$(nproc)" \
-      --target llama-quantize llama-imatrix llama-perplexity llama-server llama-bench llama-cli
+      --target llama-quantize llama-imatrix llama-perplexity llama-server llama-bench llama-cli llama-tokenize
 
 git -C "$LCPP" rev-parse HEAD > vendor/PIN
 echo "[build_llamacpp] pinned $(cat vendor/PIN)"

@@ -23,9 +23,12 @@ $PY scripts/verify_download.py || { step "ABORT: download not verified (D2)"; ex
 if [ -s "$M/Ornith-Q8_0.gguf" ]; then
   step "P1 skip: $M/Ornith-Q8_0.gguf exists ($(du -h "$M/Ornith-Q8_0.gguf" | cut -f1))"
 else
-  step "P1: convert BF16 -> Q8_0 (CPU+disk, est 4-10 h, ~420 GB out)"
+  step "P1: convert BF16 -> Q8_0 (CPU+disk, measured ~31 min @ 224 MB/s, ~420 GB out)"
   rm -f "$M/Ornith-Q8_0.gguf.part"
-  nice -n 10 $PY "$LCPP/convert_hf_to_gguf.py" "$M/hf-bf16" \
+  # --no-mtp is REQUIRED: Ornith's config declares mtp_num_hidden_layers=1 but neither the
+  # BF16 nor FP8 repo ships the mtp.* weights; a default convert writes block_count=61 +
+  # nextn metadata with no blk.60 tensors -> unloadable (2026-07-02 defect, TODO decision log).
+  nice -n 10 $PY "$LCPP/convert_hf_to_gguf.py" "$M/hf-bf16" --no-mtp \
     --outtype q8_0 --outfile "$M/Ornith-Q8_0.gguf.part" 2>&1 | tee notes/logs/p1-convert.log
   mv "$M/Ornith-Q8_0.gguf.part" "$M/Ornith-Q8_0.gguf"
   step "P1 done: $(du -h "$M/Ornith-Q8_0.gguf" | cut -f1)"

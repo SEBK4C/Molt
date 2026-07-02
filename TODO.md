@@ -193,10 +193,13 @@ States: `[pending]` `[in-progress]` `[blocked: <on-what>]` `[done]` `[HUMAN]` (p
   - **HG1-prep [done]** script written + 3 mock tests green
     (`.venv/bin/python -m pytest scripts/test_endpoint_mock.py -q`): mock goldens for all 4
     suites, refuse-without---confirm-spend, dry-run cost print.
-- **HG2 [HUMAN]** Any deletion > 50 GB. First expected instance: delete
-  `/mnt/proxmox/llm-serve/models/ornith-397b/hf-bf16` (794 GB) ONLY after BOTH
-  `scripts/verify_download.py --deep` passed AND P1 Q8_0 verified (tokenize sanity + smoke).
-  Paste-ready: `rm -rf /mnt/proxmox/llm-serve/models/ornith-397b/hf-bf16`  — NOT before.
+- **HG2 [HUMAN]** Any deletion > 50 GB. Two queued candidates:
+  (a) the defective first convert (421 GB), safe to delete as soon as the fixed canonical
+      Ornith-Q8_0.gguf passes its tokenize sanity:
+      `rm /mnt/proxmox/llm-serve/models/ornith-397b/Ornith-Q8_0.BAD-phantom-mtp.gguf`
+  (b) the BF16 snapshot (794 GB) — deep verify ALREADY PASSED 04:31Z, so this is safe once the
+      fixed Q8_0 also passes sanity (it is the requant source thereafter):
+      `rm -rf /mnt/proxmox/llm-serve/models/ornith-397b/hf-bf16`
 - **HG3 [HUMAN]** Create `~/.config/molt/env` with `HF_TOKEN=` (fine-grained: read + write
   SEBK4C namespace + Inference Endpoints admin), `ANTHROPIC_API_KEY=`. Download currently rides
   the cached `~/.cache/huggingface/token`; HG1 endpoint + HF uploads need the env file.
@@ -220,10 +223,18 @@ every step: check-before-do → *.part → atomic rename → notes/logs/)
 **P1–P4 = one command once D2 passes** (CPU/disk only, no GPU dependency; safe to launch
 detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects/Molt && ./scripts/post_download_chain.sh 2>&1 | tee -a notes/logs/molt-chain.log'`
 
-- **P1 [in-progress]** Q8_0 convert → models/Ornith-Q8_0.gguf (421.5 GB, 1098 tensors).
-  STARTED ~04:31Z by D3 auto-trigger; convert PID 207502 in tmux `molt:chain`;
-  log notes/logs/p1-convert.log. Observed ~180–220 MB/s → ETA ~05:10–05:20Z (tqdm est),
-  then tokenize sanity + ctx32k token count auto-run. PERMANENT artifact — never delete.
+- **P1 [in-progress — REDO with --no-mtp]** First convert (04:31–05:02Z, 31 min, 421.5 GB,
+  1098 tensors) produced an UNLOADABLE file: config declares `text_config.mtp_num_hidden_layers=1`
+  but the BF16 repo ships NO mtp.* weights → convert wrote `block_count=61` +
+  `nextn_predict_layers=1` with zero blk.60 tensors → `missing tensor 'blk.60.attn_norm.weight'`
+  (chain attempts 2–3 failed the same way; watcher exhausted). FIX running since ~05:2xZ:
+  `scripts/fix_p1_reconvert.sh` in tmux `molt:chain` (log notes/logs/molt-chain.log +
+  p1-convert-nomtp.log): builds llama-tokenize (was missing from targets — fixed in
+  build_llamacpp.sh), re-converts with `--no-mtp` (~31 min), asserts block_count=60 + no nextn
+  keys, tokenize sanity + ctx32k count, parks the bad file as
+  `Ornith-Q8_0.BAD-phantom-mtp.gguf` (deletion = HG2), promotes the fixed file to canonical
+  name, then execs post_download_chain.sh (P1 skips, P2→P4 proceed). Disk fine (1.4 T free).
+  PERMANENT artifact once good — never delete.
 - **P2 [blocked: P1, SK-F1]** imatrix → models/imatrix-agentic.dat. Script auto-picks -ngl 15
   (GPUs idle) vs -ngl 0 (degraded CPU path, allowed per bootstrap; recorded in log). est 2–8 h.
 - **P3 [blocked: P1, SK-F2]** KLD base → models/kld-base.out (-ngl 0 ok). est 1–6 h.
@@ -233,6 +244,13 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
   journal, FINAL manifest freeze, verify green. est 3× ~1 h once GPUs are free.
 - **P6 [blocked: P5]** Pre-flight per REQUIREMENTS checklist + `git checkout -b molt/<date>` —
   research session may start (successor switches modes per resume.md §4).
+
+## Loop (session-scoped)
+
+- A 30-min self-improvement cron (`7,37 * * * *`, job d5d63a29, prompt "Self-improvement
+  goal.") runs in the CURRENT session only (in-memory; gone if the session exits — do not
+  expect it in a fresh instance). Each tick: reconcile TODO vs disk, then fix the
+  highest-value defect found. Tick 1 (05:18–05:3xZ) caught the P1 phantom-MTP defect above.
 
 ## Notes / decision log
 
@@ -244,3 +262,10 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
   FP8 endpoint (spec-derived args / hand-authored terminal states / exec tests / upstream BFCL
   answers). HG1 endpoint upgrades bfcl+nested refs to FP8-behavioral goldens + supplies imatrix
   self-traces + secret split. ε/P5 therefore NOT blocked on HG1.
+- 2026-07-02 05:2x: **MTP is unavailable for Ornith-1.0-397B, period.** Config declares
+  `mtp_num_hidden_layers: 1` but the mtp.* weights are absent from BOTH the BF16 repo (weight
+  index grep: 0 hits) and the FP8 repo (index grep: 0 hits). Corrects INF2's earlier "MTP
+  bundled by default" note (that described convert's default BEHAVIOR, not shipped weights).
+  Consequences: SPEC §3's `draft-mtp` A/B is off the table; serve/current.args documents
+  model-free `--spec-type ngram-*` as the replacement Tier-A speculative-decoding direction;
+  P1 conversion permanently carries `--no-mtp`.
