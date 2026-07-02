@@ -52,7 +52,10 @@ def chat(server, messages, tools=None, max_tokens=1024, temperature=0.0, extra=N
     req = urllib.request.Request(f"{server}/v1/chat/completions",
                                  data=json.dumps(body).encode(),
                                  headers={"Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=600) as r:
+    # per-request ceiling sized for the SLOWEST legitimate case: 4096-token budget at ~4 t/s
+    # per-slot under 4-way concurrency ≈ 1024 s. 600 s would convert honest slow cases into
+    # random fails and inflate ε.
+    with urllib.request.urlopen(req, timeout=1800) as r:
         return json.load(r)
 
 
