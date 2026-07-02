@@ -63,7 +63,7 @@ else
   nice -n 15 ionice -c3 runner/gpu_lock.sh with-gpus \
     "$LCPP/build/bin/llama-imatrix" -m "$M/Ornith-Q8_0.gguf" \
     -f corpora/imatrix.txt -o "$M/imatrix-agentic.dat.part" \
-    -ngl 99 --n-cpu-moe 60 --chunks 240 -b 4096 -ub 4096 --no-warmup \
+    -ngl 99 --n-cpu-moe 60 --chunks 240 -b 4096 -ub 4096 \
     --parse-special -t 32 -tb 32 \
     2>&1 | tee notes/logs/p2-imatrix.log
   mv "$M/imatrix-agentic.dat.part" "$M/imatrix-agentic.dat"

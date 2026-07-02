@@ -2,9 +2,10 @@
 """Generate harness/prompts/ctx32k.txt — a deterministic ≥32K-token document for the G4/G5
 throughput probe (content is throughput filler; only length matters). Seeded PRNG, stable output.
 
-Token estimate: ~3.9 chars/token for this prose mix on qwen-family BPE; we target ~155 KB
-≈ 36-40K tokens for margin. Verify exact count once a GGUF exists:
-  vendor/llama.cpp/build/bin/llama-tokenize -m <any qwen3.5 gguf> -f harness/prompts/ctx32k.txt --show-count
+MEASURED 2026-07-02 with the real Ornith tokenizer (248K vocab): 156 KB = 29,050 tokens
+(~5.37 chars/token — big vocab compresses this prose harder than the 3.9 chars/tok guess).
+Target 205 KB ⇒ ~38K tokens: honest margin over the 32K the G4/G5 gates claim. Verify:
+  vendor/llama.cpp/build/bin/llama-tokenize -m models/Ornith-Q8_0.gguf -f harness/prompts/ctx32k.txt --show-count
 """
 import os
 import random
@@ -49,7 +50,7 @@ def main():
     rng = random.Random(20260702)
     parts = ["THROUGHPUT PROBE DOCUMENT (deterministic filler, seed 20260702)\n"]
     section = 0
-    while sum(len(p) for p in parts) < 155_000:
+    while sum(len(p) for p in parts) < 205_000:
         section += 1
         parts.append(f"\n\nSection {section}. {sentence(rng)}\n")
         for _ in range(rng.randint(10, 16)):
