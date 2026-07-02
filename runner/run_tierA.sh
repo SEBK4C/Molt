@@ -24,7 +24,9 @@ done
 [ -n "$GGUF" ] || GGUF=$(cat serve/current.gguf)
 PORT=${MOLT_PORT:-9021}
 SRV_BIN=${MOLT_LLAMA_SERVER:-vendor/llama.cpp/build/bin/llama-server}
-if [ -z "$MODE" ]; then TIMEOUT=${MOLT_EVAL_TIMEOUT:-5400}; else TIMEOUT=${MOLT_EVAL_TIMEOUT:-1500}; fi
+# full-S wall time with thinking enabled is unmeasured until Phase-0; default generously so
+# the auto-P5 path can't die by timeout at its final step (tighten after Phase-0 measures it)
+if [ -z "$MODE" ]; then TIMEOUT=${MOLT_EVAL_TIMEOUT:-14400}; else TIMEOUT=${MOLT_EVAL_TIMEOUT:-2700}; fi
 
 # 1. referee integrity first — a tampered harness auto-fails everything
 runner/score.sh --verify-only
