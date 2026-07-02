@@ -262,7 +262,14 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
   GPU-assisted (60 chunks / 8-chunk passes ≈ 15–25 min). PID via molt:status.
 - **P4 [blocked: P3 — auto-next]** Baseline quant via render_quant_cmd (hardened recipe
   37dd242) → models/ornith-molt-000.gguf. est 1–3 h CPU. Then AUTO-P5.
-- **P5 [blocked: P4 only — AUTO-RUNS]** Chain now execs `scripts/phase0_epsilon.sh` after P4
+- **P5 [in-progress — run 1 restarted 09:29Z under 10 h ceiling]** GATE DATA (run-1 first
+  attempt): G1 119.5 GB ✓, G2 loads ✓ (--cpu-moe after the layer-split OOM), **G4 decode
+  13.5 t/s ✓**, G5 129 t/s ✗ (cold-cache probe — fixed: warm-up + cache_prompt=False measured
+  pass + ub 4096), G3 ✗ (repetition heuristic false-positive on short exact answers — fixed).
+  OPEN QUESTION for owner/session: at 13.5 t/s with thinking, full-S ≈ 6–10 h ⇒ Phase-0 3×
+  could take a day. Alternative: cap think length via `--reasoning-budget N` in serve args
+  (legit Tier-A surface; changes measured policy, must stay fixed across compared configs).
+  Chain now execs `scripts/phase0_epsilon.sh` after P4
   (HG4 cleared; escape hatch: MOLT_NO_AUTOP5=1). 3× full S (resumable per run), ε=2σ →
   harness/epsilon.txt, journal, **FINAL manifest freeze**, verify green. WALL-TIME UNKNOWN with
   thinking enabled (watch-item). NOTE: a `molt:guard` handover retires the pre-edit chain
