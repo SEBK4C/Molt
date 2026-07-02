@@ -1,0 +1,16 @@
+# molt serving config — Tier-A sandbox surface (agent-editable). SPEC §6 seed.
+# One arg (or arg value-pair) per line; comments/blank lines stripped by the runner.
+# The runner supplies: -m <gguf> --host 127.0.0.1 --port <port> --alias molt.
+-ngl 99
+--n-cpu-moe 45
+-fa on
+--cache-type-k q8_0
+--cache-type-v q8_0
+-c 131072
+--jinja
+--chat-template-file models/hf-bf16/chat_template.jinja
+--reasoning-format auto
+-np 1
+# MTP speculative decode (SPEC §3 A/B candidate) — enable once vendor build sanity confirms
+# the flag exists (scripts/build_llamacpp.sh prints it at the end of notes/logs/molt-lcpp.log):
+# --spec-type draft-mtp

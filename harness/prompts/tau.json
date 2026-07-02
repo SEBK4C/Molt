@@ -1,0 +1,6662 @@
+[
+ {
+  "id": "tau_r_cxl_0",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W481": {
+     "user": "u7",
+     "status": "processing",
+     "total": 64.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "LAMP-3",
+       "qty": 1,
+       "price": 64.0
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "Hi, I need to cancel my order W481, I ordered by mistake.",
+   "Yes, please cancel it now.",
+   "Thanks, that's everything."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "cancel allowed: status placed/processing"
+ },
+ {
+  "id": "tau_r_cxl_1",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W482": {
+     "user": "u7",
+     "status": "placed",
+     "total": 149.99,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "DESK-9",
+       "qty": 1,
+       "price": 149.99
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "Hi, I need to cancel my order W482, I ordered by mistake.",
+   "Yes, please cancel it now.",
+   "Thanks, that's everything."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "cancel allowed: status placed/processing"
+ },
+ {
+  "id": "tau_r_cxl_2",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W483": {
+     "user": "u7",
+     "status": "processing",
+     "total": 28.5,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "CBL-2",
+       "qty": 3,
+       "price": 9.5
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "Hi, I need to cancel my order W483, I ordered by mistake.",
+   "Yes, please cancel it now.",
+   "Thanks, that's everything."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "cancel allowed: status placed/processing"
+ },
+ {
+  "id": "tau_r_cxl_3",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W484": {
+     "user": "u7",
+     "status": "placed",
+     "total": 210.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "CHR-11",
+       "qty": 1,
+       "price": 210.0
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "Hi, I need to cancel my order W484, I ordered by mistake.",
+   "Yes, please cancel it now.",
+   "Thanks, that's everything."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "cancel allowed: status placed/processing"
+ },
+ {
+  "id": "tau_r_cxl_4",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W485": {
+     "user": "u7",
+     "status": "processing",
+     "total": 176.5,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "RUG-5",
+       "qty": 2,
+       "price": 88.25
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "Hi, I need to cancel my order W485, I ordered by mistake.",
+   "Yes, please cancel it now.",
+   "Thanks, that's everything."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "cancel allowed: status placed/processing"
+ },
+ {
+  "id": "tau_r_cxlref_0",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W510": {
+     "user": "u7",
+     "status": "shipped",
+     "total": 399.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "TV-42",
+       "qty": 1,
+       "price": 399.0
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "Please cancel order W510 right away.",
+   "I really want it cancelled, are you sure you can't?",
+   "Fine. Bye."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "cancel forbidden: shipped; correct terminal state == initial"
+ },
+ {
+  "id": "tau_r_cxlref_1",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W511": {
+     "user": "u7",
+     "status": "shipped",
+     "total": 118.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "SPK-7",
+       "qty": 2,
+       "price": 59.0
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "Please cancel order W511 right away.",
+   "I really want it cancelled, are you sure you can't?",
+   "Fine. Bye."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "cancel forbidden: shipped; correct terminal state == initial"
+ },
+ {
+  "id": "tau_r_cxlref_2",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W512": {
+     "user": "u7",
+     "status": "shipped",
+     "total": 45.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "KBD-1",
+       "qty": 1,
+       "price": 45.0
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "Please cancel order W512 right away.",
+   "I really want it cancelled, are you sure you can't?",
+   "Fine. Bye."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "cancel forbidden: shipped; correct terminal state == initial"
+ },
+ {
+  "id": "tau_r_cxlref_3",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W513": {
+     "user": "u7",
+     "status": "shipped",
+     "total": 229.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "MON-27",
+       "qty": 1,
+       "price": 229.0
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "Please cancel order W513 right away.",
+   "I really want it cancelled, are you sure you can't?",
+   "Fine. Bye."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "cancel forbidden: shipped; correct terminal state == initial"
+ },
+ {
+  "id": "tau_r_addr_0",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W520": {
+     "user": "u7",
+     "status": "processing",
+     "total": 25.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "BOOK-1",
+       "qty": 1,
+       "price": 25.0
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "I moved — please change the shipping address on W520 to: 88 Cañón Road, Santa Fe NM 87501",
+   "Yes that address is correct, exactly as written.",
+   "Great, thanks!"
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "address change allowed while processing; address must be copied verbatim"
+ },
+ {
+  "id": "tau_r_addr_1",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W521": {
+     "user": "u7",
+     "status": "processing",
+     "total": 25.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "BOOK-1",
+       "qty": 1,
+       "price": 25.0
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "I moved — please change the shipping address on W521 to: Flat 4B, 12 Königstraße, Stuttgart 70173",
+   "Yes that address is correct, exactly as written.",
+   "Great, thanks!"
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "address change allowed while processing; address must be copied verbatim"
+ },
+ {
+  "id": "tau_r_addr_2",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W522": {
+     "user": "u7",
+     "status": "processing",
+     "total": 25.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "BOOK-1",
+       "qty": 1,
+       "price": 25.0
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "I moved — please change the shipping address on W522 to: 1600 Harbor Blvd, Weehawken NJ 07086",
+   "Yes that address is correct, exactly as written.",
+   "Great, thanks!"
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "address change allowed while processing; address must be copied verbatim"
+ },
+ {
+  "id": "tau_r_addr_3",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W523": {
+     "user": "u7",
+     "status": "processing",
+     "total": 25.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "BOOK-1",
+       "qty": 1,
+       "price": 25.0
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "I moved — please change the shipping address on W523 to: Unit 9, 345 O'Connell St, Dublin D01",
+   "Yes that address is correct, exactly as written.",
+   "Great, thanks!"
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "address change allowed while processing; address must be copied verbatim"
+ },
+ {
+  "id": "tau_r_dmg_0",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W530": {
+     "user": "u7",
+     "status": "delivered",
+     "total": 25.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "GLS-6",
+       "qty": 2,
+       "price": 12.5
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "My GLS-6 from order W530 arrived damaged (all 2 of them). I want this sorted.",
+   "Yes, whatever your policy allows, please do it.",
+   "Ok, thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "damaged item: qty*price = 25.0; refund without return"
+ },
+ {
+  "id": "tau_r_dmg_1",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W531": {
+     "user": "u7",
+     "status": "delivered",
+     "total": 32.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "PLT-3",
+       "qty": 4,
+       "price": 8.0
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "My PLT-3 from order W531 arrived damaged (all 4 of them). I want this sorted.",
+   "Yes, whatever your policy allows, please do it.",
+   "Ok, thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "damaged item: qty*price = 32.0; refund without return"
+ },
+ {
+  "id": "tau_r_dmg_2",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W532": {
+     "user": "u7",
+     "status": "delivered",
+     "total": 49.99,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "VAS-2",
+       "qty": 1,
+       "price": 49.99
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "My VAS-2 from order W532 arrived damaged (all 1 of them). I want this sorted.",
+   "Yes, whatever your policy allows, please do it.",
+   "Ok, thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "damaged item: qty*price = 49.99; refund without return"
+ },
+ {
+  "id": "tau_r_dmg_3",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W533": {
+     "user": "u7",
+     "status": "delivered",
+     "total": 60.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "ART-9",
+       "qty": 2,
+       "price": 30.0
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "My ART-9 from order W533 arrived damaged (all 2 of them). I want this sorted.",
+   "Yes, whatever your policy allows, please do it.",
+   "Ok, thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "damaged item: qty*price = 60.0; must escalate, no refund"
+ },
+ {
+  "id": "tau_r_dmg_4",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W534": {
+     "user": "u7",
+     "status": "delivered",
+     "total": 75.5,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "LMP-8",
+       "qty": 1,
+       "price": 75.5
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "My LMP-8 from order W534 arrived damaged (all 1 of them). I want this sorted.",
+   "Yes, whatever your policy allows, please do it.",
+   "Ok, thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "damaged item: qty*price = 75.5; must escalate, no refund"
+ },
+ {
+  "id": "tau_r_exch_0",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W540": {
+     "user": "u7",
+     "status": "placed",
+     "total": 19.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "MUG-BLU",
+       "qty": 1,
+       "price": 19.0
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "On order W540, can you swap the MUG-BLU for the MUG-RED? Same product, different variant.",
+   "Yes please, make the swap.",
+   "Perfect, bye."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "same-price exchange while placed"
+ },
+ {
+  "id": "tau_r_exch_1",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W541": {
+     "user": "u7",
+     "status": "placed",
+     "total": 19.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "TEE-M",
+       "qty": 1,
+       "price": 19.0
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "On order W541, can you swap the TEE-M for the TEE-L? Same product, different variant.",
+   "Yes please, make the swap.",
+   "Perfect, bye."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "same-price exchange while placed"
+ },
+ {
+  "id": "tau_r_exch_2",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W542": {
+     "user": "u7",
+     "status": "placed",
+     "total": 19.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "PEN-BLK",
+       "qty": 1,
+       "price": 19.0
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "On order W542, can you swap the PEN-BLK for the PEN-BLU? Same product, different variant.",
+   "Yes please, make the swap.",
+   "Perfect, bye."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "same-price exchange while placed"
+ },
+ {
+  "id": "tau_r_exch_3",
+  "domain": "retail",
+  "system": "You are the customer support agent for AcmeShop. Binding policy:\n1. Cancellation (full refund) is allowed ONLY while the order status is 'placed' or 'processing'. Never cancel shipped or delivered orders; politely refuse instead.\n2. The shipping address may be changed ONLY while status is 'placed' or 'processing'.\n3. Damaged-item complaints: if the damaged item's price times quantity is UNDER $50, refund exactly that amount via refund_order WITHOUT requiring a return. If it is $50 or more, do NOT refund; call escalate_to_human instead.\n4. Exchanges (exchange_item) are allowed only between items of the same price, only while status is 'placed' or 'processing'.\n5. Look up the order before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_order",
+     "description": "Look up an order by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_order",
+     "description": "Cancel an order and refund its full total.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "update_shipping_address",
+     "description": "Set a new shipping address on an order.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "address": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "address"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "refund_order",
+     "description": "Refund a specific amount on an order (partial refunds allowed).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "order_id",
+       "amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "exchange_item",
+     "description": "Swap one SKU in an order for another.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "order_id": {
+        "type": "string"
+       },
+       "old_sku": {
+        "type": "string"
+       },
+       "new_sku": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "order_id",
+       "old_sku",
+       "new_sku"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "get_user",
+     "description": "Look up a user profile.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "user_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W543": {
+     "user": "u7",
+     "status": "placed",
+     "total": 19.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "CAP-GRY",
+       "qty": 1,
+       "price": 19.0
+      }
+     ]
+    }
+   }
+  },
+  "user_script": [
+   "On order W543, can you swap the CAP-GRY for the CAP-NVY? Same product, different variant.",
+   "Yes please, make the swap.",
+   "Perfect, bye."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "same-price exchange while placed"
+ },
+ {
+  "id": "tau_a_chg_0",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA100": {
+     "seats_available": 1,
+     "price": 320.0
+    },
+    "AA200": {
+     "seats_available": 4,
+     "price": 320.0
+    }
+   },
+   "bookings": {
+    "B810": {
+     "user": "u7",
+     "flight": "AA100",
+     "status": "confirmed",
+     "fare_class": "economy",
+     "price": 320.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "I need to move booking B810 from flight AA100 to AA200 tomorrow.",
+   "Yes, go ahead with the change.",
+   "That's all, thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "fare economy: change allowed (fee auto)"
+ },
+ {
+  "id": "tau_a_chg_1",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA100": {
+     "seats_available": 1,
+     "price": 320.0
+    },
+    "AA200": {
+     "seats_available": 2,
+     "price": 320.0
+    }
+   },
+   "bookings": {
+    "B811": {
+     "user": "u7",
+     "flight": "AA100",
+     "status": "confirmed",
+     "fare_class": "economy",
+     "price": 320.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "I need to move booking B811 from flight AA100 to AA200 tomorrow.",
+   "Yes, go ahead with the change.",
+   "That's all, thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "fare economy: change allowed (fee auto)"
+ },
+ {
+  "id": "tau_a_chg_2",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA100": {
+     "seats_available": 1,
+     "price": 320.0
+    },
+    "AA200": {
+     "seats_available": 3,
+     "price": 320.0
+    }
+   },
+   "bookings": {
+    "B812": {
+     "user": "u7",
+     "flight": "AA100",
+     "status": "confirmed",
+     "fare_class": "flex",
+     "price": 320.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "I need to move booking B812 from flight AA100 to AA200 tomorrow.",
+   "Yes, go ahead with the change.",
+   "That's all, thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "fare flex: change allowed (fee auto)"
+ },
+ {
+  "id": "tau_a_chg_3",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA100": {
+     "seats_available": 1,
+     "price": 320.0
+    },
+    "AA200": {
+     "seats_available": 5,
+     "price": 320.0
+    }
+   },
+   "bookings": {
+    "B813": {
+     "user": "u7",
+     "flight": "AA100",
+     "status": "confirmed",
+     "fare_class": "economy",
+     "price": 320.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "I need to move booking B813 from flight AA100 to AA200 tomorrow.",
+   "Yes, go ahead with the change.",
+   "That's all, thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "fare economy: change allowed (fee auto)"
+ },
+ {
+  "id": "tau_a_chg_4",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA100": {
+     "seats_available": 1,
+     "price": 320.0
+    },
+    "AA200": {
+     "seats_available": 6,
+     "price": 320.0
+    }
+   },
+   "bookings": {
+    "B814": {
+     "user": "u7",
+     "flight": "AA100",
+     "status": "confirmed",
+     "fare_class": "basic",
+     "price": 320.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "I need to move booking B814 from flight AA100 to AA200 tomorrow.",
+   "I understand the fare rules, but please try anyway.",
+   "That's all, thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "fare basic: change FORBIDDEN - correct answer refuses"
+ },
+ {
+  "id": "tau_a_cxl_0",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA300": {
+     "seats_available": 0,
+     "price": 410.0
+    }
+   },
+   "bookings": {
+    "B820": {
+     "user": "u7",
+     "flight": "AA300",
+     "status": "confirmed",
+     "fare_class": "flex",
+     "price": 410.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "Cancel booking B820 please. What do I get back?",
+   "Understood, please proceed with the cancellation.",
+   "Ok bye."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "cancel flex: refund must be exactly 410.0"
+ },
+ {
+  "id": "tau_a_cxl_1",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA300": {
+     "seats_available": 0,
+     "price": 129.5
+    }
+   },
+   "bookings": {
+    "B821": {
+     "user": "u7",
+     "flight": "AA300",
+     "status": "confirmed",
+     "fare_class": "flex",
+     "price": 129.5,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "Cancel booking B821 please. What do I get back?",
+   "Understood, please proceed with the cancellation.",
+   "Ok bye."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "cancel flex: refund must be exactly 129.5"
+ },
+ {
+  "id": "tau_a_cxl_2",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA300": {
+     "seats_available": 0,
+     "price": 300.0
+    }
+   },
+   "bookings": {
+    "B822": {
+     "user": "u7",
+     "flight": "AA300",
+     "status": "confirmed",
+     "fare_class": "economy",
+     "price": 300.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "Cancel booking B822 please. What do I get back?",
+   "Understood, please proceed with the cancellation.",
+   "Ok bye."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "cancel economy: refund must be exactly 150.0"
+ },
+ {
+  "id": "tau_a_cxl_3",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA300": {
+     "seats_available": 0,
+     "price": 179.98
+    }
+   },
+   "bookings": {
+    "B823": {
+     "user": "u7",
+     "flight": "AA300",
+     "status": "confirmed",
+     "fare_class": "economy",
+     "price": 179.98,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "Cancel booking B823 please. What do I get back?",
+   "Understood, please proceed with the cancellation.",
+   "Ok bye."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "cancel economy: refund must be exactly 89.99"
+ },
+ {
+  "id": "tau_a_cxl_4",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA300": {
+     "seats_available": 0,
+     "price": 89.0
+    }
+   },
+   "bookings": {
+    "B824": {
+     "user": "u7",
+     "flight": "AA300",
+     "status": "confirmed",
+     "fare_class": "basic",
+     "price": 89.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "Cancel booking B824 please. What do I get back?",
+   "Understood, please proceed with the cancellation.",
+   "Ok bye."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "cancel basic: refund must be exactly 0"
+ },
+ {
+  "id": "tau_a_bag_0",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA400": {
+     "seats_available": 2,
+     "price": 250.0
+    }
+   },
+   "bookings": {
+    "B830": {
+     "user": "u7",
+     "flight": "AA400",
+     "status": "confirmed",
+     "fare_class": "economy",
+     "price": 250.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "Add 2 checked bags to booking B830.",
+   "Yes, charge it to the booking.",
+   "Thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "baggage: 2 bags, fare economy (fee auto-applied)"
+ },
+ {
+  "id": "tau_a_bag_1",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA400": {
+     "seats_available": 2,
+     "price": 250.0
+    }
+   },
+   "bookings": {
+    "B831": {
+     "user": "u7",
+     "flight": "AA400",
+     "status": "confirmed",
+     "fare_class": "flex",
+     "price": 250.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "Add 1 checked bag to booking B831.",
+   "Yes, charge it to the booking.",
+   "Thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "baggage: 1 bags, fare flex (fee auto-applied)"
+ },
+ {
+  "id": "tau_a_bag_2",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA400": {
+     "seats_available": 2,
+     "price": 250.0
+    }
+   },
+   "bookings": {
+    "B832": {
+     "user": "u7",
+     "flight": "AA400",
+     "status": "confirmed",
+     "fare_class": "economy",
+     "price": 250.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "Add 3 checked bags to booking B832.",
+   "Yes, charge it to the booking.",
+   "Thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "baggage: 3 bags, fare economy (fee auto-applied)"
+ },
+ {
+  "id": "tau_a_bag_3",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA400": {
+     "seats_available": 2,
+     "price": 250.0
+    }
+   },
+   "bookings": {
+    "B833": {
+     "user": "u7",
+     "flight": "AA400",
+     "status": "confirmed",
+     "fare_class": "flex",
+     "price": 250.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "Add 2 checked bags to booking B833.",
+   "Yes, charge it to the booking.",
+   "Thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "baggage: 2 bags, fare flex (fee auto-applied)"
+ },
+ {
+  "id": "tau_a_multi_0",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA500": {
+     "seats_available": 1,
+     "price": 275.0
+    },
+    "AA600": {
+     "seats_available": 4,
+     "price": 275.0
+    }
+   },
+   "bookings": {
+    "B840": {
+     "user": "u7",
+     "flight": "AA500",
+     "status": "confirmed",
+     "fare_class": "economy",
+     "price": 275.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "Two things for booking B840: move me to flight AA600, and add 1 checked bag.",
+   "Yes to both, please proceed.",
+   "All good, thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "bundle: change + 1 bags, fare economy"
+ },
+ {
+  "id": "tau_a_multi_1",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA500": {
+     "seats_available": 1,
+     "price": 275.0
+    },
+    "AA600": {
+     "seats_available": 4,
+     "price": 275.0
+    }
+   },
+   "bookings": {
+    "B841": {
+     "user": "u7",
+     "flight": "AA500",
+     "status": "confirmed",
+     "fare_class": "flex",
+     "price": 275.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "Two things for booking B841: move me to flight AA600, and add 2 checked bags.",
+   "Yes to both, please proceed.",
+   "All good, thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "bundle: change + 2 bags, fare flex"
+ },
+ {
+  "id": "tau_a_multi_2",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA500": {
+     "seats_available": 1,
+     "price": 275.0
+    },
+    "AA600": {
+     "seats_available": 4,
+     "price": 275.0
+    }
+   },
+   "bookings": {
+    "B842": {
+     "user": "u7",
+     "flight": "AA500",
+     "status": "confirmed",
+     "fare_class": "economy",
+     "price": 275.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "Two things for booking B842: move me to flight AA600, and add 2 checked bags.",
+   "Yes to both, please proceed.",
+   "All good, thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "bundle: change + 2 bags, fare economy"
+ },
+ {
+  "id": "tau_a_multi_3",
+  "domain": "airline",
+  "system": "You are the reservations agent for AcmeAir. Binding policy:\n1. Flight changes (change_flight): allowed for 'flex' and 'economy' fares if seats are available. The system charges the change fee automatically. NOT allowed for 'basic' fare — politely refuse, do not call change_flight.\n2. Cancellations (cancel_booking): refund_amount depends on fare class — 'flex': full ticket price; 'economy': 50% of ticket price; 'basic': 0. Compute it exactly.\n3. Checked baggage (add_baggage): the system charges automatically per bag.\n4. Look up the booking before acting. Never invent details.\nUse the tools to act. When the task is complete (or correctly refused), reply with a short plain-text summary and no tool call.",
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_booking",
+     "description": "Look up a booking by id.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "list_flights",
+     "description": "List flights with seat availability.",
+     "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "change_flight",
+     "description": "Move a booking to a different flight (change fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "new_flight": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "booking_id",
+       "new_flight"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "cancel_booking",
+     "description": "Cancel a booking, refunding refund_amount (must follow fare policy).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "refund_amount": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "booking_id",
+       "refund_amount"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add_baggage",
+     "description": "Add checked bags to a booking (fee auto-applied by fare class).",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "booking_id": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "booking_id",
+       "count"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "escalate_to_human",
+     "description": "Escalate the case to a human agent.",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "reason": {
+        "type": "string"
+       }
+      },
+      "required": []
+     }
+    }
+   }
+  ],
+  "initial_state": {
+   "escalated": false,
+   "flights": {
+    "AA500": {
+     "seats_available": 1,
+     "price": 275.0
+    },
+    "AA600": {
+     "seats_available": 4,
+     "price": 275.0
+    }
+   },
+   "bookings": {
+    "B843": {
+     "user": "u7",
+     "flight": "AA500",
+     "status": "confirmed",
+     "fare_class": "flex",
+     "price": 275.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  },
+  "user_script": [
+   "Two things for booking B843: move me to flight AA600, and add 1 checked bag.",
+   "Yes to both, please proceed.",
+   "All good, thanks."
+  ],
+  "max_steps": 16,
+  "max_tokens": 1024,
+  "note": "bundle: change + 1 bags, fare flex"
+ }
+]

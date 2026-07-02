@@ -1,0 +1,20 @@
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# pinned build tree (recreate via scripts/build_llamacpp.sh; commit is recorded in vendor/PIN)
+vendor/llama.cpp/
+!vendor/PIN
+
+# machine-local run artifacts (cross-session memory lives in TODO.md + notes/*.md, not logs)
+notes/logs/
+.gpu.lock
+.molt.lock
+
+# regenerable corpora outputs (spec lives in recipes/imatrix.yaml + corpora/*.py)
+corpora/imatrix.txt
+corpora/kld_heldout.txt
+corpora/*.part
+corpora/fp8_traces.jsonl

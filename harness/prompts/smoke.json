@@ -1,0 +1,22 @@
+[
+  {"id": "smoke_01", "expect_no_nan": true, "messages": [{"role": "user", "content": "What is 17 * 23? Reply with just the number."}]},
+  {"id": "smoke_02", "expect_no_nan": true, "messages": [{"role": "user", "content": "List the first 8 prime numbers, comma-separated."}]},
+  {"id": "smoke_03", "expect_no_nan": true, "messages": [{"role": "user", "content": "Write a two-sentence description of how a refrigerator works."}]},
+  {"id": "smoke_04", "expect_no_nan": true, "messages": [{"role": "user", "content": "Return a JSON object with keys 'city' set to 'Kyoto' and 'population' set to 1463000. Only the JSON."}]},
+  {"id": "smoke_05", "expect_no_nan": true, "messages": [{"role": "user", "content": "Write a Python one-liner that reverses a string s."}]},
+  {"id": "smoke_06", "expect_no_nan": true, "max_tokens": 512, "messages": [{"role": "user", "content": "Write a 150-word story about a lighthouse keeper who finds a message in a bottle."}]},
+  {"id": "smoke_07", "expect_no_nan": true, "messages": [{"role": "user", "content": "Translate to French: 'The library opens at nine in the morning.'"}]},
+  {"id": "smoke_08", "expect_no_nan": true, "messages": [{"role": "user", "content": "Echo back exactly: 早晨的光線很柔和 — świt — رائع"}]},
+  {"id": "smoke_09", "expect_no_nan": true, "messages": [{"role": "system", "content": "You answer in exactly one word."}, {"role": "user", "content": "What color is a ripe lemon?"}]},
+  {"id": "smoke_10", "expect_no_nan": true, "messages": [{"role": "user", "content": "Solve for x: 3x + 7 = 22. Show one line of working then the answer."}]},
+  {"id": "smoke_11", "expect_no_nan": true, "tools": [{"type": "function", "function": {"name": "get_time", "description": "Get current time for a timezone", "parameters": {"type": "object", "properties": {"tz": {"type": "string", "description": "IANA timezone"}}, "required": ["tz"]}}}], "messages": [{"role": "user", "content": "What time is it in Tokyo right now? Use the tool."}]},
+  {"id": "smoke_12", "expect_no_nan": true, "tools": [{"type": "function", "function": {"name": "add_numbers", "description": "Add two numbers", "parameters": {"type": "object", "properties": {"a": {"type": "number"}, "b": {"type": "number"}}, "required": ["a", "b"]}}}], "messages": [{"role": "user", "content": "Use the add_numbers tool to add 41.5 and 0.25."}]},
+  {"id": "smoke_13", "expect_no_nan": true, "messages": [{"role": "user", "content": "Name three chemical elements whose symbols do not match their English names, with the symbols."}]},
+  {"id": "smoke_14", "expect_no_nan": true, "messages": [{"role": "user", "content": "Sort these numbers ascending and return them space-separated: 42 7 19 3 88 61"}]},
+  {"id": "smoke_15", "expect_no_nan": true, "messages": [{"role": "user", "content": "Give the SQL to select all rows from a table 'orders' where total > 100, newest first by created_at."}]},
+  {"id": "smoke_16", "expect_no_nan": true, "max_tokens": 512, "messages": [{"role": "user", "content": "Explain the difference between a mutex and a semaphore in about 80 words."}]},
+  {"id": "smoke_17", "expect_no_nan": true, "messages": [{"role": "user", "content": "Continue the pattern with the next three terms: 2, 6, 18, 54, ..."}]},
+  {"id": "smoke_18", "expect_no_nan": true, "messages": [{"role": "user", "content": "Rewrite this sentence in passive voice: 'The committee approved the proposal.'"}]},
+  {"id": "smoke_19", "expect_no_nan": true, "messages": [{"role": "user", "content": "You have a 3-liter jug and a 5-liter jug. How do you measure exactly 4 liters? Answer in numbered steps."}]},
+  {"id": "smoke_20", "expect_no_nan": true, "messages": [{"role": "user", "content": "Return valid JSON: an array of the weekdays in English, starting with Monday."}]}
+]

@@ -1,0 +1,24 @@
+# molt imatrix corpus mix — Tier-C sandbox surface. Rendered by corpora/build_imatrix_corpus.py.
+# v1 is the public-data fallback mix; FP8 self-generated traces (HUMAN gate HG1) get added as a
+# high-weight component later — that swap is itself a Tier-C experiment.
+seed: 20260702
+target_mb: 16
+chunk_tokens: 512          # llama-imatrix --chunk; Tier C may sweep 512 vs 2048
+render_chat_template: models/hf-bf16/chat_template.jinja   # wrap convos if file present
+
+components:
+  - name: xlam
+    weight: 0.40
+    source: "hf:Salesforce/xlam-function-calling-60k"
+  - name: glaive
+    weight: 0.25
+    source: "hf:glaiveai/glaive-function-calling-v2"
+  - name: code
+    weight: 0.20
+    source: "hf:bigcode/the-stack-smol"
+  - name: tool_syntax_synthetic          # held-out seeds from our tau/nested generators —
+    weight: 0.15                         # distribution-adjacent, never the frozen eval cases
+    source: "local:synthetic"
+# - name: fp8_self_traces                # unlocked by HG1 (corpora/fp8_traces.jsonl)
+#   weight: 0.50                         # when added, renormalize others
+#   source: "local:corpora/fp8_traces.jsonl"

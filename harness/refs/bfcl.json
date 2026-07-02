@@ -1,0 +1,9141 @@
+{
+ "bfcl_simple_python_203": {
+  "calls": [
+   {
+    "name": "get_air_quality",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Chicago"
+      ]
+     },
+     "detail": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_313": {
+  "calls": [
+   {
+    "name": "celebrity_net_worth_get",
+    "arguments": {
+     "name": {
+      "__any_of__": [
+       "Lionel Messi",
+       "Messi"
+      ]
+     },
+     "currency": {
+      "__any_of__": [
+       "EUR",
+       "euro"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_126": {
+  "calls": [
+   {
+    "name": "linear_regression_get_r_squared",
+    "arguments": {
+     "dataset_path": {
+      "__any_of__": [
+       "C:/data/cars.csv"
+      ]
+     },
+     "independent_variables": {
+      "__any_of__": [
+       [
+        "engine_size",
+        "fuel_economy"
+       ]
+      ]
+     },
+     "dependent_variable": {
+      "__any_of__": [
+       "car_price"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_88": {
+  "calls": [
+   {
+    "name": "calculate_BMI",
+    "arguments": {
+     "weight_kg": {
+      "__any_of__": [
+       70
+      ]
+     },
+     "height_m": {
+      "__any_of__": [
+       1.75
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_90": {
+  "calls": [
+   {
+    "name": "travel_itinerary_generator",
+    "arguments": {
+     "destination": {
+      "__any_of__": [
+       "Tokyo"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       7
+      ]
+     },
+     "daily_budget": {
+      "__any_of__": [
+       200
+      ]
+     },
+     "exploration_type": {
+      "__any_of__": [
+       "urban",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "travel_itinerary_generator",
+    "arguments": {
+     "destination": {
+      "__any_of__": [
+       "Paris"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "daily_budget": {
+      "__any_of__": [
+       150
+      ]
+     },
+     "exploration_type": {
+      "__any_of__": [
+       "history"
+      ]
+     }
+    }
+   },
+   {
+    "name": "travel_itinerary_generator",
+    "arguments": {
+     "destination": {
+      "__any_of__": [
+       "Sydney"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "daily_budget": {
+      "__any_of__": [
+       100
+      ]
+     },
+     "exploration_type": {
+      "__any_of__": [
+       "nature"
+      ]
+     }
+    }
+   },
+   {
+    "name": "travel_itinerary_generator",
+    "arguments": {
+     "destination": {
+      "__any_of__": [
+       "Rome"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       12
+      ]
+     },
+     "daily_budget": {
+      "__any_of__": [
+       180
+      ]
+     },
+     "exploration_type": {
+      "__any_of__": [
+       "culture"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_179": {
+  "calls": [
+   {
+    "name": "get_stock_price",
+    "arguments": {
+     "company": {
+      "__any_of__": [
+       "AAPL"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "exchange": {
+      "__any_of__": [
+       "NASDAQ"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_stock_price",
+    "arguments": {
+     "company": {
+      "__any_of__": [
+       "MSFT"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       15
+      ]
+     },
+     "exchange": {
+      "__any_of__": [
+       "NYSE",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_53": {
+  "calls": [
+   {
+    "name": "get_cooking_recipe",
+    "arguments": {
+     "dish_name": {
+      "__any_of__": [
+       "Lasagne Bolognese"
+      ]
+     },
+     "serving_size": {
+      "__any_of__": [
+       4
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_cooking_recipe",
+    "arguments": {
+     "dish_name": {
+      "__any_of__": [
+       "Caesar Salad"
+      ]
+     },
+     "serving_size": {
+      "__any_of__": [
+       2
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_182": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_164": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_135": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_395": {
+  "calls": [
+   {
+    "name": "parking_lot_find_nearest",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Central Park, NY"
+      ]
+     },
+     "radius": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "type": {
+      "__any_of__": [
+       "public",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_188": {
+  "calls": [
+   {
+    "name": "weather_humidity_forecast",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Miami",
+       "Miami, Florida"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       7
+      ]
+     },
+     "min_humidity": {
+      "__any_of__": [
+       "",
+       0,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_77": {
+  "calls": [
+   {
+    "name": "restaurant_find_nearby",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Los Angeles, CA"
+      ]
+     },
+     "dietary_preference": {
+      "__any_of__": [
+       [
+        "Vegan"
+       ]
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_229": {
+  "calls": [
+   {
+    "name": "get_bigfive_scores",
+    "arguments": {
+     "characteristics": {
+      "__any_of__": [
+       [
+        "efficient",
+        "organized",
+        "easy going",
+        "compassionate"
+       ]
+      ]
+     },
+     "scale": {
+      "__any_of__": [
+       "medium",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_70": {
+  "calls": [
+   {
+    "name": "geometry_circumference",
+    "arguments": {
+     "radius": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "units": {
+      "__any_of__": [
+       "m",
+       "meters"
+      ]
+     }
+    }
+   },
+   {
+    "name": "geometry_circumference",
+    "arguments": {
+     "radius": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "units": {
+      "__any_of__": [
+       "m",
+       "meters",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "geometry_circumference",
+    "arguments": {
+     "radius": {
+      "__any_of__": [
+       15
+      ]
+     },
+     "units": {
+      "__any_of__": [
+       "m",
+       "meters",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "geometry_circumference",
+    "arguments": {
+     "radius": {
+      "__any_of__": [
+       20
+      ]
+     },
+     "units": {
+      "__any_of__": [
+       "m",
+       "meters",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_94": {
+  "calls": [
+   {
+    "name": "calculate_electric_field",
+    "arguments": {
+     "charge": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "distance": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "permitivity": {
+      "__any_of__": [
+       "",
+       0,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_electric_field",
+    "arguments": {
+     "charge": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "distance": {
+      "__any_of__": [
+       4
+      ]
+     },
+     "permitivity": {
+      "__any_of__": [
+       "",
+       0,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_51": {
+  "calls": [
+   {
+    "name": "recipe_search_find",
+    "arguments": {
+     "dish": {
+      "__any_of__": [
+       "Chicken Noodle Soup"
+      ]
+     },
+     "diet": {
+      "__any_of__": [
+       "",
+       "Keto",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "recipe_search_find",
+    "arguments": {
+     "dish": {
+      "__any_of__": [
+       "Salad",
+       "salad",
+       "Vegan Salad",
+       "vegan salad"
+      ]
+     },
+     "diet": {
+      "__any_of__": [
+       "Vegan"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_132": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_54": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_205": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_179": {
+  "calls": [
+   {
+    "name": "find_latest_court_case",
+    "arguments": {
+     "company1": {
+      "__any_of__": [
+       "Apple"
+      ]
+     },
+     "company2": {
+      "__any_of__": [
+       "Samsung"
+      ]
+     },
+     "country": {
+      "__any_of__": [
+       "USA",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_16": {
+  "calls": [
+   {
+    "name": "calculus_derivative",
+    "arguments": {
+     "function": {
+      "__any_of__": [
+       "2x**2",
+       "lambda x: 2x**2"
+      ]
+     },
+     "value": {
+      "__any_of__": [
+       1
+      ]
+     },
+     "function_variable": {
+      "__any_of__": [
+       "x",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_291": {
+  "calls": [
+   {
+    "name": "music_generator_generate_melody",
+    "arguments": {
+     "key": {
+      "__any_of__": [
+       "C"
+      ]
+     },
+     "start_note": {
+      "__any_of__": [
+       "C4"
+      ]
+     },
+     "length": {
+      "__any_of__": [
+       16
+      ]
+     },
+     "tempo": {
+      "__any_of__": [
+       120,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_168": {
+  "calls": [
+   {
+    "name": "lawsuit_search",
+    "arguments": {
+     "company": {
+      "__any_of__": [
+       "Google",
+       "GOOG"
+      ]
+     },
+     "start_date": {
+      "__any_of__": [
+       "01-01-2021",
+       "January 1, 2021"
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "California"
+      ]
+     },
+     "status": {
+      "__any_of__": [
+       "ongoing",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_102": {
+  "calls": [
+   {
+    "name": "calc_absolute_pressure",
+    "arguments": {
+     "gauge_pressure": {
+      "__any_of__": [
+       2.5
+      ]
+     },
+     "atm_pressure": {
+      "__any_of__": [
+       1.0,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calc_absolute_pressure",
+    "arguments": {
+     "gauge_pressure": {
+      "__any_of__": [
+       2.5
+      ]
+     },
+     "atm_pressure": {
+      "__any_of__": [
+       0.85
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_169": {
+  "calls": [
+   {
+    "name": "calculate_discounted_cash_flow",
+    "arguments": {
+     "coupon_payment": {
+      "__any_of__": [
+       50
+      ]
+     },
+     "period": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "discount_rate": {
+      "__any_of__": [
+       0.05
+      ]
+     },
+     "face_value": {
+      "__any_of__": [
+       1000,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_discounted_cash_flow",
+    "arguments": {
+     "coupon_payment": {
+      "__any_of__": [
+       60
+      ]
+     },
+     "period": {
+      "__any_of__": [
+       7
+      ]
+     },
+     "discount_rate": {
+      "__any_of__": [
+       0.04
+      ]
+     },
+     "face_value": {
+      "__any_of__": [
+       1000,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_50": {
+  "calls": [
+   {
+    "name": "game_save_progress",
+    "arguments": {
+     "stage": {
+      "__any_of__": [
+       7
+      ]
+     },
+     "mode": {
+      "__any_of__": [
+       "easy"
+      ]
+     },
+     "level": {
+      "__any_of__": [
+       "user",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "game_save_progress",
+    "arguments": {
+     "stage": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "mode": {
+      "__any_of__": [
+       "hard"
+      ]
+     },
+     "level": {
+      "__any_of__": [
+       "user",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_170": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_177": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_187": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_314": {
+  "calls": [
+   {
+    "name": "sports_celebrity_get_major_achievements",
+    "arguments": {
+     "celebrity_name": {
+      "__any_of__": [
+       "Lionel Messi",
+       "Messi"
+      ]
+     },
+     "sports": {
+      "__any_of__": [
+       "Football",
+       "Soccer",
+       "",
+       "__ABSENT_OK__"
+      ]
+     },
+     "team": {
+      "__any_of__": [
+       "",
+       "all",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_118": {
+  "calls": [
+   {
+    "name": "stats_t_test",
+    "arguments": {
+     "array_1": {
+      "__any_of__": [
+       [
+        10,
+        15,
+        12,
+        14,
+        11
+       ]
+      ]
+     },
+     "array_2": {
+      "__any_of__": [
+       [
+        18,
+        16,
+        17,
+        20,
+        22
+       ]
+      ]
+     },
+     "alpha": {
+      "__any_of__": [
+       0.05
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_186": {
+  "calls": [
+   {
+    "name": "current_weather_condition",
+    "arguments": {
+     "city": {
+      "__any_of__": [
+       "Tokyo"
+      ]
+     },
+     "country": {
+      "__any_of__": [
+       "Japan"
+      ]
+     },
+     "measurement": {
+      "__any_of__": [
+       "c",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_140": {
+  "calls": [
+   {
+    "name": "calculate_cagr",
+    "arguments": {
+     "initial_value": {
+      "__any_of__": [
+       2000
+      ]
+     },
+     "final_value": {
+      "__any_of__": [
+       3000
+      ]
+     },
+     "period_in_years": {
+      "__any_of__": [
+       4
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_38": {
+  "calls": [
+   {
+    "name": "calc_distance",
+    "arguments": {
+     "start_loc": {
+      "__any_of__": [
+       "New York",
+       "New York, NY",
+       "New York City",
+       "NYC"
+      ]
+     },
+     "end_loc": {
+      "__any_of__": [
+       "Washington DC",
+       "Washington D.C."
+      ]
+     },
+     "shortest_route": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   },
+   {
+    "name": "calc_distance",
+    "arguments": {
+     "start_loc": {
+      "__any_of__": [
+       "Los Angeles",
+       "Los Angeles, CA",
+       "LA"
+      ]
+     },
+     "end_loc": {
+      "__any_of__": [
+       "San Francisco",
+       "SF"
+      ]
+     },
+     "shortest_route": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_55": {
+  "calls": [
+   {
+    "name": "grocery_store_find_by_criteria",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "New York City",
+       "NYC"
+      ]
+     },
+     "criteria": {
+      "__any_of__": [
+       [
+        "24 hours"
+       ]
+      ]
+     }
+    }
+   },
+   {
+    "name": "grocery_store_find_by_criteria",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "SD",
+       "San Diego"
+      ]
+     },
+     "criteria": {
+      "__any_of__": [
+       [
+        "Home Delivery"
+       ]
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_79": {
+  "calls": [
+   {
+    "name": "prime_factorize",
+    "arguments": {
+     "number": {
+      "__any_of__": [
+       4567
+      ]
+     },
+     "return_type": {
+      "__any_of__": [
+       "dictionary"
+      ]
+     }
+    }
+   },
+   {
+    "name": "prime_factorize",
+    "arguments": {
+     "number": {
+      "__any_of__": [
+       7890
+      ]
+     },
+     "return_type": {
+      "__any_of__": [
+       "dictionary"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_61": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_223": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_64": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_309": {
+  "calls": [
+   {
+    "name": "nfl_data_player_record",
+    "arguments": {
+     "player_name": {
+      "__any_of__": [
+       "Tom Brady"
+      ]
+     },
+     "season_year": {
+      "__any_of__": [
+       2020
+      ]
+     },
+     "team": {
+      "__any_of__": [
+       "",
+       "Tampa Bay Buccaneers",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_101": {
+  "calls": [
+   {
+    "name": "calculate_speed",
+    "arguments": {
+     "distance": {
+      "__any_of__": [
+       450
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       20
+      ]
+     },
+     "to_unit": {
+      "__any_of__": [
+       "km/h"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_174": {
+  "calls": [
+   {
+    "name": "get_top_cases",
+    "arguments": {
+     "field_of_law": {
+      "__any_of__": [
+       "constitutional law",
+       "constitutional"
+      ]
+     },
+     "top_number": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "country": {
+      "__any_of__": [
+       "China",
+       "CN"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_336": {
+  "calls": [
+   {
+    "name": "cards_shuffle_and_draw",
+    "arguments": {
+     "num_cards": {
+      "__any_of__": [
+       3
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_14": {
+  "calls": [
+   {
+    "name": "calculate_present_value",
+    "arguments": {
+     "payment_per_year": {
+      "__any_of__": [
+       1000
+      ]
+     },
+     "interest_rate": {
+      "__any_of__": [
+       0.05
+      ]
+     },
+     "years": {
+      "__any_of__": [
+       20
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_present_value",
+    "arguments": {
+     "payment_per_year": {
+      "__any_of__": [
+       1000
+      ]
+     },
+     "interest_rate": {
+      "__any_of__": [
+       0.05
+      ]
+     },
+     "years": {
+      "__any_of__": [
+       30
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_present_value",
+    "arguments": {
+     "payment_per_year": {
+      "__any_of__": [
+       1000
+      ]
+     },
+     "interest_rate": {
+      "__any_of__": [
+       0.05
+      ]
+     },
+     "years": {
+      "__any_of__": [
+       10
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_119": {
+  "calls": [
+   {
+    "name": "identify_bird",
+    "arguments": {
+     "color": {
+      "__any_of__": [
+       "blue"
+      ]
+     },
+     "habitat": {
+      "__any_of__": [
+       "forest"
+      ]
+     },
+     "size": {
+      "__any_of__": [
+       "small",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "identify_bird",
+    "arguments": {
+     "color": {
+      "__any_of__": [
+       "black"
+      ]
+     },
+     "habitat": {
+      "__any_of__": [
+       "lake"
+      ]
+     },
+     "size": {
+      "__any_of__": [
+       "large"
+      ]
+     }
+    }
+   },
+   {
+    "name": "identify_bird",
+    "arguments": {
+     "color": {
+      "__any_of__": [
+       "brown"
+      ]
+     },
+     "habitat": {
+      "__any_of__": [
+       "desert"
+      ]
+     },
+     "size": {
+      "__any_of__": [
+       "medium"
+      ]
+     }
+    }
+   },
+   {
+    "name": "identify_bird",
+    "arguments": {
+     "color": {
+      "__any_of__": [
+       "green"
+      ]
+     },
+     "habitat": {
+      "__any_of__": [
+       "tropical rainforest"
+      ]
+     },
+     "size": {
+      "__any_of__": [
+       "large"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_178": {
+  "calls": [
+   {
+    "name": "get_stock_price",
+    "arguments": {
+     "company_name": {
+      "__any_of__": [
+       "Microsoft",
+       "Apple"
+      ]
+     },
+     "date": {
+      "__any_of__": [
+       "2022-01-01",
+       "01/01/2022",
+       "Jan.1,2022"
+      ]
+     },
+     "exchange": {
+      "__any_of__": [
+       "NASDAQ",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_stock_price",
+    "arguments": {
+     "company_name": {
+      "__any_of__": [
+       "Microsoft"
+      ]
+     },
+     "date": {
+      "__any_of__": [
+       "2022-02-01",
+       "02/01/2022",
+       "Feb.1,2022"
+      ]
+     },
+     "exchange": {
+      "__any_of__": [
+       "NASDAQ",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_stock_price",
+    "arguments": {
+     "company_name": {
+      "__any_of__": [
+       "Apple"
+      ]
+     },
+     "date": {
+      "__any_of__": [
+       "2022-01-01",
+       "01/01/2022",
+       "Jan.1,2022"
+      ]
+     },
+     "exchange": {
+      "__any_of__": [
+       "NASDAQ",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_stock_price",
+    "arguments": {
+     "company_name": {
+      "__any_of__": [
+       "Apple"
+      ]
+     },
+     "date": {
+      "__any_of__": [
+       "2022-02-01",
+       "02/01/2022",
+       "Feb.1,2022"
+      ]
+     },
+     "exchange": {
+      "__any_of__": [
+       "NASDAQ",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_104": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_207": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_186": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_244": {
+  "calls": [
+   {
+    "name": "publication_year_find",
+    "arguments": {
+     "author": {
+      "__any_of__": [
+       "Isaac Newton"
+      ]
+     },
+     "work_title": {
+      "__any_of__": [
+       "Law of Universal Gravitation",
+       "Universal Law of Gravitation",
+       "The law of universal gravitation"
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "",
+       "all",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_372": {
+  "calls": [
+   {
+    "name": "whole_foods_find_top_brands",
+    "arguments": {
+     "product": {
+      "__any_of__": [
+       "bananas"
+      ]
+     },
+     "number": {
+      "__any_of__": [
+       5,
+       "",
+       "__ABSENT_OK__"
+      ]
+     },
+     "organic": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_277": {
+  "calls": [
+   {
+    "name": "museum_info",
+    "arguments": {
+     "museum": {
+      "__any_of__": [
+       "The British Museum"
+      ]
+     },
+     "date": {
+      "__any_of__": [
+       "2023-06-20"
+      ]
+     },
+     "information": {
+      "__any_of__": [
+       [
+        "opening_hours",
+        "ticket_price"
+       ],
+       [
+        "ticket_price",
+        "opening_hours"
+       ]
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_0": {
+  "calls": [
+   {
+    "name": "calculate_triangle_area",
+    "arguments": {
+     "base": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "height": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "unit": {
+      "__any_of__": [
+       "units",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_199": {
+  "calls": [
+   {
+    "name": "get_current_weather",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "New York",
+       "New York, NY",
+       "New York City",
+       "NYC"
+      ]
+     },
+     "include_temperature": {
+      "__any_of__": [
+       true,
+       "",
+       "__ABSENT_OK__"
+      ]
+     },
+     "include_humidity": {
+      "__any_of__": [
+       true,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_current_weather",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Los Angeles",
+       "Los Angeles, CA",
+       "LA"
+      ]
+     },
+     "include_temperature": {
+      "__any_of__": [
+       true,
+       "",
+       "__ABSENT_OK__"
+      ]
+     },
+     "include_humidity": {
+      "__any_of__": [
+       true,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_current_weather",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "London"
+      ]
+     },
+     "include_temperature": {
+      "__any_of__": [
+       true,
+       "",
+       "__ABSENT_OK__"
+      ]
+     },
+     "include_humidity": {
+      "__any_of__": [
+       true,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_current_weather",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Tokyo"
+      ]
+     },
+     "include_temperature": {
+      "__any_of__": [
+       true,
+       "",
+       "__ABSENT_OK__"
+      ]
+     },
+     "include_humidity": {
+      "__any_of__": [
+       true,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_88": {
+  "calls": [
+   {
+    "name": "calculate_final_speed",
+    "arguments": {
+     "initial_velocity": {
+      "__any_of__": [
+       0,
+       "",
+       "__ABSENT_OK__"
+      ]
+     },
+     "height": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "gravity": {
+      "__any_of__": [
+       9.8,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_final_speed",
+    "arguments": {
+     "initial_velocity": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "height": {
+      "__any_of__": [
+       20
+      ]
+     },
+     "gravity": {
+      "__any_of__": [
+       9.8,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_78": {
+  "calls": [
+   {
+    "name": "number_theory_gcd",
+    "arguments": {
+     "number1": {
+      "__any_of__": [
+       45
+      ]
+     },
+     "number2": {
+      "__any_of__": [
+       60
+      ]
+     }
+    }
+   },
+   {
+    "name": "number_theory_gcd",
+    "arguments": {
+     "number1": {
+      "__any_of__": [
+       81
+      ]
+     },
+     "number2": {
+      "__any_of__": [
+       63
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_82": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_36": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_20": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_247": {
+  "calls": [
+   {
+    "name": "historical_contrib_get_contrib",
+    "arguments": {
+     "scientist": {
+      "__any_of__": [
+       "Albert Einstein"
+      ]
+     },
+     "date": {
+      "__any_of__": [
+       "1915-03-17",
+       "03/17/1915",
+       "Mar.17,1915"
+      ]
+     },
+     "category": {
+      "__any_of__": [
+       "",
+       "all",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_11": {
+  "calls": [
+   {
+    "name": "calculate_triangle_area",
+    "arguments": {
+     "base": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "height": {
+      "__any_of__": [
+       5
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_68": {
+  "calls": [
+   {
+    "name": "forest_growth_forecast",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Yellowstone National Park"
+      ]
+     },
+     "years": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "include_human_impact": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_349": {
+  "calls": [
+   {
+    "name": "game_score_highest",
+    "arguments": {
+     "game": {
+      "__any_of__": [
+       "Overwatch"
+      ]
+     },
+     "platform": {
+      "__any_of__": [
+       "PC"
+      ]
+     },
+     "region": {
+      "__any_of__": [
+       "Global",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_72": {
+  "calls": [
+   {
+    "name": "integrate",
+    "arguments": {
+     "function": {
+      "__any_of__": [
+       "x**3",
+       "lambda x: x**3"
+      ]
+     },
+     "start_x": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "end_x": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "method": {
+      "__any_of__": [
+       "trapezoid",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "integrate",
+    "arguments": {
+     "function": {
+      "__any_of__": [
+       "x**3",
+       "lambda x: x**3"
+      ]
+     },
+     "start_x": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "end_x": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "method": {
+      "__any_of__": [
+       "simpson"
+      ]
+     }
+    }
+   },
+   {
+    "name": "integrate",
+    "arguments": {
+     "function": {
+      "__any_of__": [
+       "2x**2 + 3x - 1",
+       "lambda x: 2x**2 + 3x - 1"
+      ]
+     },
+     "start_x": {
+      "__any_of__": [
+       -1
+      ]
+     },
+     "end_x": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "method": {
+      "__any_of__": [
+       "trapezoid",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "integrate",
+    "arguments": {
+     "function": {
+      "__any_of__": [
+       "2x**2 + 3x - 1",
+       "lambda x: 2x**2 + 3x - 1"
+      ]
+     },
+     "start_x": {
+      "__any_of__": [
+       -1
+      ]
+     },
+     "end_x": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "method": {
+      "__any_of__": [
+       "simpson"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_157": {
+  "calls": [
+   {
+    "name": "predict_house_price",
+    "arguments": {
+     "bedrooms": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "bathrooms": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "area": {
+      "__any_of__": [
+       1500
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "New York",
+       "New York, NY",
+       "New York City",
+       "NYC"
+      ]
+     }
+    }
+   },
+   {
+    "name": "predict_house_price",
+    "arguments": {
+     "bedrooms": {
+      "__any_of__": [
+       4
+      ]
+     },
+     "bathrooms": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "area": {
+      "__any_of__": [
+       2000
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "Los Angeles",
+       "Los Angeles, CA",
+       "LA"
+      ]
+     }
+    }
+   },
+   {
+    "name": "predict_house_price",
+    "arguments": {
+     "bedrooms": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "bathrooms": {
+      "__any_of__": [
+       1
+      ]
+     },
+     "area": {
+      "__any_of__": [
+       1200
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "Chicago"
+      ]
+     }
+    }
+   },
+   {
+    "name": "predict_house_price",
+    "arguments": {
+     "bedrooms": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "bathrooms": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "area": {
+      "__any_of__": [
+       1800
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "Miami"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_37": {
+  "calls": [
+   {
+    "name": "color_converter_get_color_info",
+    "arguments": {
+     "color_name": {
+      "__any_of__": [
+       "navy"
+      ]
+     },
+     "conversion_type": {
+      "__any_of__": [
+       [
+        "RGB",
+        "HEX"
+       ],
+       [
+        "HEX",
+        "RGB"
+       ]
+      ]
+     }
+    }
+   },
+   {
+    "name": "color_converter_get_color_info",
+    "arguments": {
+     "color_name": {
+      "__any_of__": [
+       "purple"
+      ]
+     },
+     "conversion_type": {
+      "__any_of__": [
+       [
+        "RGB",
+        "HEX"
+       ],
+       [
+        "HEX",
+        "RGB"
+       ]
+      ]
+     }
+    }
+   },
+   {
+    "name": "color_converter_get_color_info",
+    "arguments": {
+     "color_name": {
+      "__any_of__": [
+       "maroon"
+      ]
+     },
+     "conversion_type": {
+      "__any_of__": [
+       [
+        "RGB",
+        "HEX"
+       ],
+       [
+        "HEX",
+        "RGB"
+       ]
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_174": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_150": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_180": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_189": {
+  "calls": [
+   {
+    "name": "weather_forecast_detailed",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "New York",
+       "New York, USA"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "details": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_279": {
+  "calls": [
+   {
+    "name": "instrument_price_get",
+    "arguments": {
+     "brand": {
+      "__any_of__": [
+       "Fender"
+      ]
+     },
+     "model": {
+      "__any_of__": [
+       "American Professional II Stratocaster"
+      ]
+     },
+     "finish": {
+      "__any_of__": [
+       "Rosewood"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_302": {
+  "calls": [
+   {
+    "name": "calculate_batting_average",
+    "arguments": {
+     "hits": {
+      "__any_of__": [
+       180
+      ]
+     },
+     "at_bats": {
+      "__any_of__": [
+       600
+      ]
+     },
+     "decimal_places": {
+      "__any_of__": [
+       3,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_338": {
+  "calls": [
+   {
+    "name": "card_game_probability_calculate",
+    "arguments": {
+     "total_cards": {
+      "__any_of__": [
+       52
+      ]
+     },
+     "desired_cards": {
+      "__any_of__": [
+       13
+      ]
+     },
+     "cards_drawn": {
+      "__any_of__": [
+       "",
+       1,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_31": {
+  "calls": [
+   {
+    "name": "history_fact_fetch",
+    "arguments": {
+     "event": {
+      "__any_of__": [
+       "Treaty of Paris"
+      ]
+     },
+     "depth": {
+      "__any_of__": [
+       "",
+       "detailed",
+       "__ABSENT_OK__"
+      ]
+     },
+     "year": {
+      "__any_of__": [
+       "",
+       0,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "history_fact_fetch",
+    "arguments": {
+     "event": {
+      "__any_of__": [
+       "Magna Carta"
+      ]
+     },
+     "depth": {
+      "__any_of__": [
+       "",
+       "detailed",
+       "__ABSENT_OK__"
+      ]
+     },
+     "year": {
+      "__any_of__": [
+       "",
+       0,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_95": {
+  "calls": [
+   {
+    "name": "calculate_magnetic_field",
+    "arguments": {
+     "current": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "radius": {
+      "__any_of__": [
+       0.5
+      ]
+     },
+     "permeability": {
+      "__any_of__": [
+       "",
+       0,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_magnetic_field",
+    "arguments": {
+     "current": {
+      "__any_of__": [
+       15
+      ]
+     },
+     "radius": {
+      "__any_of__": [
+       1.0
+      ]
+     },
+     "permeability": {
+      "__any_of__": [
+       "",
+       0,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_35": {
+  "calls": [
+   {
+    "name": "ancient_empires_get_religion_info",
+    "arguments": {
+     "empire_name": {
+      "__any_of__": [
+       "Mauryan Empire"
+      ]
+     },
+     "include_influences": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   },
+   {
+    "name": "ancient_empires_get_religion_info",
+    "arguments": {
+     "empire_name": {
+      "__any_of__": [
+       "Persian Empire"
+      ]
+     },
+     "include_influences": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_218": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_156": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_206": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_253": {
+  "calls": [
+   {
+    "name": "retrieve_religion_info",
+    "arguments": {
+     "religion_name": {
+      "__any_of__": [
+       "Buddhism"
+      ]
+     },
+     "detail_level": {
+      "__any_of__": [
+       "full"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_350": {
+  "calls": [
+   {
+    "name": "get_highest_scoring_player",
+    "arguments": {
+     "game": {
+      "__any_of__": [
+       "Valorant"
+      ]
+     },
+     "season": {
+      "__any_of__": [
+       "2022",
+       "2022 season"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_59": {
+  "calls": [
+   {
+    "name": "calculate_molecular_weight",
+    "arguments": {
+     "compound": {
+      "__any_of__": [
+       "C6H12O6"
+      ]
+     },
+     "to_unit": {
+      "__any_of__": [
+       "grams/mole",
+       "g/mol"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_268": {
+  "calls": [
+   {
+    "name": "sculpture_locator_find_by_artist",
+    "arguments": {
+     "artist": {
+      "__any_of__": [
+       "Michelangelo"
+      ]
+     },
+     "material": {
+      "__any_of__": [
+       "Marble"
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "Rome",
+       "Rome, Italy"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_109": {
+  "calls": [
+   {
+    "name": "cellbio_get_proteins",
+    "arguments": {
+     "cell_compartment": {
+      "__any_of__": [
+       "nucleus"
+      ]
+     },
+     "include_description": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   },
+   {
+    "name": "cellbio_get_proteins",
+    "arguments": {
+     "cell_compartment": {
+      "__any_of__": [
+       "mitochondria"
+      ]
+     },
+     "include_description": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   },
+   {
+    "name": "cellbio_get_proteins",
+    "arguments": {
+     "cell_compartment": {
+      "__any_of__": [
+       "cytoplasm"
+      ]
+     },
+     "include_description": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_149": {
+  "calls": [
+   {
+    "name": "calculate_distance",
+    "arguments": {
+     "body1": {
+      "__any_of__": [
+       "Mars"
+      ]
+     },
+     "body2": {
+      "__any_of__": [
+       "Venus"
+      ]
+     },
+     "unit": {
+      "__any_of__": [
+       "miles"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_distance",
+    "arguments": {
+     "body1": {
+      "__any_of__": [
+       "Mars"
+      ]
+     },
+     "body2": {
+      "__any_of__": [
+       "Jupiter"
+      ]
+     },
+     "unit": {
+      "__any_of__": [
+       "miles"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_101": {
+  "calls": [
+   {
+    "name": "calculate_density",
+    "arguments": {
+     "mass": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "volume": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "unit": {
+      "__any_of__": [
+       "",
+       "kg/m³",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_density",
+    "arguments": {
+     "mass": {
+      "__any_of__": [
+       15
+      ]
+     },
+     "volume": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "unit": {
+      "__any_of__": [
+       "",
+       "kg/m³",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_3": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_215": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_19": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_269": {
+  "calls": [
+   {
+    "name": "calculate_compound_interest",
+    "arguments": {
+     "principle": {
+      "__any_of__": [
+       10000
+      ]
+     },
+     "interest_rate": {
+      "__any_of__": [
+       0.05
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "compounds_per_year": {
+      "__any_of__": [
+       1,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_210": {
+  "calls": [
+   {
+    "name": "get_news",
+    "arguments": {
+     "topic": {
+      "__any_of__": [
+       "Bitcoin"
+      ]
+     },
+     "quantity": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "region": {
+      "__any_of__": [
+       "US",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_160": {
+  "calls": [
+   {
+    "name": "get_case_info",
+    "arguments": {
+     "docket": {
+      "__any_of__": [
+       "2022/AL2562"
+      ]
+     },
+     "court": {
+      "__any_of__": [
+       "California",
+       "CA"
+      ]
+     },
+     "info_type": {
+      "__any_of__": [
+       "victim"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_345": {
+  "calls": [
+   {
+    "name": "game_valuation",
+    "arguments": {
+     "game_name": {
+      "__any_of__": [
+       "Super Mario Bros."
+      ]
+     },
+     "release_year": {
+      "__any_of__": [
+       1985
+      ]
+     },
+     "condition": {
+      "__any_of__": [
+       "Like New",
+       "New"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_69": {
+  "calls": [
+   {
+    "name": "calculate_triangle_area",
+    "arguments": {
+     "base": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "height": {
+      "__any_of__": [
+       5
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_triangle_area",
+    "arguments": {
+     "base": {
+      "__any_of__": [
+       8
+      ]
+     },
+     "height": {
+      "__any_of__": [
+       6
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_171": {
+  "calls": [
+   {
+    "name": "calculate_return_on_equity",
+    "arguments": {
+     "net_income": {
+      "__any_of__": [
+       1000000
+      ]
+     },
+     "shareholder_equity": {
+      "__any_of__": [
+       5000000
+      ]
+     },
+     "dividends_paid": {
+      "__any_of__": [
+       200000
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_return_on_equity",
+    "arguments": {
+     "net_income": {
+      "__any_of__": [
+       2000000
+      ]
+     },
+     "shareholder_equity": {
+      "__any_of__": [
+       10000000
+      ]
+     },
+     "dividends_paid": {
+      "__any_of__": [
+       0,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_48": {
+  "calls": [
+   {
+    "name": "PokemonGO_get_moves",
+    "arguments": {
+     "pokemon": {
+      "__any_of__": [
+       "Pikachu"
+      ]
+     },
+     "move": {
+      "__any_of__": [
+       "",
+       "Run",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "PokemonGO_get_moves",
+    "arguments": {
+     "pokemon": {
+      "__any_of__": [
+       "Bulbasaur"
+      ]
+     },
+     "move": {
+      "__any_of__": [
+       "Solar Beam"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_236": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_228": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_120": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_124": {
+  "calls": [
+   {
+    "name": "t_test",
+    "arguments": {
+     "dataset_A": {
+      "__any_of__": [
+       [
+        12,
+        24,
+        36
+       ]
+      ]
+     },
+     "dataset_B": {
+      "__any_of__": [
+       [
+        15,
+        30,
+        45
+       ]
+      ]
+     },
+     "alpha": {
+      "__any_of__": [
+       0.05,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_378": {
+  "calls": [
+   {
+    "name": "timezone_convert",
+    "arguments": {
+     "time": {
+      "__any_of__": [
+       "3pm"
+      ]
+     },
+     "from_timezone": {
+      "__any_of__": [
+       "America/New_York",
+       "New York",
+       "NYC",
+       "New York City"
+      ]
+     },
+     "to_timezone": {
+      "__any_of__": [
+       "Europe/London",
+       "London"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_25": {
+  "calls": [
+   {
+    "name": "calculate_final_velocity",
+    "arguments": {
+     "height": {
+      "__any_of__": [
+       150
+      ]
+     },
+     "initial_velocity": {
+      "__any_of__": [
+       0,
+       "",
+       "__ABSENT_OK__"
+      ]
+     },
+     "gravity": {
+      "__any_of__": [
+       9.81,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_129": {
+  "calls": [
+   {
+    "name": "calculate_discounted_cash_flow",
+    "arguments": {
+     "coupon_payment": {
+      "__any_of__": [
+       100
+      ]
+     },
+     "period": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "discount_rate": {
+      "__any_of__": [
+       0.04
+      ]
+     },
+     "face_value": {
+      "__any_of__": [
+       "",
+       1000,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_107": {
+  "calls": [
+   {
+    "name": "get_protein_sequence",
+    "arguments": {
+     "gene": {
+      "__any_of__": [
+       "BRCA1"
+      ]
+     },
+     "species": {
+      "__any_of__": [
+       "Homo sapiens",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_protein_sequence",
+    "arguments": {
+     "gene": {
+      "__any_of__": [
+       "BRCA2"
+      ]
+     },
+     "species": {
+      "__any_of__": [
+       "Homo sapiens",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_protein_sequence",
+    "arguments": {
+     "gene": {
+      "__any_of__": [
+       "BRCA1"
+      ]
+     },
+     "species": {
+      "__any_of__": [
+       "Pan troglodytes"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_protein_sequence",
+    "arguments": {
+     "gene": {
+      "__any_of__": [
+       "BRCA2"
+      ]
+     },
+     "species": {
+      "__any_of__": [
+       "Pan troglodytes"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_74": {
+  "calls": [
+   {
+    "name": "get_prime_factors",
+    "arguments": {
+     "number": {
+      "__any_of__": [
+       4567
+      ]
+     },
+     "formatted": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_prime_factors",
+    "arguments": {
+     "number": {
+      "__any_of__": [
+       4567
+      ]
+     },
+     "formatted": {
+      "__any_of__": [
+       false
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_prime_factors",
+    "arguments": {
+     "number": {
+      "__any_of__": [
+       7890
+      ]
+     },
+     "formatted": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_prime_factors",
+    "arguments": {
+     "number": {
+      "__any_of__": [
+       7890
+      ]
+     },
+     "formatted": {
+      "__any_of__": [
+       false
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_175": {
+  "calls": [
+   {
+    "name": "portfolio_future_value",
+    "arguments": {
+     "stock": {
+      "__any_of__": [
+       "AAPL"
+      ]
+     },
+     "invested_amount": {
+      "__any_of__": [
+       5000
+      ]
+     },
+     "expected_annual_return": {
+      "__any_of__": [
+       0.07
+      ]
+     },
+     "years": {
+      "__any_of__": [
+       5
+      ]
+     }
+    }
+   },
+   {
+    "name": "portfolio_future_value",
+    "arguments": {
+     "stock": {
+      "__any_of__": [
+       "MSFT"
+      ]
+     },
+     "invested_amount": {
+      "__any_of__": [
+       8000
+      ]
+     },
+     "expected_annual_return": {
+      "__any_of__": [
+       0.06
+      ]
+     },
+     "years": {
+      "__any_of__": [
+       7
+      ]
+     }
+    }
+   },
+   {
+    "name": "portfolio_future_value",
+    "arguments": {
+     "stock": {
+      "__any_of__": [
+       "AMZN"
+      ]
+     },
+     "invested_amount": {
+      "__any_of__": [
+       10000
+      ]
+     },
+     "expected_annual_return": {
+      "__any_of__": [
+       0.08
+      ]
+     },
+     "years": {
+      "__any_of__": [
+       10
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_105": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_69": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_86": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_137": {
+  "calls": [
+   {
+    "name": "calculate_stock_return",
+    "arguments": {
+     "investment_amount": {
+      "__any_of__": [
+       5000
+      ]
+     },
+     "annual_growth_rate": {
+      "__any_of__": [
+       0.06
+      ]
+     },
+     "holding_period": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "dividends": {
+      "__any_of__": [
+       "",
+       false,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_61": {
+  "calls": [
+   {
+    "name": "diabetes_prediction",
+    "arguments": {
+     "weight": {
+      "__any_of__": [
+       150
+      ]
+     },
+     "height": {
+      "__any_of__": [
+       70
+      ]
+     },
+     "activity_level": {
+      "__any_of__": [
+       "lightly active"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_72": {
+  "calls": [
+   {
+    "name": "calculate_fitness",
+    "arguments": {
+     "trait_values": {
+      "__any_of__": [
+       [
+        0.8,
+        0.7
+       ]
+      ]
+     },
+     "trait_contributions": {
+      "__any_of__": [
+       [
+        0.4,
+        0.6
+       ]
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_381": {
+  "calls": [
+   {
+    "name": "hilton_hotel_check_availability",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Paris"
+      ]
+     },
+     "check_in_date": {
+      "__any_of__": [
+       "2023-04-04"
+      ]
+     },
+     "check_out_date": {
+      "__any_of__": [
+       "2023-04-08"
+      ]
+     },
+     "no_of_adults": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "hotel_chain": {
+      "__any_of__": [
+       "Hilton",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_136": {
+  "calls": [
+   {
+    "name": "city_distance_find_shortest",
+    "arguments": {
+     "start_city": {
+      "__any_of__": [
+       "New York",
+       "New York, NY",
+       "NYC"
+      ]
+     },
+     "end_city": {
+      "__any_of__": [
+       "Los Angeles",
+       "Los Angeles, CA",
+       "LA"
+      ]
+     },
+     "transportation": {
+      "__any_of__": [
+       "bus",
+       "",
+       "__ABSENT_OK__"
+      ]
+     },
+     "allow_transfer": {
+      "__any_of__": [
+       "",
+       false,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "city_distance_find_shortest",
+    "arguments": {
+     "start_city": {
+      "__any_of__": [
+       "New York",
+       "New York, NY",
+       "NYC"
+      ]
+     },
+     "end_city": {
+      "__any_of__": [
+       "Los Angeles",
+       "Los Angeles, CA",
+       "LA"
+      ]
+     },
+     "transportation": {
+      "__any_of__": [
+       "bus",
+       "",
+       "__ABSENT_OK__"
+      ]
+     },
+     "allow_transfer": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_145": {
+  "calls": [
+   {
+    "name": "calculate_clock_angle",
+    "arguments": {
+     "hours": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "minutes": {
+      "__any_of__": [
+       15
+      ]
+     },
+     "round_to": {
+      "__any_of__": [
+       2,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_clock_angle",
+    "arguments": {
+     "hours": {
+      "__any_of__": [
+       8
+      ]
+     },
+     "minutes": {
+      "__any_of__": [
+       20
+      ]
+     },
+     "round_to": {
+      "__any_of__": [
+       2,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_clock_angle",
+    "arguments": {
+     "hours": {
+      "__any_of__": [
+       11
+      ]
+     },
+     "minutes": {
+      "__any_of__": [
+       50
+      ]
+     },
+     "round_to": {
+      "__any_of__": [
+       2,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_167": {
+  "calls": [
+   {
+    "name": "linear_regression_get_r_squared",
+    "arguments": {
+     "dataset_path": {
+      "__any_of__": [
+       "/user/home/datasets/finance.csv"
+      ]
+     },
+     "independent_variables": {
+      "__any_of__": [
+       [
+        "income",
+        "age",
+        "education"
+       ]
+      ]
+     },
+     "dependent_variable": {
+      "__any_of__": [
+       "credit_score"
+      ]
+     }
+    }
+   },
+   {
+    "name": "linear_regression_get_r_squared",
+    "arguments": {
+     "dataset_path": {
+      "__any_of__": [
+       "/user/home/datasets/finance.csv"
+      ]
+     },
+     "independent_variables": {
+      "__any_of__": [
+       [
+        "income",
+        "age",
+        "credit_score"
+       ]
+      ]
+     },
+     "dependent_variable": {
+      "__any_of__": [
+       "education"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_55": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_93": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_199": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_14": {
+  "calls": [
+   {
+    "name": "calculate_derivative",
+    "arguments": {
+     "function": {
+      "__any_of__": [
+       "3x**2 + 2x - 1",
+       "lambda x: 3x**2 + 2x - 1"
+      ]
+     },
+     "x_value": {
+      "__any_of__": [
+       "",
+       0.0,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_170": {
+  "calls": [
+   {
+    "name": "law_case_search_find_historical",
+    "arguments": {
+     "subject": {
+      "__any_of__": [
+       "fraud"
+      ]
+     },
+     "from_year": {
+      "__any_of__": [
+       2010
+      ]
+     },
+     "to_year": {
+      "__any_of__": [
+       2015
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_56": {
+  "calls": [
+   {
+    "name": "cellbio_get_proteins",
+    "arguments": {
+     "cell_compartment": {
+      "__any_of__": [
+       "plasma membrane"
+      ]
+     },
+     "include_description": {
+      "__any_of__": [
+       "",
+       true,
+       false,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_207": {
+  "calls": [
+   {
+    "name": "calculate_shortest_distance",
+    "arguments": {
+     "start_location": {
+      "__any_of__": [
+       "New York, USA",
+       "New York City",
+       "New York City, NY",
+       "NYC",
+       "NY"
+      ]
+     },
+     "end_location": {
+      "__any_of__": [
+       "Miami, USA",
+       "Miami",
+       "Miami, FL",
+       "FL"
+      ]
+     },
+     "route_preference": {
+      "__any_of__": [
+       "Shortest"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_12": {
+  "calls": [
+   {
+    "name": "model_DecisionTreeClassifier",
+    "arguments": {
+     "criterion": {
+      "__any_of__": [
+       "gini"
+      ]
+     },
+     "max_depth": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "random_state": {
+      "__any_of__": [
+       1
+      ]
+     }
+    }
+   },
+   {
+    "name": "model_DecisionTreeClassifier",
+    "arguments": {
+     "criterion": {
+      "__any_of__": [
+       "entropy"
+      ]
+     },
+     "max_depth": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "random_state": {
+      "__any_of__": [
+       1
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_28": {
+  "calls": [
+   {
+    "name": "get_current_and_future_temperature",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Seattle",
+       "Seattle, Washington",
+       "Seattle, WA"
+      ]
+     },
+     "hours": {
+      "__any_of__": [
+       3
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_current_and_future_temperature",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Los Angeles",
+       "Los Angeles, CA",
+       "LA",
+       "Los Angeles, California",
+       "Los Angeles, CA"
+      ]
+     },
+     "hours": {
+      "__any_of__": [
+       3
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_60": {
+  "calls": [
+   {
+    "name": "math_factorial",
+    "arguments": {
+     "number": {
+      "__any_of__": [
+       5
+      ]
+     }
+    }
+   },
+   {
+    "name": "math_factorial",
+    "arguments": {
+     "number": {
+      "__any_of__": [
+       7
+      ]
+     }
+    }
+   },
+   {
+    "name": "math_factorial",
+    "arguments": {
+     "number": {
+      "__any_of__": [
+       9
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_39": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_197": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_155": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_281": {
+  "calls": [
+   {
+    "name": "get_instrument_info",
+    "arguments": {
+     "name": {
+      "__any_of__": [
+       "Violin"
+      ]
+     },
+     "maker": {
+      "__any_of__": [
+       "Stradivarius"
+      ]
+     },
+     "year": {
+      "__any_of__": [
+       1721
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_278": {
+  "calls": [
+   {
+    "name": "get_instrument_details",
+    "arguments": {
+     "instrument": {
+      "__any_of__": [
+       "piano"
+      ]
+     },
+     "manufacturer": {
+      "__any_of__": [
+       "Yamaha"
+      ]
+     },
+     "features": {
+      "__any_of__": [
+       [
+        "price",
+        "rating"
+       ]
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_212": {
+  "calls": [
+   {
+    "name": "get_stock_info",
+    "arguments": {
+     "company_name": {
+      "__any_of__": [
+       "Apple Inc."
+      ]
+     },
+     "detail_level": {
+      "__any_of__": [
+       "detailed"
+      ]
+     },
+     "market": {
+      "__any_of__": [
+       "",
+       "NASDAQ",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_393": {
+  "calls": [
+   {
+    "name": "convert_currency",
+    "arguments": {
+     "base_currency": {
+      "__any_of__": [
+       "JPY"
+      ]
+     },
+     "target_currency": {
+      "__any_of__": [
+       "USD"
+      ]
+     },
+     "amount": {
+      "__any_of__": [
+       20000
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_143": {
+  "calls": [
+   {
+    "name": "calc_area_triangle",
+    "arguments": {
+     "base": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "height": {
+      "__any_of__": [
+       5
+      ]
+     }
+    }
+   },
+   {
+    "name": "calc_area_triangle",
+    "arguments": {
+     "base": {
+      "__any_of__": [
+       15
+      ]
+     },
+     "height": {
+      "__any_of__": [
+       7
+      ]
+     }
+    }
+   },
+   {
+    "name": "calc_area_triangle",
+    "arguments": {
+     "base": {
+      "__any_of__": [
+       20
+      ]
+     },
+     "height": {
+      "__any_of__": [
+       10
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_91": {
+  "calls": [
+   {
+    "name": "vegan_restaurant_find_nearby",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Los Angeles, CA",
+       "Los Angeles",
+       "LA, CA"
+      ]
+     },
+     "operating_hours": {
+      "__any_of__": [
+       22
+      ]
+     }
+    }
+   },
+   {
+    "name": "vegan_restaurant_find_nearby",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "San Francisco, CA",
+       "San Francisco",
+       "SF, CA"
+      ]
+     },
+     "operating_hours": {
+      "__any_of__": [
+       22
+      ]
+     }
+    }
+   },
+   {
+    "name": "vegan_restaurant_find_nearby",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Seattle, WA",
+       "Seattle",
+       "WA"
+      ]
+     },
+     "operating_hours": {
+      "__any_of__": [
+       22
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_66": {
+  "calls": [
+   {
+    "name": "geometry_area_circle",
+    "arguments": {
+     "radius": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "units": {
+      "__any_of__": [
+       "meters",
+       "m",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "geometry_area_circle",
+    "arguments": {
+     "radius": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "units": {
+      "__any_of__": [
+       "meters",
+       "m",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "geometry_area_circle",
+    "arguments": {
+     "radius": {
+      "__any_of__": [
+       15
+      ]
+     },
+     "units": {
+      "__any_of__": [
+       "meters",
+       "m",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_154": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_195": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_196": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_316": {
+  "calls": [
+   {
+    "name": "get_sport_ranking",
+    "arguments": {
+     "sport": {
+      "__any_of__": [
+       "Tennis"
+      ]
+     },
+     "player_name": {
+      "__any_of__": [
+       "Serena Williams"
+      ]
+     },
+     "gender": {
+      "__any_of__": [
+       "",
+       "all",
+       "female",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_70": {
+  "calls": [
+   {
+    "name": "calculate_vehicle_emission",
+    "arguments": {
+     "vehicle_type": {
+      "__any_of__": [
+       "gas"
+      ]
+     },
+     "miles_driven": {
+      "__any_of__": [
+       1500
+      ]
+     },
+     "emission_factor": {
+      "__any_of__": [
+       "",
+       355.48,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_267": {
+  "calls": [
+   {
+    "name": "find_exhibition",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "New York City, NY"
+      ]
+     },
+     "art_form": {
+      "__any_of__": [
+       "sculpture",
+       "modern sculpture"
+      ]
+     },
+     "month": {
+      "__any_of__": [
+       "",
+       "__ABSENT_OK__"
+      ]
+     },
+     "user_ratings": {
+      "__any_of__": [
+       "high"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_300": {
+  "calls": [
+   {
+    "name": "music_calculate_note_duration",
+    "arguments": {
+     "first_note_frequency": {
+      "__any_of__": [
+       440
+      ]
+     },
+     "second_note_frequency": {
+      "__any_of__": [
+       880
+      ]
+     },
+     "tempo": {
+      "__any_of__": [
+       "",
+       120,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_89": {
+  "calls": [
+   {
+    "name": "get_directions",
+    "arguments": {
+     "start_location": {
+      "__any_of__": [
+       "San Francisco",
+       "SF"
+      ]
+     },
+     "end_location": {
+      "__any_of__": [
+       "Palo Alto"
+      ]
+     },
+     "route_type": {
+      "__any_of__": [
+       "fastest"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_directions",
+    "arguments": {
+     "start_location": {
+      "__any_of__": [
+       "Palo Alto"
+      ]
+     },
+     "end_location": {
+      "__any_of__": [
+       "Golden Gate Bridge in San Francisco",
+       "Golden Gate Bridge, San Francisco",
+       "Golden Gate Bridge"
+      ]
+     },
+     "route_type": {
+      "__any_of__": [
+       "scenic"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_directions",
+    "arguments": {
+     "start_location": {
+      "__any_of__": [
+       "Golden Gate Bridge in San Francisco",
+       "Golden Gate Bridge, San Francisco",
+       "Golden Gate Bridge"
+      ]
+     },
+     "end_location": {
+      "__any_of__": [
+       "San Francisco",
+       "SF"
+      ]
+     },
+     "route_type": {
+      "__any_of__": [
+       "fastest"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_133": {
+  "calls": [
+   {
+    "name": "calculate_distance",
+    "arguments": {
+     "coord1": {
+      "__any_of__": [
+       [
+        48.8584,
+        2.2945
+       ]
+      ]
+     },
+     "coord2": {
+      "__any_of__": [
+       [
+        41.8902,
+        12.4922
+       ]
+      ]
+     },
+     "unit": {
+      "__any_of__": [
+       "kilometers",
+       "km"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_distance",
+    "arguments": {
+     "coord1": {
+      "__any_of__": [
+       [
+        41.8902,
+        12.4922
+       ]
+      ]
+     },
+     "coord2": {
+      "__any_of__": [
+       [
+        37.9715,
+        23.7257
+       ]
+      ]
+     },
+     "unit": {
+      "__any_of__": [
+       "kilometers",
+       "km"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_distance",
+    "arguments": {
+     "coord1": {
+      "__any_of__": [
+       [
+        37.9715,
+        23.7257
+       ]
+      ]
+     },
+     "coord2": {
+      "__any_of__": [
+       [
+        29.9792,
+        31.1342
+       ]
+      ]
+     },
+     "unit": {
+      "__any_of__": [
+       "kilometers",
+       "km"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_132": {
+  "calls": [
+   {
+    "name": "calculate_average",
+    "arguments": {
+     "numbers": {
+      "__any_of__": [
+       [
+        23,
+        45,
+        67,
+        89
+       ]
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_average",
+    "arguments": {
+     "numbers": {
+      "__any_of__": [
+       [
+        12,
+        34,
+        56,
+        78
+       ]
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_average",
+    "arguments": {
+     "numbers": {
+      "__any_of__": [
+       [
+        98,
+        76,
+        54,
+        32
+       ]
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_average",
+    "arguments": {
+     "numbers": {
+      "__any_of__": [
+       [
+        87,
+        65,
+        43,
+        21
+       ]
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_32": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_41": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_216": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_246": {
+  "calls": [
+   {
+    "name": "science_history_get_discovery_details",
+    "arguments": {
+     "discovery": {
+      "__any_of__": [
+       "Gravity"
+      ]
+     },
+     "method_used": {
+      "__any_of__": [
+       "",
+       "default",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_218": {
+  "calls": [
+   {
+    "name": "patient_get_mri_report",
+    "arguments": {
+     "patient_id": {
+      "__any_of__": [
+       "546382"
+      ]
+     },
+     "mri_type": {
+      "__any_of__": [
+       "brain",
+       "",
+       "__ABSENT_OK__"
+      ]
+     },
+     "status": {
+      "__any_of__": [
+       "concluded"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_21": {
+  "calls": [
+   {
+    "name": "number_theory_gcd",
+    "arguments": {
+     "number1": {
+      "__any_of__": [
+       36
+      ]
+     },
+     "number2": {
+      "__any_of__": [
+       48
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_219": {
+  "calls": [
+   {
+    "name": "get_neuron_coordinates",
+    "arguments": {
+     "neuron_type": {
+      "__any_of__": [
+       "GABA"
+      ]
+     },
+     "brain_region": {
+      "__any_of__": [
+       "All",
+       "all part of the brain",
+       "entire brain"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_146": {
+  "calls": [
+   {
+    "name": "plot_sine_wave",
+    "arguments": {
+     "start_range": {
+      "__any_of__": [
+       0
+      ]
+     },
+     "end_range": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "frequency": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "amplitude": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "phase_shift": {
+      "__any_of__": [
+       1
+      ]
+     }
+    }
+   },
+   {
+    "name": "plot_sine_wave",
+    "arguments": {
+     "start_range": {
+      "__any_of__": [
+       0
+      ]
+     },
+     "end_range": {
+      "__any_of__": [
+       20
+      ]
+     },
+     "frequency": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "amplitude": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "phase_shift": {
+      "__any_of__": [
+       2
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_122": {
+  "calls": [
+   {
+    "name": "calculate_vehicle_emission",
+    "arguments": {
+     "vehicle_type": {
+      "__any_of__": [
+       "gas"
+      ]
+     },
+     "miles_driven": {
+      "__any_of__": [
+       15000
+      ]
+     },
+     "emission_factor": {
+      "__any_of__": [
+       "",
+       1.4,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_vehicle_emission",
+    "arguments": {
+     "vehicle_type": {
+      "__any_of__": [
+       "diesel"
+      ]
+     },
+     "miles_driven": {
+      "__any_of__": [
+       15000
+      ]
+     },
+     "emission_factor": {
+      "__any_of__": [
+       2.7
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_vehicle_emission",
+    "arguments": {
+     "vehicle_type": {
+      "__any_of__": [
+       "EV"
+      ]
+     },
+     "miles_driven": {
+      "__any_of__": [
+       15000
+      ]
+     },
+     "emission_factor": {
+      "__any_of__": [
+       0
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_166": {
+  "calls": [
+   {
+    "name": "predict_house_price",
+    "arguments": {
+     "area": {
+      "__any_of__": [
+       2500
+      ]
+     },
+     "rooms": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "year": {
+      "__any_of__": [
+       2000
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "New York",
+       "New York, NY",
+       "New York City",
+       "NYC",
+       "NY"
+      ]
+     }
+    }
+   },
+   {
+    "name": "predict_house_price",
+    "arguments": {
+     "area": {
+      "__any_of__": [
+       3000
+      ]
+     },
+     "rooms": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "year": {
+      "__any_of__": [
+       2005
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "Los Angeles",
+       "Los Angeles, CA",
+       "LA",
+       "Los Angeles, CA",
+       "CA"
+      ]
+     }
+    }
+   },
+   {
+    "name": "predict_house_price",
+    "arguments": {
+     "area": {
+      "__any_of__": [
+       2000
+      ]
+     },
+     "rooms": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "year": {
+      "__any_of__": [
+       1995
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "Chicago"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_143": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_57": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_146": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_385": {
+  "calls": [
+   {
+    "name": "hotel_bookings_book_room",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Los Angeles",
+       "Los Angeles, CA",
+       "LA"
+      ]
+     },
+     "room_type": {
+      "__any_of__": [
+       "King Size",
+       "king size"
+      ]
+     },
+     "check_in_date": {
+      "__any_of__": [
+       "15-10-2023",
+       "15th October",
+       "2023-10-15",
+       "10/15/2023",
+       "Oct.15,2023"
+      ]
+     },
+     "no_of_nights": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "no_of_rooms": {
+      "__any_of__": [
+       "",
+       1,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_37": {
+  "calls": [
+   {
+    "name": "route_estimate_time",
+    "arguments": {
+     "start_location": {
+      "__any_of__": [
+       "San Francisco"
+      ]
+     },
+     "end_location": {
+      "__any_of__": [
+       "Los Angeles"
+      ]
+     },
+     "stops": {
+      "__any_of__": [
+       [
+        "Santa Barbara",
+        "Monterey"
+       ],
+       [
+        "Monterey",
+        "Santa Barbara"
+       ]
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_143": {
+  "calls": [
+   {
+    "name": "get_stock_price",
+    "arguments": {
+     "company": {
+      "__any_of__": [
+       "AAPL"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "exchange": {
+      "__any_of__": [
+       "NASDAQ",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_380": {
+  "calls": [
+   {
+    "name": "hotel_booking",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Manhattan, New York",
+       "Manhattan, NY",
+       "NYC",
+       "New York City"
+      ]
+     },
+     "room_type": {
+      "__any_of__": [
+       "single"
+      ]
+     },
+     "duration": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "start_date": {
+      "__any_of__": [
+       "2023-03-10",
+       "03/10/2023",
+       "Mar.10,2023",
+       "March 10th, 2023",
+       "March 10th,2023",
+       "March10th, 2023",
+       "March10th,2023"
+      ]
+     },
+     "preferences": {
+      "__any_of__": [
+       [
+        "pet_friendly"
+       ]
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_49": {
+  "calls": [
+   {
+    "name": "player_status_check",
+    "arguments": {
+     "team": {
+      "__any_of__": [
+       "RocketLeague"
+      ]
+     },
+     "player_id": {
+      "__any_of__": [
+       3142
+      ]
+     },
+     "season": {
+      "__any_of__": [
+       2017
+      ]
+     }
+    }
+   },
+   {
+    "name": "player_status_check",
+    "arguments": {
+     "team": {
+      "__any_of__": [
+       "RocketLeague"
+      ]
+     },
+     "player_id": {
+      "__any_of__": [
+       3142
+      ]
+     },
+     "season": {
+      "__any_of__": [
+       2018
+      ]
+     }
+    }
+   },
+   {
+    "name": "player_status_check",
+    "arguments": {
+     "team": {
+      "__any_of__": [
+       "RocketLeague"
+      ]
+     },
+     "player_id": {
+      "__any_of__": [
+       3142
+      ]
+     },
+     "season": {
+      "__any_of__": [
+       2019
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_128": {
+  "calls": [
+   {
+    "name": "average_temperature",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "New York",
+       "New York, NY",
+       "NYC"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       7
+      ]
+     },
+     "temp_unit": {
+      "__any_of__": [
+       "Fahrenheit",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "average_temperature",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Los Angeles",
+       "Los Angeles, CA",
+       "LA"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       7
+      ]
+     },
+     "temp_unit": {
+      "__any_of__": [
+       "Celsius"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_170": {
+  "calls": [
+   {
+    "name": "calculate_compound_interest",
+    "arguments": {
+     "principal": {
+      "__any_of__": [
+       5000
+      ]
+     },
+     "rate": {
+      "__any_of__": [
+       0.025
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "n": {
+      "__any_of__": [
+       4
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_compound_interest",
+    "arguments": {
+     "principal": {
+      "__any_of__": [
+       5000
+      ]
+     },
+     "rate": {
+      "__any_of__": [
+       0.025
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "n": {
+      "__any_of__": [
+       4
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_compound_interest",
+    "arguments": {
+     "principal": {
+      "__any_of__": [
+       5000
+      ]
+     },
+     "rate": {
+      "__any_of__": [
+       0.025
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "n": {
+      "__any_of__": [
+       4
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_94": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_74": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_210": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_211": {
+  "calls": [
+   {
+    "name": "send_email",
+    "arguments": {
+     "to": {
+      "__any_of__": [
+       "john.doe@example.com"
+      ]
+     },
+     "subject": {
+      "__any_of__": [
+       "Meeting"
+      ]
+     },
+     "body": {
+      "__any_of__": [
+       "Let's meet at 10 AM tomorrow",
+       "Let's meet at 10 AM tomorrow."
+      ]
+     },
+     "cc": {
+      "__any_of__": [
+       "",
+       "__ABSENT_OK__"
+      ]
+     },
+     "bcc": {
+      "__any_of__": [
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_213": {
+  "calls": [
+   {
+    "name": "flight_book",
+    "arguments": {
+     "departure_location": {
+      "__any_of__": [
+       "San Francisco",
+       "SF"
+      ]
+     },
+     "destination_location": {
+      "__any_of__": [
+       "London"
+      ]
+     },
+     "date": {
+      "__any_of__": [
+       "2022-04-27",
+       "04/27/2022",
+       "Apr 27, 2022"
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       "afternoon",
+       "",
+       "__ABSENT_OK__"
+      ]
+     },
+     "direct_flight": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_31": {
+  "calls": [
+   {
+    "name": "calculate_final_velocity",
+    "arguments": {
+     "initial_velocity": {
+      "__any_of__": [
+       0
+      ]
+     },
+     "acceleration": {
+      "__any_of__": [
+       9.8
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       5
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_263": {
+  "calls": [
+   {
+    "name": "get_sculpture_info",
+    "arguments": {
+     "artist_name": {
+      "__any_of__": [
+       "James Plensa"
+      ]
+     },
+     "detail": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_163": {
+  "calls": [
+   {
+    "name": "calc_binomial_prob",
+    "arguments": {
+     "num_trials": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "num_success": {
+      "__any_of__": [
+       6
+      ]
+     },
+     "prob_success": {
+      "__any_of__": [
+       0.6
+      ]
+     }
+    }
+   },
+   {
+    "name": "calc_binomial_prob",
+    "arguments": {
+     "num_trials": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "num_success": {
+      "__any_of__": [
+       6
+      ]
+     },
+     "prob_success": {
+      "__any_of__": [
+       0.5
+      ]
+     }
+    }
+   },
+   {
+    "name": "calc_binomial_prob",
+    "arguments": {
+     "num_trials": {
+      "__any_of__": [
+       15
+      ]
+     },
+     "num_success": {
+      "__any_of__": [
+       6
+      ]
+     },
+     "prob_success": {
+      "__any_of__": [
+       0.5
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_92": {
+  "calls": [
+   {
+    "name": "get_shortest_driving_distance",
+    "arguments": {
+     "origin": {
+      "__any_of__": [
+       "New York City",
+       "NYC"
+      ]
+     },
+     "destination": {
+      "__any_of__": [
+       "Los Angeles",
+       "Los Angeles, CA",
+       "LA"
+      ]
+     },
+     "unit": {
+      "__any_of__": [
+       "miles",
+       "mile"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_shortest_driving_distance",
+    "arguments": {
+     "origin": {
+      "__any_of__": [
+       "Los Angeles",
+       "Los Angeles, CA",
+       "LA"
+      ]
+     },
+     "destination": {
+      "__any_of__": [
+       "Miami"
+      ]
+     },
+     "unit": {
+      "__any_of__": [
+       "miles",
+       "mile"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_shortest_driving_distance",
+    "arguments": {
+     "origin": {
+      "__any_of__": [
+       "Miami"
+      ]
+     },
+     "destination": {
+      "__any_of__": [
+       "New York City",
+       "NYC"
+      ]
+     },
+     "unit": {
+      "__any_of__": [
+       "miles",
+       "mile"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_77": {
+  "calls": [
+   {
+    "name": "math_hcf",
+    "arguments": {
+     "number1": {
+      "__any_of__": [
+       45
+      ]
+     },
+     "number2": {
+      "__any_of__": [
+       60
+      ]
+     }
+    }
+   },
+   {
+    "name": "math_hcf",
+    "arguments": {
+     "number1": {
+      "__any_of__": [
+       90
+      ]
+     },
+     "number2": {
+      "__any_of__": [
+       120
+      ]
+     }
+    }
+   },
+   {
+    "name": "math_hcf",
+    "arguments": {
+     "number1": {
+      "__any_of__": [
+       36
+      ]
+     },
+     "number2": {
+      "__any_of__": [
+       48
+      ]
+     }
+    }
+   },
+   {
+    "name": "math_hcf",
+    "arguments": {
+     "number1": {
+      "__any_of__": [
+       72
+      ]
+     },
+     "number2": {
+      "__any_of__": [
+       96
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_167": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_8": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_123": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_152": {
+  "calls": [
+   {
+    "name": "calculate_mutual_fund_balance",
+    "arguments": {
+     "investment_amount": {
+      "__any_of__": [
+       50000
+      ]
+     },
+     "annual_yield": {
+      "__any_of__": [
+       0.05
+      ]
+     },
+     "years": {
+      "__any_of__": [
+       3
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_299": {
+  "calls": [
+   {
+    "name": "musical_scale",
+    "arguments": {
+     "key": {
+      "__any_of__": [
+       "C#",
+       "C sharp"
+      ]
+     },
+     "scale_type": {
+      "__any_of__": [
+       "major",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_286": {
+  "calls": [
+   {
+    "name": "concert_get_details",
+    "arguments": {
+     "artist": {
+      "__any_of__": [
+       "Beyonce"
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "San Diego",
+       "San Diego, California",
+       "CA"
+      ]
+     },
+     "date": {
+      "__any_of__": [
+       "04-2022",
+       "April 2022"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_165": {
+  "calls": [
+   {
+    "name": "civil_cases_retrieve",
+    "arguments": {
+     "year": {
+      "__any_of__": [
+       2020
+      ]
+     },
+     "crime_type": {
+      "__any_of__": [
+       "theft"
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "Los Angeles",
+       "Los Angeles, California"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_192": {
+  "calls": [
+   {
+    "name": "get_news",
+    "arguments": {
+     "topic": {
+      "__any_of__": [
+       "Climate Change"
+      ]
+     },
+     "quantity": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "region": {
+      "__any_of__": [
+       "Europe",
+       "EU"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_news",
+    "arguments": {
+     "topic": {
+      "__any_of__": [
+       "Artificial Intelligence"
+      ]
+     },
+     "quantity": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "region": {
+      "__any_of__": [
+       "Europe",
+       "EU"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_84": {
+  "calls": [
+   {
+    "name": "calculate_displacement",
+    "arguments": {
+     "initial_velocity": {
+      "__any_of__": [
+       15
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       7
+      ]
+     },
+     "acceleration": {
+      "__any_of__": [
+       3.5
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_displacement",
+    "arguments": {
+     "initial_velocity": {
+      "__any_of__": [
+       20
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "acceleration": {
+      "__any_of__": [
+       2.0
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_displacement",
+    "arguments": {
+     "initial_velocity": {
+      "__any_of__": [
+       25
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       8
+      ]
+     },
+     "acceleration": {
+      "__any_of__": [
+       0
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_159": {
+  "calls": [
+   {
+    "name": "probability_dice_roll",
+    "arguments": {
+     "desired_number": {
+      "__any_of__": [
+       4
+      ]
+     },
+     "number_of_rolls": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "die_sides": {
+      "__any_of__": [
+       6,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "probability_dice_roll",
+    "arguments": {
+     "desired_number": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "number_of_rolls": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "die_sides": {
+      "__any_of__": [
+       6,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "probability_dice_roll",
+    "arguments": {
+     "desired_number": {
+      "__any_of__": [
+       7
+      ]
+     },
+     "number_of_rolls": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "die_sides": {
+      "__any_of__": [
+       8
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_131": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_99": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_35": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_215": {
+  "calls": [
+   {
+    "name": "movie_details_brief",
+    "arguments": {
+     "title": {
+      "__any_of__": [
+       "Interstellar"
+      ]
+     },
+     "extra_info": {
+      "__any_of__": [
+       "",
+       false,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_93": {
+  "calls": [
+   {
+    "name": "get_theater_movie_releases",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "LA"
+      ]
+     },
+     "timeframe": {
+      "__any_of__": [
+       7
+      ]
+     },
+     "format": {
+      "__any_of__": [
+       "IMAX"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_67": {
+  "calls": [
+   {
+    "name": "identify_bird",
+    "arguments": {
+     "color": {
+      "__any_of__": [
+       "green"
+      ]
+     },
+     "habitat": {
+      "__any_of__": [
+       "forest"
+      ]
+     },
+     "size": {
+      "__any_of__": [
+       "small"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_235": {
+  "calls": [
+   {
+    "name": "get_event_date",
+    "arguments": {
+     "event": {
+      "__any_of__": [
+       "Treaty of Lisbon",
+       "Signing of the Treaty of Lisbon",
+       "The signing of the Treaty of Lisbon"
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "",
+       "Lisbon",
+       "Lisbon, Portugal",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_5": {
+  "calls": [
+   {
+    "name": "streaming_services_shows_list_and_ratings",
+    "arguments": {
+     "streaming_service": {
+      "__any_of__": [
+       "Netflix"
+      ]
+     },
+     "show_list": {
+      "__any_of__": [
+       [
+        "Friends"
+       ]
+      ]
+     },
+     "sort_by_rating": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   },
+   {
+    "name": "streaming_services_shows_list_and_ratings",
+    "arguments": {
+     "streaming_service": {
+      "__any_of__": [
+       "Hulu"
+      ]
+     },
+     "show_list": {
+      "__any_of__": [
+       [
+        "The Office",
+        "Stranger Things"
+       ],
+       [
+        "Stranger Things",
+        "The Office"
+       ]
+      ]
+     },
+     "sort_by_rating": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_67": {
+  "calls": [
+   {
+    "name": "geometry_calculate_area_circle",
+    "arguments": {
+     "radius": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "unit": {
+      "__any_of__": [
+       "meters",
+       "m"
+      ]
+     }
+    }
+   },
+   {
+    "name": "geometry_calculate_area_circle",
+    "arguments": {
+     "radius": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "unit": {
+      "__any_of__": [
+       "meters",
+       "m"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_177": {
+  "calls": [
+   {
+    "name": "get_metal_price",
+    "arguments": {
+     "metal": {
+      "__any_of__": [
+       "gold"
+      ]
+     },
+     "measure": {
+      "__any_of__": [
+       "ounce"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_metal_price",
+    "arguments": {
+     "metal": {
+      "__any_of__": [
+       "silver"
+      ]
+     },
+     "measure": {
+      "__any_of__": [
+       "ounce"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_metal_price",
+    "arguments": {
+     "metal": {
+      "__any_of__": [
+       "platinum"
+      ]
+     },
+     "measure": {
+      "__any_of__": [
+       "ounce"
+      ]
+     }
+    }
+   },
+   {
+    "name": "get_metal_price",
+    "arguments": {
+     "metal": {
+      "__any_of__": [
+       "palladium"
+      ]
+     },
+     "measure": {
+      "__any_of__": [
+       "ounce"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_18": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_141": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_60": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_374": {
+  "calls": [
+   {
+    "name": "grocery_info_nutritional_info",
+    "arguments": {
+     "store": {
+      "__any_of__": [
+       "Walmart"
+      ]
+     },
+     "food": {
+      "__any_of__": [
+       "avocado",
+       "Avocado"
+      ]
+     },
+     "information": {
+      "__any_of__": [
+       [
+        "Protein",
+        "Calories",
+        "Carbohydrates"
+       ]
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_290": {
+  "calls": [
+   {
+    "name": "concert_find_details",
+    "arguments": {
+     "artist": {
+      "__any_of__": [
+       "The Weeknd"
+      ]
+     },
+     "month": {
+      "__any_of__": [
+       "December"
+      ]
+     },
+     "year": {
+      "__any_of__": [
+       "",
+       2022,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_391": {
+  "calls": [
+   {
+    "name": "get_exchange_rate_with_fee",
+    "arguments": {
+     "base_currency": {
+      "__any_of__": [
+       "GBP"
+      ]
+     },
+     "target_currency": {
+      "__any_of__": [
+       "JPY"
+      ]
+     },
+     "fee": {
+      "__any_of__": [
+       0.02
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_306": {
+  "calls": [
+   {
+    "name": "average_batting_score",
+    "arguments": {
+     "player_name": {
+      "__any_of__": [
+       "Virat Kohli"
+      ]
+     },
+     "matches": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "match_format": {
+      "__any_of__": [
+       "T20",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_99": {
+  "calls": [
+   {
+    "name": "thermo_calculate_energy",
+    "arguments": {
+     "mass": {
+      "__any_of__": [
+       500
+      ]
+     },
+     "phase_transition": {
+      "__any_of__": [
+       "melting"
+      ]
+     },
+     "substance": {
+      "__any_of__": [
+       "water",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "thermo_calculate_energy",
+    "arguments": {
+     "mass": {
+      "__any_of__": [
+       500
+      ]
+     },
+     "phase_transition": {
+      "__any_of__": [
+       "freezing"
+      ]
+     },
+     "substance": {
+      "__any_of__": [
+       "water",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "thermo_calculate_energy",
+    "arguments": {
+     "mass": {
+      "__any_of__": [
+       500
+      ]
+     },
+     "phase_transition": {
+      "__any_of__": [
+       "vaporization"
+      ]
+     },
+     "substance": {
+      "__any_of__": [
+       "water",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "thermo_calculate_energy",
+    "arguments": {
+     "mass": {
+      "__any_of__": [
+       500
+      ]
+     },
+     "phase_transition": {
+      "__any_of__": [
+       "condensation"
+      ]
+     },
+     "substance": {
+      "__any_of__": [
+       "water",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_112": {
+  "calls": [
+   {
+    "name": "mutation_type_find",
+    "arguments": {
+     "snp_id": {
+      "__any_of__": [
+       "rs123456"
+      ]
+     },
+     "species": {
+      "__any_of__": [
+       "Homo sapiens",
+       "Humans",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "mutation_type_find",
+    "arguments": {
+     "snp_id": {
+      "__any_of__": [
+       "rs7891011"
+      ]
+     },
+     "species": {
+      "__any_of__": [
+       "Canis lupus familiaris",
+       "Dog"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_62": {
+  "calls": [
+   {
+    "name": "algebra_quadratic_roots",
+    "arguments": {
+     "a": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "b": {
+      "__any_of__": [
+       4
+      ]
+     },
+     "c": {
+      "__any_of__": [
+       2
+      ]
+     }
+    }
+   },
+   {
+    "name": "algebra_quadratic_roots",
+    "arguments": {
+     "a": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "b": {
+      "__any_of__": [
+       -7
+      ]
+     },
+     "c": {
+      "__any_of__": [
+       3
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_165": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_191": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_115": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_388": {
+  "calls": [
+   {
+    "name": "currency_exchange_convert",
+    "arguments": {
+     "base_currency": {
+      "__any_of__": [
+       "USD"
+      ]
+     },
+     "target_currency": {
+      "__any_of__": [
+       "CAD"
+      ]
+     },
+     "amount": {
+      "__any_of__": [
+       500
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_287": {
+  "calls": [
+   {
+    "name": "concert_search",
+    "arguments": {
+     "genre": {
+      "__any_of__": [
+       "classical"
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "Los Angeles",
+       "LA"
+      ]
+     },
+     "date": {
+      "__any_of__": [
+       "this weekend"
+      ]
+     },
+     "price_range": {
+      "__any_of__": [
+       "cheap"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_43": {
+  "calls": [
+   {
+    "name": "calculate_magnetic_field_strength",
+    "arguments": {
+     "current": {
+      "__any_of__": [
+       20
+      ]
+     },
+     "distance": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "permeability": {
+      "__any_of__": [
+       "",
+       1.257e-06,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_390": {
+  "calls": [
+   {
+    "name": "currency_conversion_convert",
+    "arguments": {
+     "amount": {
+      "__any_of__": [
+       150
+      ]
+     },
+     "from_currency": {
+      "__any_of__": [
+       "EUR",
+       "Euros"
+      ]
+     },
+     "to_currency": {
+      "__any_of__": [
+       "CAD",
+       "Canadian dollars"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_164": {
+  "calls": [
+   {
+    "name": "chi_squared_test",
+    "arguments": {
+     "table": {
+      "__any_of__": [
+       [
+        45,
+        55,
+        35,
+        65
+       ]
+      ]
+     },
+     "alpha": {
+      "__any_of__": [
+       0.05
+      ]
+     }
+    }
+   },
+   {
+    "name": "chi_squared_test",
+    "arguments": {
+     "table": {
+      "__any_of__": [
+       [
+        30,
+        70,
+        50,
+        50
+       ]
+      ]
+     },
+     "alpha": {
+      "__any_of__": [
+       0.05
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_73": {
+  "calls": [
+   {
+    "name": "calculus_derivative",
+    "arguments": {
+     "function": {
+      "__any_of__": [
+       "3x**2 + 2x - 1",
+       "lambda x: 3x**2 + 2x - 1"
+      ]
+     },
+     "value": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "function_variable": {
+      "__any_of__": [
+       "x",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculus_derivative",
+    "arguments": {
+     "function": {
+      "__any_of__": [
+       "4y**3 - 3y**2 + 2y - 1",
+       "lambda y: 4y**3 - 3y**2 + 2y - 1"
+      ]
+     },
+     "value": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "function_variable": {
+      "__any_of__": [
+       "y"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_148": {
+  "calls": [
+   {
+    "name": "calculate_speed",
+    "arguments": {
+     "distance": {
+      "__any_of__": [
+       500
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       25
+      ]
+     },
+     "to_unit": {
+      "__any_of__": [
+       "km/h"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_speed",
+    "arguments": {
+     "distance": {
+      "__any_of__": [
+       1000
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       200
+      ]
+     },
+     "to_unit": {
+      "__any_of__": [
+       "m/s",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_speed",
+    "arguments": {
+     "distance": {
+      "__any_of__": [
+       10000
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       600
+      ]
+     },
+     "to_unit": {
+      "__any_of__": [
+       "km/h"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_142": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_107": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_113": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_141": {
+  "calls": [
+   {
+    "name": "get_metal_price",
+    "arguments": {
+     "metal": {
+      "__any_of__": [
+       "Gold",
+       "gold"
+      ]
+     },
+     "measure": {
+      "__any_of__": [
+       "ounce"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_34": {
+  "calls": [
+   {
+    "name": "travel_itinerary_generator",
+    "arguments": {
+     "destination": {
+      "__any_of__": [
+       "Tokyo"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       7
+      ]
+     },
+     "daily_budget": {
+      "__any_of__": [
+       100
+      ]
+     },
+     "exploration_type": {
+      "__any_of__": [
+       "nature"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_339": {
+  "calls": [
+   {
+    "name": "poker_probability_full_house",
+    "arguments": {
+     "deck_size": {
+      "__any_of__": [
+       52
+      ]
+     },
+     "hand_size": {
+      "__any_of__": [
+       5
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_29": {
+  "calls": [
+   {
+    "name": "calculate_final_speed",
+    "arguments": {
+     "initial_speed": {
+      "__any_of__": [
+       0,
+       "",
+       "__ABSENT_OK__"
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "gravity": {
+      "__any_of__": [
+       -9.81,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_197": {
+  "calls": [
+   {
+    "name": "lawsuit_info",
+    "arguments": {
+     "case_number": {
+      "__any_of__": [
+       "12345ABC"
+      ]
+     },
+     "year": {
+      "__any_of__": [
+       2018
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "New York",
+       "New York, NY",
+       "NY",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "lawsuit_info",
+    "arguments": {
+     "case_number": {
+      "__any_of__": [
+       "67890XYZ"
+      ]
+     },
+     "year": {
+      "__any_of__": [
+       2019
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "California",
+       "CA"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_9": {
+  "calls": [
+   {
+    "name": "find_movie_showing",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "San Diego",
+       "San Diego, CA",
+       "CA"
+      ]
+     },
+     "movie": {
+      "__any_of__": [
+       [
+        "Tenet"
+       ]
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       [
+        "5 pm"
+       ],
+       [
+        "17:00"
+       ]
+      ]
+     }
+    }
+   },
+   {
+    "name": "find_movie_showing",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "San Diego",
+       "San Diego, CA",
+       "CA"
+      ]
+     },
+     "movie": {
+      "__any_of__": [
+       [
+        "No Time To Die"
+       ]
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       [
+        "7:30 pm"
+       ],
+       [
+        "19:30"
+       ]
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_115": {
+  "calls": [
+   {
+    "name": "genetics_calculate_similarity",
+    "arguments": {
+     "species1": {
+      "__any_of__": [
+       "human",
+       "Human"
+      ]
+     },
+     "species2": {
+      "__any_of__": [
+       "chimpanzee"
+      ]
+     },
+     "format": {
+      "__any_of__": [
+       "percentage",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "genetics_calculate_similarity",
+    "arguments": {
+     "species1": {
+      "__any_of__": [
+       "human"
+      ]
+     },
+     "species2": {
+      "__any_of__": [
+       "chimpanzee"
+      ]
+     },
+     "format": {
+      "__any_of__": [
+       "fraction"
+      ]
+     }
+    }
+   },
+   {
+    "name": "genetics_calculate_similarity",
+    "arguments": {
+     "species1": {
+      "__any_of__": [
+       "human"
+      ]
+     },
+     "species2": {
+      "__any_of__": [
+       "gorilla"
+      ]
+     },
+     "format": {
+      "__any_of__": [
+       "percentage",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "genetics_calculate_similarity",
+    "arguments": {
+     "species1": {
+      "__any_of__": [
+       "human"
+      ]
+     },
+     "species2": {
+      "__any_of__": [
+       "gorilla"
+      ]
+     },
+     "format": {
+      "__any_of__": [
+       "fraction"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_7": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_40": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_2": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_27": {
+  "calls": [
+   {
+    "name": "final_velocity",
+    "arguments": {
+     "initial_velocity": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "acceleration": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       5
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_383": {
+  "calls": [
+   {
+    "name": "book_room",
+    "arguments": {
+     "hotel_name": {
+      "__any_of__": [
+       "The Plaza"
+      ]
+     },
+     "room_type": {
+      "__any_of__": [
+       "Single",
+       "single"
+      ]
+     },
+     "num_nights": {
+      "__any_of__": [
+       2
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_57": {
+  "calls": [
+   {
+    "name": "calculate_cell_density",
+    "arguments": {
+     "optical_density": {
+      "__any_of__": [
+       0.6
+      ]
+     },
+     "dilution": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "calibration_factor": {
+      "__any_of__": [
+       1000000000.0,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_201": {
+  "calls": [
+   {
+    "name": "estimate_population",
+    "arguments": {
+     "species": {
+      "__any_of__": [
+       "panda",
+       "pandas"
+      ]
+     },
+     "country": {
+      "__any_of__": [
+       "China",
+       "CN"
+      ]
+     },
+     "year": {
+      "__any_of__": [
+       "",
+       2024,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_21": {
+  "calls": [
+   {
+    "name": "law_crimes_search",
+    "arguments": {
+     "crime": {
+      "__any_of__": [
+       "money laundering"
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "San Francisco",
+       "SF"
+      ]
+     },
+     "year": {
+      "__any_of__": [
+       2019
+      ]
+     }
+    }
+   },
+   {
+    "name": "law_crimes_search",
+    "arguments": {
+     "crime": {
+      "__any_of__": [
+       "money laundering"
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "Texas",
+       "TX"
+      ]
+     },
+     "year": {
+      "__any_of__": [
+       2018
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_56": {
+  "calls": [
+   {
+    "name": "hotel_booking_check_availability",
+    "arguments": {
+     "hotel_name": {
+      "__any_of__": [
+       "Queens Hotel"
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "Berlin, Germany"
+      ]
+     },
+     "check_in_date": {
+      "__any_of__": [
+       "2022-03-10",
+       "03/10/2022",
+       "Mar.10,2022"
+      ]
+     },
+     "check_out_date": {
+      "__any_of__": [
+       "2022-03-20",
+       "03/20/2022",
+       "Mar.20,2022"
+      ]
+     }
+    }
+   },
+   {
+    "name": "hotel_booking_check_availability",
+    "arguments": {
+     "hotel_name": {
+      "__any_of__": [
+       "Royal Hotel"
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "Paris, France"
+      ]
+     },
+     "check_in_date": {
+      "__any_of__": [
+       "2022-04-05",
+       "04/05/2022",
+       "Apr.5,2022"
+      ]
+     },
+     "check_out_date": {
+      "__any_of__": [
+       "2022-04-15",
+       "04/15/2022",
+       "Apr.15,2022"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_123": {
+  "calls": [
+   {
+    "name": "generate_DNA_sequence",
+    "arguments": {
+     "length": {
+      "__any_of__": [
+       500
+      ]
+     },
+     "preferences": {
+      "__any_of__": [
+       [
+        "A"
+       ]
+      ]
+     }
+    }
+   },
+   {
+    "name": "generate_DNA_sequence",
+    "arguments": {
+     "length": {
+      "__any_of__": [
+       500
+      ]
+     },
+     "preferences": {
+      "__any_of__": [
+       [
+        "T"
+       ]
+      ]
+     }
+    }
+   },
+   {
+    "name": "generate_DNA_sequence",
+    "arguments": {
+     "length": {
+      "__any_of__": [
+       500
+      ]
+     },
+     "preferences": {
+      "__any_of__": [
+       [
+        "C"
+       ]
+      ]
+     }
+    }
+   },
+   {
+    "name": "generate_DNA_sequence",
+    "arguments": {
+     "length": {
+      "__any_of__": [
+       500
+      ]
+     },
+     "preferences": {
+      "__any_of__": [
+       [
+        "G"
+       ]
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_214": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_68": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_66": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_241": {
+  "calls": [
+   {
+    "name": "US_President_During_Event",
+    "arguments": {
+     "event": {
+      "__any_of__": [
+       "Civil War"
+      ]
+     },
+     "country": {
+      "__any_of__": [
+       "USA",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_387": {
+  "calls": [
+   {
+    "name": "hotel_booking",
+    "arguments": {
+     "hotel_name": {
+      "__any_of__": [
+       "Plaza Hotel"
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "New York City, NY",
+       "New York, NY"
+      ]
+     },
+     "start_date": {
+      "__any_of__": [
+       "2022-06-01",
+       "06/01/2022",
+       "Jun.1,2022"
+      ]
+     },
+     "end_date": {
+      "__any_of__": [
+       "2022-06-04",
+       "06/04/2022",
+       "Jun.4,2022"
+      ]
+     },
+     "rooms": {
+      "__any_of__": [
+       1,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_30": {
+  "calls": [
+   {
+    "name": "kinematics_final_velocity_from_distance",
+    "arguments": {
+     "acceleration": {
+      "__any_of__": [
+       4
+      ]
+     },
+     "distance": {
+      "__any_of__": [
+       300
+      ]
+     },
+     "initial_velocity": {
+      "__any_of__": [
+       "",
+       0.0,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_327": {
+  "calls": [
+   {
+    "name": "sports_team_get_schedule",
+    "arguments": {
+     "team_name": {
+      "__any_of__": [
+       "Manchester United",
+       "Man United",
+       "Man U",
+       "MUFC"
+      ]
+     },
+     "num_of_games": {
+      "__any_of__": [
+       6
+      ]
+     },
+     "league": {
+      "__any_of__": [
+       "Premier League"
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_44": {
+  "calls": [
+   {
+    "name": "concert_find_nearby",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Berlin"
+      ]
+     },
+     "date": {
+      "__any_of__": [
+       "next Friday"
+      ]
+     },
+     "genre": {
+      "__any_of__": [
+       "Classical",
+       "classical"
+      ]
+     },
+     "amenities": {
+      "__any_of__": [
+       [
+        "Parking"
+       ],
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "concert_find_nearby",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Paris"
+      ]
+     },
+     "date": {
+      "__any_of__": [
+       "next Friday"
+      ]
+     },
+     "genre": {
+      "__any_of__": [
+       "Classical",
+       "classical"
+      ]
+     },
+     "amenities": {
+      "__any_of__": [
+       [
+        "Parking"
+       ],
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_154": {
+  "calls": [
+   {
+    "name": "calculate_bmi",
+    "arguments": {
+     "weight": {
+      "__any_of__": [
+       75
+      ]
+     },
+     "height": {
+      "__any_of__": [
+       180
+      ]
+     },
+     "system": {
+      "__any_of__": [
+       "metric",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_bmi",
+    "arguments": {
+     "weight": {
+      "__any_of__": [
+       60
+      ]
+     },
+     "height": {
+      "__any_of__": [
+       165
+      ]
+     },
+     "system": {
+      "__any_of__": [
+       "metric",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_bmi",
+    "arguments": {
+     "weight": {
+      "__any_of__": [
+       80
+      ]
+     },
+     "height": {
+      "__any_of__": [
+       175
+      ]
+     },
+     "system": {
+      "__any_of__": [
+       "metric",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_bmi",
+    "arguments": {
+     "weight": {
+      "__any_of__": [
+       90
+      ]
+     },
+     "height": {
+      "__any_of__": [
+       185
+      ]
+     },
+     "system": {
+      "__any_of__": [
+       "metric",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_43": {
+  "calls": [
+   {
+    "name": "concert_finder",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "San Francisco, California",
+       "San Francisco, CA",
+       "SF, California",
+       "SF, CA"
+      ]
+     },
+     "music_genre": {
+      "__any_of__": [
+       "rock"
+      ]
+     },
+     "time_period": {
+      "__any_of__": [
+       30,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "concert_finder",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "San Francisco, California",
+       "San Francisco, CA",
+       "SF, California",
+       "SF, CA"
+      ]
+     },
+     "music_genre": {
+      "__any_of__": [
+       "jazz"
+      ]
+     },
+     "time_period": {
+      "__any_of__": [
+       30,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "concert_finder",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "New York, New York",
+       "New York, NY",
+       "NYC",
+       "NY, NY"
+      ]
+     },
+     "music_genre": {
+      "__any_of__": [
+       "rock"
+      ]
+     },
+     "time_period": {
+      "__any_of__": [
+       30,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "concert_finder",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "New York, New York",
+       "New York, NY",
+       "NYC",
+       "NY, NY"
+      ]
+     },
+     "music_genre": {
+      "__any_of__": [
+       "jazz"
+      ]
+     },
+     "time_period": {
+      "__any_of__": [
+       30,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_201": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_13": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_181": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_45": {
+  "calls": [
+   {
+    "name": "thermo_calculate_energy",
+    "arguments": {
+     "mass": {
+      "__any_of__": [
+       100
+      ]
+     },
+     "phase_transition": {
+      "__any_of__": [
+       "vaporization"
+      ]
+     },
+     "substance": {
+      "__any_of__": [
+       "water",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_397": {
+  "calls": [
+   {
+    "name": "distance_calculator_calculate",
+    "arguments": {
+     "origin": {
+      "__any_of__": [
+       "New York",
+       "New York City",
+       "New York City, NY",
+       "New York, NY",
+       "NYC"
+      ]
+     },
+     "destination": {
+      "__any_of__": [
+       "Boston"
+      ]
+     },
+     "consider_terrain": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_26": {
+  "calls": [
+   {
+    "name": "calculate_velocity",
+    "arguments": {
+     "distance": {
+      "__any_of__": [
+       50
+      ]
+     },
+     "duration": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "unit": {
+      "__any_of__": [
+       "",
+       "km/h",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_172": {
+  "calls": [
+   {
+    "name": "legal_case_fetch",
+    "arguments": {
+     "case_id": {
+      "__any_of__": [
+       "R vs Adams"
+      ]
+     },
+     "details": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_86": {
+  "calls": [
+   {
+    "name": "kinematics_final_velocity_from_distance",
+    "arguments": {
+     "acceleration": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "distance": {
+      "__any_of__": [
+       100
+      ]
+     },
+     "initial_velocity": {
+      "__any_of__": [
+       "",
+       0,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "kinematics_final_velocity_from_distance",
+    "arguments": {
+     "acceleration": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "distance": {
+      "__any_of__": [
+       200
+      ]
+     },
+     "initial_velocity": {
+      "__any_of__": [
+       "",
+       0,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_54": {
+  "calls": [
+   {
+    "name": "whole_foods_order",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "downtown",
+       "Downtown"
+      ]
+     },
+     "items": {
+      "__any_of__": [
+       [
+        "pepperoni pizza",
+        "chicken Caesar salad"
+       ],
+       [
+        "chicken Caesar salad",
+        "pepperoni pizza"
+       ]
+      ]
+     },
+     "size": {
+      "__any_of__": [
+       "large"
+      ]
+     }
+    }
+   },
+   {
+    "name": "whole_foods_order",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "uptown",
+       "Uptown"
+      ]
+     },
+     "items": {
+      "__any_of__": [
+       [
+        "pepperoni pizza",
+        "chicken Caesar salad"
+       ],
+       [
+        "chicken Caesar salad",
+        "pepperoni pizza"
+       ]
+      ]
+     },
+     "size": {
+      "__any_of__": [
+       "large"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_63": {
+  "calls": [
+   {
+    "name": "solve_quadratic_equation",
+    "arguments": {
+     "a": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "b": {
+      "__any_of__": [
+       6
+      ]
+     },
+     "c": {
+      "__any_of__": [
+       1
+      ]
+     }
+    }
+   },
+   {
+    "name": "solve_quadratic_equation",
+    "arguments": {
+     "a": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "b": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "c": {
+      "__any_of__": [
+       1
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_139": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_23": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_103": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_66": {
+  "calls": [
+   {
+    "name": "ecology_data_precipitation_stats",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Amazon rainforest"
+      ]
+     },
+     "time_frame": {
+      "__any_of__": [
+       "six_months"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_20": {
+  "calls": [
+   {
+    "name": "math_hcf",
+    "arguments": {
+     "number1": {
+      "__any_of__": [
+       36
+      ]
+     },
+     "number2": {
+      "__any_of__": [
+       24
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_355": {
+  "calls": [
+   {
+    "name": "recipe_info_get_calories",
+    "arguments": {
+     "website": {
+      "__any_of__": [
+       "Foodnetwork.com"
+      ]
+     },
+     "recipe": {
+      "__any_of__": [
+       "Beef Lasagna"
+      ]
+     },
+     "optional_meal_time": {
+      "__any_of__": [
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_33": {
+  "calls": [
+   {
+    "name": "get_directions",
+    "arguments": {
+     "start_location": {
+      "__any_of__": [
+       "Sydney"
+      ]
+     },
+     "end_location": {
+      "__any_of__": [
+       "Melbourne"
+      ]
+     },
+     "route_type": {
+      "__any_of__": [
+       "fastest",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_10": {
+  "calls": [
+   {
+    "name": "math_pythagoras",
+    "arguments": {
+     "a": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "b": {
+      "__any_of__": [
+       4
+      ]
+     }
+    }
+   },
+   {
+    "name": "math_pythagoras",
+    "arguments": {
+     "a": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "b": {
+      "__any_of__": [
+       12
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_124": {
+  "calls": [
+   {
+    "name": "population_projections",
+    "arguments": {
+     "country": {
+      "__any_of__": [
+       "Japan"
+      ]
+     },
+     "years": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "growth_rate": {
+      "__any_of__": [
+       "",
+       0.01,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "population_projections",
+    "arguments": {
+     "country": {
+      "__any_of__": [
+       "Japan"
+      ]
+     },
+     "years": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "growth_rate": {
+      "__any_of__": [
+       0.015
+      ]
+     }
+    }
+   },
+   {
+    "name": "population_projections",
+    "arguments": {
+     "country": {
+      "__any_of__": [
+       "India"
+      ]
+     },
+     "years": {
+      "__any_of__": [
+       20
+      ]
+     },
+     "growth_rate": {
+      "__any_of__": [
+       0.021
+      ]
+     }
+    }
+   },
+   {
+    "name": "population_projections",
+    "arguments": {
+     "country": {
+      "__any_of__": [
+       "India"
+      ]
+     },
+     "years": {
+      "__any_of__": [
+       20
+      ]
+     },
+     "growth_rate": {
+      "__any_of__": [
+       "",
+       0.01,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_183": {
+  "calls": [
+   {
+    "name": "math_hypot",
+    "arguments": {
+     "x": {
+      "__any_of__": [
+       5
+      ]
+     },
+     "y": {
+      "__any_of__": [
+       7
+      ]
+     },
+     "z": {
+      "__any_of__": [
+       "",
+       0,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "math_hypot",
+    "arguments": {
+     "x": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "y": {
+      "__any_of__": [
+       15
+      ]
+     },
+     "z": {
+      "__any_of__": [
+       "",
+       0,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "math_hypot",
+    "arguments": {
+     "x": {
+      "__any_of__": [
+       20
+      ]
+     },
+     "y": {
+      "__any_of__": [
+       25
+      ]
+     },
+     "z": {
+      "__any_of__": [
+       "",
+       0,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_110": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_237": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_129": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_206": {
+  "calls": [
+   {
+    "name": "parks_find_nearby",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "London",
+       "London, UK"
+      ]
+     },
+     "amenities": {
+      "__any_of__": [
+       [
+        "Tennis Court"
+       ]
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_243": {
+  "calls": [
+   {
+    "name": "get_discoverer",
+    "arguments": {
+     "discovery": {
+      "__any_of__": [
+       "neutron"
+      ]
+     },
+     "detail": {
+      "__any_of__": [
+       true
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_328": {
+  "calls": [
+   {
+    "name": "boardgame_get_info",
+    "arguments": {
+     "name": {
+      "__any_of__": [
+       "Ticket to Ride"
+      ]
+     },
+     "parameters": {
+      "__any_of__": [
+       [
+        "rating",
+        "player count"
+       ],
+       [
+        "player count",
+        "rating"
+       ]
+      ]
+     },
+     "language": {
+      "__any_of__": [
+       "",
+       "English",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_39": {
+  "calls": [
+   {
+    "name": "calculate_electric_field",
+    "arguments": {
+     "charge": {
+      "__any_of__": [
+       2
+      ]
+     },
+     "distance": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "permitivity": {
+      "__any_of__": [
+       "",
+       8.854e-12,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_45": {
+  "calls": [
+   {
+    "name": "musicCharts_getMostPlayed",
+    "arguments": {
+     "genre": {
+      "__any_of__": [
+       "Pop"
+      ]
+     },
+     "region": {
+      "__any_of__": [
+       "Australia",
+       "AU"
+      ]
+     },
+     "duration": {
+      "__any_of__": [
+       "",
+       0,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "musicCharts_getMostPlayed",
+    "arguments": {
+     "genre": {
+      "__any_of__": [
+       "Rock"
+      ]
+     },
+     "region": {
+      "__any_of__": [
+       "Australia",
+       "AU"
+      ]
+     },
+     "duration": {
+      "__any_of__": [
+       "",
+       0,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_147": {
+  "calls": [
+   {
+    "name": "light_travel_time",
+    "arguments": {
+     "distance_in_light_years": {
+      "__any_of__": [
+       4.22
+      ]
+     },
+     "speed_of_light": {
+      "__any_of__": [
+       299792458,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "light_travel_time",
+    "arguments": {
+     "distance_in_light_years": {
+      "__any_of__": [
+       6.1
+      ]
+     },
+     "speed_of_light": {
+      "__any_of__": [
+       299792458,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "light_travel_time",
+    "arguments": {
+     "distance_in_light_years": {
+      "__any_of__": [
+       5.88
+      ]
+     },
+     "speed_of_light": {
+      "__any_of__": [
+       299792458,
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_32": {
+  "calls": [
+   {
+    "name": "us_history_events_by_presidency",
+    "arguments": {
+     "president_name": {
+      "__any_of__": [
+       "Abraham Lincoln"
+      ]
+     },
+     "start_year": {
+      "__any_of__": [
+       "",
+       0,
+       "__ABSENT_OK__"
+      ]
+     },
+     "end_year": {
+      "__any_of__": [
+       "",
+       2000,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "us_history_events_by_presidency",
+    "arguments": {
+     "president_name": {
+      "__any_of__": [
+       "George Washington"
+      ]
+     },
+     "start_year": {
+      "__any_of__": [
+       "",
+       0,
+       "__ABSENT_OK__"
+      ]
+     },
+     "end_year": {
+      "__any_of__": [
+       "",
+       2000,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_109": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_88": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_91": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_62": {
+  "calls": [
+   {
+    "name": "analyze_dna_sequence",
+    "arguments": {
+     "sequence": {
+      "__any_of__": [
+       "AGTCGATCGAACGTACGTACG"
+      ]
+     },
+     "reference_sequence": {
+      "__any_of__": [
+       "AGTCCATCGAACGTACGTACG"
+      ]
+     },
+     "mutation_type": {
+      "__any_of__": [
+       "substitution",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_333": {
+  "calls": [
+   {
+    "name": "detailed_weather_forecast",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "London, United Kingdom",
+       "London"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       3
+      ]
+     },
+     "details": {
+      "__any_of__": [
+       [
+        "high_low_temperature",
+        "humidity",
+        "precipitation"
+       ]
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_283": {
+  "calls": [
+   {
+    "name": "guitar_price_find",
+    "arguments": {
+     "model": {
+      "__any_of__": [
+       "Gibson Les Paul"
+      ]
+     },
+     "condition": {
+      "__any_of__": [
+       "Excellent"
+      ]
+     },
+     "location": {
+      "__any_of__": [
+       "Chicago",
+       "Chicago, IL",
+       "Chicago, Illinois"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_224": {
+  "calls": [
+   {
+    "name": "social_media_analytics_most_followed",
+    "arguments": {
+     "topic": {
+      "__any_of__": [
+       "psychology"
+      ]
+     },
+     "sub_topics": {
+      "__any_of__": [
+       [
+        "behaviour",
+        "group dynamics"
+       ]
+      ]
+     },
+     "region": {
+      "__any_of__": [
+       "",
+       "all",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_138": {
+  "calls": [
+   {
+    "name": "calculate_BMI",
+    "arguments": {
+     "weight_kg": {
+      "__any_of__": [
+       85
+      ]
+     },
+     "height_m": {
+      "__any_of__": [
+       1.8
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_BMI",
+    "arguments": {
+     "weight_kg": {
+      "__any_of__": [
+       60
+      ]
+     },
+     "height_m": {
+      "__any_of__": [
+       1.65
+      ]
+     }
+    }
+   },
+   {
+    "name": "calculate_BMI",
+    "arguments": {
+     "weight_kg": {
+      "__any_of__": [
+       75
+      ]
+     },
+     "height_m": {
+      "__any_of__": [
+       1.7
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_118": {
+  "calls": [
+   {
+    "name": "ecology_data_precipitation_stats",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Amazon rainforest"
+      ]
+     },
+     "time_frame": {
+      "__any_of__": [
+       "six_months"
+      ]
+     }
+    }
+   },
+   {
+    "name": "ecology_data_precipitation_stats",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Amazon rainforest"
+      ]
+     },
+     "time_frame": {
+      "__any_of__": [
+       "year"
+      ]
+     }
+    }
+   },
+   {
+    "name": "ecology_data_precipitation_stats",
+    "arguments": {
+     "location": {
+      "__any_of__": [
+       "Amazon rainforest"
+      ]
+     },
+     "time_frame": {
+      "__any_of__": [
+       "five_years"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_168": {
+  "calls": [
+   {
+    "name": "finance_calculate_quarterly_dividend_per_share",
+    "arguments": {
+     "total_payout": {
+      "__any_of__": [
+       5000000
+      ]
+     },
+     "outstanding_shares": {
+      "__any_of__": [
+       2000000
+      ]
+     }
+    }
+   },
+   {
+    "name": "finance_calculate_quarterly_dividend_per_share",
+    "arguments": {
+     "total_payout": {
+      "__any_of__": [
+       6000000
+      ]
+     },
+     "outstanding_shares": {
+      "__any_of__": [
+       2500000
+      ]
+     }
+    }
+   },
+   {
+    "name": "finance_calculate_quarterly_dividend_per_share",
+    "arguments": {
+     "total_payout": {
+      "__any_of__": [
+       6000000
+      ]
+     },
+     "outstanding_shares": {
+      "__any_of__": [
+       2000000
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_230": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_171": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_178": {
+  "expect": "no_call"
+ },
+ "bfcl_simple_python_150": {
+  "calls": [
+   {
+    "name": "calculate_roi",
+    "arguments": {
+     "deposit": {
+      "__any_of__": [
+       1000
+      ]
+     },
+     "annual_interest_rate": {
+      "__any_of__": [
+       0.03
+      ]
+     },
+     "years": {
+      "__any_of__": [
+       1
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_310": {
+  "calls": [
+   {
+    "name": "get_career_stats",
+    "arguments": {
+     "player_name": {
+      "__any_of__": [
+       "LeBron James"
+      ]
+     },
+     "team": {
+      "__any_of__": [
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_79": {
+  "calls": [
+   {
+    "name": "create_histogram",
+    "arguments": {
+     "data": {
+      "__any_of__": [
+       [
+        85,
+        90,
+        88,
+        92,
+        86,
+        89,
+        91
+       ]
+      ]
+     },
+     "bins": {
+      "__any_of__": [
+       5
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_simple_python_131": {
+  "calls": [
+   {
+    "name": "calculate_compound_interest",
+    "arguments": {
+     "principal": {
+      "__any_of__": [
+       10000
+      ]
+     },
+     "rate": {
+      "__any_of__": [
+       0.05
+      ]
+     },
+     "time": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "n": {
+      "__any_of__": [
+       4
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_180": {
+  "calls": [
+   {
+    "name": "stock_price",
+    "arguments": {
+     "company": {
+      "__any_of__": [
+       "Microsoft"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       30
+      ]
+     },
+     "data_type": {
+      "__any_of__": [
+       "Open",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "stock_price",
+    "arguments": {
+     "company": {
+      "__any_of__": [
+       "Microsoft"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       30
+      ]
+     },
+     "data_type": {
+      "__any_of__": [
+       "Close",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "stock_price",
+    "arguments": {
+     "company": {
+      "__any_of__": [
+       "Microsoft"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       30
+      ]
+     },
+     "data_type": {
+      "__any_of__": [
+       "High",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "stock_price",
+    "arguments": {
+     "company": {
+      "__any_of__": [
+       "Microsoft"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       30
+      ]
+     },
+     "data_type": {
+      "__any_of__": [
+       "Low",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "stock_price",
+    "arguments": {
+     "company": {
+      "__any_of__": [
+       "Apple"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       30
+      ]
+     },
+     "data_type": {
+      "__any_of__": [
+       "Open",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "stock_price",
+    "arguments": {
+     "company": {
+      "__any_of__": [
+       "Apple"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       30
+      ]
+     },
+     "data_type": {
+      "__any_of__": [
+       "Close",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "stock_price",
+    "arguments": {
+     "company": {
+      "__any_of__": [
+       "Apple"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       30
+      ]
+     },
+     "data_type": {
+      "__any_of__": [
+       "High",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "stock_price",
+    "arguments": {
+     "company": {
+      "__any_of__": [
+       "Apple"
+      ]
+     },
+     "days": {
+      "__any_of__": [
+       30
+      ]
+     },
+     "data_type": {
+      "__any_of__": [
+       "Low",
+       "",
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_13": {
+  "calls": [
+   {
+    "name": "confidence_interval_calculate",
+    "arguments": {
+     "sample_std_dev": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "sample_size": {
+      "__any_of__": [
+       50
+      ]
+     },
+     "sample_mean": {
+      "__any_of__": [
+       25
+      ]
+     },
+     "confidence_level": {
+      "__any_of__": [
+       0.95
+      ]
+     }
+    }
+   },
+   {
+    "name": "confidence_interval_calculate",
+    "arguments": {
+     "sample_std_dev": {
+      "__any_of__": [
+       10
+      ]
+     },
+     "sample_size": {
+      "__any_of__": [
+       150
+      ]
+     },
+     "sample_mean": {
+      "__any_of__": [
+       25
+      ]
+     },
+     "confidence_level": {
+      "__any_of__": [
+       0.95
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_parallel_8": {
+  "calls": [
+   {
+    "name": "database_us_census_get_population",
+    "arguments": {
+     "area": {
+      "__any_of__": [
+       "New York City",
+       "NY",
+       "New York City, NY",
+       "NYC"
+      ]
+     },
+     "type": {
+      "__any_of__": [
+       "city"
+      ]
+     },
+     "year": {
+      "__any_of__": [
+       "",
+       2000,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "database_us_census_get_population",
+    "arguments": {
+     "area": {
+      "__any_of__": [
+       "Los Angeles",
+       "Los Angeles, CA",
+       "CA",
+       "Los Angeles, CA"
+      ]
+     },
+     "type": {
+      "__any_of__": [
+       "city"
+      ]
+     },
+     "year": {
+      "__any_of__": [
+       "",
+       2000,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "database_us_census_get_population",
+    "arguments": {
+     "area": {
+      "__any_of__": [
+       "Alaska"
+      ]
+     },
+     "type": {
+      "__any_of__": [
+       "state"
+      ]
+     },
+     "year": {
+      "__any_of__": [
+       "",
+       2000,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   },
+   {
+    "name": "database_us_census_get_population",
+    "arguments": {
+     "area": {
+      "__any_of__": [
+       "USA",
+       "United States",
+       "United States of America"
+      ]
+     },
+     "type": {
+      "__any_of__": [
+       "country"
+      ]
+     },
+     "year": {
+      "__any_of__": [
+       "",
+       2000,
+       "__ABSENT_OK__"
+      ]
+     }
+    }
+   }
+  ],
+  "order": "any"
+ },
+ "bfcl_irrelevance_31": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_43": {
+  "expect": "no_call"
+ },
+ "bfcl_irrelevance_24": {
+  "expect": "no_call"
+ }
+}

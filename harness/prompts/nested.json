@@ -1,0 +1,2402 @@
+[
+ {
+  "id": "nested_000_deep_uniform",
+  "family": "deep_uniform",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"level_1\": {\n    \"level_2\": {\n      \"level_3\": {\n        \"level_4\": {\n          \"level_5\": {\n            \"level_6\": {\n              \"level_7\": {\n                \"level_8\": {\n                  \"value\": 355,\n                  \"tag\": \"kappa\"\n                },\n                \"sibling\": \"pi\"\n              },\n              \"sibling\": \"nu\"\n            },\n            \"sibling\": \"theta\"\n          },\n          \"sibling\": \"pi\"\n        },\n        \"sibling\": \"nu\"\n      },\n      \"sibling\": \"rho\"\n    },\n    \"sibling\": \"lam\"\n  },\n  \"sibling\": \"rho\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_001_deep_uniform",
+  "family": "deep_uniform",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"level_1\": {\n    \"level_2\": {\n      \"level_3\": {\n        \"level_4\": {\n          \"level_5\": {\n            \"level_6\": {\n              \"level_7\": {\n                \"level_8\": {\n                  \"level_9\": {\n                    \"value\": 106,\n                    \"tag\": \"iota\"\n                  },\n                  \"sibling\": \"rho\"\n                },\n                \"sibling\": \"gamma\"\n              },\n              \"sibling\": \"gamma\"\n            },\n            \"sibling\": \"xi\"\n          },\n          \"sibling\": \"zeta\"\n        },\n        \"sibling\": \"eta\"\n      },\n      \"sibling\": \"lam\"\n    },\n    \"sibling\": \"theta\"\n  },\n  \"sibling\": \"eta\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_002_deep_uniform",
+  "family": "deep_uniform",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"level_1\": {\n    \"level_2\": {\n      \"level_3\": {\n        \"level_4\": {\n          \"level_5\": {\n            \"level_6\": {\n              \"level_7\": {\n                \"level_8\": {\n                  \"level_9\": {\n                    \"level_10\": {\n                      \"value\": 812,\n                      \"tag\": \"xi\"\n                    },\n                    \"sibling\": \"kappa\"\n                  },\n                  \"sibling\": \"iota\"\n                },\n                \"sibling\": \"theta\"\n              },\n              \"sibling\": \"theta\"\n            },\n            \"sibling\": \"delta\"\n          },\n          \"sibling\": \"kappa\"\n        },\n        \"sibling\": \"alpha\"\n      },\n      \"sibling\": \"alpha\"\n    },\n    \"sibling\": \"xi\"\n  },\n  \"sibling\": \"pi\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_003_deep_uniform",
+  "family": "deep_uniform",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"level_1\": {\n    \"level_2\": {\n      \"level_3\": {\n        \"level_4\": {\n          \"level_5\": {\n            \"level_6\": {\n              \"level_7\": {\n                \"level_8\": {\n                  \"level_9\": {\n                    \"level_10\": {\n                      \"level_11\": {\n                        \"value\": 369,\n                        \"tag\": \"epsilon\"\n                      },\n                      \"sibling\": \"delta\"\n                    },\n                    \"sibling\": \"gamma\"\n                  },\n                  \"sibling\": \"mu\"\n                },\n                \"sibling\": \"nu\"\n              },\n              \"sibling\": \"omicron\"\n            },\n            \"sibling\": \"omicron\"\n          },\n          \"sibling\": \"delta\"\n        },\n        \"sibling\": \"iota\"\n      },\n      \"sibling\": \"zeta\"\n    },\n    \"sibling\": \"pi\"\n  },\n  \"sibling\": \"alpha\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_004_deep_uniform",
+  "family": "deep_uniform",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"level_1\": {\n    \"level_2\": {\n      \"level_3\": {\n        \"level_4\": {\n          \"level_5\": {\n            \"level_6\": {\n              \"level_7\": {\n                \"level_8\": {\n                  \"level_9\": {\n                    \"level_10\": {\n                      \"level_11\": {\n                        \"level_12\": {\n                          \"value\": 66,\n                          \"tag\": \"beta\"\n                        },\n                        \"sibling\": \"theta\"\n                      },\n                      \"sibling\": \"lam\"\n                    },\n                    \"sibling\": \"omicron\"\n                  },\n                  \"sibling\": \"alpha\"\n                },\n                \"sibling\": \"iota\"\n              },\n              \"sibling\": \"rho\"\n            },\n            \"sibling\": \"theta\"\n          },\n          \"sibling\": \"mu\"\n        },\n        \"sibling\": \"kappa\"\n      },\n      \"sibling\": \"xi\"\n    },\n    \"sibling\": \"xi\"\n  },\n  \"sibling\": \"nu\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_005_deep_uniform",
+  "family": "deep_uniform",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"level_1\": {\n    \"level_2\": {\n      \"level_3\": {\n        \"level_4\": {\n          \"level_5\": {\n            \"level_6\": {\n              \"level_7\": {\n                \"level_8\": {\n                  \"level_9\": {\n                    \"level_10\": {\n                      \"level_11\": {\n                        \"level_12\": {\n                          \"level_13\": {\n                            \"value\": 800,\n                            \"tag\": \"omicron\"\n                          },\n                          \"sibling\": \"rho\"\n                        },\n                        \"sibling\": \"beta\"\n                      },\n                      \"sibling\": \"nu\"\n                    },\n                    \"sibling\": \"omicron\"\n                  },\n                  \"sibling\": \"theta\"\n                },\n                \"sibling\": \"eta\"\n              },\n              \"sibling\": \"iota\"\n            },\n            \"sibling\": \"zeta\"\n          },\n          \"sibling\": \"beta\"\n        },\n        \"sibling\": \"delta\"\n      },\n      \"sibling\": \"zeta\"\n    },\n    \"sibling\": \"delta\"\n  },\n  \"sibling\": \"mu\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_006_deep_uniform",
+  "family": "deep_uniform",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"level_1\": {\n    \"level_2\": {\n      \"level_3\": {\n        \"level_4\": {\n          \"level_5\": {\n            \"level_6\": {\n              \"level_7\": {\n                \"level_8\": {\n                  \"level_9\": {\n                    \"level_10\": {\n                      \"level_11\": {\n                        \"level_12\": {\n                          \"level_13\": {\n                            \"level_14\": {\n                              \"value\": 317,\n                              \"tag\": \"mu\"\n                            },\n                            \"sibling\": \"omicron\"\n                          },\n                          \"sibling\": \"alpha\"\n                        },\n                        \"sibling\": \"alpha\"\n                      },\n                      \"sibling\": \"nu\"\n                    },\n                    \"sibling\": \"epsilon\"\n                  },\n                  \"sibling\": \"alpha\"\n                },\n                \"sibling\": \"epsilon\"\n              },\n              \"sibling\": \"beta\"\n            },\n            \"sibling\": \"eta\"\n          },\n          \"sibling\": \"zeta\"\n        },\n        \"sibling\": \"eta\"\n      },\n      \"sibling\": \"omicron\"\n    },\n    \"sibling\": \"eta\"\n  },\n  \"sibling\": \"theta\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_007_deep_uniform",
+  "family": "deep_uniform",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"level_1\": {\n    \"level_2\": {\n      \"level_3\": {\n        \"level_4\": {\n          \"level_5\": {\n            \"level_6\": {\n              \"level_7\": {\n                \"level_8\": {\n                  \"level_9\": {\n                    \"level_10\": {\n                      \"level_11\": {\n                        \"level_12\": {\n                          \"level_13\": {\n                            \"level_14\": {\n                              \"level_15\": {\n                                \"value\": 521,\n                                \"tag\": \"delta\"\n                              },\n                              \"sibling\": \"lam\"\n                            },\n                            \"sibling\": \"theta\"\n                          },\n                          \"sibling\": \"kappa\"\n                        },\n                        \"sibling\": \"epsilon\"\n                      },\n                      \"sibling\": \"alpha\"\n                    },\n                    \"sibling\": \"alpha\"\n                  },\n                  \"sibling\": \"theta\"\n                },\n                \"sibling\": \"kappa\"\n              },\n              \"sibling\": \"eta\"\n            },\n            \"sibling\": \"lam\"\n          },\n          \"sibling\": \"mu\"\n        },\n        \"sibling\": \"alpha\"\n      },\n      \"sibling\": \"xi\"\n    },\n    \"sibling\": \"omicron\"\n  },\n  \"sibling\": \"delta\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_008_deep_uniform",
+  "family": "deep_uniform",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"level_1\": {\n    \"level_2\": {\n      \"level_3\": {\n        \"level_4\": {\n          \"level_5\": {\n            \"level_6\": {\n              \"level_7\": {\n                \"level_8\": {\n                  \"level_9\": {\n                    \"level_10\": {\n                      \"level_11\": {\n                        \"level_12\": {\n                          \"level_13\": {\n                            \"level_14\": {\n                              \"level_15\": {\n                                \"level_16\": {\n                                  \"value\": 575,\n                                  \"tag\": \"iota\"\n                                },\n                                \"sibling\": \"delta\"\n                              },\n                              \"sibling\": \"pi\"\n                            },\n                            \"sibling\": \"delta\"\n                          },\n                          \"sibling\": \"omicron\"\n                        },\n                        \"sibling\": \"pi\"\n                      },\n                      \"sibling\": \"delta\"\n                    },\n                    \"sibling\": \"nu\"\n                  },\n                  \"sibling\": \"rho\"\n                },\n                \"sibling\": \"epsilon\"\n              },\n              \"sibling\": \"epsilon\"\n            },\n            \"sibling\": \"theta\"\n          },\n          \"sibling\": \"nu\"\n        },\n        \"sibling\": \"xi\"\n      },\n      \"sibling\": \"lam\"\n    },\n    \"sibling\": \"alpha\"\n  },\n  \"sibling\": \"rho\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_009_deep_uniform",
+  "family": "deep_uniform",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"level_1\": {\n    \"level_2\": {\n      \"level_3\": {\n        \"level_4\": {\n          \"level_5\": {\n            \"level_6\": {\n              \"level_7\": {\n                \"level_8\": {\n                  \"level_9\": {\n                    \"level_10\": {\n                      \"level_11\": {\n                        \"level_12\": {\n                          \"level_13\": {\n                            \"level_14\": {\n                              \"level_15\": {\n                                \"level_16\": {\n                                  \"level_17\": {\n                                    \"value\": 953,\n                                    \"tag\": \"epsilon\"\n                                  },\n                                  \"sibling\": \"omicron\"\n                                },\n                                \"sibling\": \"zeta\"\n                              },\n                              \"sibling\": \"alpha\"\n                            },\n                            \"sibling\": \"omicron\"\n                          },\n                          \"sibling\": \"alpha\"\n                        },\n                        \"sibling\": \"xi\"\n                      },\n                      \"sibling\": \"alpha\"\n                    },\n                    \"sibling\": \"theta\"\n                  },\n                  \"sibling\": \"alpha\"\n                },\n                \"sibling\": \"xi\"\n              },\n              \"sibling\": \"kappa\"\n            },\n            \"sibling\": \"mu\"\n          },\n          \"sibling\": \"gamma\"\n        },\n        \"sibling\": \"rho\"\n      },\n      \"sibling\": \"lam\"\n    },\n    \"sibling\": \"omicron\"\n  },\n  \"sibling\": \"theta\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_010_deep_mixed",
+  "family": "deep_mixed",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"root\": {\n    \"list\": [\n      [\n        {\n          \"list\": [\n            [\n              {\n                \"list\": [\n                  [\n                    [\n                      4,\n                      \"theta\"\n                    ],\n                    {\n                      \"k\": \"theta\"\n                    }\n                  ],\n                  97\n                ]\n              },\n              {\n                \"k\": \"gamma\"\n              }\n            ],\n            38\n          ]\n        },\n        {\n          \"k\": \"xi\"\n        }\n      ],\n      52\n    ]\n  },\n  \"depth\": 6\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_011_deep_mixed",
+  "family": "deep_mixed",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"root\": [\n    {\n      \"list\": [\n        [\n          {\n            \"list\": [\n              [\n                {\n                  \"list\": [\n                    [\n                      [\n                        3,\n                        \"nu\"\n                      ],\n                      {\n                        \"k\": \"iota\"\n                      }\n                    ],\n                    33\n                  ]\n                },\n                {\n                  \"k\": \"kappa\"\n                }\n              ],\n              61\n            ]\n          },\n          {\n            \"k\": \"eta\"\n          }\n        ],\n        52\n      ]\n    },\n    {\n      \"k\": \"kappa\"\n    }\n  ],\n  \"depth\": 7\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_012_deep_mixed",
+  "family": "deep_mixed",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"root\": {\n    \"list\": [\n      [\n        {\n          \"list\": [\n            [\n              {\n                \"list\": [\n                  [\n                    {\n                      \"list\": [\n                        [\n                          [\n                            5,\n                            \"lam\"\n                          ],\n                          {\n                            \"k\": \"epsilon\"\n                          }\n                        ],\n                        90\n                      ]\n                    },\n                    {\n                      \"k\": \"iota\"\n                    }\n                  ],\n                  51\n                ]\n              },\n              {\n                \"k\": \"pi\"\n              }\n            ],\n            27\n          ]\n        },\n        {\n          \"k\": \"lam\"\n        }\n      ],\n      87\n    ]\n  },\n  \"depth\": 8\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_013_deep_mixed",
+  "family": "deep_mixed",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"root\": [\n    {\n      \"list\": [\n        [\n          {\n            \"list\": [\n              [\n                {\n                  \"list\": [\n                    [\n                      {\n                        \"list\": [\n                          [\n                            [\n                              0,\n                              \"beta\"\n                            ],\n                            {\n                              \"k\": \"theta\"\n                            }\n                          ],\n                          21\n                        ]\n                      },\n                      {\n                        \"k\": \"iota\"\n                      }\n                    ],\n                    34\n                  ]\n                },\n                {\n                  \"k\": \"iota\"\n                }\n              ],\n              54\n            ]\n          },\n          {\n            \"k\": \"eta\"\n          }\n        ],\n        80\n      ]\n    },\n    {\n      \"k\": \"theta\"\n    }\n  ],\n  \"depth\": 9\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_014_deep_mixed",
+  "family": "deep_mixed",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"root\": {\n    \"list\": [\n      [\n        {\n          \"list\": [\n            [\n              {\n                \"list\": [\n                  [\n                    {\n                      \"list\": [\n                        [\n                          {\n                            \"list\": [\n                              [\n                                [\n                                  2,\n                                  \"theta\"\n                                ],\n                                {\n                                  \"k\": \"lam\"\n                                }\n                              ],\n                              63\n                            ]\n                          },\n                          {\n                            \"k\": \"delta\"\n                          }\n                        ],\n                        57\n                      ]\n                    },\n                    {\n                      \"k\": \"alpha\"\n                    }\n                  ],\n                  57\n                ]\n              },\n              {\n                \"k\": \"alpha\"\n              }\n            ],\n            35\n          ]\n        },\n        {\n          \"k\": \"zeta\"\n        }\n      ],\n      45\n    ]\n  },\n  \"depth\": 10\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_015_deep_mixed",
+  "family": "deep_mixed",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"root\": [\n    {\n      \"list\": [\n        [\n          {\n            \"list\": [\n              [\n                {\n                  \"list\": [\n                    [\n                      {\n                        \"list\": [\n                          [\n                            {\n                              \"list\": [\n                                [\n                                  [\n                                    6,\n                                    \"beta\"\n                                  ],\n                                  {\n                                    \"k\": \"alpha\"\n                                  }\n                                ],\n                                85\n                              ]\n                            },\n                            {\n                              \"k\": \"zeta\"\n                            }\n                          ],\n                          87\n                        ]\n                      },\n                      {\n                        \"k\": \"iota\"\n                      }\n                    ],\n                    97\n                  ]\n                },\n                {\n                  \"k\": \"rho\"\n                }\n              ],\n              59\n            ]\n          },\n          {\n            \"k\": \"theta\"\n          }\n        ],\n        72\n      ]\n    },\n    {\n      \"k\": \"alpha\"\n    }\n  ],\n  \"depth\": 11\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_016_deep_mixed",
+  "family": "deep_mixed",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"root\": {\n    \"list\": [\n      [\n        {\n          \"list\": [\n            [\n              {\n                \"list\": [\n                  [\n                    {\n                      \"list\": [\n                        [\n                          {\n                            \"list\": [\n                              [\n                                {\n                                  \"list\": [\n                                    [\n                                      [\n                                        8,\n                                        \"eta\"\n                                      ],\n                                      {\n                                        \"k\": \"pi\"\n                                      }\n                                    ],\n                                    66\n                                  ]\n                                },\n                                {\n                                  \"k\": \"eta\"\n                                }\n                              ],\n                              19\n                            ]\n                          },\n                          {\n                            \"k\": \"pi\"\n                          }\n                        ],\n                        96\n                      ]\n                    },\n                    {\n                      \"k\": \"kappa\"\n                    }\n                  ],\n                  95\n                ]\n              },\n              {\n                \"k\": \"gamma\"\n              }\n            ],\n            24\n          ]\n        },\n        {\n          \"k\": \"nu\"\n        }\n      ],\n      91\n    ]\n  },\n  \"depth\": 12\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_017_deep_mixed",
+  "family": "deep_mixed",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"root\": [\n    {\n      \"list\": [\n        [\n          {\n            \"list\": [\n              [\n                {\n                  \"list\": [\n                    [\n                      {\n                        \"list\": [\n                          [\n                            {\n                              \"list\": [\n                                [\n                                  {\n                                    \"list\": [\n                                      [\n                                        [\n                                          4,\n                                          \"kappa\"\n                                        ],\n                                        {\n                                          \"k\": \"alpha\"\n                                        }\n                                      ],\n                                      47\n                                    ]\n                                  },\n                                  {\n                                    \"k\": \"gamma\"\n                                  }\n                                ],\n                                28\n                              ]\n                            },\n                            {\n                              \"k\": \"kappa\"\n                            }\n                          ],\n                          21\n                        ]\n                      },\n                      {\n                        \"k\": \"kappa\"\n                      }\n                    ],\n                    66\n                  ]\n                },\n                {\n                  \"k\": \"nu\"\n                }\n              ],\n              21\n            ]\n          },\n          {\n            \"k\": \"kappa\"\n          }\n        ],\n        55\n      ]\n    },\n    {\n      \"k\": \"iota\"\n    }\n  ],\n  \"depth\": 13\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_018_deep_mixed",
+  "family": "deep_mixed",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"root\": {\n    \"list\": [\n      [\n        {\n          \"list\": [\n            [\n              {\n                \"list\": [\n                  [\n                    [\n                      0,\n                      \"iota\"\n                    ],\n                    {\n                      \"k\": \"kappa\"\n                    }\n                  ],\n                  73\n                ]\n              },\n              {\n                \"k\": \"lam\"\n              }\n            ],\n            26\n          ]\n        },\n        {\n          \"k\": \"theta\"\n        }\n      ],\n      76\n    ]\n  },\n  \"depth\": 6\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_019_deep_mixed",
+  "family": "deep_mixed",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"root\": [\n    {\n      \"list\": [\n        [\n          {\n            \"list\": [\n              [\n                {\n                  \"list\": [\n                    [\n                      [\n                        2,\n                        \"kappa\"\n                      ],\n                      {\n                        \"k\": \"kappa\"\n                      }\n                    ],\n                    10\n                  ]\n                },\n                {\n                  \"k\": \"alpha\"\n                }\n              ],\n              68\n            ]\n          },\n          {\n            \"k\": \"omicron\"\n          }\n        ],\n        19\n      ]\n    },\n    {\n      \"k\": \"rho\"\n    }\n  ],\n  \"depth\": 7\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_020_escapes",
+  "family": "escapes",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"text\": \"line1\\nline2\\r\\nline3\\ttabbed\",\n  \"index\": 0,\n  \"nested\": {\n    \"again\": \"many \\\\\\\\ backslashes \\\\\\\\\\\\\\\\ here\"\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_021_escapes",
+  "family": "escapes",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"text\": \"she said \\\"quote\\\" and \\\\backslash\\\\ and /slash/\",\n  \"index\": 1,\n  \"nested\": {\n    \"again\": \"json-in-string: {\\\"a\\\": [1, 2, {\\\"b\\\": \\\"c\\\"}]}\"\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_022_escapes",
+  "family": "escapes",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"text\": \"null-adjacent: \\u0001\\u0002 bell:\\u0007 end\",\n  \"index\": 2,\n  \"nested\": {\n    \"again\": \"trailing spaces   and\\ttabs\\t\"\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_023_escapes",
+  "family": "escapes",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"text\": \"many \\\\\\\\ backslashes \\\\\\\\\\\\\\\\ here\",\n  \"index\": 3,\n  \"nested\": {\n    \"again\": \"single'quotes' and `backticks`\"\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_024_escapes",
+  "family": "escapes",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"text\": \"json-in-string: {\\\"a\\\": [1, 2, {\\\"b\\\": \\\"c\\\"}]}\",\n  \"index\": 4,\n  \"nested\": {\n    \"again\": \"unicode escape target:   and   seps\"\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_025_escapes",
+  "family": "escapes",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"text\": \"trailing spaces   and\\ttabs\\t\",\n  \"index\": 5,\n  \"nested\": {\n    \"again\": \"percent %s %% and braces {} {{}}\"\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_026_escapes",
+  "family": "escapes",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"text\": \"single'quotes' and `backticks`\",\n  \"index\": 6,\n  \"nested\": {\n    \"again\": \"mixed: \\\"\\\\n\\\" literal vs \\n real newline\"\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_027_escapes",
+  "family": "escapes",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"text\": \"unicode escape target:   and   seps\",\n  \"index\": 7,\n  \"nested\": {\n    \"again\": \"line1\\nline2\\r\\nline3\\ttabbed\"\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_028_escapes",
+  "family": "escapes",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"text\": \"percent %s %% and braces {} {{}}\",\n  \"index\": 8,\n  \"nested\": {\n    \"again\": \"she said \\\"quote\\\" and \\\\backslash\\\\ and /slash/\"\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_029_escapes",
+  "family": "escapes",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"text\": \"mixed: \\\"\\\\n\\\" literal vs \\n real newline\",\n  \"index\": 9,\n  \"nested\": {\n    \"again\": \"null-adjacent: \\u0001\\u0002 bell:\\u0007 end\"\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_030_unicode_keys",
+  "family": "unicode_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"键\": {\n    \"内側\": 35,\n    \"λ\": \"zeta\"\n  },\n  \"plain\": \"ascii_value\",\n  \"键_2\": [\n    \"键\",\n    \"混合\",\n    889\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_031_unicode_keys",
+  "family": "unicode_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"🔑\": {\n    \"内側\": 3,\n    \"λ\": \"omicron\"\n  },\n  \"plain\": \"ascii_value\",\n  \"🔑_2\": [\n    \"🔑\",\n    \"混合\",\n    353\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_032_unicode_keys",
+  "family": "unicode_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"ключ\": {\n    \"内側\": 73,\n    \"λ\": \"beta\"\n  },\n  \"plain\": \"ascii_value\",\n  \"ключ_2\": [\n    \"ключ\",\n    \"混合\",\n    225\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_033_unicode_keys",
+  "family": "unicode_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"clé\": {\n    \"内側\": 44,\n    \"λ\": \"delta\"\n  },\n  \"plain\": \"ascii_value\",\n  \"clé_2\": [\n    \"clé\",\n    \"混合\",\n    810\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_034_unicode_keys",
+  "family": "unicode_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"מפתח\": {\n    \"内側\": 1,\n    \"λ\": \"omicron\"\n  },\n  \"plain\": \"ascii_value\",\n  \"מפתח_2\": [\n    \"מפתח\",\n    \"混合\",\n    804\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_035_unicode_keys",
+  "family": "unicode_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"κλειδί\": {\n    \"内側\": 63,\n    \"λ\": \"mu\"\n  },\n  \"plain\": \"ascii_value\",\n  \"κλειδί_2\": [\n    \"κλειδί\",\n    \"混合\",\n    792\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_036_unicode_keys",
+  "family": "unicode_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"kľúč\": {\n    \"内側\": 51,\n    \"λ\": \"gamma\"\n  },\n  \"plain\": \"ascii_value\",\n  \"kľúč_2\": [\n    \"kľúč\",\n    \"混合\",\n    688\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_037_unicode_keys",
+  "family": "unicode_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"nøkkel\": {\n    \"内側\": 18,\n    \"λ\": \"lam\"\n  },\n  \"plain\": \"ascii_value\",\n  \"nøkkel_2\": [\n    \"nøkkel\",\n    \"混合\",\n    487\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_038_unicode_keys",
+  "family": "unicode_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"açar\": {\n    \"内側\": 47,\n    \"λ\": \"omicron\"\n  },\n  \"plain\": \"ascii_value\",\n  \"açar_2\": [\n    \"açar\",\n    \"混合\",\n    897\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_039_unicode_keys",
+  "family": "unicode_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"kulcs\": {\n    \"内側\": 90,\n    \"λ\": \"xi\"\n  },\n  \"plain\": \"ascii_value\",\n  \"kulcs_2\": [\n    \"kulcs\",\n    \"混合\",\n    277\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_040_unicode_values",
+  "family": "unicode_values",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"greeting\": \"こんにちは世界\",\n  \"mirror\": \"ᚱᚢᚾᛖᛋ\",\n  \"wrap\": {\n    \"inner\": [\n      \"�\",\n      0\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_041_unicode_values",
+  "family": "unicode_values",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"greeting\": \"Grüße aus Köln\",\n  \"mirror\": \"中文测试字符串\",\n  \"wrap\": {\n    \"inner\": [\n      \"🎛️🎚️\",\n      1\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_042_unicode_values",
+  "family": "unicode_values",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"greeting\": \"�\",\n  \"mirror\": \"علامات الترقيم\",\n  \"wrap\": {\n    \"inner\": [\n      \"Ω≈ç√∫\",\n      2\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_043_unicode_values",
+  "family": "unicode_values",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"greeting\": \"🎛️🎚️\",\n  \"mirror\": \"𝔪𝔞𝔱𝔥 𝔟𝔬𝔩𝔡\",\n  \"wrap\": {\n    \"inner\": [\n      \"ᚱᚢᚾᛖᛋ\",\n      3\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_044_unicode_values",
+  "family": "unicode_values",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"greeting\": \"Ω≈ç√∫\",\n  \"mirror\": \"é combining\",\n  \"wrap\": {\n    \"inner\": [\n      \"中文测试字符串\",\n      4\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_045_unicode_values",
+  "family": "unicode_values",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"greeting\": \"ᚱᚢᚾᛖᛋ\",\n  \"mirror\": \"こんにちは世界\",\n  \"wrap\": {\n    \"inner\": [\n      \"علامات الترقيم\",\n      5\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_046_unicode_values",
+  "family": "unicode_values",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"greeting\": \"中文测试字符串\",\n  \"mirror\": \"Grüße aus Köln\",\n  \"wrap\": {\n    \"inner\": [\n      \"𝔪𝔞𝔱𝔥 𝔟𝔬𝔩𝔡\",\n      6\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_047_unicode_values",
+  "family": "unicode_values",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"greeting\": \"علامات الترقيم\",\n  \"mirror\": \"�\",\n  \"wrap\": {\n    \"inner\": [\n      \"é combining\",\n      7\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_048_unicode_values",
+  "family": "unicode_values",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"greeting\": \"𝔪𝔞𝔱𝔥 𝔟𝔬𝔩𝔡\",\n  \"mirror\": \"🎛️🎚️\",\n  \"wrap\": {\n    \"inner\": [\n      \"こんにちは世界\",\n      8\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_049_unicode_values",
+  "family": "unicode_values",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"greeting\": \"é combining\",\n  \"mirror\": \"Ω≈ç√∫\",\n  \"wrap\": {\n    \"inner\": [\n      \"Grüße aus Köln\",\n      9\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_050_wide_64_args",
+  "family": "wide_64_args",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"param_00\": -403,\n  \"param_01\": \"eta\",\n  \"param_02\": false,\n  \"param_03\": [\n    1,\n    \"xi\"\n  ],\n  \"param_04\": 351,\n  \"param_05\": \"alpha\",\n  \"param_06\": true,\n  \"param_07\": [\n    5,\n    \"kappa\"\n  ],\n  \"param_08\": -54,\n  \"param_09\": \"omicron\",\n  \"param_10\": true,\n  \"param_11\": [\n    1,\n    \"epsilon\"\n  ],\n  \"param_12\": -124,\n  \"param_13\": \"delta\",\n  \"param_14\": true,\n  \"param_15\": [\n    8,\n    \"gamma\"\n  ],\n  \"param_16\": -253,\n  \"param_17\": \"delta\",\n  \"param_18\": false,\n  \"param_19\": [\n    1,\n    \"beta\"\n  ],\n  \"param_20\": 295,\n  \"param_21\": \"eta\",\n  \"param_22\": false,\n  \"param_23\": [\n    6,\n    \"gamma\"\n  ],\n  \"param_24\": 210,\n  \"param_25\": \"nu\",\n  \"param_26\": true,\n  \"param_27\": [\n    4,\n    \"kappa\"\n  ],\n  \"param_28\": 393,\n  \"param_29\": \"nu\",\n  \"param_30\": false,\n  \"param_31\": [\n    8,\n    \"eta\"\n  ],\n  \"param_32\": -402,\n  \"param_33\": \"zeta\",\n  \"param_34\": true,\n  \"param_35\": [\n    8,\n    \"omicron\"\n  ],\n  \"param_36\": 294,\n  \"param_37\": \"pi\",\n  \"param_38\": false,\n  \"param_39\": [\n    2,\n    \"kappa\"\n  ],\n  \"param_40\": -7,\n  \"param_41\": \"xi\",\n  \"param_42\": true,\n  \"param_43\": [\n    3,\n    \"delta\"\n  ],\n  \"param_44\": 76,\n  \"param_45\": \"beta\",\n  \"param_46\": true,\n  \"param_47\": [\n    8,\n    \"theta\"\n  ],\n  \"param_48\": 358,\n  \"param_49\": \"rho\",\n  \"param_50\": true,\n  \"param_51\": [\n    3,\n    \"eta\"\n  ],\n  \"param_52\": -67,\n  \"param_53\": \"theta\",\n  \"param_54\": true,\n  \"param_55\": [\n    5,\n    \"kappa\"\n  ],\n  \"param_56\": -91,\n  \"param_57\": \"epsilon\",\n  \"param_58\": true,\n  \"param_59\": [\n    4,\n    \"iota\"\n  ],\n  \"param_60\": 200,\n  \"param_61\": \"pi\",\n  \"param_62\": false,\n  \"param_63\": [\n    6,\n    \"alpha\"\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_051_wide_64_args",
+  "family": "wide_64_args",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"param_00\": -218,\n  \"param_01\": \"kappa\",\n  \"param_02\": false,\n  \"param_03\": [\n    6,\n    \"beta\"\n  ],\n  \"param_04\": 441,\n  \"param_05\": \"omicron\",\n  \"param_06\": true,\n  \"param_07\": [\n    1,\n    \"eta\"\n  ],\n  \"param_08\": 129,\n  \"param_09\": \"beta\",\n  \"param_10\": false,\n  \"param_11\": [\n    4,\n    \"xi\"\n  ],\n  \"param_12\": 75,\n  \"param_13\": \"epsilon\",\n  \"param_14\": false,\n  \"param_15\": [\n    3,\n    \"theta\"\n  ],\n  \"param_16\": 165,\n  \"param_17\": \"epsilon\",\n  \"param_18\": false,\n  \"param_19\": [\n    9,\n    \"theta\"\n  ],\n  \"param_20\": 22,\n  \"param_21\": \"omicron\",\n  \"param_22\": false,\n  \"param_23\": [\n    9,\n    \"gamma\"\n  ],\n  \"param_24\": -242,\n  \"param_25\": \"delta\",\n  \"param_26\": false,\n  \"param_27\": [\n    9,\n    \"xi\"\n  ],\n  \"param_28\": -368,\n  \"param_29\": \"nu\",\n  \"param_30\": true,\n  \"param_31\": [\n    3,\n    \"theta\"\n  ],\n  \"param_32\": -12,\n  \"param_33\": \"alpha\",\n  \"param_34\": false,\n  \"param_35\": [\n    7,\n    \"eta\"\n  ],\n  \"param_36\": 134,\n  \"param_37\": \"mu\",\n  \"param_38\": false,\n  \"param_39\": [\n    5,\n    \"beta\"\n  ],\n  \"param_40\": -354,\n  \"param_41\": \"epsilon\",\n  \"param_42\": true,\n  \"param_43\": [\n    8,\n    \"delta\"\n  ],\n  \"param_44\": 148,\n  \"param_45\": \"rho\",\n  \"param_46\": true,\n  \"param_47\": [\n    1,\n    \"beta\"\n  ],\n  \"param_48\": 215,\n  \"param_49\": \"delta\",\n  \"param_50\": true,\n  \"param_51\": [\n    2,\n    \"nu\"\n  ],\n  \"param_52\": -227,\n  \"param_53\": \"zeta\",\n  \"param_54\": true,\n  \"param_55\": [\n    3,\n    \"delta\"\n  ],\n  \"param_56\": -376,\n  \"param_57\": \"omicron\",\n  \"param_58\": false,\n  \"param_59\": [\n    2,\n    \"omicron\"\n  ],\n  \"param_60\": -173,\n  \"param_61\": \"epsilon\",\n  \"param_62\": false,\n  \"param_63\": [\n    0,\n    \"gamma\"\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_052_wide_64_args",
+  "family": "wide_64_args",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"param_00\": 140,\n  \"param_01\": \"alpha\",\n  \"param_02\": false,\n  \"param_03\": [\n    2,\n    \"xi\"\n  ],\n  \"param_04\": 438,\n  \"param_05\": \"lam\",\n  \"param_06\": false,\n  \"param_07\": [\n    3,\n    \"alpha\"\n  ],\n  \"param_08\": -479,\n  \"param_09\": \"zeta\",\n  \"param_10\": true,\n  \"param_11\": [\n    4,\n    \"eta\"\n  ],\n  \"param_12\": 463,\n  \"param_13\": \"iota\",\n  \"param_14\": true,\n  \"param_15\": [\n    9,\n    \"mu\"\n  ],\n  \"param_16\": 311,\n  \"param_17\": \"eta\",\n  \"param_18\": true,\n  \"param_19\": [\n    9,\n    \"pi\"\n  ],\n  \"param_20\": 237,\n  \"param_21\": \"zeta\",\n  \"param_22\": false,\n  \"param_23\": [\n    9,\n    \"alpha\"\n  ],\n  \"param_24\": -459,\n  \"param_25\": \"lam\",\n  \"param_26\": true,\n  \"param_27\": [\n    0,\n    \"eta\"\n  ],\n  \"param_28\": 492,\n  \"param_29\": \"delta\",\n  \"param_30\": false,\n  \"param_31\": [\n    8,\n    \"kappa\"\n  ],\n  \"param_32\": 102,\n  \"param_33\": \"iota\",\n  \"param_34\": true,\n  \"param_35\": [\n    0,\n    \"nu\"\n  ],\n  \"param_36\": -229,\n  \"param_37\": \"alpha\",\n  \"param_38\": true,\n  \"param_39\": [\n    7,\n    \"beta\"\n  ],\n  \"param_40\": 324,\n  \"param_41\": \"kappa\",\n  \"param_42\": false,\n  \"param_43\": [\n    7,\n    \"theta\"\n  ],\n  \"param_44\": 333,\n  \"param_45\": \"kappa\",\n  \"param_46\": false,\n  \"param_47\": [\n    3,\n    \"beta\"\n  ],\n  \"param_48\": -4,\n  \"param_49\": \"nu\",\n  \"param_50\": false,\n  \"param_51\": [\n    7,\n    \"zeta\"\n  ],\n  \"param_52\": -190,\n  \"param_53\": \"gamma\",\n  \"param_54\": false,\n  \"param_55\": [\n    8,\n    \"iota\"\n  ],\n  \"param_56\": -5,\n  \"param_57\": \"xi\",\n  \"param_58\": false,\n  \"param_59\": [\n    5,\n    \"beta\"\n  ],\n  \"param_60\": -373,\n  \"param_61\": \"epsilon\",\n  \"param_62\": true,\n  \"param_63\": [\n    8,\n    \"xi\"\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_053_wide_64_args",
+  "family": "wide_64_args",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"param_00\": -333,\n  \"param_01\": \"delta\",\n  \"param_02\": true,\n  \"param_03\": [\n    1,\n    \"nu\"\n  ],\n  \"param_04\": 202,\n  \"param_05\": \"zeta\",\n  \"param_06\": false,\n  \"param_07\": [\n    1,\n    \"nu\"\n  ],\n  \"param_08\": 177,\n  \"param_09\": \"iota\",\n  \"param_10\": false,\n  \"param_11\": [\n    0,\n    \"lam\"\n  ],\n  \"param_12\": -42,\n  \"param_13\": \"gamma\",\n  \"param_14\": true,\n  \"param_15\": [\n    9,\n    \"xi\"\n  ],\n  \"param_16\": 110,\n  \"param_17\": \"theta\",\n  \"param_18\": false,\n  \"param_19\": [\n    0,\n    \"rho\"\n  ],\n  \"param_20\": -421,\n  \"param_21\": \"alpha\",\n  \"param_22\": true,\n  \"param_23\": [\n    1,\n    \"beta\"\n  ],\n  \"param_24\": -318,\n  \"param_25\": \"alpha\",\n  \"param_26\": false,\n  \"param_27\": [\n    0,\n    \"gamma\"\n  ],\n  \"param_28\": 225,\n  \"param_29\": \"eta\",\n  \"param_30\": false,\n  \"param_31\": [\n    9,\n    \"kappa\"\n  ],\n  \"param_32\": -107,\n  \"param_33\": \"gamma\",\n  \"param_34\": true,\n  \"param_35\": [\n    5,\n    \"lam\"\n  ],\n  \"param_36\": 472,\n  \"param_37\": \"epsilon\",\n  \"param_38\": true,\n  \"param_39\": [\n    4,\n    \"rho\"\n  ],\n  \"param_40\": 172,\n  \"param_41\": \"pi\",\n  \"param_42\": false,\n  \"param_43\": [\n    1,\n    \"xi\"\n  ],\n  \"param_44\": -149,\n  \"param_45\": \"mu\",\n  \"param_46\": false,\n  \"param_47\": [\n    5,\n    \"omicron\"\n  ],\n  \"param_48\": 465,\n  \"param_49\": \"xi\",\n  \"param_50\": false,\n  \"param_51\": [\n    4,\n    \"rho\"\n  ],\n  \"param_52\": -478,\n  \"param_53\": \"xi\",\n  \"param_54\": false,\n  \"param_55\": [\n    5,\n    \"eta\"\n  ],\n  \"param_56\": -248,\n  \"param_57\": \"xi\",\n  \"param_58\": true,\n  \"param_59\": [\n    9,\n    \"omicron\"\n  ],\n  \"param_60\": 355,\n  \"param_61\": \"omicron\",\n  \"param_62\": false,\n  \"param_63\": [\n    2,\n    \"nu\"\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_054_wide_64_args",
+  "family": "wide_64_args",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"param_00\": -494,\n  \"param_01\": \"kappa\",\n  \"param_02\": true,\n  \"param_03\": [\n    7,\n    \"epsilon\"\n  ],\n  \"param_04\": 460,\n  \"param_05\": \"rho\",\n  \"param_06\": false,\n  \"param_07\": [\n    1,\n    \"alpha\"\n  ],\n  \"param_08\": -304,\n  \"param_09\": \"gamma\",\n  \"param_10\": false,\n  \"param_11\": [\n    6,\n    \"zeta\"\n  ],\n  \"param_12\": -170,\n  \"param_13\": \"kappa\",\n  \"param_14\": true,\n  \"param_15\": [\n    7,\n    \"xi\"\n  ],\n  \"param_16\": -385,\n  \"param_17\": \"delta\",\n  \"param_18\": true,\n  \"param_19\": [\n    1,\n    \"gamma\"\n  ],\n  \"param_20\": 271,\n  \"param_21\": \"theta\",\n  \"param_22\": true,\n  \"param_23\": [\n    8,\n    \"iota\"\n  ],\n  \"param_24\": 256,\n  \"param_25\": \"delta\",\n  \"param_26\": true,\n  \"param_27\": [\n    9,\n    \"omicron\"\n  ],\n  \"param_28\": -451,\n  \"param_29\": \"lam\",\n  \"param_30\": true,\n  \"param_31\": [\n    7,\n    \"epsilon\"\n  ],\n  \"param_32\": 323,\n  \"param_33\": \"kappa\",\n  \"param_34\": false,\n  \"param_35\": [\n    8,\n    \"pi\"\n  ],\n  \"param_36\": 495,\n  \"param_37\": \"mu\",\n  \"param_38\": true,\n  \"param_39\": [\n    8,\n    \"eta\"\n  ],\n  \"param_40\": 63,\n  \"param_41\": \"delta\",\n  \"param_42\": true,\n  \"param_43\": [\n    9,\n    \"kappa\"\n  ],\n  \"param_44\": 444,\n  \"param_45\": \"kappa\",\n  \"param_46\": false,\n  \"param_47\": [\n    9,\n    \"zeta\"\n  ],\n  \"param_48\": 28,\n  \"param_49\": \"rho\",\n  \"param_50\": true,\n  \"param_51\": [\n    2,\n    \"pi\"\n  ],\n  \"param_52\": 100,\n  \"param_53\": \"omicron\",\n  \"param_54\": false,\n  \"param_55\": [\n    0,\n    \"alpha\"\n  ],\n  \"param_56\": 155,\n  \"param_57\": \"alpha\",\n  \"param_58\": true,\n  \"param_59\": [\n    6,\n    \"zeta\"\n  ],\n  \"param_60\": 1,\n  \"param_61\": \"beta\",\n  \"param_62\": false,\n  \"param_63\": [\n    0,\n    \"eta\"\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_055_wide_64_args",
+  "family": "wide_64_args",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"param_00\": -223,\n  \"param_01\": \"delta\",\n  \"param_02\": false,\n  \"param_03\": [\n    3,\n    \"zeta\"\n  ],\n  \"param_04\": -200,\n  \"param_05\": \"beta\",\n  \"param_06\": false,\n  \"param_07\": [\n    8,\n    \"rho\"\n  ],\n  \"param_08\": -390,\n  \"param_09\": \"nu\",\n  \"param_10\": false,\n  \"param_11\": [\n    2,\n    \"theta\"\n  ],\n  \"param_12\": 371,\n  \"param_13\": \"lam\",\n  \"param_14\": true,\n  \"param_15\": [\n    7,\n    \"iota\"\n  ],\n  \"param_16\": 396,\n  \"param_17\": \"mu\",\n  \"param_18\": true,\n  \"param_19\": [\n    4,\n    \"theta\"\n  ],\n  \"param_20\": -363,\n  \"param_21\": \"xi\",\n  \"param_22\": true,\n  \"param_23\": [\n    3,\n    \"lam\"\n  ],\n  \"param_24\": -61,\n  \"param_25\": \"theta\",\n  \"param_26\": false,\n  \"param_27\": [\n    9,\n    \"xi\"\n  ],\n  \"param_28\": 321,\n  \"param_29\": \"mu\",\n  \"param_30\": false,\n  \"param_31\": [\n    9,\n    \"epsilon\"\n  ],\n  \"param_32\": -191,\n  \"param_33\": \"delta\",\n  \"param_34\": true,\n  \"param_35\": [\n    2,\n    \"rho\"\n  ],\n  \"param_36\": 118,\n  \"param_37\": \"kappa\",\n  \"param_38\": true,\n  \"param_39\": [\n    8,\n    \"delta\"\n  ],\n  \"param_40\": -257,\n  \"param_41\": \"delta\",\n  \"param_42\": false,\n  \"param_43\": [\n    1,\n    \"omicron\"\n  ],\n  \"param_44\": 113,\n  \"param_45\": \"xi\",\n  \"param_46\": false,\n  \"param_47\": [\n    1,\n    \"iota\"\n  ],\n  \"param_48\": -152,\n  \"param_49\": \"rho\",\n  \"param_50\": true,\n  \"param_51\": [\n    9,\n    \"omicron\"\n  ],\n  \"param_52\": 109,\n  \"param_53\": \"zeta\",\n  \"param_54\": false,\n  \"param_55\": [\n    3,\n    \"gamma\"\n  ],\n  \"param_56\": 237,\n  \"param_57\": \"lam\",\n  \"param_58\": false,\n  \"param_59\": [\n    5,\n    \"alpha\"\n  ],\n  \"param_60\": 243,\n  \"param_61\": \"lam\",\n  \"param_62\": true,\n  \"param_63\": [\n    5,\n    \"epsilon\"\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_056_wide_64_args",
+  "family": "wide_64_args",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"param_00\": 465,\n  \"param_01\": \"lam\",\n  \"param_02\": true,\n  \"param_03\": [\n    2,\n    \"nu\"\n  ],\n  \"param_04\": 184,\n  \"param_05\": \"alpha\",\n  \"param_06\": false,\n  \"param_07\": [\n    7,\n    \"alpha\"\n  ],\n  \"param_08\": -180,\n  \"param_09\": \"epsilon\",\n  \"param_10\": true,\n  \"param_11\": [\n    3,\n    \"gamma\"\n  ],\n  \"param_12\": -400,\n  \"param_13\": \"lam\",\n  \"param_14\": true,\n  \"param_15\": [\n    8,\n    \"epsilon\"\n  ],\n  \"param_16\": 393,\n  \"param_17\": \"theta\",\n  \"param_18\": true,\n  \"param_19\": [\n    9,\n    \"iota\"\n  ],\n  \"param_20\": -244,\n  \"param_21\": \"eta\",\n  \"param_22\": false,\n  \"param_23\": [\n    5,\n    \"kappa\"\n  ],\n  \"param_24\": -404,\n  \"param_25\": \"eta\",\n  \"param_26\": true,\n  \"param_27\": [\n    5,\n    \"iota\"\n  ],\n  \"param_28\": -287,\n  \"param_29\": \"kappa\",\n  \"param_30\": false,\n  \"param_31\": [\n    6,\n    \"rho\"\n  ],\n  \"param_32\": 297,\n  \"param_33\": \"pi\",\n  \"param_34\": false,\n  \"param_35\": [\n    8,\n    \"eta\"\n  ],\n  \"param_36\": -176,\n  \"param_37\": \"eta\",\n  \"param_38\": false,\n  \"param_39\": [\n    0,\n    \"gamma\"\n  ],\n  \"param_40\": 197,\n  \"param_41\": \"theta\",\n  \"param_42\": false,\n  \"param_43\": [\n    6,\n    \"lam\"\n  ],\n  \"param_44\": -317,\n  \"param_45\": \"zeta\",\n  \"param_46\": true,\n  \"param_47\": [\n    9,\n    \"mu\"\n  ],\n  \"param_48\": 288,\n  \"param_49\": \"delta\",\n  \"param_50\": false,\n  \"param_51\": [\n    6,\n    \"pi\"\n  ],\n  \"param_52\": 491,\n  \"param_53\": \"gamma\",\n  \"param_54\": true,\n  \"param_55\": [\n    2,\n    \"alpha\"\n  ],\n  \"param_56\": 450,\n  \"param_57\": \"eta\",\n  \"param_58\": true,\n  \"param_59\": [\n    9,\n    \"gamma\"\n  ],\n  \"param_60\": 264,\n  \"param_61\": \"zeta\",\n  \"param_62\": false,\n  \"param_63\": [\n    2,\n    \"gamma\"\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_057_wide_64_args",
+  "family": "wide_64_args",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"param_00\": 253,\n  \"param_01\": \"epsilon\",\n  \"param_02\": true,\n  \"param_03\": [\n    3,\n    \"lam\"\n  ],\n  \"param_04\": -335,\n  \"param_05\": \"zeta\",\n  \"param_06\": true,\n  \"param_07\": [\n    4,\n    \"eta\"\n  ],\n  \"param_08\": 65,\n  \"param_09\": \"theta\",\n  \"param_10\": false,\n  \"param_11\": [\n    9,\n    \"nu\"\n  ],\n  \"param_12\": 460,\n  \"param_13\": \"xi\",\n  \"param_14\": true,\n  \"param_15\": [\n    6,\n    \"zeta\"\n  ],\n  \"param_16\": -371,\n  \"param_17\": \"gamma\",\n  \"param_18\": false,\n  \"param_19\": [\n    0,\n    \"zeta\"\n  ],\n  \"param_20\": -367,\n  \"param_21\": \"kappa\",\n  \"param_22\": true,\n  \"param_23\": [\n    5,\n    \"pi\"\n  ],\n  \"param_24\": -146,\n  \"param_25\": \"beta\",\n  \"param_26\": true,\n  \"param_27\": [\n    7,\n    \"eta\"\n  ],\n  \"param_28\": 290,\n  \"param_29\": \"theta\",\n  \"param_30\": false,\n  \"param_31\": [\n    4,\n    \"lam\"\n  ],\n  \"param_32\": -289,\n  \"param_33\": \"alpha\",\n  \"param_34\": true,\n  \"param_35\": [\n    5,\n    \"mu\"\n  ],\n  \"param_36\": -359,\n  \"param_37\": \"pi\",\n  \"param_38\": false,\n  \"param_39\": [\n    7,\n    \"alpha\"\n  ],\n  \"param_40\": 7,\n  \"param_41\": \"nu\",\n  \"param_42\": true,\n  \"param_43\": [\n    5,\n    \"eta\"\n  ],\n  \"param_44\": -244,\n  \"param_45\": \"nu\",\n  \"param_46\": false,\n  \"param_47\": [\n    7,\n    \"beta\"\n  ],\n  \"param_48\": -11,\n  \"param_49\": \"lam\",\n  \"param_50\": false,\n  \"param_51\": [\n    8,\n    \"xi\"\n  ],\n  \"param_52\": 189,\n  \"param_53\": \"omicron\",\n  \"param_54\": true,\n  \"param_55\": [\n    6,\n    \"nu\"\n  ],\n  \"param_56\": -138,\n  \"param_57\": \"rho\",\n  \"param_58\": true,\n  \"param_59\": [\n    5,\n    \"lam\"\n  ],\n  \"param_60\": -435,\n  \"param_61\": \"xi\",\n  \"param_62\": true,\n  \"param_63\": [\n    2,\n    \"alpha\"\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_058_wide_64_args",
+  "family": "wide_64_args",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"param_00\": 193,\n  \"param_01\": \"zeta\",\n  \"param_02\": false,\n  \"param_03\": [\n    9,\n    \"alpha\"\n  ],\n  \"param_04\": -430,\n  \"param_05\": \"alpha\",\n  \"param_06\": false,\n  \"param_07\": [\n    1,\n    \"iota\"\n  ],\n  \"param_08\": -6,\n  \"param_09\": \"delta\",\n  \"param_10\": true,\n  \"param_11\": [\n    6,\n    \"alpha\"\n  ],\n  \"param_12\": 484,\n  \"param_13\": \"rho\",\n  \"param_14\": true,\n  \"param_15\": [\n    2,\n    \"epsilon\"\n  ],\n  \"param_16\": 73,\n  \"param_17\": \"beta\",\n  \"param_18\": false,\n  \"param_19\": [\n    2,\n    \"mu\"\n  ],\n  \"param_20\": 450,\n  \"param_21\": \"iota\",\n  \"param_22\": false,\n  \"param_23\": [\n    4,\n    \"mu\"\n  ],\n  \"param_24\": 493,\n  \"param_25\": \"mu\",\n  \"param_26\": true,\n  \"param_27\": [\n    8,\n    \"alpha\"\n  ],\n  \"param_28\": 451,\n  \"param_29\": \"nu\",\n  \"param_30\": true,\n  \"param_31\": [\n    5,\n    \"omicron\"\n  ],\n  \"param_32\": -226,\n  \"param_33\": \"gamma\",\n  \"param_34\": true,\n  \"param_35\": [\n    4,\n    \"nu\"\n  ],\n  \"param_36\": -46,\n  \"param_37\": \"zeta\",\n  \"param_38\": false,\n  \"param_39\": [\n    6,\n    \"xi\"\n  ],\n  \"param_40\": 162,\n  \"param_41\": \"delta\",\n  \"param_42\": true,\n  \"param_43\": [\n    5,\n    \"theta\"\n  ],\n  \"param_44\": -470,\n  \"param_45\": \"omicron\",\n  \"param_46\": false,\n  \"param_47\": [\n    6,\n    \"kappa\"\n  ],\n  \"param_48\": 196,\n  \"param_49\": \"epsilon\",\n  \"param_50\": true,\n  \"param_51\": [\n    5,\n    \"zeta\"\n  ],\n  \"param_52\": -254,\n  \"param_53\": \"lam\",\n  \"param_54\": false,\n  \"param_55\": [\n    3,\n    \"xi\"\n  ],\n  \"param_56\": -61,\n  \"param_57\": \"theta\",\n  \"param_58\": true,\n  \"param_59\": [\n    1,\n    \"eta\"\n  ],\n  \"param_60\": -5,\n  \"param_61\": \"iota\",\n  \"param_62\": false,\n  \"param_63\": [\n    8,\n    \"zeta\"\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_059_wide_64_args",
+  "family": "wide_64_args",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"param_00\": -372,\n  \"param_01\": \"alpha\",\n  \"param_02\": true,\n  \"param_03\": [\n    5,\n    \"mu\"\n  ],\n  \"param_04\": 490,\n  \"param_05\": \"nu\",\n  \"param_06\": true,\n  \"param_07\": [\n    7,\n    \"omicron\"\n  ],\n  \"param_08\": -451,\n  \"param_09\": \"pi\",\n  \"param_10\": false,\n  \"param_11\": [\n    3,\n    \"iota\"\n  ],\n  \"param_12\": -332,\n  \"param_13\": \"alpha\",\n  \"param_14\": false,\n  \"param_15\": [\n    1,\n    \"alpha\"\n  ],\n  \"param_16\": -464,\n  \"param_17\": \"lam\",\n  \"param_18\": false,\n  \"param_19\": [\n    4,\n    \"omicron\"\n  ],\n  \"param_20\": 462,\n  \"param_21\": \"delta\",\n  \"param_22\": false,\n  \"param_23\": [\n    6,\n    \"omicron\"\n  ],\n  \"param_24\": -199,\n  \"param_25\": \"theta\",\n  \"param_26\": false,\n  \"param_27\": [\n    6,\n    \"xi\"\n  ],\n  \"param_28\": 2,\n  \"param_29\": \"theta\",\n  \"param_30\": false,\n  \"param_31\": [\n    4,\n    \"kappa\"\n  ],\n  \"param_32\": -222,\n  \"param_33\": \"rho\",\n  \"param_34\": false,\n  \"param_35\": [\n    3,\n    \"lam\"\n  ],\n  \"param_36\": -282,\n  \"param_37\": \"pi\",\n  \"param_38\": false,\n  \"param_39\": [\n    4,\n    \"beta\"\n  ],\n  \"param_40\": 342,\n  \"param_41\": \"lam\",\n  \"param_42\": true,\n  \"param_43\": [\n    0,\n    \"alpha\"\n  ],\n  \"param_44\": -70,\n  \"param_45\": \"rho\",\n  \"param_46\": false,\n  \"param_47\": [\n    0,\n    \"omicron\"\n  ],\n  \"param_48\": 417,\n  \"param_49\": \"gamma\",\n  \"param_50\": false,\n  \"param_51\": [\n    4,\n    \"delta\"\n  ],\n  \"param_52\": 306,\n  \"param_53\": \"lam\",\n  \"param_54\": false,\n  \"param_55\": [\n    1,\n    \"beta\"\n  ],\n  \"param_56\": 10,\n  \"param_57\": \"iota\",\n  \"param_58\": false,\n  \"param_59\": [\n    4,\n    \"zeta\"\n  ],\n  \"param_60\": 249,\n  \"param_61\": \"eta\",\n  \"param_62\": true,\n  \"param_63\": [\n    2,\n    \"theta\"\n  ]\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_060_big_numbers",
+  "family": "big_numbers",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"int64_edge\": 9007199254740993,\n  \"negative\": -9007199254740999,\n  \"large\": 1787678260337919,\n  \"small_group\": [\n    -3,\n    -8,\n    -1,\n    5,\n    -3\n  ],\n  \"id_like\": 999999999999999\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_061_big_numbers",
+  "family": "big_numbers",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"int64_edge\": 9007199254740994,\n  \"negative\": -9007199254741000,\n  \"large\": 9546715316363063,\n  \"small_group\": [\n    8,\n    -4,\n    -8,\n    8,\n    -8\n  ],\n  \"id_like\": 999999999999998\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_062_big_numbers",
+  "family": "big_numbers",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"int64_edge\": 9007199254740995,\n  \"negative\": -9007199254741001,\n  \"large\": 5668591110120212,\n  \"small_group\": [\n    8,\n    0,\n    1,\n    7,\n    -5\n  ],\n  \"id_like\": 999999999999997\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_063_big_numbers",
+  "family": "big_numbers",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"int64_edge\": 9007199254740996,\n  \"negative\": -9007199254741002,\n  \"large\": 9032957296234853,\n  \"small_group\": [\n    -5,\n    -8,\n    4,\n    5,\n    -4\n  ],\n  \"id_like\": 999999999999996\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_064_big_numbers",
+  "family": "big_numbers",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"int64_edge\": 9007199254740997,\n  \"negative\": -9007199254741003,\n  \"large\": 3746569238961053,\n  \"small_group\": [\n    -1,\n    -9,\n    -8,\n    -9,\n    -8\n  ],\n  \"id_like\": 999999999999995\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_065_big_numbers",
+  "family": "big_numbers",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"int64_edge\": 9007199254740998,\n  \"negative\": -9007199254741004,\n  \"large\": 5029232572744340,\n  \"small_group\": [\n    0,\n    7,\n    -9,\n    3,\n    -7\n  ],\n  \"id_like\": 999999999999994\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_066_big_numbers",
+  "family": "big_numbers",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"int64_edge\": 9007199254740999,\n  \"negative\": -9007199254741005,\n  \"large\": 4921227756221925,\n  \"small_group\": [\n    9,\n    -9,\n    -4,\n    2,\n    7\n  ],\n  \"id_like\": 999999999999993\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_067_big_numbers",
+  "family": "big_numbers",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"int64_edge\": 9007199254741000,\n  \"negative\": -9007199254741006,\n  \"large\": 7597407379358008,\n  \"small_group\": [\n    7,\n    -4,\n    0,\n    -1,\n    -4\n  ],\n  \"id_like\": 999999999999992\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_068_big_numbers",
+  "family": "big_numbers",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"int64_edge\": 9007199254741001,\n  \"negative\": -9007199254741007,\n  \"large\": 6616009918033648,\n  \"small_group\": [\n    -2,\n    -8,\n    8,\n    -3,\n    6\n  ],\n  \"id_like\": 999999999999991\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_069_big_numbers",
+  "family": "big_numbers",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"int64_edge\": 9007199254741002,\n  \"negative\": -9007199254741008,\n  \"large\": 3426343169873175,\n  \"small_group\": [\n    -7,\n    -2,\n    1,\n    5,\n    -4\n  ],\n  \"id_like\": 999999999999990\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_070_floats",
+  "family": "floats",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"half\": 0.5,\n  \"quarter\": 3.25,\n  \"tiny\": 1e-07,\n  \"big_e\": 2500000000000000.0,\n  \"pi_ish\": 3.141592653589793,\n  \"list\": [\n    0.1,\n    0.25,\n    1.75,\n    -42.5\n  ],\n  \"nested\": {\n    \"ratio\": 0.125\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_071_floats",
+  "family": "floats",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"half\": 0.5,\n  \"quarter\": 4.25,\n  \"tiny\": 1e-07,\n  \"big_e\": 2500000000000000.0,\n  \"pi_ish\": 3.141592653589793,\n  \"list\": [\n    0.1,\n    0.25,\n    1.75,\n    -42.5\n  ],\n  \"nested\": {\n    \"ratio\": 0.25\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_072_floats",
+  "family": "floats",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"half\": 0.5,\n  \"quarter\": 5.25,\n  \"tiny\": 1e-07,\n  \"big_e\": 2500000000000000.0,\n  \"pi_ish\": 3.141592653589793,\n  \"list\": [\n    0.1,\n    0.25,\n    1.75,\n    -42.5\n  ],\n  \"nested\": {\n    \"ratio\": 0.375\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_073_floats",
+  "family": "floats",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"half\": 0.5,\n  \"quarter\": 6.25,\n  \"tiny\": 1e-07,\n  \"big_e\": 2500000000000000.0,\n  \"pi_ish\": 3.141592653589793,\n  \"list\": [\n    0.1,\n    0.25,\n    1.75,\n    -42.5\n  ],\n  \"nested\": {\n    \"ratio\": 0.5\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_074_floats",
+  "family": "floats",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"half\": 0.5,\n  \"quarter\": 7.25,\n  \"tiny\": 1e-07,\n  \"big_e\": 2500000000000000.0,\n  \"pi_ish\": 3.141592653589793,\n  \"list\": [\n    0.1,\n    0.25,\n    1.75,\n    -42.5\n  ],\n  \"nested\": {\n    \"ratio\": 0.625\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_075_floats",
+  "family": "floats",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"half\": 0.5,\n  \"quarter\": 8.25,\n  \"tiny\": 1e-07,\n  \"big_e\": 2500000000000000.0,\n  \"pi_ish\": 3.141592653589793,\n  \"list\": [\n    0.1,\n    0.25,\n    1.75,\n    -42.5\n  ],\n  \"nested\": {\n    \"ratio\": 0.75\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_076_floats",
+  "family": "floats",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"half\": 0.5,\n  \"quarter\": 9.25,\n  \"tiny\": 1e-07,\n  \"big_e\": 2500000000000000.0,\n  \"pi_ish\": 3.141592653589793,\n  \"list\": [\n    0.1,\n    0.25,\n    1.75,\n    -42.5\n  ],\n  \"nested\": {\n    \"ratio\": 0.875\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_077_floats",
+  "family": "floats",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"half\": 0.5,\n  \"quarter\": 10.25,\n  \"tiny\": 1e-07,\n  \"big_e\": 2500000000000000.0,\n  \"pi_ish\": 3.141592653589793,\n  \"list\": [\n    0.1,\n    0.25,\n    1.75,\n    -42.5\n  ],\n  \"nested\": {\n    \"ratio\": 1.0\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_078_floats",
+  "family": "floats",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"half\": 0.5,\n  \"quarter\": 11.25,\n  \"tiny\": 1e-07,\n  \"big_e\": 2500000000000000.0,\n  \"pi_ish\": 3.141592653589793,\n  \"list\": [\n    0.1,\n    0.25,\n    1.75,\n    -42.5\n  ],\n  \"nested\": {\n    \"ratio\": 1.125\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_079_floats",
+  "family": "floats",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"half\": 0.5,\n  \"quarter\": 12.25,\n  \"tiny\": 1e-07,\n  \"big_e\": 2500000000000000.0,\n  \"pi_ish\": 3.141592653589793,\n  \"list\": [\n    0.1,\n    0.25,\n    1.75,\n    -42.5\n  ],\n  \"nested\": {\n    \"ratio\": 1.25\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_080_empty_structures",
+  "family": "empty_structures",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"shell\": {},\n  \"marker\": 0,\n  \"also\": {\n    \"deep_empty\": [\n      [],\n      {},\n      [\n        [],\n        {}\n      ]\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_081_empty_structures",
+  "family": "empty_structures",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"shell\": [],\n  \"marker\": 1,\n  \"also\": {\n    \"deep_empty\": [\n      [],\n      {},\n      [\n        [],\n        {}\n      ]\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_082_empty_structures",
+  "family": "empty_structures",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"shell\": \"\",\n  \"marker\": 2,\n  \"also\": {\n    \"deep_empty\": [\n      [],\n      {},\n      [\n        [],\n        {}\n      ]\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_083_empty_structures",
+  "family": "empty_structures",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"shell\": {\n    \"empty_obj\": {}\n  },\n  \"marker\": 3,\n  \"also\": {\n    \"deep_empty\": [\n      [],\n      {},\n      [\n        [],\n        {}\n      ]\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_084_empty_structures",
+  "family": "empty_structures",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"shell\": {\n    \"empty_arr\": []\n  },\n  \"marker\": 4,\n  \"also\": {\n    \"deep_empty\": [\n      [],\n      {},\n      [\n        [],\n        {}\n      ]\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_085_empty_structures",
+  "family": "empty_structures",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"shell\": {\n    \"empty_str\": \"\"\n  },\n  \"marker\": 5,\n  \"also\": {\n    \"deep_empty\": [\n      [],\n      {},\n      [\n        [],\n        {}\n      ]\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_086_empty_structures",
+  "family": "empty_structures",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"shell\": [\n    []\n  ],\n  \"marker\": 6,\n  \"also\": {\n    \"deep_empty\": [\n      [],\n      {},\n      [\n        [],\n        {}\n      ]\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_087_empty_structures",
+  "family": "empty_structures",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"shell\": [\n    {}\n  ],\n  \"marker\": 7,\n  \"also\": {\n    \"deep_empty\": [\n      [],\n      {},\n      [\n        [],\n        {}\n      ]\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_088_empty_structures",
+  "family": "empty_structures",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"shell\": {\n    \"a\": {\n      \"b\": {\n        \"c\": {}\n      }\n    }\n  },\n  \"marker\": 8,\n  \"also\": {\n    \"deep_empty\": [\n      [],\n      {},\n      [\n        [],\n        {}\n      ]\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_089_empty_structures",
+  "family": "empty_structures",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"shell\": {\n    \"mix\": [\n      {},\n      [],\n      \"\",\n      0,\n      false,\n      null\n    ]\n  },\n  \"marker\": 9,\n  \"also\": {\n    \"deep_empty\": [\n      [],\n      {},\n      [\n        [],\n        {}\n      ]\n    ]\n  }\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_090_lookalike_keys",
+  "family": "lookalike_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"a\": \"first\",\n  \"а\": \"second\",\n  \"note\": \"keys differ (cyrillic/greek/space lookalikes)\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_091_lookalike_keys",
+  "family": "lookalike_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"key\": \"first\",\n  \"kеy\": \"second\",\n  \"note\": \"keys differ (cyrillic/greek/space lookalikes)\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_092_lookalike_keys",
+  "family": "lookalike_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"O0\": \"first\",\n  \"0O\": \"second\",\n  \"note\": \"keys differ (cyrillic/greek/space lookalikes)\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_093_lookalike_keys",
+  "family": "lookalike_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"l1\": \"first\",\n  \"1l\": \"second\",\n  \"note\": \"keys differ (cyrillic/greek/space lookalikes)\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_094_lookalike_keys",
+  "family": "lookalike_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"x \": \"first\",\n  \" x\": \"second\",\n  \"note\": \"keys differ (cyrillic/greek/space lookalikes)\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_095_lookalike_keys",
+  "family": "lookalike_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"A\": \"first\",\n  \"Α\": \"second\",\n  \"note\": \"keys differ (cyrillic/greek/space lookalikes)\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_096_lookalike_keys",
+  "family": "lookalike_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"data\": \"first\",\n  \"dаta\": \"second\",\n  \"note\": \"keys differ (cyrillic/greek/space lookalikes)\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_097_lookalike_keys",
+  "family": "lookalike_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"test\": \"first\",\n  \"tеst\": \"second\",\n  \"note\": \"keys differ (cyrillic/greek/space lookalikes)\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_098_lookalike_keys",
+  "family": "lookalike_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"v_1\": \"first\",\n  \"v-1\": \"second\",\n  \"note\": \"keys differ (cyrillic/greek/space lookalikes)\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ },
+ {
+  "id": "nested_099_lookalike_keys",
+  "family": "lookalike_keys",
+  "max_tokens": 2048,
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "submit_payload",
+     "description": "Submit a structured payload for processing. Arguments are passed through verbatim.",
+     "parameters": {
+      "type": "object",
+      "additionalProperties": true
+     }
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Call the tool `submit_payload` exactly once. Its arguments must be EXACTLY the following JSON — every key, every value, every nesting level reproduced verbatim, with no additions, omissions, reordering of arrays, or reformatting of values:\n\n{\n  \"π\": \"first\",\n  \"п\": \"second\",\n  \"note\": \"keys differ (cyrillic/greek/space lookalikes)\"\n}\n\nReply with only the tool call."
+   }
+  ]
+ }
+]

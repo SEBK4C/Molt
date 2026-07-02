@@ -1,0 +1,1046 @@
+{
+ "tau_r_cxl_0": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W481": {
+     "user": "u7",
+     "status": "cancelled",
+     "total": 64.0,
+     "refund": 64.0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "LAMP-3",
+       "qty": 1,
+       "price": 64.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_cxl_1": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W482": {
+     "user": "u7",
+     "status": "cancelled",
+     "total": 149.99,
+     "refund": 149.99,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "DESK-9",
+       "qty": 1,
+       "price": 149.99
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_cxl_2": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W483": {
+     "user": "u7",
+     "status": "cancelled",
+     "total": 28.5,
+     "refund": 28.5,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "CBL-2",
+       "qty": 3,
+       "price": 9.5
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_cxl_3": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W484": {
+     "user": "u7",
+     "status": "cancelled",
+     "total": 210.0,
+     "refund": 210.0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "CHR-11",
+       "qty": 1,
+       "price": 210.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_cxl_4": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W485": {
+     "user": "u7",
+     "status": "cancelled",
+     "total": 176.5,
+     "refund": 176.5,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "RUG-5",
+       "qty": 2,
+       "price": 88.25
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_cxlref_0": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W510": {
+     "user": "u7",
+     "status": "shipped",
+     "total": 399.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "TV-42",
+       "qty": 1,
+       "price": 399.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_cxlref_1": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W511": {
+     "user": "u7",
+     "status": "shipped",
+     "total": 118.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "SPK-7",
+       "qty": 2,
+       "price": 59.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_cxlref_2": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W512": {
+     "user": "u7",
+     "status": "shipped",
+     "total": 45.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "KBD-1",
+       "qty": 1,
+       "price": 45.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_cxlref_3": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W513": {
+     "user": "u7",
+     "status": "shipped",
+     "total": 229.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "MON-27",
+       "qty": 1,
+       "price": 229.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_addr_0": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W520": {
+     "user": "u7",
+     "status": "processing",
+     "total": 25.0,
+     "refund": 0,
+     "address": "88 Cañón Road, Santa Fe NM 87501",
+     "items": [
+      {
+       "sku": "BOOK-1",
+       "qty": 1,
+       "price": 25.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_addr_1": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W521": {
+     "user": "u7",
+     "status": "processing",
+     "total": 25.0,
+     "refund": 0,
+     "address": "Flat 4B, 12 Königstraße, Stuttgart 70173",
+     "items": [
+      {
+       "sku": "BOOK-1",
+       "qty": 1,
+       "price": 25.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_addr_2": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W522": {
+     "user": "u7",
+     "status": "processing",
+     "total": 25.0,
+     "refund": 0,
+     "address": "1600 Harbor Blvd, Weehawken NJ 07086",
+     "items": [
+      {
+       "sku": "BOOK-1",
+       "qty": 1,
+       "price": 25.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_addr_3": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W523": {
+     "user": "u7",
+     "status": "processing",
+     "total": 25.0,
+     "refund": 0,
+     "address": "Unit 9, 345 O'Connell St, Dublin D01",
+     "items": [
+      {
+       "sku": "BOOK-1",
+       "qty": 1,
+       "price": 25.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_dmg_0": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W530": {
+     "user": "u7",
+     "status": "delivered",
+     "total": 25.0,
+     "refund": 25.0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "GLS-6",
+       "qty": 2,
+       "price": 12.5
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_dmg_1": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W531": {
+     "user": "u7",
+     "status": "delivered",
+     "total": 32.0,
+     "refund": 32.0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "PLT-3",
+       "qty": 4,
+       "price": 8.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_dmg_2": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W532": {
+     "user": "u7",
+     "status": "delivered",
+     "total": 49.99,
+     "refund": 49.99,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "VAS-2",
+       "qty": 1,
+       "price": 49.99
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_dmg_3": {
+  "final_state": {
+   "escalated": true,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W533": {
+     "user": "u7",
+     "status": "delivered",
+     "total": 60.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "ART-9",
+       "qty": 2,
+       "price": 30.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_dmg_4": {
+  "final_state": {
+   "escalated": true,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W534": {
+     "user": "u7",
+     "status": "delivered",
+     "total": 75.5,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "LMP-8",
+       "qty": 1,
+       "price": 75.5
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_exch_0": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W540": {
+     "user": "u7",
+     "status": "placed",
+     "total": 19.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "MUG-RED",
+       "qty": 1,
+       "price": 19.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_exch_1": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W541": {
+     "user": "u7",
+     "status": "placed",
+     "total": 19.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "TEE-L",
+       "qty": 1,
+       "price": 19.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_exch_2": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W542": {
+     "user": "u7",
+     "status": "placed",
+     "total": 19.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "PEN-BLU",
+       "qty": 1,
+       "price": 19.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_r_exch_3": {
+  "final_state": {
+   "escalated": false,
+   "users": {
+    "u7": {
+     "name": "Sam Rivera",
+     "membership": "standard"
+    }
+   },
+   "orders": {
+    "W543": {
+     "user": "u7",
+     "status": "placed",
+     "total": 19.0,
+     "refund": 0,
+     "address": "12 Birch Lane, Portland OR",
+     "items": [
+      {
+       "sku": "CAP-NVY",
+       "qty": 1,
+       "price": 19.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "tau_a_chg_0": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA100": {
+     "seats_available": 2,
+     "price": 320.0
+    },
+    "AA200": {
+     "seats_available": 3,
+     "price": 320.0
+    }
+   },
+   "bookings": {
+    "B810": {
+     "user": "u7",
+     "flight": "AA200",
+     "status": "confirmed",
+     "fare_class": "economy",
+     "price": 320.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 75
+    }
+   }
+  }
+ },
+ "tau_a_chg_1": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA100": {
+     "seats_available": 2,
+     "price": 320.0
+    },
+    "AA200": {
+     "seats_available": 1,
+     "price": 320.0
+    }
+   },
+   "bookings": {
+    "B811": {
+     "user": "u7",
+     "flight": "AA200",
+     "status": "confirmed",
+     "fare_class": "economy",
+     "price": 320.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 75
+    }
+   }
+  }
+ },
+ "tau_a_chg_2": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA100": {
+     "seats_available": 2,
+     "price": 320.0
+    },
+    "AA200": {
+     "seats_available": 2,
+     "price": 320.0
+    }
+   },
+   "bookings": {
+    "B812": {
+     "user": "u7",
+     "flight": "AA200",
+     "status": "confirmed",
+     "fare_class": "flex",
+     "price": 320.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  }
+ },
+ "tau_a_chg_3": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA100": {
+     "seats_available": 2,
+     "price": 320.0
+    },
+    "AA200": {
+     "seats_available": 4,
+     "price": 320.0
+    }
+   },
+   "bookings": {
+    "B813": {
+     "user": "u7",
+     "flight": "AA200",
+     "status": "confirmed",
+     "fare_class": "economy",
+     "price": 320.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 75
+    }
+   }
+  }
+ },
+ "tau_a_chg_4": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA100": {
+     "seats_available": 1,
+     "price": 320.0
+    },
+    "AA200": {
+     "seats_available": 6,
+     "price": 320.0
+    }
+   },
+   "bookings": {
+    "B814": {
+     "user": "u7",
+     "flight": "AA100",
+     "status": "confirmed",
+     "fare_class": "basic",
+     "price": 320.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  }
+ },
+ "tau_a_cxl_0": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA300": {
+     "seats_available": 1,
+     "price": 410.0
+    }
+   },
+   "bookings": {
+    "B820": {
+     "user": "u7",
+     "flight": "AA300",
+     "status": "cancelled",
+     "fare_class": "flex",
+     "price": 410.0,
+     "refund": 410.0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  }
+ },
+ "tau_a_cxl_1": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA300": {
+     "seats_available": 1,
+     "price": 129.5
+    }
+   },
+   "bookings": {
+    "B821": {
+     "user": "u7",
+     "flight": "AA300",
+     "status": "cancelled",
+     "fare_class": "flex",
+     "price": 129.5,
+     "refund": 129.5,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  }
+ },
+ "tau_a_cxl_2": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA300": {
+     "seats_available": 1,
+     "price": 300.0
+    }
+   },
+   "bookings": {
+    "B822": {
+     "user": "u7",
+     "flight": "AA300",
+     "status": "cancelled",
+     "fare_class": "economy",
+     "price": 300.0,
+     "refund": 150.0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  }
+ },
+ "tau_a_cxl_3": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA300": {
+     "seats_available": 1,
+     "price": 179.98
+    }
+   },
+   "bookings": {
+    "B823": {
+     "user": "u7",
+     "flight": "AA300",
+     "status": "cancelled",
+     "fare_class": "economy",
+     "price": 179.98,
+     "refund": 89.99,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  }
+ },
+ "tau_a_cxl_4": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA300": {
+     "seats_available": 1,
+     "price": 89.0
+    }
+   },
+   "bookings": {
+    "B824": {
+     "user": "u7",
+     "flight": "AA300",
+     "status": "cancelled",
+     "fare_class": "basic",
+     "price": 89.0,
+     "refund": 0,
+     "baggage": 0,
+     "charges": 0
+    }
+   }
+  }
+ },
+ "tau_a_bag_0": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA400": {
+     "seats_available": 2,
+     "price": 250.0
+    }
+   },
+   "bookings": {
+    "B830": {
+     "user": "u7",
+     "flight": "AA400",
+     "status": "confirmed",
+     "fare_class": "economy",
+     "price": 250.0,
+     "refund": 0,
+     "baggage": 2,
+     "charges": 80
+    }
+   }
+  }
+ },
+ "tau_a_bag_1": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA400": {
+     "seats_available": 2,
+     "price": 250.0
+    }
+   },
+   "bookings": {
+    "B831": {
+     "user": "u7",
+     "flight": "AA400",
+     "status": "confirmed",
+     "fare_class": "flex",
+     "price": 250.0,
+     "refund": 0,
+     "baggage": 1,
+     "charges": 30
+    }
+   }
+  }
+ },
+ "tau_a_bag_2": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA400": {
+     "seats_available": 2,
+     "price": 250.0
+    }
+   },
+   "bookings": {
+    "B832": {
+     "user": "u7",
+     "flight": "AA400",
+     "status": "confirmed",
+     "fare_class": "economy",
+     "price": 250.0,
+     "refund": 0,
+     "baggage": 3,
+     "charges": 120
+    }
+   }
+  }
+ },
+ "tau_a_bag_3": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA400": {
+     "seats_available": 2,
+     "price": 250.0
+    }
+   },
+   "bookings": {
+    "B833": {
+     "user": "u7",
+     "flight": "AA400",
+     "status": "confirmed",
+     "fare_class": "flex",
+     "price": 250.0,
+     "refund": 0,
+     "baggage": 2,
+     "charges": 60
+    }
+   }
+  }
+ },
+ "tau_a_multi_0": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA500": {
+     "seats_available": 2,
+     "price": 275.0
+    },
+    "AA600": {
+     "seats_available": 3,
+     "price": 275.0
+    }
+   },
+   "bookings": {
+    "B840": {
+     "user": "u7",
+     "flight": "AA600",
+     "status": "confirmed",
+     "fare_class": "economy",
+     "price": 275.0,
+     "refund": 0,
+     "baggage": 1,
+     "charges": 115
+    }
+   }
+  }
+ },
+ "tau_a_multi_1": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA500": {
+     "seats_available": 2,
+     "price": 275.0
+    },
+    "AA600": {
+     "seats_available": 3,
+     "price": 275.0
+    }
+   },
+   "bookings": {
+    "B841": {
+     "user": "u7",
+     "flight": "AA600",
+     "status": "confirmed",
+     "fare_class": "flex",
+     "price": 275.0,
+     "refund": 0,
+     "baggage": 2,
+     "charges": 60
+    }
+   }
+  }
+ },
+ "tau_a_multi_2": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA500": {
+     "seats_available": 2,
+     "price": 275.0
+    },
+    "AA600": {
+     "seats_available": 3,
+     "price": 275.0
+    }
+   },
+   "bookings": {
+    "B842": {
+     "user": "u7",
+     "flight": "AA600",
+     "status": "confirmed",
+     "fare_class": "economy",
+     "price": 275.0,
+     "refund": 0,
+     "baggage": 2,
+     "charges": 155
+    }
+   }
+  }
+ },
+ "tau_a_multi_3": {
+  "final_state": {
+   "escalated": false,
+   "flights": {
+    "AA500": {
+     "seats_available": 2,
+     "price": 275.0
+    },
+    "AA600": {
+     "seats_available": 3,
+     "price": 275.0
+    }
+   },
+   "bookings": {
+    "B843": {
+     "user": "u7",
+     "flight": "AA600",
+     "status": "confirmed",
+     "fare_class": "flex",
+     "price": 275.0,
+     "refund": 0,
+     "baggage": 1,
+     "charges": 30
+    }
+   }
+  }
+ }
+}

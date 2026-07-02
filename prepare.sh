@@ -1,51 +1,51 @@
 #!/usr/bin/env bash
-# molt prepare.sh — one-time setup on llm-serve. Idempotent-ish; rerun safe steps skip.
+# molt prepare.sh — one-time setup on llm-serve. Idempotent: every step checks before doing.
+# Thin orchestrator over scripts/ (each independently rerunnable + tmux-friendly).
+# ~/.config/molt/env (HF_TOKEN, ANTHROPIC_API_KEY) is needed for HG1 endpoint + HF uploads;
+# the public 397B download itself rides the cached ~/.cache/huggingface/token.
 set -euo pipefail
-source ~/.config/molt/env   # HF_TOKEN, ANTHROPIC_API_KEY
+[ -f ~/.config/molt/env ] && { set -a; source ~/.config/molt/env; set +a; }
 
-ROOT=/home/seb/molt
-MODELS=/mnt/proxmox/llm-serve/models/ornith
-LCPP=$ROOT/vendor/llama.cpp
-mkdir -p "$ROOT"/{recipes,serve,notes,harness,runner,corpora} "$MODELS"
+ROOT=/home/seb/molt              # symlink -> the repo (created below if absent)
+REPO=/home/seb/Ai-projects/Molt
+STAGE=/mnt/proxmox/llm-serve/models/ornith-397b   # ALL large artifacts live here, never on /
 
-# 1. llama.cpp pinned build (qwen3_5_moe + draft-mtp)
-if [ ! -x "$LCPP/build/bin/llama-quantize" ]; then
-  git clone https://github.com/ggml-org/llama.cpp "$LCPP" || true
-  cmake -S "$LCPP" -B "$LCPP/build" -DGGML_CUDA=ON -DCMAKE_BUILD_TYPE=Release
-  cmake --build "$LCPP/build" -j"$(nproc)" \
-    --target llama-quantize llama-imatrix llama-perplexity llama-server llama-bench
+# 0. layout: symlinks + dirs (models/ -> big disk; /home/seb/molt -> repo)
+[ -e "$ROOT" ] || ln -s "$REPO" "$ROOT"
+mkdir -p "$STAGE" "$REPO/notes/logs"
+[ -e "$REPO/models" ] || ln -s "$STAGE" "$REPO/models"
+
+cd "$REPO"
+
+# 1. pinned llama.cpp build (qwen35moe + --spec-type draft-mtp + --tensor-type; see vendor/PIN)
+[ -x vendor/llama.cpp/build/bin/llama-quantize ] || ./scripts/build_llamacpp.sh
+
+# 2. python env (uv; torch is CPU-only, for convert_hf_to_gguf)
+[ -x .venv/bin/python ] || ./scripts/setup_env.sh
+
+# 3. P0: BF16 originals (~794 GB; NOT the FP8 repo — convert can't ingest compressed-tensors).
+#    Resumes natively; run detached because this takes hours:
+if [ ! -f notes/logs/molt-dl.log ] || ! grep -q 'COMPLETE' notes/logs/molt-dl.log; then
+  tmux has-session -t molt 2>/dev/null || tmux new-session -d -s molt -n dl
+  tmux list-windows -t molt | grep -q ' dl' || tmux new-window -t molt -n dl
+  tmux send-keys -t molt:dl "cd $REPO && ./scripts/download_397b.sh 2>&1 | tee -a notes/logs/molt-dl.log" Enter
+  echo ">> download running in tmux molt:dl (progress: du -sb $STAGE/hf-bf16 vs 793633331312)"
 fi
 
-# 2. Python env
-cd "$ROOT" && uv venv && uv pip install gguf safetensors transformers datasets evalplus numpy matplotlib
+# 4. corpora (small; can run while weights download)
+[ -s corpora/imatrix.txt ]     || .venv/bin/python corpora/build_imatrix_corpus.py --mix recipes/imatrix.yaml --out corpora/imatrix.txt
+[ -s corpora/kld_heldout.txt ] || .venv/bin/python corpora/build_kld_heldout.py --out corpora/kld_heldout.txt
 
-# 3. P0: BF16 originals (807 GB). NOT the FP8 repo — convert can't ingest compressed-tensors.
-hf download deepreinforce-ai/Ornith-1.0-397B --local-dir "$MODELS/hf-bf16" \
-  --exclude "*.msgpack" &
+# 5. harness self-check (tests + provisional manifest if none yet)
+.venv/bin/python -m pytest harness/tests/ -q
+[ -f harness/manifest.json ] || .venv/bin/python harness/manifest.py --write --provisional
+runner/score.sh --verify-only
 
-# 4. Corpora (small; runs while weights download)
-python corpora/build_imatrix_corpus.py --mix recipes/imatrix.yaml --out corpora/imatrix.txt
-python corpora/build_kld_heldout.py   --out corpora/kld_heldout.txt
-wait
-
-# 5. P1: direct Q8_0 GGUF (skip BF16 GGUF intermediate; saves 807 GB staging)
-uv run python "$LCPP/convert_hf_to_gguf.py" "$MODELS/hf-bf16" \
-  --outtype q8_0 --outfile "$MODELS/Ornith-Q8_0.gguf"
-
-# 6. P2: imatrix (~1 h; prefill-only, streams 420 GB/chunk from SSD at 14 GB/s)
-"$LCPP/build/bin/llama-imatrix" -m "$MODELS/Ornith-Q8_0.gguf" \
-  -f corpora/imatrix.txt -o "$MODELS/imatrix-agentic.dat" -ngl 15 --chunk 512
-
-# 7. P3: KLD reference logits
-"$LCPP/build/bin/llama-perplexity" -m "$MODELS/Ornith-Q8_0.gguf" \
-  -f corpora/kld_heldout.txt --kl-divergence-base "$MODELS/kld-base.out" -ngl 15
-
-# 8. P4: baseline quant from recipes/baseline.yaml (rendered to --tensor-type flags)
-uv run python runner/render_quant_cmd.py recipes/baseline.yaml \
-  --imatrix "$MODELS/imatrix-agentic.dat" \
-  --in "$MODELS/Ornith-Q8_0.gguf" --out "$MODELS/ornith-molt-000.gguf" | bash
-
-# 9. Harness freeze + Phase 0
-python harness/manifest.py --write
-echo ">> Now: score baseline 3x -> harness/epsilon.txt; then 'git checkout -b molt/$(date +%Y%m%d)'"
-echo ">> and start Claude Code: 'Read program.md and start tonight's session.'"
+cat <<'EOF'
+>> prepare.sh done (download may still be streaming — see tmux molt:dl).
+>> After the download verifies (scripts/verify_download.py):
+>>   ./scripts/post_download_chain.sh   # P1 Q8_0 -> P2 imatrix -> P3 KLD -> P4 baseline quant
+>>   ./scripts/phase0_epsilon.sh        # P5: 3x baseline -> harness/epsilon.txt -> FINAL freeze
+>>     (P5 needs idle GPUs: llama-swap's Nemotron entry is ttl:0 — freeing GPUs is HUMAN gate HG4)
+>> then: git checkout -b molt/$(date +%Y%m%d); start Claude Code: "Read program.md and start tonight's session."
+EOF

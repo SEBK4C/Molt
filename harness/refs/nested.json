@@ -1,0 +1,3167 @@
+{
+ "nested_000_deep_uniform": {
+  "name": "submit_payload",
+  "arguments": {
+   "level_1": {
+    "level_2": {
+     "level_3": {
+      "level_4": {
+       "level_5": {
+        "level_6": {
+         "level_7": {
+          "level_8": {
+           "value": 355,
+           "tag": "kappa"
+          },
+          "sibling": "pi"
+         },
+         "sibling": "nu"
+        },
+        "sibling": "theta"
+       },
+       "sibling": "pi"
+      },
+      "sibling": "nu"
+     },
+     "sibling": "rho"
+    },
+    "sibling": "lam"
+   },
+   "sibling": "rho"
+  }
+ },
+ "nested_001_deep_uniform": {
+  "name": "submit_payload",
+  "arguments": {
+   "level_1": {
+    "level_2": {
+     "level_3": {
+      "level_4": {
+       "level_5": {
+        "level_6": {
+         "level_7": {
+          "level_8": {
+           "level_9": {
+            "value": 106,
+            "tag": "iota"
+           },
+           "sibling": "rho"
+          },
+          "sibling": "gamma"
+         },
+         "sibling": "gamma"
+        },
+        "sibling": "xi"
+       },
+       "sibling": "zeta"
+      },
+      "sibling": "eta"
+     },
+     "sibling": "lam"
+    },
+    "sibling": "theta"
+   },
+   "sibling": "eta"
+  }
+ },
+ "nested_002_deep_uniform": {
+  "name": "submit_payload",
+  "arguments": {
+   "level_1": {
+    "level_2": {
+     "level_3": {
+      "level_4": {
+       "level_5": {
+        "level_6": {
+         "level_7": {
+          "level_8": {
+           "level_9": {
+            "level_10": {
+             "value": 812,
+             "tag": "xi"
+            },
+            "sibling": "kappa"
+           },
+           "sibling": "iota"
+          },
+          "sibling": "theta"
+         },
+         "sibling": "theta"
+        },
+        "sibling": "delta"
+       },
+       "sibling": "kappa"
+      },
+      "sibling": "alpha"
+     },
+     "sibling": "alpha"
+    },
+    "sibling": "xi"
+   },
+   "sibling": "pi"
+  }
+ },
+ "nested_003_deep_uniform": {
+  "name": "submit_payload",
+  "arguments": {
+   "level_1": {
+    "level_2": {
+     "level_3": {
+      "level_4": {
+       "level_5": {
+        "level_6": {
+         "level_7": {
+          "level_8": {
+           "level_9": {
+            "level_10": {
+             "level_11": {
+              "value": 369,
+              "tag": "epsilon"
+             },
+             "sibling": "delta"
+            },
+            "sibling": "gamma"
+           },
+           "sibling": "mu"
+          },
+          "sibling": "nu"
+         },
+         "sibling": "omicron"
+        },
+        "sibling": "omicron"
+       },
+       "sibling": "delta"
+      },
+      "sibling": "iota"
+     },
+     "sibling": "zeta"
+    },
+    "sibling": "pi"
+   },
+   "sibling": "alpha"
+  }
+ },
+ "nested_004_deep_uniform": {
+  "name": "submit_payload",
+  "arguments": {
+   "level_1": {
+    "level_2": {
+     "level_3": {
+      "level_4": {
+       "level_5": {
+        "level_6": {
+         "level_7": {
+          "level_8": {
+           "level_9": {
+            "level_10": {
+             "level_11": {
+              "level_12": {
+               "value": 66,
+               "tag": "beta"
+              },
+              "sibling": "theta"
+             },
+             "sibling": "lam"
+            },
+            "sibling": "omicron"
+           },
+           "sibling": "alpha"
+          },
+          "sibling": "iota"
+         },
+         "sibling": "rho"
+        },
+        "sibling": "theta"
+       },
+       "sibling": "mu"
+      },
+      "sibling": "kappa"
+     },
+     "sibling": "xi"
+    },
+    "sibling": "xi"
+   },
+   "sibling": "nu"
+  }
+ },
+ "nested_005_deep_uniform": {
+  "name": "submit_payload",
+  "arguments": {
+   "level_1": {
+    "level_2": {
+     "level_3": {
+      "level_4": {
+       "level_5": {
+        "level_6": {
+         "level_7": {
+          "level_8": {
+           "level_9": {
+            "level_10": {
+             "level_11": {
+              "level_12": {
+               "level_13": {
+                "value": 800,
+                "tag": "omicron"
+               },
+               "sibling": "rho"
+              },
+              "sibling": "beta"
+             },
+             "sibling": "nu"
+            },
+            "sibling": "omicron"
+           },
+           "sibling": "theta"
+          },
+          "sibling": "eta"
+         },
+         "sibling": "iota"
+        },
+        "sibling": "zeta"
+       },
+       "sibling": "beta"
+      },
+      "sibling": "delta"
+     },
+     "sibling": "zeta"
+    },
+    "sibling": "delta"
+   },
+   "sibling": "mu"
+  }
+ },
+ "nested_006_deep_uniform": {
+  "name": "submit_payload",
+  "arguments": {
+   "level_1": {
+    "level_2": {
+     "level_3": {
+      "level_4": {
+       "level_5": {
+        "level_6": {
+         "level_7": {
+          "level_8": {
+           "level_9": {
+            "level_10": {
+             "level_11": {
+              "level_12": {
+               "level_13": {
+                "level_14": {
+                 "value": 317,
+                 "tag": "mu"
+                },
+                "sibling": "omicron"
+               },
+               "sibling": "alpha"
+              },
+              "sibling": "alpha"
+             },
+             "sibling": "nu"
+            },
+            "sibling": "epsilon"
+           },
+           "sibling": "alpha"
+          },
+          "sibling": "epsilon"
+         },
+         "sibling": "beta"
+        },
+        "sibling": "eta"
+       },
+       "sibling": "zeta"
+      },
+      "sibling": "eta"
+     },
+     "sibling": "omicron"
+    },
+    "sibling": "eta"
+   },
+   "sibling": "theta"
+  }
+ },
+ "nested_007_deep_uniform": {
+  "name": "submit_payload",
+  "arguments": {
+   "level_1": {
+    "level_2": {
+     "level_3": {
+      "level_4": {
+       "level_5": {
+        "level_6": {
+         "level_7": {
+          "level_8": {
+           "level_9": {
+            "level_10": {
+             "level_11": {
+              "level_12": {
+               "level_13": {
+                "level_14": {
+                 "level_15": {
+                  "value": 521,
+                  "tag": "delta"
+                 },
+                 "sibling": "lam"
+                },
+                "sibling": "theta"
+               },
+               "sibling": "kappa"
+              },
+              "sibling": "epsilon"
+             },
+             "sibling": "alpha"
+            },
+            "sibling": "alpha"
+           },
+           "sibling": "theta"
+          },
+          "sibling": "kappa"
+         },
+         "sibling": "eta"
+        },
+        "sibling": "lam"
+       },
+       "sibling": "mu"
+      },
+      "sibling": "alpha"
+     },
+     "sibling": "xi"
+    },
+    "sibling": "omicron"
+   },
+   "sibling": "delta"
+  }
+ },
+ "nested_008_deep_uniform": {
+  "name": "submit_payload",
+  "arguments": {
+   "level_1": {
+    "level_2": {
+     "level_3": {
+      "level_4": {
+       "level_5": {
+        "level_6": {
+         "level_7": {
+          "level_8": {
+           "level_9": {
+            "level_10": {
+             "level_11": {
+              "level_12": {
+               "level_13": {
+                "level_14": {
+                 "level_15": {
+                  "level_16": {
+                   "value": 575,
+                   "tag": "iota"
+                  },
+                  "sibling": "delta"
+                 },
+                 "sibling": "pi"
+                },
+                "sibling": "delta"
+               },
+               "sibling": "omicron"
+              },
+              "sibling": "pi"
+             },
+             "sibling": "delta"
+            },
+            "sibling": "nu"
+           },
+           "sibling": "rho"
+          },
+          "sibling": "epsilon"
+         },
+         "sibling": "epsilon"
+        },
+        "sibling": "theta"
+       },
+       "sibling": "nu"
+      },
+      "sibling": "xi"
+     },
+     "sibling": "lam"
+    },
+    "sibling": "alpha"
+   },
+   "sibling": "rho"
+  }
+ },
+ "nested_009_deep_uniform": {
+  "name": "submit_payload",
+  "arguments": {
+   "level_1": {
+    "level_2": {
+     "level_3": {
+      "level_4": {
+       "level_5": {
+        "level_6": {
+         "level_7": {
+          "level_8": {
+           "level_9": {
+            "level_10": {
+             "level_11": {
+              "level_12": {
+               "level_13": {
+                "level_14": {
+                 "level_15": {
+                  "level_16": {
+                   "level_17": {
+                    "value": 953,
+                    "tag": "epsilon"
+                   },
+                   "sibling": "omicron"
+                  },
+                  "sibling": "zeta"
+                 },
+                 "sibling": "alpha"
+                },
+                "sibling": "omicron"
+               },
+               "sibling": "alpha"
+              },
+              "sibling": "xi"
+             },
+             "sibling": "alpha"
+            },
+            "sibling": "theta"
+           },
+           "sibling": "alpha"
+          },
+          "sibling": "xi"
+         },
+         "sibling": "kappa"
+        },
+        "sibling": "mu"
+       },
+       "sibling": "gamma"
+      },
+      "sibling": "rho"
+     },
+     "sibling": "lam"
+    },
+    "sibling": "omicron"
+   },
+   "sibling": "theta"
+  }
+ },
+ "nested_010_deep_mixed": {
+  "name": "submit_payload",
+  "arguments": {
+   "root": {
+    "list": [
+     [
+      {
+       "list": [
+        [
+         {
+          "list": [
+           [
+            [
+             4,
+             "theta"
+            ],
+            {
+             "k": "theta"
+            }
+           ],
+           97
+          ]
+         },
+         {
+          "k": "gamma"
+         }
+        ],
+        38
+       ]
+      },
+      {
+       "k": "xi"
+      }
+     ],
+     52
+    ]
+   },
+   "depth": 6
+  }
+ },
+ "nested_011_deep_mixed": {
+  "name": "submit_payload",
+  "arguments": {
+   "root": [
+    {
+     "list": [
+      [
+       {
+        "list": [
+         [
+          {
+           "list": [
+            [
+             [
+              3,
+              "nu"
+             ],
+             {
+              "k": "iota"
+             }
+            ],
+            33
+           ]
+          },
+          {
+           "k": "kappa"
+          }
+         ],
+         61
+        ]
+       },
+       {
+        "k": "eta"
+       }
+      ],
+      52
+     ]
+    },
+    {
+     "k": "kappa"
+    }
+   ],
+   "depth": 7
+  }
+ },
+ "nested_012_deep_mixed": {
+  "name": "submit_payload",
+  "arguments": {
+   "root": {
+    "list": [
+     [
+      {
+       "list": [
+        [
+         {
+          "list": [
+           [
+            {
+             "list": [
+              [
+               [
+                5,
+                "lam"
+               ],
+               {
+                "k": "epsilon"
+               }
+              ],
+              90
+             ]
+            },
+            {
+             "k": "iota"
+            }
+           ],
+           51
+          ]
+         },
+         {
+          "k": "pi"
+         }
+        ],
+        27
+       ]
+      },
+      {
+       "k": "lam"
+      }
+     ],
+     87
+    ]
+   },
+   "depth": 8
+  }
+ },
+ "nested_013_deep_mixed": {
+  "name": "submit_payload",
+  "arguments": {
+   "root": [
+    {
+     "list": [
+      [
+       {
+        "list": [
+         [
+          {
+           "list": [
+            [
+             {
+              "list": [
+               [
+                [
+                 0,
+                 "beta"
+                ],
+                {
+                 "k": "theta"
+                }
+               ],
+               21
+              ]
+             },
+             {
+              "k": "iota"
+             }
+            ],
+            34
+           ]
+          },
+          {
+           "k": "iota"
+          }
+         ],
+         54
+        ]
+       },
+       {
+        "k": "eta"
+       }
+      ],
+      80
+     ]
+    },
+    {
+     "k": "theta"
+    }
+   ],
+   "depth": 9
+  }
+ },
+ "nested_014_deep_mixed": {
+  "name": "submit_payload",
+  "arguments": {
+   "root": {
+    "list": [
+     [
+      {
+       "list": [
+        [
+         {
+          "list": [
+           [
+            {
+             "list": [
+              [
+               {
+                "list": [
+                 [
+                  [
+                   2,
+                   "theta"
+                  ],
+                  {
+                   "k": "lam"
+                  }
+                 ],
+                 63
+                ]
+               },
+               {
+                "k": "delta"
+               }
+              ],
+              57
+             ]
+            },
+            {
+             "k": "alpha"
+            }
+           ],
+           57
+          ]
+         },
+         {
+          "k": "alpha"
+         }
+        ],
+        35
+       ]
+      },
+      {
+       "k": "zeta"
+      }
+     ],
+     45
+    ]
+   },
+   "depth": 10
+  }
+ },
+ "nested_015_deep_mixed": {
+  "name": "submit_payload",
+  "arguments": {
+   "root": [
+    {
+     "list": [
+      [
+       {
+        "list": [
+         [
+          {
+           "list": [
+            [
+             {
+              "list": [
+               [
+                {
+                 "list": [
+                  [
+                   [
+                    6,
+                    "beta"
+                   ],
+                   {
+                    "k": "alpha"
+                   }
+                  ],
+                  85
+                 ]
+                },
+                {
+                 "k": "zeta"
+                }
+               ],
+               87
+              ]
+             },
+             {
+              "k": "iota"
+             }
+            ],
+            97
+           ]
+          },
+          {
+           "k": "rho"
+          }
+         ],
+         59
+        ]
+       },
+       {
+        "k": "theta"
+       }
+      ],
+      72
+     ]
+    },
+    {
+     "k": "alpha"
+    }
+   ],
+   "depth": 11
+  }
+ },
+ "nested_016_deep_mixed": {
+  "name": "submit_payload",
+  "arguments": {
+   "root": {
+    "list": [
+     [
+      {
+       "list": [
+        [
+         {
+          "list": [
+           [
+            {
+             "list": [
+              [
+               {
+                "list": [
+                 [
+                  {
+                   "list": [
+                    [
+                     [
+                      8,
+                      "eta"
+                     ],
+                     {
+                      "k": "pi"
+                     }
+                    ],
+                    66
+                   ]
+                  },
+                  {
+                   "k": "eta"
+                  }
+                 ],
+                 19
+                ]
+               },
+               {
+                "k": "pi"
+               }
+              ],
+              96
+             ]
+            },
+            {
+             "k": "kappa"
+            }
+           ],
+           95
+          ]
+         },
+         {
+          "k": "gamma"
+         }
+        ],
+        24
+       ]
+      },
+      {
+       "k": "nu"
+      }
+     ],
+     91
+    ]
+   },
+   "depth": 12
+  }
+ },
+ "nested_017_deep_mixed": {
+  "name": "submit_payload",
+  "arguments": {
+   "root": [
+    {
+     "list": [
+      [
+       {
+        "list": [
+         [
+          {
+           "list": [
+            [
+             {
+              "list": [
+               [
+                {
+                 "list": [
+                  [
+                   {
+                    "list": [
+                     [
+                      [
+                       4,
+                       "kappa"
+                      ],
+                      {
+                       "k": "alpha"
+                      }
+                     ],
+                     47
+                    ]
+                   },
+                   {
+                    "k": "gamma"
+                   }
+                  ],
+                  28
+                 ]
+                },
+                {
+                 "k": "kappa"
+                }
+               ],
+               21
+              ]
+             },
+             {
+              "k": "kappa"
+             }
+            ],
+            66
+           ]
+          },
+          {
+           "k": "nu"
+          }
+         ],
+         21
+        ]
+       },
+       {
+        "k": "kappa"
+       }
+      ],
+      55
+     ]
+    },
+    {
+     "k": "iota"
+    }
+   ],
+   "depth": 13
+  }
+ },
+ "nested_018_deep_mixed": {
+  "name": "submit_payload",
+  "arguments": {
+   "root": {
+    "list": [
+     [
+      {
+       "list": [
+        [
+         {
+          "list": [
+           [
+            [
+             0,
+             "iota"
+            ],
+            {
+             "k": "kappa"
+            }
+           ],
+           73
+          ]
+         },
+         {
+          "k": "lam"
+         }
+        ],
+        26
+       ]
+      },
+      {
+       "k": "theta"
+      }
+     ],
+     76
+    ]
+   },
+   "depth": 6
+  }
+ },
+ "nested_019_deep_mixed": {
+  "name": "submit_payload",
+  "arguments": {
+   "root": [
+    {
+     "list": [
+      [
+       {
+        "list": [
+         [
+          {
+           "list": [
+            [
+             [
+              2,
+              "kappa"
+             ],
+             {
+              "k": "kappa"
+             }
+            ],
+            10
+           ]
+          },
+          {
+           "k": "alpha"
+          }
+         ],
+         68
+        ]
+       },
+       {
+        "k": "omicron"
+       }
+      ],
+      19
+     ]
+    },
+    {
+     "k": "rho"
+    }
+   ],
+   "depth": 7
+  }
+ },
+ "nested_020_escapes": {
+  "name": "submit_payload",
+  "arguments": {
+   "text": "line1\nline2\r\nline3\ttabbed",
+   "index": 0,
+   "nested": {
+    "again": "many \\\\ backslashes \\\\\\\\ here"
+   }
+  }
+ },
+ "nested_021_escapes": {
+  "name": "submit_payload",
+  "arguments": {
+   "text": "she said \"quote\" and \\backslash\\ and /slash/",
+   "index": 1,
+   "nested": {
+    "again": "json-in-string: {\"a\": [1, 2, {\"b\": \"c\"}]}"
+   }
+  }
+ },
+ "nested_022_escapes": {
+  "name": "submit_payload",
+  "arguments": {
+   "text": "null-adjacent: \u0001\u0002 bell:\u0007 end",
+   "index": 2,
+   "nested": {
+    "again": "trailing spaces   and\ttabs\t"
+   }
+  }
+ },
+ "nested_023_escapes": {
+  "name": "submit_payload",
+  "arguments": {
+   "text": "many \\\\ backslashes \\\\\\\\ here",
+   "index": 3,
+   "nested": {
+    "again": "single'quotes' and `backticks`"
+   }
+  }
+ },
+ "nested_024_escapes": {
+  "name": "submit_payload",
+  "arguments": {
+   "text": "json-in-string: {\"a\": [1, 2, {\"b\": \"c\"}]}",
+   "index": 4,
+   "nested": {
+    "again": "unicode escape target:   and   seps"
+   }
+  }
+ },
+ "nested_025_escapes": {
+  "name": "submit_payload",
+  "arguments": {
+   "text": "trailing spaces   and\ttabs\t",
+   "index": 5,
+   "nested": {
+    "again": "percent %s %% and braces {} {{}}"
+   }
+  }
+ },
+ "nested_026_escapes": {
+  "name": "submit_payload",
+  "arguments": {
+   "text": "single'quotes' and `backticks`",
+   "index": 6,
+   "nested": {
+    "again": "mixed: \"\\n\" literal vs \n real newline"
+   }
+  }
+ },
+ "nested_027_escapes": {
+  "name": "submit_payload",
+  "arguments": {
+   "text": "unicode escape target:   and   seps",
+   "index": 7,
+   "nested": {
+    "again": "line1\nline2\r\nline3\ttabbed"
+   }
+  }
+ },
+ "nested_028_escapes": {
+  "name": "submit_payload",
+  "arguments": {
+   "text": "percent %s %% and braces {} {{}}",
+   "index": 8,
+   "nested": {
+    "again": "she said \"quote\" and \\backslash\\ and /slash/"
+   }
+  }
+ },
+ "nested_029_escapes": {
+  "name": "submit_payload",
+  "arguments": {
+   "text": "mixed: \"\\n\" literal vs \n real newline",
+   "index": 9,
+   "nested": {
+    "again": "null-adjacent: \u0001\u0002 bell:\u0007 end"
+   }
+  }
+ },
+ "nested_030_unicode_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "键": {
+    "内側": 35,
+    "λ": "zeta"
+   },
+   "plain": "ascii_value",
+   "键_2": [
+    "键",
+    "混合",
+    889
+   ]
+  }
+ },
+ "nested_031_unicode_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "🔑": {
+    "内側": 3,
+    "λ": "omicron"
+   },
+   "plain": "ascii_value",
+   "🔑_2": [
+    "🔑",
+    "混合",
+    353
+   ]
+  }
+ },
+ "nested_032_unicode_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "ключ": {
+    "内側": 73,
+    "λ": "beta"
+   },
+   "plain": "ascii_value",
+   "ключ_2": [
+    "ключ",
+    "混合",
+    225
+   ]
+  }
+ },
+ "nested_033_unicode_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "clé": {
+    "内側": 44,
+    "λ": "delta"
+   },
+   "plain": "ascii_value",
+   "clé_2": [
+    "clé",
+    "混合",
+    810
+   ]
+  }
+ },
+ "nested_034_unicode_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "מפתח": {
+    "内側": 1,
+    "λ": "omicron"
+   },
+   "plain": "ascii_value",
+   "מפתח_2": [
+    "מפתח",
+    "混合",
+    804
+   ]
+  }
+ },
+ "nested_035_unicode_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "κλειδί": {
+    "内側": 63,
+    "λ": "mu"
+   },
+   "plain": "ascii_value",
+   "κλειδί_2": [
+    "κλειδί",
+    "混合",
+    792
+   ]
+  }
+ },
+ "nested_036_unicode_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "kľúč": {
+    "内側": 51,
+    "λ": "gamma"
+   },
+   "plain": "ascii_value",
+   "kľúč_2": [
+    "kľúč",
+    "混合",
+    688
+   ]
+  }
+ },
+ "nested_037_unicode_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "nøkkel": {
+    "内側": 18,
+    "λ": "lam"
+   },
+   "plain": "ascii_value",
+   "nøkkel_2": [
+    "nøkkel",
+    "混合",
+    487
+   ]
+  }
+ },
+ "nested_038_unicode_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "açar": {
+    "内側": 47,
+    "λ": "omicron"
+   },
+   "plain": "ascii_value",
+   "açar_2": [
+    "açar",
+    "混合",
+    897
+   ]
+  }
+ },
+ "nested_039_unicode_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "kulcs": {
+    "内側": 90,
+    "λ": "xi"
+   },
+   "plain": "ascii_value",
+   "kulcs_2": [
+    "kulcs",
+    "混合",
+    277
+   ]
+  }
+ },
+ "nested_040_unicode_values": {
+  "name": "submit_payload",
+  "arguments": {
+   "greeting": "こんにちは世界",
+   "mirror": "ᚱᚢᚾᛖᛋ",
+   "wrap": {
+    "inner": [
+     "�",
+     0
+    ]
+   }
+  }
+ },
+ "nested_041_unicode_values": {
+  "name": "submit_payload",
+  "arguments": {
+   "greeting": "Grüße aus Köln",
+   "mirror": "中文测试字符串",
+   "wrap": {
+    "inner": [
+     "🎛️🎚️",
+     1
+    ]
+   }
+  }
+ },
+ "nested_042_unicode_values": {
+  "name": "submit_payload",
+  "arguments": {
+   "greeting": "�",
+   "mirror": "علامات الترقيم",
+   "wrap": {
+    "inner": [
+     "Ω≈ç√∫",
+     2
+    ]
+   }
+  }
+ },
+ "nested_043_unicode_values": {
+  "name": "submit_payload",
+  "arguments": {
+   "greeting": "🎛️🎚️",
+   "mirror": "𝔪𝔞𝔱𝔥 𝔟𝔬𝔩𝔡",
+   "wrap": {
+    "inner": [
+     "ᚱᚢᚾᛖᛋ",
+     3
+    ]
+   }
+  }
+ },
+ "nested_044_unicode_values": {
+  "name": "submit_payload",
+  "arguments": {
+   "greeting": "Ω≈ç√∫",
+   "mirror": "é combining",
+   "wrap": {
+    "inner": [
+     "中文测试字符串",
+     4
+    ]
+   }
+  }
+ },
+ "nested_045_unicode_values": {
+  "name": "submit_payload",
+  "arguments": {
+   "greeting": "ᚱᚢᚾᛖᛋ",
+   "mirror": "こんにちは世界",
+   "wrap": {
+    "inner": [
+     "علامات الترقيم",
+     5
+    ]
+   }
+  }
+ },
+ "nested_046_unicode_values": {
+  "name": "submit_payload",
+  "arguments": {
+   "greeting": "中文测试字符串",
+   "mirror": "Grüße aus Köln",
+   "wrap": {
+    "inner": [
+     "𝔪𝔞𝔱𝔥 𝔟𝔬𝔩𝔡",
+     6
+    ]
+   }
+  }
+ },
+ "nested_047_unicode_values": {
+  "name": "submit_payload",
+  "arguments": {
+   "greeting": "علامات الترقيم",
+   "mirror": "�",
+   "wrap": {
+    "inner": [
+     "é combining",
+     7
+    ]
+   }
+  }
+ },
+ "nested_048_unicode_values": {
+  "name": "submit_payload",
+  "arguments": {
+   "greeting": "𝔪𝔞𝔱𝔥 𝔟𝔬𝔩𝔡",
+   "mirror": "🎛️🎚️",
+   "wrap": {
+    "inner": [
+     "こんにちは世界",
+     8
+    ]
+   }
+  }
+ },
+ "nested_049_unicode_values": {
+  "name": "submit_payload",
+  "arguments": {
+   "greeting": "é combining",
+   "mirror": "Ω≈ç√∫",
+   "wrap": {
+    "inner": [
+     "Grüße aus Köln",
+     9
+    ]
+   }
+  }
+ },
+ "nested_050_wide_64_args": {
+  "name": "submit_payload",
+  "arguments": {
+   "param_00": -403,
+   "param_01": "eta",
+   "param_02": false,
+   "param_03": [
+    1,
+    "xi"
+   ],
+   "param_04": 351,
+   "param_05": "alpha",
+   "param_06": true,
+   "param_07": [
+    5,
+    "kappa"
+   ],
+   "param_08": -54,
+   "param_09": "omicron",
+   "param_10": true,
+   "param_11": [
+    1,
+    "epsilon"
+   ],
+   "param_12": -124,
+   "param_13": "delta",
+   "param_14": true,
+   "param_15": [
+    8,
+    "gamma"
+   ],
+   "param_16": -253,
+   "param_17": "delta",
+   "param_18": false,
+   "param_19": [
+    1,
+    "beta"
+   ],
+   "param_20": 295,
+   "param_21": "eta",
+   "param_22": false,
+   "param_23": [
+    6,
+    "gamma"
+   ],
+   "param_24": 210,
+   "param_25": "nu",
+   "param_26": true,
+   "param_27": [
+    4,
+    "kappa"
+   ],
+   "param_28": 393,
+   "param_29": "nu",
+   "param_30": false,
+   "param_31": [
+    8,
+    "eta"
+   ],
+   "param_32": -402,
+   "param_33": "zeta",
+   "param_34": true,
+   "param_35": [
+    8,
+    "omicron"
+   ],
+   "param_36": 294,
+   "param_37": "pi",
+   "param_38": false,
+   "param_39": [
+    2,
+    "kappa"
+   ],
+   "param_40": -7,
+   "param_41": "xi",
+   "param_42": true,
+   "param_43": [
+    3,
+    "delta"
+   ],
+   "param_44": 76,
+   "param_45": "beta",
+   "param_46": true,
+   "param_47": [
+    8,
+    "theta"
+   ],
+   "param_48": 358,
+   "param_49": "rho",
+   "param_50": true,
+   "param_51": [
+    3,
+    "eta"
+   ],
+   "param_52": -67,
+   "param_53": "theta",
+   "param_54": true,
+   "param_55": [
+    5,
+    "kappa"
+   ],
+   "param_56": -91,
+   "param_57": "epsilon",
+   "param_58": true,
+   "param_59": [
+    4,
+    "iota"
+   ],
+   "param_60": 200,
+   "param_61": "pi",
+   "param_62": false,
+   "param_63": [
+    6,
+    "alpha"
+   ]
+  }
+ },
+ "nested_051_wide_64_args": {
+  "name": "submit_payload",
+  "arguments": {
+   "param_00": -218,
+   "param_01": "kappa",
+   "param_02": false,
+   "param_03": [
+    6,
+    "beta"
+   ],
+   "param_04": 441,
+   "param_05": "omicron",
+   "param_06": true,
+   "param_07": [
+    1,
+    "eta"
+   ],
+   "param_08": 129,
+   "param_09": "beta",
+   "param_10": false,
+   "param_11": [
+    4,
+    "xi"
+   ],
+   "param_12": 75,
+   "param_13": "epsilon",
+   "param_14": false,
+   "param_15": [
+    3,
+    "theta"
+   ],
+   "param_16": 165,
+   "param_17": "epsilon",
+   "param_18": false,
+   "param_19": [
+    9,
+    "theta"
+   ],
+   "param_20": 22,
+   "param_21": "omicron",
+   "param_22": false,
+   "param_23": [
+    9,
+    "gamma"
+   ],
+   "param_24": -242,
+   "param_25": "delta",
+   "param_26": false,
+   "param_27": [
+    9,
+    "xi"
+   ],
+   "param_28": -368,
+   "param_29": "nu",
+   "param_30": true,
+   "param_31": [
+    3,
+    "theta"
+   ],
+   "param_32": -12,
+   "param_33": "alpha",
+   "param_34": false,
+   "param_35": [
+    7,
+    "eta"
+   ],
+   "param_36": 134,
+   "param_37": "mu",
+   "param_38": false,
+   "param_39": [
+    5,
+    "beta"
+   ],
+   "param_40": -354,
+   "param_41": "epsilon",
+   "param_42": true,
+   "param_43": [
+    8,
+    "delta"
+   ],
+   "param_44": 148,
+   "param_45": "rho",
+   "param_46": true,
+   "param_47": [
+    1,
+    "beta"
+   ],
+   "param_48": 215,
+   "param_49": "delta",
+   "param_50": true,
+   "param_51": [
+    2,
+    "nu"
+   ],
+   "param_52": -227,
+   "param_53": "zeta",
+   "param_54": true,
+   "param_55": [
+    3,
+    "delta"
+   ],
+   "param_56": -376,
+   "param_57": "omicron",
+   "param_58": false,
+   "param_59": [
+    2,
+    "omicron"
+   ],
+   "param_60": -173,
+   "param_61": "epsilon",
+   "param_62": false,
+   "param_63": [
+    0,
+    "gamma"
+   ]
+  }
+ },
+ "nested_052_wide_64_args": {
+  "name": "submit_payload",
+  "arguments": {
+   "param_00": 140,
+   "param_01": "alpha",
+   "param_02": false,
+   "param_03": [
+    2,
+    "xi"
+   ],
+   "param_04": 438,
+   "param_05": "lam",
+   "param_06": false,
+   "param_07": [
+    3,
+    "alpha"
+   ],
+   "param_08": -479,
+   "param_09": "zeta",
+   "param_10": true,
+   "param_11": [
+    4,
+    "eta"
+   ],
+   "param_12": 463,
+   "param_13": "iota",
+   "param_14": true,
+   "param_15": [
+    9,
+    "mu"
+   ],
+   "param_16": 311,
+   "param_17": "eta",
+   "param_18": true,
+   "param_19": [
+    9,
+    "pi"
+   ],
+   "param_20": 237,
+   "param_21": "zeta",
+   "param_22": false,
+   "param_23": [
+    9,
+    "alpha"
+   ],
+   "param_24": -459,
+   "param_25": "lam",
+   "param_26": true,
+   "param_27": [
+    0,
+    "eta"
+   ],
+   "param_28": 492,
+   "param_29": "delta",
+   "param_30": false,
+   "param_31": [
+    8,
+    "kappa"
+   ],
+   "param_32": 102,
+   "param_33": "iota",
+   "param_34": true,
+   "param_35": [
+    0,
+    "nu"
+   ],
+   "param_36": -229,
+   "param_37": "alpha",
+   "param_38": true,
+   "param_39": [
+    7,
+    "beta"
+   ],
+   "param_40": 324,
+   "param_41": "kappa",
+   "param_42": false,
+   "param_43": [
+    7,
+    "theta"
+   ],
+   "param_44": 333,
+   "param_45": "kappa",
+   "param_46": false,
+   "param_47": [
+    3,
+    "beta"
+   ],
+   "param_48": -4,
+   "param_49": "nu",
+   "param_50": false,
+   "param_51": [
+    7,
+    "zeta"
+   ],
+   "param_52": -190,
+   "param_53": "gamma",
+   "param_54": false,
+   "param_55": [
+    8,
+    "iota"
+   ],
+   "param_56": -5,
+   "param_57": "xi",
+   "param_58": false,
+   "param_59": [
+    5,
+    "beta"
+   ],
+   "param_60": -373,
+   "param_61": "epsilon",
+   "param_62": true,
+   "param_63": [
+    8,
+    "xi"
+   ]
+  }
+ },
+ "nested_053_wide_64_args": {
+  "name": "submit_payload",
+  "arguments": {
+   "param_00": -333,
+   "param_01": "delta",
+   "param_02": true,
+   "param_03": [
+    1,
+    "nu"
+   ],
+   "param_04": 202,
+   "param_05": "zeta",
+   "param_06": false,
+   "param_07": [
+    1,
+    "nu"
+   ],
+   "param_08": 177,
+   "param_09": "iota",
+   "param_10": false,
+   "param_11": [
+    0,
+    "lam"
+   ],
+   "param_12": -42,
+   "param_13": "gamma",
+   "param_14": true,
+   "param_15": [
+    9,
+    "xi"
+   ],
+   "param_16": 110,
+   "param_17": "theta",
+   "param_18": false,
+   "param_19": [
+    0,
+    "rho"
+   ],
+   "param_20": -421,
+   "param_21": "alpha",
+   "param_22": true,
+   "param_23": [
+    1,
+    "beta"
+   ],
+   "param_24": -318,
+   "param_25": "alpha",
+   "param_26": false,
+   "param_27": [
+    0,
+    "gamma"
+   ],
+   "param_28": 225,
+   "param_29": "eta",
+   "param_30": false,
+   "param_31": [
+    9,
+    "kappa"
+   ],
+   "param_32": -107,
+   "param_33": "gamma",
+   "param_34": true,
+   "param_35": [
+    5,
+    "lam"
+   ],
+   "param_36": 472,
+   "param_37": "epsilon",
+   "param_38": true,
+   "param_39": [
+    4,
+    "rho"
+   ],
+   "param_40": 172,
+   "param_41": "pi",
+   "param_42": false,
+   "param_43": [
+    1,
+    "xi"
+   ],
+   "param_44": -149,
+   "param_45": "mu",
+   "param_46": false,
+   "param_47": [
+    5,
+    "omicron"
+   ],
+   "param_48": 465,
+   "param_49": "xi",
+   "param_50": false,
+   "param_51": [
+    4,
+    "rho"
+   ],
+   "param_52": -478,
+   "param_53": "xi",
+   "param_54": false,
+   "param_55": [
+    5,
+    "eta"
+   ],
+   "param_56": -248,
+   "param_57": "xi",
+   "param_58": true,
+   "param_59": [
+    9,
+    "omicron"
+   ],
+   "param_60": 355,
+   "param_61": "omicron",
+   "param_62": false,
+   "param_63": [
+    2,
+    "nu"
+   ]
+  }
+ },
+ "nested_054_wide_64_args": {
+  "name": "submit_payload",
+  "arguments": {
+   "param_00": -494,
+   "param_01": "kappa",
+   "param_02": true,
+   "param_03": [
+    7,
+    "epsilon"
+   ],
+   "param_04": 460,
+   "param_05": "rho",
+   "param_06": false,
+   "param_07": [
+    1,
+    "alpha"
+   ],
+   "param_08": -304,
+   "param_09": "gamma",
+   "param_10": false,
+   "param_11": [
+    6,
+    "zeta"
+   ],
+   "param_12": -170,
+   "param_13": "kappa",
+   "param_14": true,
+   "param_15": [
+    7,
+    "xi"
+   ],
+   "param_16": -385,
+   "param_17": "delta",
+   "param_18": true,
+   "param_19": [
+    1,
+    "gamma"
+   ],
+   "param_20": 271,
+   "param_21": "theta",
+   "param_22": true,
+   "param_23": [
+    8,
+    "iota"
+   ],
+   "param_24": 256,
+   "param_25": "delta",
+   "param_26": true,
+   "param_27": [
+    9,
+    "omicron"
+   ],
+   "param_28": -451,
+   "param_29": "lam",
+   "param_30": true,
+   "param_31": [
+    7,
+    "epsilon"
+   ],
+   "param_32": 323,
+   "param_33": "kappa",
+   "param_34": false,
+   "param_35": [
+    8,
+    "pi"
+   ],
+   "param_36": 495,
+   "param_37": "mu",
+   "param_38": true,
+   "param_39": [
+    8,
+    "eta"
+   ],
+   "param_40": 63,
+   "param_41": "delta",
+   "param_42": true,
+   "param_43": [
+    9,
+    "kappa"
+   ],
+   "param_44": 444,
+   "param_45": "kappa",
+   "param_46": false,
+   "param_47": [
+    9,
+    "zeta"
+   ],
+   "param_48": 28,
+   "param_49": "rho",
+   "param_50": true,
+   "param_51": [
+    2,
+    "pi"
+   ],
+   "param_52": 100,
+   "param_53": "omicron",
+   "param_54": false,
+   "param_55": [
+    0,
+    "alpha"
+   ],
+   "param_56": 155,
+   "param_57": "alpha",
+   "param_58": true,
+   "param_59": [
+    6,
+    "zeta"
+   ],
+   "param_60": 1,
+   "param_61": "beta",
+   "param_62": false,
+   "param_63": [
+    0,
+    "eta"
+   ]
+  }
+ },
+ "nested_055_wide_64_args": {
+  "name": "submit_payload",
+  "arguments": {
+   "param_00": -223,
+   "param_01": "delta",
+   "param_02": false,
+   "param_03": [
+    3,
+    "zeta"
+   ],
+   "param_04": -200,
+   "param_05": "beta",
+   "param_06": false,
+   "param_07": [
+    8,
+    "rho"
+   ],
+   "param_08": -390,
+   "param_09": "nu",
+   "param_10": false,
+   "param_11": [
+    2,
+    "theta"
+   ],
+   "param_12": 371,
+   "param_13": "lam",
+   "param_14": true,
+   "param_15": [
+    7,
+    "iota"
+   ],
+   "param_16": 396,
+   "param_17": "mu",
+   "param_18": true,
+   "param_19": [
+    4,
+    "theta"
+   ],
+   "param_20": -363,
+   "param_21": "xi",
+   "param_22": true,
+   "param_23": [
+    3,
+    "lam"
+   ],
+   "param_24": -61,
+   "param_25": "theta",
+   "param_26": false,
+   "param_27": [
+    9,
+    "xi"
+   ],
+   "param_28": 321,
+   "param_29": "mu",
+   "param_30": false,
+   "param_31": [
+    9,
+    "epsilon"
+   ],
+   "param_32": -191,
+   "param_33": "delta",
+   "param_34": true,
+   "param_35": [
+    2,
+    "rho"
+   ],
+   "param_36": 118,
+   "param_37": "kappa",
+   "param_38": true,
+   "param_39": [
+    8,
+    "delta"
+   ],
+   "param_40": -257,
+   "param_41": "delta",
+   "param_42": false,
+   "param_43": [
+    1,
+    "omicron"
+   ],
+   "param_44": 113,
+   "param_45": "xi",
+   "param_46": false,
+   "param_47": [
+    1,
+    "iota"
+   ],
+   "param_48": -152,
+   "param_49": "rho",
+   "param_50": true,
+   "param_51": [
+    9,
+    "omicron"
+   ],
+   "param_52": 109,
+   "param_53": "zeta",
+   "param_54": false,
+   "param_55": [
+    3,
+    "gamma"
+   ],
+   "param_56": 237,
+   "param_57": "lam",
+   "param_58": false,
+   "param_59": [
+    5,
+    "alpha"
+   ],
+   "param_60": 243,
+   "param_61": "lam",
+   "param_62": true,
+   "param_63": [
+    5,
+    "epsilon"
+   ]
+  }
+ },
+ "nested_056_wide_64_args": {
+  "name": "submit_payload",
+  "arguments": {
+   "param_00": 465,
+   "param_01": "lam",
+   "param_02": true,
+   "param_03": [
+    2,
+    "nu"
+   ],
+   "param_04": 184,
+   "param_05": "alpha",
+   "param_06": false,
+   "param_07": [
+    7,
+    "alpha"
+   ],
+   "param_08": -180,
+   "param_09": "epsilon",
+   "param_10": true,
+   "param_11": [
+    3,
+    "gamma"
+   ],
+   "param_12": -400,
+   "param_13": "lam",
+   "param_14": true,
+   "param_15": [
+    8,
+    "epsilon"
+   ],
+   "param_16": 393,
+   "param_17": "theta",
+   "param_18": true,
+   "param_19": [
+    9,
+    "iota"
+   ],
+   "param_20": -244,
+   "param_21": "eta",
+   "param_22": false,
+   "param_23": [
+    5,
+    "kappa"
+   ],
+   "param_24": -404,
+   "param_25": "eta",
+   "param_26": true,
+   "param_27": [
+    5,
+    "iota"
+   ],
+   "param_28": -287,
+   "param_29": "kappa",
+   "param_30": false,
+   "param_31": [
+    6,
+    "rho"
+   ],
+   "param_32": 297,
+   "param_33": "pi",
+   "param_34": false,
+   "param_35": [
+    8,
+    "eta"
+   ],
+   "param_36": -176,
+   "param_37": "eta",
+   "param_38": false,
+   "param_39": [
+    0,
+    "gamma"
+   ],
+   "param_40": 197,
+   "param_41": "theta",
+   "param_42": false,
+   "param_43": [
+    6,
+    "lam"
+   ],
+   "param_44": -317,
+   "param_45": "zeta",
+   "param_46": true,
+   "param_47": [
+    9,
+    "mu"
+   ],
+   "param_48": 288,
+   "param_49": "delta",
+   "param_50": false,
+   "param_51": [
+    6,
+    "pi"
+   ],
+   "param_52": 491,
+   "param_53": "gamma",
+   "param_54": true,
+   "param_55": [
+    2,
+    "alpha"
+   ],
+   "param_56": 450,
+   "param_57": "eta",
+   "param_58": true,
+   "param_59": [
+    9,
+    "gamma"
+   ],
+   "param_60": 264,
+   "param_61": "zeta",
+   "param_62": false,
+   "param_63": [
+    2,
+    "gamma"
+   ]
+  }
+ },
+ "nested_057_wide_64_args": {
+  "name": "submit_payload",
+  "arguments": {
+   "param_00": 253,
+   "param_01": "epsilon",
+   "param_02": true,
+   "param_03": [
+    3,
+    "lam"
+   ],
+   "param_04": -335,
+   "param_05": "zeta",
+   "param_06": true,
+   "param_07": [
+    4,
+    "eta"
+   ],
+   "param_08": 65,
+   "param_09": "theta",
+   "param_10": false,
+   "param_11": [
+    9,
+    "nu"
+   ],
+   "param_12": 460,
+   "param_13": "xi",
+   "param_14": true,
+   "param_15": [
+    6,
+    "zeta"
+   ],
+   "param_16": -371,
+   "param_17": "gamma",
+   "param_18": false,
+   "param_19": [
+    0,
+    "zeta"
+   ],
+   "param_20": -367,
+   "param_21": "kappa",
+   "param_22": true,
+   "param_23": [
+    5,
+    "pi"
+   ],
+   "param_24": -146,
+   "param_25": "beta",
+   "param_26": true,
+   "param_27": [
+    7,
+    "eta"
+   ],
+   "param_28": 290,
+   "param_29": "theta",
+   "param_30": false,
+   "param_31": [
+    4,
+    "lam"
+   ],
+   "param_32": -289,
+   "param_33": "alpha",
+   "param_34": true,
+   "param_35": [
+    5,
+    "mu"
+   ],
+   "param_36": -359,
+   "param_37": "pi",
+   "param_38": false,
+   "param_39": [
+    7,
+    "alpha"
+   ],
+   "param_40": 7,
+   "param_41": "nu",
+   "param_42": true,
+   "param_43": [
+    5,
+    "eta"
+   ],
+   "param_44": -244,
+   "param_45": "nu",
+   "param_46": false,
+   "param_47": [
+    7,
+    "beta"
+   ],
+   "param_48": -11,
+   "param_49": "lam",
+   "param_50": false,
+   "param_51": [
+    8,
+    "xi"
+   ],
+   "param_52": 189,
+   "param_53": "omicron",
+   "param_54": true,
+   "param_55": [
+    6,
+    "nu"
+   ],
+   "param_56": -138,
+   "param_57": "rho",
+   "param_58": true,
+   "param_59": [
+    5,
+    "lam"
+   ],
+   "param_60": -435,
+   "param_61": "xi",
+   "param_62": true,
+   "param_63": [
+    2,
+    "alpha"
+   ]
+  }
+ },
+ "nested_058_wide_64_args": {
+  "name": "submit_payload",
+  "arguments": {
+   "param_00": 193,
+   "param_01": "zeta",
+   "param_02": false,
+   "param_03": [
+    9,
+    "alpha"
+   ],
+   "param_04": -430,
+   "param_05": "alpha",
+   "param_06": false,
+   "param_07": [
+    1,
+    "iota"
+   ],
+   "param_08": -6,
+   "param_09": "delta",
+   "param_10": true,
+   "param_11": [
+    6,
+    "alpha"
+   ],
+   "param_12": 484,
+   "param_13": "rho",
+   "param_14": true,
+   "param_15": [
+    2,
+    "epsilon"
+   ],
+   "param_16": 73,
+   "param_17": "beta",
+   "param_18": false,
+   "param_19": [
+    2,
+    "mu"
+   ],
+   "param_20": 450,
+   "param_21": "iota",
+   "param_22": false,
+   "param_23": [
+    4,
+    "mu"
+   ],
+   "param_24": 493,
+   "param_25": "mu",
+   "param_26": true,
+   "param_27": [
+    8,
+    "alpha"
+   ],
+   "param_28": 451,
+   "param_29": "nu",
+   "param_30": true,
+   "param_31": [
+    5,
+    "omicron"
+   ],
+   "param_32": -226,
+   "param_33": "gamma",
+   "param_34": true,
+   "param_35": [
+    4,
+    "nu"
+   ],
+   "param_36": -46,
+   "param_37": "zeta",
+   "param_38": false,
+   "param_39": [
+    6,
+    "xi"
+   ],
+   "param_40": 162,
+   "param_41": "delta",
+   "param_42": true,
+   "param_43": [
+    5,
+    "theta"
+   ],
+   "param_44": -470,
+   "param_45": "omicron",
+   "param_46": false,
+   "param_47": [
+    6,
+    "kappa"
+   ],
+   "param_48": 196,
+   "param_49": "epsilon",
+   "param_50": true,
+   "param_51": [
+    5,
+    "zeta"
+   ],
+   "param_52": -254,
+   "param_53": "lam",
+   "param_54": false,
+   "param_55": [
+    3,
+    "xi"
+   ],
+   "param_56": -61,
+   "param_57": "theta",
+   "param_58": true,
+   "param_59": [
+    1,
+    "eta"
+   ],
+   "param_60": -5,
+   "param_61": "iota",
+   "param_62": false,
+   "param_63": [
+    8,
+    "zeta"
+   ]
+  }
+ },
+ "nested_059_wide_64_args": {
+  "name": "submit_payload",
+  "arguments": {
+   "param_00": -372,
+   "param_01": "alpha",
+   "param_02": true,
+   "param_03": [
+    5,
+    "mu"
+   ],
+   "param_04": 490,
+   "param_05": "nu",
+   "param_06": true,
+   "param_07": [
+    7,
+    "omicron"
+   ],
+   "param_08": -451,
+   "param_09": "pi",
+   "param_10": false,
+   "param_11": [
+    3,
+    "iota"
+   ],
+   "param_12": -332,
+   "param_13": "alpha",
+   "param_14": false,
+   "param_15": [
+    1,
+    "alpha"
+   ],
+   "param_16": -464,
+   "param_17": "lam",
+   "param_18": false,
+   "param_19": [
+    4,
+    "omicron"
+   ],
+   "param_20": 462,
+   "param_21": "delta",
+   "param_22": false,
+   "param_23": [
+    6,
+    "omicron"
+   ],
+   "param_24": -199,
+   "param_25": "theta",
+   "param_26": false,
+   "param_27": [
+    6,
+    "xi"
+   ],
+   "param_28": 2,
+   "param_29": "theta",
+   "param_30": false,
+   "param_31": [
+    4,
+    "kappa"
+   ],
+   "param_32": -222,
+   "param_33": "rho",
+   "param_34": false,
+   "param_35": [
+    3,
+    "lam"
+   ],
+   "param_36": -282,
+   "param_37": "pi",
+   "param_38": false,
+   "param_39": [
+    4,
+    "beta"
+   ],
+   "param_40": 342,
+   "param_41": "lam",
+   "param_42": true,
+   "param_43": [
+    0,
+    "alpha"
+   ],
+   "param_44": -70,
+   "param_45": "rho",
+   "param_46": false,
+   "param_47": [
+    0,
+    "omicron"
+   ],
+   "param_48": 417,
+   "param_49": "gamma",
+   "param_50": false,
+   "param_51": [
+    4,
+    "delta"
+   ],
+   "param_52": 306,
+   "param_53": "lam",
+   "param_54": false,
+   "param_55": [
+    1,
+    "beta"
+   ],
+   "param_56": 10,
+   "param_57": "iota",
+   "param_58": false,
+   "param_59": [
+    4,
+    "zeta"
+   ],
+   "param_60": 249,
+   "param_61": "eta",
+   "param_62": true,
+   "param_63": [
+    2,
+    "theta"
+   ]
+  }
+ },
+ "nested_060_big_numbers": {
+  "name": "submit_payload",
+  "arguments": {
+   "int64_edge": 9007199254740993,
+   "negative": -9007199254740999,
+   "large": 1787678260337919,
+   "small_group": [
+    -3,
+    -8,
+    -1,
+    5,
+    -3
+   ],
+   "id_like": 999999999999999
+  }
+ },
+ "nested_061_big_numbers": {
+  "name": "submit_payload",
+  "arguments": {
+   "int64_edge": 9007199254740994,
+   "negative": -9007199254741000,
+   "large": 9546715316363063,
+   "small_group": [
+    8,
+    -4,
+    -8,
+    8,
+    -8
+   ],
+   "id_like": 999999999999998
+  }
+ },
+ "nested_062_big_numbers": {
+  "name": "submit_payload",
+  "arguments": {
+   "int64_edge": 9007199254740995,
+   "negative": -9007199254741001,
+   "large": 5668591110120212,
+   "small_group": [
+    8,
+    0,
+    1,
+    7,
+    -5
+   ],
+   "id_like": 999999999999997
+  }
+ },
+ "nested_063_big_numbers": {
+  "name": "submit_payload",
+  "arguments": {
+   "int64_edge": 9007199254740996,
+   "negative": -9007199254741002,
+   "large": 9032957296234853,
+   "small_group": [
+    -5,
+    -8,
+    4,
+    5,
+    -4
+   ],
+   "id_like": 999999999999996
+  }
+ },
+ "nested_064_big_numbers": {
+  "name": "submit_payload",
+  "arguments": {
+   "int64_edge": 9007199254740997,
+   "negative": -9007199254741003,
+   "large": 3746569238961053,
+   "small_group": [
+    -1,
+    -9,
+    -8,
+    -9,
+    -8
+   ],
+   "id_like": 999999999999995
+  }
+ },
+ "nested_065_big_numbers": {
+  "name": "submit_payload",
+  "arguments": {
+   "int64_edge": 9007199254740998,
+   "negative": -9007199254741004,
+   "large": 5029232572744340,
+   "small_group": [
+    0,
+    7,
+    -9,
+    3,
+    -7
+   ],
+   "id_like": 999999999999994
+  }
+ },
+ "nested_066_big_numbers": {
+  "name": "submit_payload",
+  "arguments": {
+   "int64_edge": 9007199254740999,
+   "negative": -9007199254741005,
+   "large": 4921227756221925,
+   "small_group": [
+    9,
+    -9,
+    -4,
+    2,
+    7
+   ],
+   "id_like": 999999999999993
+  }
+ },
+ "nested_067_big_numbers": {
+  "name": "submit_payload",
+  "arguments": {
+   "int64_edge": 9007199254741000,
+   "negative": -9007199254741006,
+   "large": 7597407379358008,
+   "small_group": [
+    7,
+    -4,
+    0,
+    -1,
+    -4
+   ],
+   "id_like": 999999999999992
+  }
+ },
+ "nested_068_big_numbers": {
+  "name": "submit_payload",
+  "arguments": {
+   "int64_edge": 9007199254741001,
+   "negative": -9007199254741007,
+   "large": 6616009918033648,
+   "small_group": [
+    -2,
+    -8,
+    8,
+    -3,
+    6
+   ],
+   "id_like": 999999999999991
+  }
+ },
+ "nested_069_big_numbers": {
+  "name": "submit_payload",
+  "arguments": {
+   "int64_edge": 9007199254741002,
+   "negative": -9007199254741008,
+   "large": 3426343169873175,
+   "small_group": [
+    -7,
+    -2,
+    1,
+    5,
+    -4
+   ],
+   "id_like": 999999999999990
+  }
+ },
+ "nested_070_floats": {
+  "name": "submit_payload",
+  "arguments": {
+   "half": 0.5,
+   "quarter": 3.25,
+   "tiny": 1e-07,
+   "big_e": 2500000000000000.0,
+   "pi_ish": 3.141592653589793,
+   "list": [
+    0.1,
+    0.25,
+    1.75,
+    -42.5
+   ],
+   "nested": {
+    "ratio": 0.125
+   }
+  }
+ },
+ "nested_071_floats": {
+  "name": "submit_payload",
+  "arguments": {
+   "half": 0.5,
+   "quarter": 4.25,
+   "tiny": 1e-07,
+   "big_e": 2500000000000000.0,
+   "pi_ish": 3.141592653589793,
+   "list": [
+    0.1,
+    0.25,
+    1.75,
+    -42.5
+   ],
+   "nested": {
+    "ratio": 0.25
+   }
+  }
+ },
+ "nested_072_floats": {
+  "name": "submit_payload",
+  "arguments": {
+   "half": 0.5,
+   "quarter": 5.25,
+   "tiny": 1e-07,
+   "big_e": 2500000000000000.0,
+   "pi_ish": 3.141592653589793,
+   "list": [
+    0.1,
+    0.25,
+    1.75,
+    -42.5
+   ],
+   "nested": {
+    "ratio": 0.375
+   }
+  }
+ },
+ "nested_073_floats": {
+  "name": "submit_payload",
+  "arguments": {
+   "half": 0.5,
+   "quarter": 6.25,
+   "tiny": 1e-07,
+   "big_e": 2500000000000000.0,
+   "pi_ish": 3.141592653589793,
+   "list": [
+    0.1,
+    0.25,
+    1.75,
+    -42.5
+   ],
+   "nested": {
+    "ratio": 0.5
+   }
+  }
+ },
+ "nested_074_floats": {
+  "name": "submit_payload",
+  "arguments": {
+   "half": 0.5,
+   "quarter": 7.25,
+   "tiny": 1e-07,
+   "big_e": 2500000000000000.0,
+   "pi_ish": 3.141592653589793,
+   "list": [
+    0.1,
+    0.25,
+    1.75,
+    -42.5
+   ],
+   "nested": {
+    "ratio": 0.625
+   }
+  }
+ },
+ "nested_075_floats": {
+  "name": "submit_payload",
+  "arguments": {
+   "half": 0.5,
+   "quarter": 8.25,
+   "tiny": 1e-07,
+   "big_e": 2500000000000000.0,
+   "pi_ish": 3.141592653589793,
+   "list": [
+    0.1,
+    0.25,
+    1.75,
+    -42.5
+   ],
+   "nested": {
+    "ratio": 0.75
+   }
+  }
+ },
+ "nested_076_floats": {
+  "name": "submit_payload",
+  "arguments": {
+   "half": 0.5,
+   "quarter": 9.25,
+   "tiny": 1e-07,
+   "big_e": 2500000000000000.0,
+   "pi_ish": 3.141592653589793,
+   "list": [
+    0.1,
+    0.25,
+    1.75,
+    -42.5
+   ],
+   "nested": {
+    "ratio": 0.875
+   }
+  }
+ },
+ "nested_077_floats": {
+  "name": "submit_payload",
+  "arguments": {
+   "half": 0.5,
+   "quarter": 10.25,
+   "tiny": 1e-07,
+   "big_e": 2500000000000000.0,
+   "pi_ish": 3.141592653589793,
+   "list": [
+    0.1,
+    0.25,
+    1.75,
+    -42.5
+   ],
+   "nested": {
+    "ratio": 1.0
+   }
+  }
+ },
+ "nested_078_floats": {
+  "name": "submit_payload",
+  "arguments": {
+   "half": 0.5,
+   "quarter": 11.25,
+   "tiny": 1e-07,
+   "big_e": 2500000000000000.0,
+   "pi_ish": 3.141592653589793,
+   "list": [
+    0.1,
+    0.25,
+    1.75,
+    -42.5
+   ],
+   "nested": {
+    "ratio": 1.125
+   }
+  }
+ },
+ "nested_079_floats": {
+  "name": "submit_payload",
+  "arguments": {
+   "half": 0.5,
+   "quarter": 12.25,
+   "tiny": 1e-07,
+   "big_e": 2500000000000000.0,
+   "pi_ish": 3.141592653589793,
+   "list": [
+    0.1,
+    0.25,
+    1.75,
+    -42.5
+   ],
+   "nested": {
+    "ratio": 1.25
+   }
+  }
+ },
+ "nested_080_empty_structures": {
+  "name": "submit_payload",
+  "arguments": {
+   "shell": {},
+   "marker": 0,
+   "also": {
+    "deep_empty": [
+     [],
+     {},
+     [
+      [],
+      {}
+     ]
+    ]
+   }
+  }
+ },
+ "nested_081_empty_structures": {
+  "name": "submit_payload",
+  "arguments": {
+   "shell": [],
+   "marker": 1,
+   "also": {
+    "deep_empty": [
+     [],
+     {},
+     [
+      [],
+      {}
+     ]
+    ]
+   }
+  }
+ },
+ "nested_082_empty_structures": {
+  "name": "submit_payload",
+  "arguments": {
+   "shell": "",
+   "marker": 2,
+   "also": {
+    "deep_empty": [
+     [],
+     {},
+     [
+      [],
+      {}
+     ]
+    ]
+   }
+  }
+ },
+ "nested_083_empty_structures": {
+  "name": "submit_payload",
+  "arguments": {
+   "shell": {
+    "empty_obj": {}
+   },
+   "marker": 3,
+   "also": {
+    "deep_empty": [
+     [],
+     {},
+     [
+      [],
+      {}
+     ]
+    ]
+   }
+  }
+ },
+ "nested_084_empty_structures": {
+  "name": "submit_payload",
+  "arguments": {
+   "shell": {
+    "empty_arr": []
+   },
+   "marker": 4,
+   "also": {
+    "deep_empty": [
+     [],
+     {},
+     [
+      [],
+      {}
+     ]
+    ]
+   }
+  }
+ },
+ "nested_085_empty_structures": {
+  "name": "submit_payload",
+  "arguments": {
+   "shell": {
+    "empty_str": ""
+   },
+   "marker": 5,
+   "also": {
+    "deep_empty": [
+     [],
+     {},
+     [
+      [],
+      {}
+     ]
+    ]
+   }
+  }
+ },
+ "nested_086_empty_structures": {
+  "name": "submit_payload",
+  "arguments": {
+   "shell": [
+    []
+   ],
+   "marker": 6,
+   "also": {
+    "deep_empty": [
+     [],
+     {},
+     [
+      [],
+      {}
+     ]
+    ]
+   }
+  }
+ },
+ "nested_087_empty_structures": {
+  "name": "submit_payload",
+  "arguments": {
+   "shell": [
+    {}
+   ],
+   "marker": 7,
+   "also": {
+    "deep_empty": [
+     [],
+     {},
+     [
+      [],
+      {}
+     ]
+    ]
+   }
+  }
+ },
+ "nested_088_empty_structures": {
+  "name": "submit_payload",
+  "arguments": {
+   "shell": {
+    "a": {
+     "b": {
+      "c": {}
+     }
+    }
+   },
+   "marker": 8,
+   "also": {
+    "deep_empty": [
+     [],
+     {},
+     [
+      [],
+      {}
+     ]
+    ]
+   }
+  }
+ },
+ "nested_089_empty_structures": {
+  "name": "submit_payload",
+  "arguments": {
+   "shell": {
+    "mix": [
+     {},
+     [],
+     "",
+     0,
+     false,
+     null
+    ]
+   },
+   "marker": 9,
+   "also": {
+    "deep_empty": [
+     [],
+     {},
+     [
+      [],
+      {}
+     ]
+    ]
+   }
+  }
+ },
+ "nested_090_lookalike_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "a": "first",
+   "а": "second",
+   "note": "keys differ (cyrillic/greek/space lookalikes)"
+  }
+ },
+ "nested_091_lookalike_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "key": "first",
+   "kеy": "second",
+   "note": "keys differ (cyrillic/greek/space lookalikes)"
+  }
+ },
+ "nested_092_lookalike_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "O0": "first",
+   "0O": "second",
+   "note": "keys differ (cyrillic/greek/space lookalikes)"
+  }
+ },
+ "nested_093_lookalike_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "l1": "first",
+   "1l": "second",
+   "note": "keys differ (cyrillic/greek/space lookalikes)"
+  }
+ },
+ "nested_094_lookalike_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "x ": "first",
+   " x": "second",
+   "note": "keys differ (cyrillic/greek/space lookalikes)"
+  }
+ },
+ "nested_095_lookalike_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "A": "first",
+   "Α": "second",
+   "note": "keys differ (cyrillic/greek/space lookalikes)"
+  }
+ },
+ "nested_096_lookalike_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "data": "first",
+   "dаta": "second",
+   "note": "keys differ (cyrillic/greek/space lookalikes)"
+  }
+ },
+ "nested_097_lookalike_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "test": "first",
+   "tеst": "second",
+   "note": "keys differ (cyrillic/greek/space lookalikes)"
+  }
+ },
+ "nested_098_lookalike_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "v_1": "first",
+   "v-1": "second",
+   "note": "keys differ (cyrillic/greek/space lookalikes)"
+  }
+ },
+ "nested_099_lookalike_keys": {
+  "name": "submit_payload",
+  "arguments": {
+   "π": "first",
+   "п": "second",
+   "note": "keys differ (cyrillic/greek/space lookalikes)"
+  }
+ }
+}
