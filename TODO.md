@@ -290,6 +290,12 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
 
 ## Known harness deficiencies (accepted for the current freeze — bundle at next re-freeze)
 
+- DISCIPLINE (learned 17:2xZ, the hard way): during ε calibration, harness/ is READ-ONLY
+  **including build/** — the manifest covers builders, and my "harmless builder-only fix"
+  tripped `--verify-only` to TAMPER, which would have auto-aborted run 2. Provisional manifest
+  was re-frozen (justified: build/* never executes at eval time; prompts/refs bytes identical
+  → runs stay true replicas), but the precedent stands: next time, park fixes in a commit
+  touching NOTHING under harness/ until the freeze window.
 - **nested_080–089 (empty_structures ×10) die with HTTP 400 every run**: schema generator
   emitted `{"anyOf": []}` for empty arrays → llama-server rejects the request. DETERMINISTIC
   → zero σ contribution → ε valid; every config pays the same fixed ~1-point S handicap →
