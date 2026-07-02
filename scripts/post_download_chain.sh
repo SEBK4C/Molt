@@ -46,10 +46,16 @@ else
   [ -s corpora/imatrix.txt ] || { step "ABORT P2: corpora/imatrix.txt missing (SK-F1)"; exit 1; }
   if runner/gpu_lock.sh wait-idle 1 2>/dev/null; then NGL=15; else NGL=0; fi
   step "P2: llama-imatrix with -ngl $NGL ($([ "$NGL" = 0 ] && echo 'DEGRADED CPU-only path — GPUs busy (recorded per bootstrap rule)' || echo 'GPU path'))"
+  # Flag notes (2026-07-02): --chunk means FROM-chunk (skip!), not chunk size — never use it.
+  # --chunks 600 caps compute at ~307K tokens ≈ ~150 full model-streaming passes ≈ 1.5-3 h
+  # CPU-only (matches SPEC §2's ~1 h budget; 421 GB doesn't fit in 91 GB RAM, so every pass
+  # re-streams the SSD — uncapped would be 20+ h for negligible imatrix quality gain).
+  # --parse-special: corpus embeds the chat template's special tokens; calibrate on real ids.
   rm -f "$M/imatrix-agentic.dat.part"
   nice -n 15 ionice -c3 runner/gpu_lock.sh with-lock \
     "$LCPP/build/bin/llama-imatrix" -m "$M/Ornith-Q8_0.gguf" \
-    -f corpora/imatrix.txt -o "$M/imatrix-agentic.dat.part" -ngl "$NGL" --chunk 512 \
+    -f corpora/imatrix.txt -o "$M/imatrix-agentic.dat.part" -ngl "$NGL" \
+    --chunks 600 --parse-special -t 32 -tb 32 \
     2>&1 | tee notes/logs/p2-imatrix.log
   mv "$M/imatrix-agentic.dat.part" "$M/imatrix-agentic.dat"
   step "P2 done"
