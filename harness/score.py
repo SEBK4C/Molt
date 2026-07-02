@@ -71,24 +71,32 @@ def g2_loads(server):
 def g3_smoke(server):
     prompts = json.load(open(f"{H}/prompts/smoke.json"))  # 20 prompts
     for p in prompts:
+        pid = p.get("id", "?")
         try:
             out = chat(server, p["messages"], p.get("tools"),
                        max_tokens=p.get("max_tokens", 2048))
             msg = out["choices"][0]["message"]
-        except Exception:
+        except Exception as e:
+            print(f"[g3] {pid} FAIL request: {type(e).__name__}: {e}", file=sys.stderr)
             return False
         # a healthy reply has visible content OR a tool call; thinking that exhausts the
         # budget leaves content empty -> that IS a smoke failure (think-loop collapse)
         content = (msg.get("content") or "").strip()
         if not content and not msg.get("tool_calls"):
+            fr = out["choices"][0].get("finish_reason")
+            rlen = len(msg.get("reasoning_content") or "")
+            print(f"[g3] {pid} FAIL empty content (finish_reason={fr}, reasoning_chars={rlen})",
+                  file=sys.stderr)
             return False
         # nan/inf scan on the VISIBLE surface only (reasoning may legitimately discuss NaN)
         blob = content + " " + json.dumps(msg.get("tool_calls") or [], ensure_ascii=False)
         if p.get("expect_no_nan", True) and re.search(r"\b(nan|inf)\b", blob, re.I):
+            print(f"[g3] {pid} FAIL nan/inf in visible surface", file=sys.stderr)
             return False
         # repetition collapse: only meaningful on long content (short exact answers like
         # "391" must not trip it — Phase-0 run 1 failure mode)
         if len(content) > 300 and len(set(content[-300:].split())) < 5:
+            print(f"[g3] {pid} FAIL repetition tail={content[-80:]!r}", file=sys.stderr)
             return False
     return True
 

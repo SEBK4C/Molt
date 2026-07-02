@@ -13,8 +13,8 @@
 # batch geometry: prefill cost on this box = (streams of CPU-resident expert weights) —
 # bigger ubatch = fewer streams per token (P2 lesson; Phase-0 run 1 measured 129 t/s prefill
 # at ub 2048 cold — ub 4096 halves per-token streaming cost). Tier-A tunable.
--b 4096
--ub 4096
+-b 8192
+-ub 8192
 -fa on
 --cache-type-k q8_0
 --cache-type-v q8_0
