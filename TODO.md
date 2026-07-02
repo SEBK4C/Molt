@@ -235,8 +235,13 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
   `Ornith-Q8_0.BAD-phantom-mtp.gguf` (deletion = HG2), promotes the fixed file to canonical
   name, then execs post_download_chain.sh (P1 skips, P2→P4 proceed). Disk fine (1.4 T free).
   PERMANENT artifact once good — never delete.
-- **P2 [blocked: P1, SK-F1]** imatrix → models/imatrix-agentic.dat. Script auto-picks -ngl 15
-  (GPUs idle) vs -ngl 0 (degraded CPU path, allowed per bootstrap; recorded in log). est 2–8 h.
+- **P2 [in-progress]** imatrix → models/imatrix-agentic.dat. First attempt (05:55) used SPEC's
+  seed `--chunk 512` — that flag means FROM-chunk (skips input!), and uncapped compute was 9650
+  chunks ≈ 20+ h CPU-bound-on-SSD-streaming. Killed OUR imatrix (Nemotron untouched), fixed
+  chain script, restarted 06:01Z: `--chunks 600 --parse-special -t 32 -tb 32 -ngl 0` ≈ 307K tok
+  ≈ 150 streaming passes ≈ 1.5–3 h. NOTE for SPEC hygiene: SPEC §2/prepare.sh's `--chunk 512`
+  is wrong llama-imatrix usage (n_ctx 512 is already the default) — human may want to fix SPEC.
+  Watch: tmux `molt:status` or notes/logs/p2-imatrix.log.
 - **P3 [blocked: P1, SK-F2]** KLD base → models/kld-base.out (-ngl 0 ok). est 1–6 h.
 - **P4 [blocked: P2]** Baseline quant via render_quant_cmd → models/ornith-molt-000.gguf. est 1–3 h.
 - **P5 [blocked: P4 + HG4 (GPUs — Nemotron ttl:0 never self-unloads)]**
@@ -266,6 +271,13 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
   FP8 endpoint (spec-derived args / hand-authored terminal states / exec tests / upstream BFCL
   answers). HG1 endpoint upgrades bfcl+nested refs to FP8-behavioral goldens + supplies imatrix
   self-traces + secret split. ε/P5 therefore NOT blocked on HG1.
+- 2026-07-02 06:1x: **Storage topology verified (user question).** /mnt/proxmox = LVM pve-root
+  on nvme0n1p3 = Samsung 9100 PRO 4TB. Direct-IO measured: **11.1 GB/s read, 7.6 GB/s write**
+  (read bench ran WHILE imatrix streamed 3.7 GB/s). The sda 5TB / sdb 12TB spinners are unmounted
+  and unused by molt. Historical slow rates were soft ceilings: download 110 MB/s = network;
+  P1 convert 220 MB/s = single-threaded python quant compute (disk ~idle); imatrix 3.7 GB/s =
+  32-core MoE forward compute. SPEC §6's 14 GB/s SSD-streaming serving assumption ≈ holds
+  (11 GB/s measured). Repo itself also lives on the NVMe (/home/seb/Ai-projects is on pve-root).
 - 2026-07-02 05:2x: **MTP is unavailable for Ornith-1.0-397B, period.** Config declares
   `mtp_num_hidden_layers: 1` but the mtp.* weights are absent from BOTH the BF16 repo (weight
   index grep: 0 hits) and the FP8 repo (index grep: 0 hits). Corrects INF2's earlier "MTP

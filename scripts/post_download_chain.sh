@@ -23,7 +23,8 @@ $PY scripts/verify_download.py || { step "ABORT: download not verified (D2)"; ex
 if [ -s "$M/Ornith-Q8_0.gguf" ]; then
   step "P1 skip: $M/Ornith-Q8_0.gguf exists ($(du -h "$M/Ornith-Q8_0.gguf" | cut -f1))"
 else
-  step "P1: convert BF16 -> Q8_0 (CPU+disk, measured ~31 min @ 224 MB/s, ~420 GB out)"
+  step "P1: convert BF16 -> Q8_0 (~31 min; ceiling is single-threaded python quant compute,
+        NOT the NVMe — measured 11.1 GB/s read / 7.6 GB/s write direct-IO on /mnt/proxmox)"
   rm -f "$M/Ornith-Q8_0.gguf.part"
   # --no-mtp is REQUIRED: Ornith's config declares mtp_num_hidden_layers=1 but neither the
   # BF16 nor FP8 repo ships the mtp.* weights; a default convert writes block_count=61 +
