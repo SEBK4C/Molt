@@ -266,7 +266,12 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
   GPU-assisted (60 chunks / 8-chunk passes ≈ 15–25 min). PID via molt:status.
 - **P4 [blocked: P3 — auto-next]** Baseline quant via render_quant_cmd (hardened recipe
   37dd242) → models/ornith-molt-000.gguf. est 1–3 h CPU. Then AUTO-P5.
-- **P5 [in-progress — GATES PASSED ~11:08Z, suites running]** Run-1 gate-tuning history (each
+- **P5 [in-progress — RUN 1 COMPLETE 20:19Z: S = 0.9248]** Components: bfcl 0.9033 ·
+  tau 1.000 (40/40!) · evalplus 0.9817 (161/164) · nested 0.72 (80% of live cases; 10
+  harness-dead, see Known deficiencies). Gates: G4 17.8 t/s, G5 697 t/s warm (cold-start
+  artifacts explained the early failures). Full-run wall time ≈ 6.4 h. Run 2 auto-launched
+  20:19Z (ETA ~02:45Z), run 3 follows (ETA ~09:15Z) → ε = 2σ → FINAL freeze → auto-commit.
+  Earlier gate-tuning history: Run-1 gate-tuning history (each
   fix committed): G1 119.5 GB ✓ throughout. G2: layer-split OOM → --cpu-moe → final config
   `--n-cpu-moe 52 -ts 52,8` (GPU0 16.6 GB / GPU1 18.6 GB) ✓. G3: repetition false-positive on
   short answers → fixed; then think-overflow empty content (smoke_06 9.3K reasoning chars) →
