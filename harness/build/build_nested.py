@@ -36,6 +36,12 @@ def schema_for(v):
                 "required": list(v.keys()),
                 "additionalProperties": False}
     if isinstance(v, list):
+        if not v:
+            # empty array: NO items/anyOf key — {"anyOf": []} is invalid schema and makes
+            # llama-server 400 the whole request (Phase-0 discovery: 10 empty_structures
+            # cases died deterministically; fix committed 2026-07-02 but prompts NOT
+            # regenerated mid-calibration — bundle with the next re-freeze + re-ε window)
+            return {"type": "array", "maxItems": 0}
         subs = {json.dumps(schema_for(x), sort_keys=True) for x in v}
         items = [json.loads(s) for s in sorted(subs)]
         it = items[0] if len(items) == 1 else {"anyOf": items}

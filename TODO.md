@@ -288,6 +288,16 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
 - **P6 [blocked: P5]** Pre-flight per REQUIREMENTS checklist + `git checkout -b molt/<date>` —
   research session may start (successor switches modes per resume.md §4).
 
+## Known harness deficiencies (accepted for the current freeze — bundle at next re-freeze)
+
+- **nested_080–089 (empty_structures ×10) die with HTTP 400 every run**: schema generator
+  emitted `{"anyOf": []}` for empty arrays → llama-server rejects the request. DETERMINISTIC
+  → zero σ contribution → ε valid; every config pays the same fixed ~1-point S handicap →
+  ratchet comparisons unaffected. Builder FIXED (committed) but prompts/refs NOT regenerated
+  mid-calibration. At the next harness re-freeze window (e.g. HG1 goldens promotion):
+  rerun build_nested.py → re-freeze manifest → re-run Phase-0 ε. Until then, nested's live
+  denominator is 90, and S_max ≈ 0.99 for every config.
+
 ## Loop (session-scoped)
 
 - A 30-min self-improvement cron (`7,37 * * * *`, job d5d63a29, prompt "Self-improvement
