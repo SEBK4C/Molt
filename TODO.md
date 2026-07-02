@@ -41,26 +41,23 @@ States: `[pending]` `[in-progress]` `[blocked: <on-what>]` `[done]` `[HUMAN]` (p
 
 ## D — Download (long pole, start first)
 
-- **D1 [in-progress]** `huggingface-cli download deepreinforce-ai/Ornith-1.0-397B --revision 5e3e761811e804c295c1d3c0ce68b21da6154209 --local-dir /mnt/proxmox/llm-serve/models/ornith-397b/hf-bf16`
-  via `scripts/download_397b.sh` (retry loop ×200, resumes on rerun; Xet storage backend active).
-  tmux: `molt:dl` · pane PID 73373 (also `notes/logs/molt-dl.pid`) · log: `notes/logs/molt-dl.log`
-  Started 2026-07-02 ~02:29 local. Progress: `du -sb /mnt/proxmox/llm-serve/models/ornith-397b/hf-bf16`
-  vs **793633331312 B** expected (exact, from hf-tree.json).
-  est: measured by dl-watch 2026-07-02 02:45Z: ~97 MB/s avg (85/794 GB = 10.7%) → ETA ~04:45Z.
-  Rate history: notes/logs/dl-watch.log.
-- **D1.w [in-progress]** Babysitter subagent watches the download (rate/ETA → `notes/logs/dl-watch.log`,
-  restarts the retry script if it dies, runs D2 verify on completion, updates D1/D2 lines here).
-  Session-scoped: if this line is stale (no dl-watch.log updates for >1 h and download still
-  running), a successor instance re-adopts the watch itself per resume.md §2.
-- **D2 [blocked: D1]** Verify download: `.venv/bin/python scripts/verify_download.py` — count +
-  per-file sizes vs `/mnt/proxmox/llm-serve/models/ornith-397b/hf-tree.json` (snapshot @ pinned
-  revision), sha256 of every LFS file with `--deep` (~1–2 h). Babysitter runs both on completion.
+- **D1 [done]** `huggingface-cli download deepreinforce-ai/Ornith-1.0-397B --revision 5e3e761811e804c295c1d3c0ce68b21da6154209 --local-dir /mnt/proxmox/llm-serve/models/ornith-397b/hf-bf16`
+  via `scripts/download_397b.sh` (Xet backend). **COMPLETE 2026-07-02T04:28:53Z** (log marker),
+  ~2h00m wall, avg ~110 MB/s. On-disk file bytes = **793633331312** exact (shallow verify;
+  du -sb incl. .cache metadata = 793633397162). Log: `notes/logs/molt-dl.log`;
+  rate history: `notes/logs/dl-watch.log`.
+- **D1.w [done]** Babysitter subagent completed 04:31Z: 12 watch rounds, zero restarts/stalls,
+  ran shallow+deep verify (D2), updated D1/D2. Full rate history in `notes/logs/dl-watch.log`.
+- **D2 [done]** Verify PASSED at both depths 2026-07-02: shallow 04:31Z (136 files /
+  793633331312 B exact vs hf-tree.json); deep 04:31:33Z — sha256 of all 125 LFS files match
+  their pinned LFS oids (`--deep --jobs 8`, ~75 s @ ~10 GB/s, `[deep-verify] EXIT=0`,
+  log `notes/logs/verify-deep.log`; independent coreutils spot re-hash of model-00122 also
+  matched). HG2/P1 deep-verify precondition satisfied.
   Deep verify REQUIRED before HG2 deletion; shallow suffices to start P1 (convert crashes loudly
   on corrupt safetensors, and deep runs in parallel anyway).
-- **D3 [in-progress]** Auto-chain trigger: tmux `molt:chain` pane PID 126556 waits for the
-  download COMPLETE marker, then runs `scripts/post_download_chain.sh` (P1→P4) with 3 attempts,
-  10 min apart (each attempt re-gates on shallow verify). Log notes/logs/molt-chain.log.
-  So P1–P4 need NO human/agent action tonight; P5 stays gated on HG4.
+- **D3 [done→handed off to P1]** Auto-chain trigger FIRED ~04:31Z after the COMPLETE marker;
+  shallow-verify gate passed; chain is executing in tmux `molt:chain`
+  (log notes/logs/molt-chain.log). P1–P4 need NO human/agent action; P5 stays gated on HG4.
 
 ## INF — Infrastructure (unblocks everything else)
 
@@ -223,8 +220,10 @@ every step: check-before-do → *.part → atomic rename → notes/logs/)
 **P1–P4 = one command once D2 passes** (CPU/disk only, no GPU dependency; safe to launch
 detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects/Molt && ./scripts/post_download_chain.sh 2>&1 | tee -a notes/logs/molt-chain.log'`
 
-- **P1 [blocked: D2]** Q8_0 convert → models/Ornith-Q8_0.gguf (~420 GB, est 4–10 h) + tokenize
-  sanity + ctx32k exact token count. PERMANENT artifact — never delete.
+- **P1 [in-progress]** Q8_0 convert → models/Ornith-Q8_0.gguf (421.5 GB, 1098 tensors).
+  STARTED ~04:31Z by D3 auto-trigger; convert PID 207502 in tmux `molt:chain`;
+  log notes/logs/p1-convert.log. Observed ~180–220 MB/s → ETA ~05:10–05:20Z (tqdm est),
+  then tokenize sanity + ctx32k token count auto-run. PERMANENT artifact — never delete.
 - **P2 [blocked: P1, SK-F1]** imatrix → models/imatrix-agentic.dat. Script auto-picks -ngl 15
   (GPUs idle) vs -ngl 0 (degraded CPU path, allowed per bootstrap; recorded in log). est 2–8 h.
 - **P3 [blocked: P1, SK-F2]** KLD base → models/kld-base.out (-ngl 0 ok). est 1–6 h.
