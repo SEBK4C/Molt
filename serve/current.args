@@ -2,7 +2,11 @@
 # One arg (or arg value-pair) per line; comments/blank lines stripped by the runner.
 # The runner supplies: -m <gguf> --host 127.0.0.1 --port <port> --alias molt.
 -ngl 99
---n-cpu-moe 45
+# 48 = conservative first-serve seed: 12 GPU-resident expert layers ≈ 21 GB + non-expert
+# ~10.5 GB + KV ~2 GB + ub-2048 scratch ≈ ~36 GB of 48 GB. SPEC's 45 computes to ~42 GB —
+# too close to OOM for the unattended Phase-0 first load. Tier-A's first sweep: walk back
+# toward 45/44 until VRAM saturates (each GPU layer ≈ +1.8 GB, ~frees RAM bandwidth).
+--n-cpu-moe 48
 # batch geometry: prefill cost on this box = (streams of CPU-resident expert weights) —
 # bigger ubatch = fewer streams (P2 lesson: 4x fewer streams = 3x faster). Tier-A tunable.
 -b 2048
