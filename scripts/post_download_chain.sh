@@ -102,6 +102,12 @@ else
   step "P4 done: $(du -h "$M/ornith-molt-000.gguf" | cut -f1)"
 fi
 
-step "CHAIN COMPLETE. Next: P5 = ./scripts/phase0_epsilon.sh"
-step "  REQUIRES GPUs idle. NOTE: llama-swap has ttl:0 for Nemotron-Cascade-30B — it will"
-step "  NEVER idle-unload by itself; freeing the GPUs is HUMAN gate HG4."
+step "P1-P4 COMPLETE."
+# P5 auto-run (HG4 was cleared by owner 2026-07-02 — molt owns the GPUs; gpu_lock still waits
+# politely if anything else grabbed them). Set MOLT_NO_AUTOP5=1 to stop here instead.
+if [ "${MOLT_NO_AUTOP5:-0}" = "1" ]; then
+  step "MOLT_NO_AUTOP5=1 -> stopping before Phase-0. Run ./scripts/phase0_epsilon.sh manually."
+  exit 0
+fi
+step "P5: Phase-0 epsilon calibration (3x full S, FINAL manifest freeze) — auto-running"
+exec ./scripts/phase0_epsilon.sh

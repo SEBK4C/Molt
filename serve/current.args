@@ -3,6 +3,10 @@
 # The runner supplies: -m <gguf> --host 127.0.0.1 --port <port> --alias molt.
 -ngl 99
 --n-cpu-moe 45
+# batch geometry: prefill cost on this box = (streams of CPU-resident expert weights) —
+# bigger ubatch = fewer streams (P2 lesson: 4x fewer streams = 3x faster). Tier-A tunable.
+-b 2048
+-ub 2048
 -fa on
 --cache-type-k q8_0
 --cache-type-v q8_0

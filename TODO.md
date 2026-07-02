@@ -258,9 +258,14 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
   model (15 full layers ≈ 105 GB > VRAM) — human may want to amend SPEC.
 - **P3 [blocked: P1, SK-F2]** KLD base → models/kld-base.out (-ngl 0 ok). est 1–6 h.
 - **P4 [blocked: P2]** Baseline quant via render_quant_cmd → models/ornith-molt-000.gguf. est 1–3 h.
-- **P5 [blocked: P4 + HG4 (GPUs — Nemotron ttl:0 never self-unloads)]**
-  `./scripts/phase0_epsilon.sh` — 3× full S (resumable per run), ε=2σ → harness/epsilon.txt,
-  journal, FINAL manifest freeze, verify green. est 3× ~1 h once GPUs are free.
+- **P5 [blocked: P4 only — AUTO-RUNS]** Chain now execs `scripts/phase0_epsilon.sh` after P4
+  (HG4 cleared; escape hatch: MOLT_NO_AUTOP5=1). 3× full S (resumable per run), ε=2σ →
+  harness/epsilon.txt, journal, **FINAL manifest freeze**, verify green. WALL-TIME UNKNOWN with
+  thinking enabled (watch-item). NOTE: a `molt:guard` handover retires the pre-edit chain
+  instance after P2's rename (old bash had stale script buffered: slow P3 flags, no auto-P5)
+  and takes over — see "[handover]" marker in molt-chain.log.
+  ⚠ LOOP DISCIPLINE AFTER P5 RUNS: harness/ is then FROZEN — self-improvement ticks must never
+  edit harness/ again without a deliberate re-freeze + full Phase-0 re-run (ε depends on refs).
 - **P6 [blocked: P5]** Pre-flight per REQUIREMENTS checklist + `git checkout -b molt/<date>` —
   research session may start (successor switches modes per resume.md §4).
 
