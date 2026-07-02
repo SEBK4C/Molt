@@ -18,11 +18,19 @@
 -fa on
 --cache-type-k q8_0
 --cache-type-v q8_0
--c 131072
+# 4 slots x 40960 ctx: parallel eval (referee runs 4 workers); ctx32k probe (38,273 tok) fits
+-c 163840
+-np 4
+# SMT threads for batch/prefill matmuls (decode threads stay at physical-core default)
+-tb 32
 --jinja
 --chat-template-file models/hf-bf16/chat_template.jinja
 --reasoning-format auto
--np 1
+# BOUNDED thinking (decision 2026-07-02, data: smoke_06 thought 9.3K chars into a 3072 cap
+# without answering; unbounded think at 12 t/s makes evals unbounded). 1024 think tokens is
+# generous for tool calls; part of the optimized serving config — hold constant across
+# compared configs, tune only as an explicit Tier-A experiment.
+--reasoning-budget 1024
 # MTP speculative decode is UNAVAILABLE for this model: Ornith's config declares an MTP head
 # but neither the BF16 nor the FP8 repo ships its weights (verified 2026-07-02, TODO decision
 # log). SPEC §3's draft-mtp A/B is off the table unless DeepReinforce publishes them.

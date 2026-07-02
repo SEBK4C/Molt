@@ -10,6 +10,7 @@ Checks are AST/exec/exact only — no LLM judges inside the loop (determinism pr
 ratchet). Weights and gate thresholds must match SPEC.md §4.
 """
 import argparse
+import concurrent.futures as cf
 import hashlib
 import json
 import os
@@ -221,11 +222,14 @@ def nested_json(server):
     return run_suite(server, "nested", n=100)
 
 
+SUITE_WORKERS = int(os.environ.get("MOLT_SUITE_WORKERS", "4"))  # match llama-server -np
+
+
 def run_suite(server, name, n):
     cases = json.load(open(f"{H}/prompts/{name}.json"))[:n]
     refs = json.load(open(f"{H}/refs/{name}.json"))
-    ok = 0
-    for c in cases:
+
+    def one(c):
         cid = str(c["id"])
         try:
             if name == "tau":
@@ -236,9 +240,22 @@ def run_suite(server, name, n):
                 out = chat(server, c["messages"], c.get("tools"),
                            max_tokens=c.get("max_tokens", 1024))
                 result = out["choices"][0]["message"]
-            ok += int(check(name, result, refs[cid]))
+            return int(check(name, result, refs[cid]))
         except Exception as e:  # one bad episode = one fail, never a crashed eval
             print(f"[suite {name}] case {cid} error: {type(e).__name__}: {e}", file=sys.stderr)
+            return 0
+
+    # cases are independent; concurrency (= server slots) sets wall time. Batched decode
+    # introduces fp-order noise run-to-run — that is exactly what Phase-0's ε absorbs.
+    ok = done = 0
+    t0 = time.time()
+    with cf.ThreadPoolExecutor(max_workers=SUITE_WORKERS) as ex:
+        for r in ex.map(one, cases):
+            ok += r
+            done += 1
+            if done % 25 == 0 or done == len(cases):
+                print(f"[suite {name}] {done}/{len(cases)} scored ({ok} pass, "
+                      f"{time.time() - t0:.0f}s)", file=sys.stderr)
     return ok / len(cases)
 
 
