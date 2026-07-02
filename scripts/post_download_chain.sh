@@ -45,18 +45,21 @@ if [ -s "$M/imatrix-agentic.dat" ]; then
   step "P2 skip: imatrix exists"
 else
   [ -s corpora/imatrix.txt ] || { step "ABORT P2: corpora/imatrix.txt missing (SK-F1)"; exit 1; }
-  if runner/gpu_lock.sh wait-idle 1 2>/dev/null; then NGL=15; else NGL=0; fi
-  step "P2: llama-imatrix with -ngl $NGL ($([ "$NGL" = 0 ] && echo 'DEGRADED CPU-only path — GPUs busy (recorded per bootstrap rule)' || echo 'GPU path'))"
+  step "P2: llama-imatrix, GPU-assisted (owner cleared HG4 2026-07-02: molt owns the GPUs)"
   # Flag notes (2026-07-02): --chunk means FROM-chunk (skip!), not chunk size — never use it.
-  # --chunks 600 caps compute at ~307K tokens ≈ ~150 full model-streaming passes ≈ 1.5-3 h
-  # CPU-only (matches SPEC §2's ~1 h budget; 421 GB doesn't fit in 91 GB RAM, so every pass
-  # re-streams the SSD — uncapped would be 20+ h for negligible imatrix quality gain).
+  # -ngl 99 --n-cpu-moe 60: ALL non-expert tensors (~10.5 GB: attention, deltanet, router,
+  #   shared experts, embeddings) on the 4090s = ~58% of prefill FLOPs; the 512-expert FFNs
+  #   (~411 GB) stay CPU+mmap — they can never fit in 48 GB. Measured CPU-only: 421 s/pass
+  #   => 17.5 h uncapped; GPU-assist target ~2-4 min/pass.
+  # --chunks 240 = ~123K calibration tokens ≈ community-standard imatrix size (~60 passes);
+  #   richer remix is a Tier-C experiment later, not tonight's blocker.
   # --parse-special: corpus embeds the chat template's special tokens; calibrate on real ids.
+  # gpu_lock with-gpus: flock + wait-for-idle (never kills anything that grabs the cards back).
   rm -f "$M/imatrix-agentic.dat.part"
-  nice -n 15 ionice -c3 runner/gpu_lock.sh with-lock \
+  nice -n 15 ionice -c3 runner/gpu_lock.sh with-gpus \
     "$LCPP/build/bin/llama-imatrix" -m "$M/Ornith-Q8_0.gguf" \
-    -f corpora/imatrix.txt -o "$M/imatrix-agentic.dat.part" -ngl "$NGL" \
-    --chunks 600 --parse-special -t 32 -tb 32 \
+    -f corpora/imatrix.txt -o "$M/imatrix-agentic.dat.part" \
+    -ngl 99 --n-cpu-moe 60 --chunks 240 --parse-special -t 32 -tb 32 \
     2>&1 | tee notes/logs/p2-imatrix.log
   mv "$M/imatrix-agentic.dat.part" "$M/imatrix-agentic.dat"
   step "P2 done"
@@ -67,11 +70,14 @@ if [ -s "$M/kld-base.out" ]; then
   step "P3 skip: KLD base exists"
 else
   [ -s corpora/kld_heldout.txt ] || { step "ABORT P3: corpora/kld_heldout.txt missing (SK-F2)"; exit 1; }
-  step "P3: KLD base logits (CPU-only ok; est 1-6 h)"
+  step "P3: KLD base logits, GPU-assisted non-expert offload (same rationale as P2)"
+  # --chunks 60 ≈ 30K held-out tokens for the KLD reference — a DIAGNOSTIC (logged, never
+  # ratcheted); uncapped 2 MB CPU-only would be 10+ h for no decision value.
   rm -f "$M/kld-base.out.part"
-  nice -n 15 ionice -c3 runner/gpu_lock.sh with-lock \
+  nice -n 15 ionice -c3 runner/gpu_lock.sh with-gpus \
     "$LCPP/build/bin/llama-perplexity" -m "$M/Ornith-Q8_0.gguf" \
-    -f corpora/kld_heldout.txt --kl-divergence-base "$M/kld-base.out.part" -ngl 0 \
+    -f corpora/kld_heldout.txt --kl-divergence-base "$M/kld-base.out.part" \
+    -ngl 99 --n-cpu-moe 60 --chunks 60 -t 32 -tb 32 \
     2>&1 | tee notes/logs/p3-kld.log
   mv "$M/kld-base.out.part" "$M/kld-base.out"
   step "P3 done"

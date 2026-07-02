@@ -15,10 +15,15 @@ States: `[pending]` `[in-progress]` `[blocked: <on-what>]` `[done]` `[HUMAN]` (p
   `/mnt/proxmox/llm-serve/models/ornith/` are a **different model** — never touch, never delete.
   All 397B artifacts stage under `/mnt/proxmox/llm-serve/models/ornith-397b/`.
 - **NEVER** write weights/GGUF to the root fs (119 GB free). Everything large → `/mnt/proxmox`.
-- **NEVER** kill running `llama-server` (Nemotron PID 3339, port 9001) or `llama-swap` (PID 1770,
-  :8080). GPU-needing steps: (a) poll `nvidia-smi` + wait for llama-swap ttl idle-unload via
-  `runner/gpu_lock.sh wait-idle`, or (b) run degraded CPU-only (`-ngl 0`) when disk/CPU-bound
-  (imatrix, KLD-base qualify). Record which path was taken in the journal/log.
+- ~~NEVER kill running `llama-server`/`llama-swap`~~ **OVERRIDDEN BY OWNER 2026-07-02 ~06:25Z**
+  (chat, verbatim: "You have higher privileges to touching the GPUs and shutting down LlamaSwap
+  server temporarily while you train a new model. Nemotron is not the Priority, You are.").
+  molt owns both 4090s for the pipeline/session window. `nemotron-proxy.service` (user unit
+  running llama-swap) was STOPPED cleanly via `systemctl --user stop nemotron-proxy.service`
+  (its llama-server child went down with it; VRAM verified drained to ~1 MiB both cards).
+  **RESTORE when the session window ends: `systemctl --user start nemotron-proxy.service`**
+  (see item X-restore below). Foreign processes that are not Nemotron/llama-swap remain
+  untouchable; gpu_lock still waits rather than kills if anything grabs the cards.
 - Never execute `[HUMAN]` items; keep their paste-ready commands fresh.
 - `hf download` resumes natively: on restart rerun the same command, **never delete partials**.
 
@@ -203,11 +208,12 @@ States: `[pending]` `[in-progress]` `[blocked: <on-what>]` `[done]` `[HUMAN]` (p
 - **HG3 [HUMAN]** Create `~/.config/molt/env` with `HF_TOKEN=` (fine-grained: read + write
   SEBK4C namespace + Inference Endpoints admin), `ANTHROPIC_API_KEY=`. Download currently rides
   the cached `~/.cache/huggingface/token`; HG1 endpoint + HF uploads need the env file.
-- **HG4 [HUMAN — REQUIRED for P5]** Free the GPUs. CONFIRMED 03:00: llama-swap config gives
-  `Nemotron-Cascade-30B` **`ttl: 0` → it NEVER idle-unloads**; `gpu_lock.sh wait-idle` alone can
-  never succeed while it's resident. Options (human's call): temporarily set a ttl / unload via
-  llama-swap admin, or stop llama-swap + Nemotron for the session window. The molt side needs
-  nothing else — runners already wait-and-never-kill.
+- **HG4 [done — CLEARED BY OWNER 2026-07-02 ~06:25Z]** Owner granted molt the GPUs and
+  authorized temporarily stopping llama-swap. Executed: `systemctl --user stop
+  nemotron-proxy.service` (Restart=always does NOT resurrect a manual stop); VRAM drained.
+  P5 is no longer HUMAN-gated. NEW pinned obligation:
+  - **X-restore [pending — after session window]** `systemctl --user start nemotron-proxy.service`
+    to bring llama-swap + Nemotron back. Do this whenever molt is idle for an extended period.
 - **HG5 [HUMAN]** `./install_timer.sh` + phase-lock first start at the rate-limit reset
   (5 h cadence successor instances). Prereqs INF3+INF7 are done; timer scripts land in
   runner/molt_tick.sh + systemd user units.
@@ -235,13 +241,16 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
   `Ornith-Q8_0.BAD-phantom-mtp.gguf` (deletion = HG2), promotes the fixed file to canonical
   name, then execs post_download_chain.sh (P1 skips, P2→P4 proceed). Disk fine (1.4 T free).
   PERMANENT artifact once good — never delete.
-- **P2 [in-progress]** imatrix → models/imatrix-agentic.dat. First attempt (05:55) used SPEC's
-  seed `--chunk 512` — that flag means FROM-chunk (skips input!), and uncapped compute was 9650
-  chunks ≈ 20+ h CPU-bound-on-SSD-streaming. Killed OUR imatrix (Nemotron untouched), fixed
-  chain script, restarted 06:01Z: `--chunks 600 --parse-special -t 32 -tb 32 -ngl 0` ≈ 307K tok
-  ≈ 150 streaming passes ≈ 1.5–3 h. NOTE for SPEC hygiene: SPEC §2/prepare.sh's `--chunk 512`
-  is wrong llama-imatrix usage (n_ctx 512 is already the default) — human may want to fix SPEC.
-  Watch: tmux `molt:status` or notes/logs/p2-imatrix.log.
+- **P2 [in-progress — GPU-assisted, attempt 3]** imatrix → models/imatrix-agentic.dat.
+  Attempt 1 (05:55): SPEC seed `--chunk 512` = FROM-chunk (skips input!) + uncapped 9650 chunks.
+  Attempt 2 (06:01, CPU-only `--chunks 600`): measured **421 s/pass → ETA 17.5 h** — CPU-only
+  P2 is NOT viable on this box (experts stream fine at 3.7 GB/s; 32 cores are the ceiling).
+  Attempt 3 (06:3x, after owner cleared HG4): `-ngl 99 --n-cpu-moe 60 --chunks 240
+  --parse-special -t 32 -tb 32` — non-expert tensors (~10.5 GB ≈ 58% of FLOPs) on both 4090s,
+  512-expert FFNs stay CPU+mmap; 240 chunks = ~123K calibration tokens (community-standard).
+  Expect ~2–4 min/pass × 60 passes. Watch: molt:status / notes/logs/p2-imatrix.log.
+  SPEC hygiene note stands: SPEC §2's `--chunk 512` and `-ngl 15` are both wrong for a 421 GB
+  model (15 full layers ≈ 105 GB > VRAM) — human may want to amend SPEC.
 - **P3 [blocked: P1, SK-F2]** KLD base → models/kld-base.out (-ngl 0 ok). est 1–6 h.
 - **P4 [blocked: P2]** Baseline quant via render_quant_cmd → models/ornith-molt-000.gguf. est 1–3 h.
 - **P5 [blocked: P4 + HG4 (GPUs — Nemotron ttl:0 never self-unloads)]**
