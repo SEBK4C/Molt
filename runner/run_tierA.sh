@@ -54,11 +54,13 @@ runner/gpu_lock.sh with-gpus bash -c '
   t0=$(date +%s)
   until curl -sf "http://127.0.0.1:$PORT/health" >/dev/null 2>&1; do
     if ! kill -0 "$SRV_PID" 2>/dev/null; then
-      echo "{\"exp\":\"$EXP\",\"gates_pass\":false,\"reason\":\"G2 fail: llama-server exited during load (see $SRV_LOG)\"}"
+      echo "{\"exp\":\"$EXP\",\"gates_pass\":false,\"reason\":\"G2 fail: llama-server exited during load (see $SRV_LOG)\"}" \
+        | tee "notes/logs/score-$EXP.json"
       exit 0
     fi
     if [ $(( $(date +%s) - t0 )) -ge 1800 ]; then
-      echo "{\"exp\":\"$EXP\",\"gates_pass\":false,\"reason\":\"G2 fail: /health not ready after 1800s\"}"
+      echo "{\"exp\":\"$EXP\",\"gates_pass\":false,\"reason\":\"G2 fail: /health not ready after 1800s\"}" \
+        | tee "notes/logs/score-$EXP.json"
       exit 0
     fi
     sleep 5
