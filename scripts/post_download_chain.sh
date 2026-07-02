@@ -82,7 +82,7 @@ else
   nice -n 15 ionice -c3 runner/gpu_lock.sh with-gpus \
     "$LCPP/build/bin/llama-perplexity" -m "$M/Ornith-Q8_0.gguf" \
     -f corpora/kld_heldout.txt --kl-divergence-base "$M/kld-base.out.part" \
-    -ngl 99 --n-cpu-moe 60 --chunks 60 -t 32 -tb 32 \
+    -ngl 99 --n-cpu-moe 60 --chunks 60 -b 4096 -ub 4096 -t 32 -tb 32 \
     2>&1 | tee notes/logs/p3-kld.log
   mv "$M/kld-base.out.part" "$M/kld-base.out"
   step "P3 done"

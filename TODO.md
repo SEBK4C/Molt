@@ -248,9 +248,10 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
   Attempt 3 (06:19): GPU non-expert offload alone did NOT help — bottleneck is expert-weight
   STREAMING, not compute (411 GB ≫ 85 GB page cache; default ubatch 512 ⇒ every 2048-token
   batch streams the full model 4× ≈ 1.6 TB/pass, matches measured 421 s/pass + 86%-of-one-core
-  fault-wait profile). Attempt 4 (06:4x, running): added `-b 4096 -ub 4096 --no-warmup` ⇒
-  ONE model stream per 8 chunks ⇒ ~30 streams total ≈ 1–1.5 h expected. 240 chunks = ~123K
-  calibration tokens. Watch: molt:status / notes/logs/p2-imatrix.log.
+  fault-wait profile). Attempt 4 fixed it: `-b 4096 -ub 4096` (--no-warmup was invalid for
+  imatrix and cost one aborted relaunch) ⇒ **MEASURED 142.4 s/pass, ETA 1 h 11 m** (was 17.5 h
+  — 14.7×). Running since ~06:57Z, saves every 10 chunks, partial-data warnings 95–99% are
+  normal MoE coverage. 240 chunks = ~123K calibration tokens.
   LESSON (applies to P3/P5/serving): on this box, wall-time for any prefill-heavy job over the
   Q8 master is (streams × 411 GB ÷ ~4 GB/s); maximize ubatch to minimize streams.
   SPEC hygiene note stands: SPEC §2's `--chunk 512` and `-ngl 15` are both wrong for a 421 GB
