@@ -241,7 +241,8 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
   `Ornith-Q8_0.BAD-phantom-mtp.gguf` (deletion = HG2), promotes the fixed file to canonical
   name, then execs post_download_chain.sh (P1 skips, P2→P4 proceed). Disk fine (1.4 T free).
   PERMANENT artifact once good — never delete.
-- **P2 [in-progress — GPU-assisted, attempt 3]** imatrix → models/imatrix-agentic.dat.
+- **P2 [done 07:44Z]** models/imatrix-agentic.dat (1.14 GB, 240 chunks, ~123K tok, coverage
+  95–99% per expert tensor). History of the four attempts kept below for the record:
   Attempt 1 (05:55): SPEC seed `--chunk 512` = FROM-chunk (skips input!) + uncapped 9650 chunks.
   Attempt 2 (06:01, CPU-only `--chunks 600`): measured **421 s/pass → ETA 17.5 h** — CPU-only
   P2 is NOT viable on this box (experts stream fine at 3.7 GB/s; 32 cores are the ceiling).
@@ -256,8 +257,11 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
   Q8 master is (streams × 411 GB ÷ ~4 GB/s); maximize ubatch to minimize streams.
   SPEC hygiene note stands: SPEC §2's `--chunk 512` and `-ngl 15` are both wrong for a 421 GB
   model (15 full layers ≈ 105 GB > VRAM) — human may want to amend SPEC.
-- **P3 [blocked: P1, SK-F2]** KLD base → models/kld-base.out (-ngl 0 ok). est 1–6 h.
-- **P4 [blocked: P2]** Baseline quant via render_quant_cmd → models/ornith-molt-000.gguf. est 1–3 h.
+- **P3 [in-progress since 07:46Z]** KLD base → models/kld-base.out. Handover guard retired the
+  stale chain instance cleanly at 07:46:47Z; fresh chain runs P3 with `-b/-ub 4096 --chunks 60`
+  GPU-assisted (60 chunks / 8-chunk passes ≈ 15–25 min). PID via molt:status.
+- **P4 [blocked: P3 — auto-next]** Baseline quant via render_quant_cmd (hardened recipe
+  37dd242) → models/ornith-molt-000.gguf. est 1–3 h CPU. Then AUTO-P5.
 - **P5 [blocked: P4 only — AUTO-RUNS]** Chain now execs `scripts/phase0_epsilon.sh` after P4
   (HG4 cleared; escape hatch: MOLT_NO_AUTOP5=1). 3× full S (resumable per run), ε=2σ →
   harness/epsilon.txt, journal, **FINAL manifest freeze**, verify green. WALL-TIME UNKNOWN with
@@ -289,6 +293,12 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
   WATCH-ITEM for Phase-0: full-S wall time with thinking enabled is unmeasured — if it blows
   the 45–60 min budget at ≥10 t/s, consider `--reasoning-budget` or parallel slots (-np) as
   Tier-A-era changes. (c) Diagnosed+fixed imatrix streaming geometry (see P2).
+  Tick 4 (06:50): auto-P5 wiring + molt:guard handover + serve args -b/-ub seed + post-freeze
+  discipline note. Tick 5 (07:20): recipe hardening (order-independent patterns vs real tensor
+  names; .*gate.* trap + shexp no-match found; vision rule removed — master is text-only).
+  Tick 6 (07:50): P2 marked done; run_tierA full-eval timeout 5400→14400 (auto-P5 can't die by
+  timeout); eval-lite 1500→2700; NEW runner/staircase.py (S-vs-index hero chart, smoke-tested
+  on synthetic journal incl. malformed lines).
 
 ## Notes / decision log
 
