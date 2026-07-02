@@ -262,14 +262,18 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
   GPU-assisted (60 chunks / 8-chunk passes ≈ 15–25 min). PID via molt:status.
 - **P4 [blocked: P3 — auto-next]** Baseline quant via render_quant_cmd (hardened recipe
   37dd242) → models/ornith-molt-000.gguf. est 1–3 h CPU. Then AUTO-P5.
-- **P5 [in-progress — run 1 restarted 09:29Z under 10 h ceiling]** GATE DATA (run-1 first
-  attempt): G1 119.5 GB ✓, G2 loads ✓ (--cpu-moe after the layer-split OOM), **G4 decode
-  13.5 t/s ✓**, G5 129 t/s ✗ (cold-cache probe — fixed: warm-up + cache_prompt=False measured
-  pass + ub 4096), G3 ✗ (repetition heuristic false-positive on short exact answers — fixed).
-  OPEN QUESTION for owner/session: at 13.5 t/s with thinking, full-S ≈ 6–10 h ⇒ Phase-0 3×
-  could take a day. Alternative: cap think length via `--reasoning-budget N` in serve args
-  (legit Tier-A surface; changes measured policy, must stay fixed across compared configs).
-  Chain now execs `scripts/phase0_epsilon.sh` after P4
+- **P5 [in-progress — GATES PASSED ~11:08Z, suites running]** Run-1 gate-tuning history (each
+  fix committed): G1 119.5 GB ✓ throughout. G2: layer-split OOM → --cpu-moe → final config
+  `--n-cpu-moe 52 -ts 52,8` (GPU0 16.6 GB / GPU1 18.6 GB) ✓. G3: repetition false-positive on
+  short answers → fixed; then think-overflow empty content (smoke_06 9.3K reasoning chars) →
+  `--reasoning-budget 1024` ✓. G4: 12–13.5 t/s ✓ every attempt. G5 prefill ladder:
+  129 (ub2048 cold) → 157 (ub4096 warm) → 209–211 (ub8192, cpu-moe saturated) → PASSED with
+  8 expert layers on GPU1. Suites live at 11:20Z: bfcl 25/300, **23 pass (92% early rate!)**,
+  ~27 s/case at 4 workers ⇒ full-S ≈ 5–6.5 h/run ⇒ 3 runs complete overnight (10 h/run
+  ceiling holds). ⚠ SESSION-PLANNING IMPLICATION: eval-lite at this pace ≈ 60–80 min, NOT
+  SPEC's ~8 min — Tier-A 20-min budgets are unrealistic until serving gets faster; the session
+  planner must re-derive tier budgets from measured Phase-0 wall times.
+  Chain execs `scripts/phase0_epsilon.sh` after P4
   (HG4 cleared; escape hatch: MOLT_NO_AUTOP5=1). 3× full S (resumable per run), ε=2σ →
   harness/epsilon.txt, journal, **FINAL manifest freeze**, verify green. WALL-TIME UNKNOWN with
   thinking enabled (watch-item). NOTE: a `molt:guard` handover retires the pre-edit chain
