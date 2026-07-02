@@ -245,10 +245,14 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
   Attempt 1 (05:55): SPEC seed `--chunk 512` = FROM-chunk (skips input!) + uncapped 9650 chunks.
   Attempt 2 (06:01, CPU-only `--chunks 600`): measured **421 s/pass → ETA 17.5 h** — CPU-only
   P2 is NOT viable on this box (experts stream fine at 3.7 GB/s; 32 cores are the ceiling).
-  Attempt 3 (06:3x, after owner cleared HG4): `-ngl 99 --n-cpu-moe 60 --chunks 240
-  --parse-special -t 32 -tb 32` — non-expert tensors (~10.5 GB ≈ 58% of FLOPs) on both 4090s,
-  512-expert FFNs stay CPU+mmap; 240 chunks = ~123K calibration tokens (community-standard).
-  Expect ~2–4 min/pass × 60 passes. Watch: molt:status / notes/logs/p2-imatrix.log.
+  Attempt 3 (06:19): GPU non-expert offload alone did NOT help — bottleneck is expert-weight
+  STREAMING, not compute (411 GB ≫ 85 GB page cache; default ubatch 512 ⇒ every 2048-token
+  batch streams the full model 4× ≈ 1.6 TB/pass, matches measured 421 s/pass + 86%-of-one-core
+  fault-wait profile). Attempt 4 (06:4x, running): added `-b 4096 -ub 4096 --no-warmup` ⇒
+  ONE model stream per 8 chunks ⇒ ~30 streams total ≈ 1–1.5 h expected. 240 chunks = ~123K
+  calibration tokens. Watch: molt:status / notes/logs/p2-imatrix.log.
+  LESSON (applies to P3/P5/serving): on this box, wall-time for any prefill-heavy job over the
+  Q8 master is (streams × 411 GB ÷ ~4 GB/s); maximize ubatch to minimize streams.
   SPEC hygiene note stands: SPEC §2's `--chunk 512` and `-ngl 15` are both wrong for a 421 GB
   model (15 full layers ≈ 105 GB > VRAM) — human may want to amend SPEC.
 - **P3 [blocked: P1, SK-F2]** KLD base → models/kld-base.out (-ngl 0 ok). est 1–6 h.
@@ -269,6 +273,16 @@ detached and rerun): `tmux new-window -t molt -n chain 'cd /home/seb/Ai-projects
   zeroed prefill → guaranteed false G5 fail; now falls back to a measured probe
   (`cache_prompt:false`, max_tokens=1) + derived decode. Provisional manifest regenerated
   (still 30 files), 54/54 tests, verify-only green. Re-convert ~88% at tick end.
+  Tick 3 (06:37–06:5xZ): (a) NEW `scripts/serve_stack_smoke.sh` — served the 9B GGUF CPU-only
+  on :9022 and drove it through the referee's own chat/extraction helpers: tool_calls shape ✓,
+  extraction ✓, finish_reason ✓, timings present ✓ (g45 primary path confirmed live); reusable
+  before any risky serving change. (b) It CAUGHT the thinking-model budget bug: `<think>` eats
+  small max_tokens → empty content → suites would have scored ~0 artificially at Phase-0. All
+  suites regenerated with thinking-aware budgets (nested/evalplus 4096, tau/bfcl 2048, smoke
+  1024); g3 empty-rule = no content AND no tool_calls. Manifest re-frozen (provisional), 54/54.
+  WATCH-ITEM for Phase-0: full-S wall time with thinking enabled is unmeasured — if it blows
+  the 45–60 min budget at ≥10 t/s, consider `--reasoning-budget` or parallel slots (-np) as
+  Tier-A-era changes. (c) Diagnosed+fixed imatrix streaming geometry (see P2).
 
 ## Notes / decision log
 
