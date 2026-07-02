@@ -1,0 +1,25 @@
+# DRAFT — not wired anywhere. Paste into /home/seb/llama-swap-config.yaml when (a) restoring
+# normal service after a molt window (X-restore: `systemctl --user start nemotron-proxy.service`)
+# and (b) you want the current best molt quant servable via llama-swap alongside the others.
+# Uses molt's PINNED build (vendor/PIN 4fc4ec55) — the system llama.cpp may lack qwen35moe.
+# Args mirror serve/current.args at Phase-0 (keep them in sync with the ratchet's keeper).
+#
+#  "Ornith-Featherweight-397B":
+#    cmd: >
+#      /home/seb/Ai-projects/Molt/vendor/llama.cpp/build/bin/llama-server
+#      -m /mnt/proxmox/llm-serve/models/ornith-397b/ornith-molt-000.gguf
+#      --alias Ornith-Featherweight-397B
+#      --host 127.0.0.1 --port ${PORT}
+#      -ngl 99 --n-cpu-moe 52 -ts 52,8
+#      -b 8192 -ub 8192
+#      -fa on --cache-type-k q8_0 --cache-type-v q8_0
+#      -c 163840 -np 4 -tb 32
+#      --jinja --chat-template-file /home/seb/Ai-projects/Molt/models/hf-bf16/chat_template.jinja
+#      --reasoning-format auto --reasoning-budget 1024
+#    checkEndpoint: /health
+#    ttl: 300          # unlike Nemotron's ttl:0 — let it idle-unload so molt can reclaim GPUs
+#
+# Caveats:
+# - 119.5 GB model: ~35 GB VRAM + ~85 GB page cache; expect ~30-60 s swap-in, 12-13 t/s decode.
+# - Do NOT set ttl: 0 — that's what deadlocked the GPUs for molt in the first place (HG4).
+# - If hf-bf16/ gets deleted (HG2), copy chat_template.jinja out first and update the path.
