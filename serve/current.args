@@ -25,7 +25,7 @@
 # SMT threads for batch/prefill matmuls (decode threads stay at physical-core default)
 -tb 32
 --jinja
---chat-template-file models/hf-bf16/chat_template.jinja
+--chat-template-file serve/chat_template.jinja
 --reasoning-format auto
 # BOUNDED thinking (decision 2026-07-02, data: smoke_06 thought 9.3K chars into a 3072 cap
 # without answering; unbounded think at 12 t/s makes evals unbounded). 1024 think tokens is
