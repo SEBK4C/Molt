@@ -24,10 +24,10 @@ done
 [ -n "$GGUF" ] || GGUF=$(cat serve/current.gguf)
 PORT=${MOLT_PORT:-9021}
 SRV_BIN=${MOLT_LLAMA_SERVER:-vendor/llama.cpp/build/bin/llama-server}
-# full-S wall time with thinking enabled at 13.5 t/s decode is plausibly 6-10 h (Phase-0
-# run-1 pace); ceiling must exceed it or auto-P5 dies at its final step. Tighten after
-# Phase-0 publishes real wall times.
-if [ -z "$MODE" ]; then TIMEOUT=${MOLT_EVAL_TIMEOUT:-36000}; else TIMEOUT=${MOLT_EVAL_TIMEOUT:-2700}; fi
+# Ceilings from MEASURED wall times (notes/measured-reality): full S ≈ 6.4 h + gates ~35 min
+# => 36000s. eval-lite = gates ~35 min + bfcl-lite ~20 min + nested ~50 min ≈ 105 min =>
+# 9000s (2700 killed exp002 mid-suite, silently — hence the explicit timeout verdict below).
+if [ -z "$MODE" ]; then TIMEOUT=${MOLT_EVAL_TIMEOUT:-36000}; else TIMEOUT=${MOLT_EVAL_TIMEOUT:-9000}; fi
 
 # 1. referee integrity first — a tampered harness auto-fails everything
 runner/score.sh --verify-only
@@ -68,9 +68,19 @@ runner/gpu_lock.sh with-gpus bash -c '
   done
   echo "[tierA] server healthy after $(( $(date +%s) - t0 ))s" >&2
 
+  set +e
   if [ -n "$MODE" ]; then
     timeout "$TIMEOUT" runner/score.sh "$EXP" --lite --gguf "$GGUF" --server "http://127.0.0.1:$PORT"
   else
     timeout "$TIMEOUT" runner/score.sh "$EXP" --gguf "$GGUF" --server "http://127.0.0.1:$PORT"
   fi
+  rc=$?
+  set -e
+  if [ "$rc" -eq 124 ]; then
+    # a timeout must be a VERDICT, never silence (exp002 lesson: set -e swallowed rc 124)
+    echo "{\"exp\":\"$EXP\",\"gates_pass\":false,\"reason\":\"eval timeout after ${TIMEOUT}s — raise MOLT_EVAL_TIMEOUT or investigate stall\"}" \
+      | tee "notes/logs/score-$EXP.json"
+    exit 0
+  fi
+  exit "$rc"   # 2 = manifest tamper must propagate; 0 = verdict already on stdout
 ' _ "$EXP" "$GGUF" "$PORT" "$SRV_BIN" "$SRV_LOG" "$MODE" "$TIMEOUT"
