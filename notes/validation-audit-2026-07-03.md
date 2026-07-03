@@ -41,3 +41,16 @@ Owner asked: "this feels too easy — is the protocol or data wrong?" Adversaria
 Conclusion: protocol not "wrong"; scores are trustworthy for the ratchet's RELATIVE purpose.
 Absolute claims ("only lost X% to quantization") are NOT yet supported — that requires HG1.
 tau needs hardening to be more than a smoke alarm.
+
+## Probe results (2026-07-03 ~09:15Z)
+- A. 9B negative control (same frozen eval-lite): S_lite 0.845 — bfcl_lite 0.90 (EQUAL to the
+  397B → saturated, no capability discrimination), nested 0.60 vs 0.72 (discriminates).
+  Conclusion: bfcl/tau = degradation tripwires only; nested = the discriminating instrument;
+  harden tau + consider harder bfcl strata at the next harness window. Never present S as a
+  capability claim.
+- B. KLD of baseline quant vs Q8 master (60 chunks held-out): median 0.00075, p90 0.051,
+  p95 0.100, p99 0.338, max 3.44; mean Δp -0.08%. Healthy imatrix-2bit profile: distribution
+  intact on most tokens, thin damaged tail — consistent with S components (broad behavior
+  intact, precision tails strained → nested 0.72).
+- Cross-check: two independent instruments (behavioral suite, distributional distance) tell
+  the same story. The protocol measures what it measures honestly; its limits are now mapped.
