@@ -1,0 +1,3 @@
+{"id":"phase0-1","tier":"phase0","hypothesis":"baseline replication for epsilon","gates":"pass","S":0.9248414634146341,"decision":"calibration","lesson":"noise floor sample"}
+{"id":"phase0-2","tier":"phase0","hypothesis":"baseline replication for epsilon","gates":"pass","S":0.9196829268292683,"decision":"calibration","lesson":"noise floor sample"}
+{"id":"phase0-3","tier":"phase0","hypothesis":"baseline replication for epsilon","gates":"pass","S":0.9214024390243902,"decision":"calibration","lesson":"noise floor sample"}
