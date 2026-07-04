@@ -29,9 +29,11 @@ both of you commit small, labeled changes and read each other's notes.
    (`list_inference_endpoints()`); if delete fails, that is a DROP-EVERYTHING alarm (it bills
    until dead). Outputs land in `refs_fp8/` + `corpora/fp8_traces.jsonl` — commit them; the
    local loop bundles the refs promotion with its next harness freeze + re-ε.
-2. **HG6 — gated datasets**: CLEARED 2026-07-04 (both datasets return 200 authed — owner
-   accepted terms). Rerun both corpora builders and commit the log evidence; the local loop
-   schedules the Tier-C imatrix remix.
+2. **HG6 — gated datasets**: still [HUMAN] as of 2026-07-04 10:44Z — `auth-check` says the
+   account is NOT in the authorized list (a 200 on the /tree API is a FALSE POSITIVE for
+   gated repos; only /auth-check or a file `resolve` proves access). Owner must accept terms
+   in the browser at both dataset pages, then rerun both corpora builders with
+   `HF_TOKEN` exported and commit the log evidence; the local loop schedules the Tier-C remix.
 3. **Dataset publication** (owner-authorized): `scripts/publish_hf_dataset.py --dry-run`, then
    publish to `SEBK4C/molt-ornith-eval`. Prefer publishing AFTER goldens exist (complete
    dataset); card lives at `docs/DATASET_CARD.md` — keep its honest-limitations section intact.

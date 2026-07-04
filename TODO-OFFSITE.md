@@ -11,7 +11,11 @@ States: `[pending]` `[in-progress]` `[blocked: <on-what>]` `[done]` `[HUMAN]`.
   **HG1 token blocker CLEARED** (brief was stale; owner fixed the cached token instead of
   creating `~/.config/molt/env`). HG3 (env file with ANTHROPIC_API_KEY etc.) stays [HUMAN];
   offsite runs export `HF_TOKEN=$(cat ~/.cache/huggingface/token)` at runtime.
-- Both gated datasets return 200 authed → **HG6 CLEARED by owner**.
+- ~~Both gated datasets return 200 authed → HG6 CLEARED~~ **CORRECTION 10:44Z: WRONG.**
+  /tree 200 is a false positive on gated repos; `/api/datasets/<id>/auth-check` returns
+  "not in the authorized list" and file `resolve` 403s. **HG6 remains [HUMAN]**: owner must
+  accept terms (browser, logged in) at both dataset pages. Token itself is fine
+  (`canReadGatedRepos: True`).
 - **`aws us-east-1 nvidia-h100 x8` NO LONGER EXISTS** in the endpoints catalog
   (`api.endpoints.huggingface.cloud/v2/provider`). Replacement at $20/h:
   `aws ap-northeast-2 nvidia-h200-x4` (564 GB, native FP8 W8A8) — chosen;
@@ -23,13 +27,22 @@ States: `[pending]` `[in-progress]` `[blocked: <on-what>]` `[done]` `[HUMAN]`.
 
 ## Missions
 
-- **M1 HG1 — FP8 goldens + S_fp8 reference scoring [in-progress]** (owner-authorized, $100
-  hard cap; approved scope adds S_fp8 = score FP8 itself on the frozen suites via the
-  unmodified referee through a localhost auth-proxy). Wall bound: `timeout -s INT 16200`
-  = 4.5 h × $20/h = **$90 hard**. Sequence: goldens (parallelized) → S_fp8 → traces (3M tok).
-  Teardown verification after exit is NON-NEGOTIABLE (zero endpoints under SEBK4C).
-- **M2 HG6 corpora v2 [pending]** — builders rerun with ungated access; evidence note commits;
-  Tier-C remix scheduling = local loop's lane.
+- **M1 HG1 — FP8 goldens + S_fp8 reference scoring [blocked: HF endpoint quota — OWNER]**
+  (owner-authorized, $100 hard cap; approved scope adds S_fp8 = score FP8 on the frozen
+  suites via the unmodified referee through a localhost auth-proxy). 2026-07-04 10:40–41Z:
+  BOTH creates failed 409 pre-billing — account quota `nvidia-h200: available 2, requested 4`
+  and `nvidia-a100: available 4, requested 8`. No within-quota instance has ≥ ~420 GB VRAM
+  (a100-x4 = 320, h200-x2 = 282). $0 spent, zero endpoints left (verified).
+  **OWNER ACTION**: email api-enterprise@huggingface.co to raise quota to h200 ≥ 4 (preferred,
+  native FP8) or a100 ≥ 8 — or approve a non-HF GPU provider (needs new credentials).
+  Relaunch when cleared: `export HF_TOKEN=$(cat ~/.cache/huggingface/token); timeout -s INT
+  16200 .venv/bin/python -u scripts/hf_endpoint_goldens.py --confirm-spend --trace-tokens
+  3000000` (add `--fallback-instance` for a100-x8). Wall bound $90. Sequence: goldens
+  (parallelized) → S_fp8 → traces. Teardown verification after exit is NON-NEGOTIABLE.
+- **M2 HG6 corpora v2 [blocked: owner terms-acceptance]** — builders reran 10:41Z with token
+  exported: both datasets still refuse (not in authorized list) → output = v1 fallback mix,
+  unchanged. After owner accepts terms: rerun both builders with `HF_TOKEN` exported
+  (evidence → notes/logs/molt-corpora-v2.log); Tier-C remix scheduling = local loop's lane.
 - **M3 Dataset publication [pending]** — after goldens; public per owner authorization;
   precondition: recipes/current.yaml adjudicated (exp005 verdict ~10:45–11:00Z).
 - **M4 Featherweight publication [blocked: local-loop keeper tag]**.
