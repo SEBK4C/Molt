@@ -52,15 +52,13 @@ States: `[pending]` `[in-progress]` `[blocked: <on-what>]` `[done]` `[HUMAN]`.
   quota-blocked indefinitely); `refs_fp8/` + `fp8_traces.jsonl` slot in via a rerun of
   `scripts/publish_hf_dataset.py` once HG1 lands. Precondition held: exp005 adjudicated
   (DISCARD, S=0.9223 — embd Q8 floor load-bearing) before upload of recipes/current.yaml.
-- **M4 Featherweight publication [in-progress 11:35Z]** — trigger received (tag
-  `featherweight-v0`, owner pulled v0 forward). DONE: repo
-  https://huggingface.co/SEBK4C/Ornith-1.0-397B-Featherweight created (owner re-confirmed
-  in-session); README (model card w/ measured tables + honest limitations + sha256
-  `1499c2f2…57dc2`), RESEARCH_STATEMENT.md, recipe.yaml, serving.args uploaded.
-  IN FLIGHT: 119.5 GB GGUF as `Ornith-1.0-397B-Featherweight-v0.gguf` — measured upload
-  bandwidth 11.6 MB/s (100 MB probe) → ETA ~3 h from 11:35Z; log
-  notes/logs/m4-featherweight-upload.log; resumable (rerun same command on failure).
-  VERIFY after: repo file listing shows the GGUF at exact size 119517476064.
+- **M4 Featherweight publication [done 13:06Z]** —
+  https://huggingface.co/SEBK4C/Ornith-1.0-397B-Featherweight: GGUF VERIFIED byte-exact
+  (119,517,476,064), llamafile sidecar (v0.10.3 args-only, smoke-tested), model card
+  (sha256s, honest limitations, override semantics), RESEARCH_STATEMENT, recipe, serving.args.
+  Ops lesson: attempt 1 wedged at ~54% read position with CLOSE-WAIT sockets + zero egress
+  for ~35 min — a "running" uploader is not an uploading uploader; check `ss` state +
+  read_bytes movement, kill + rerun (xet dedup makes retries nearly free).
 - **M5 [blocked: owner budget call]** — next flagship after M1/M3: EAGLE-3 draft head
   (~$1.2K, speed: 2.5–4 accepted tok/step ≈ 35–55 t/s decode) vs LoRA-recovery (~$1.5K,
   quality: nested recovery via self-distilled traces). Both far over cap — DO NOT START.

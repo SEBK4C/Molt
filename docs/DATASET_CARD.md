@@ -18,6 +18,10 @@ searches quantization recipes and serving configs for `deepreinforce-ai/Ornith-1
 90 GB DDR5, Gen5 SSD. This dataset is the frozen evaluation harness, golden references, the
 research journal, and the documentation — published for community feedback.
 
+**The model these numbers describe is published**:
+[`SEBK4C/Ornith-1.0-397B-Featherweight`](https://huggingface.co/SEBK4C/Ornith-1.0-397B-Featherweight)
+(119.5 GB GGUF + zero-install llamafile sidecar with the reference serving flags embedded).
+
 ## Headline result
 
 A 119 GB / **2.41 bits-per-weight** GGUF of a 397B model that keeps its RL'd agentic core:
