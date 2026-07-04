@@ -13,20 +13,25 @@ both of you commit small, labeled changes and read each other's notes.
    your two main instruments. Both have --dry-run/--mock paths. USE THEM FIRST, every time.
 
 ## Your missions (priority order)
-1. **HG1 — FP8 golden generation** (owner-authorized, **$100 hard cap**). Blocked on a token
-   scope as of 2026-07-04: the cached token lacks `inference.endpoints.*` — the owner must add
-   Inference Endpoints Read+Write (and repo-write) to a token and place it in
-   `~/.config/molt/env` as `HF_TOKEN=`. Then:
-   `set -a; source ~/.config/molt/env; set +a`
+1. **HG1 — FP8 golden generation + S_fp8 reference scoring** (owner-authorized, **$100 hard
+   cap**). Token blocker CLEARED 2026-07-04 ~09:20Z: the cached token (`~/.cache/huggingface/
+   token`) now carries `inference.endpoints.write` + `repo.write` — export it at runtime
+   (`export HF_TOKEN=$(cat ~/.cache/huggingface/token)`); `~/.config/molt/env` remains HG3
+   ([HUMAN]). ⚠ INSTANCE REALITY: `aws us-east-1 nvidia-h100 x8` no longer exists in the
+   endpoints catalog; script now targets `aws ap-northeast-2 nvidia-h200-x4` ($20/h, native
+   FP8), fallback `us-east-1 nvidia-a100-x8` (same price, W8A16). Then:
    `.venv/bin/python scripts/hf_endpoint_goldens.py --dry-run` (verify cost print ≤ cap)
-   `timeout -s INT 14400 .venv/bin/python scripts/hf_endpoint_goldens.py --confirm-spend --trace-tokens 3000000`
+   `timeout -s INT 16200 .venv/bin/python scripts/hf_endpoint_goldens.py --confirm-spend --trace-tokens 3000000`
+   (16200 s × $20/h = $90 hard bound). Approved scope also includes S_fp8: score the FP8
+   endpoint on the frozen suites via the UNMODIFIED referee through a localhost auth-proxy —
+   results go in notes/offsite-*.md, never experiments.jsonl.
    Rules: teardown runs in a `finally` — VERIFY the endpoint is deleted afterward
    (`list_inference_endpoints()`); if delete fails, that is a DROP-EVERYTHING alarm (it bills
    until dead). Outputs land in `refs_fp8/` + `corpora/fp8_traces.jsonl` — commit them; the
    local loop bundles the refs promotion with its next harness freeze + re-ε.
-2. **HG6 — gated datasets**: after the owner accepts terms for
-   `Salesforce/xlam-function-calling-60k` and `bigcode/the-stack-smol`, rerun both corpora
-   builders and commit the log evidence; the local loop schedules the Tier-C imatrix remix.
+2. **HG6 — gated datasets**: CLEARED 2026-07-04 (both datasets return 200 authed — owner
+   accepted terms). Rerun both corpora builders and commit the log evidence; the local loop
+   schedules the Tier-C imatrix remix.
 3. **Dataset publication** (owner-authorized): `scripts/publish_hf_dataset.py --dry-run`, then
    publish to `SEBK4C/molt-ornith-eval`. Prefer publishing AFTER goldens exist (complete
    dataset); card lives at `docs/DATASET_CARD.md` — keep its honest-limitations section intact.
