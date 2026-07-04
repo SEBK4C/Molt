@@ -40,13 +40,15 @@ ENDPOINT_NAME = "molt-ornith-fp8-goldens"
 DEFAULT_REPO = "deepreinforce-ai/Ornith-1.0-397B-FP8"
 # 2026-07-04: h100-x8/us-east-1 no longer exists in the endpoints catalog (verify instance
 # existence via api.endpoints.huggingface.cloud/v2/provider before every billable run).
-# h200-x4 = 564 GB VRAM, native FP8 W8A8, $20/h. Fallback if create/load fails: a100-x8
-# (640 GB, FP8 runs weight-only W8A16 via Marlin — slightly different numerics).
-INSTANCE = {"vendor": "aws", "region": "ap-northeast-2", "accelerator": "gpu",
-            "instance_type": "nvidia-h200", "instance_size": "x4", "type": "protected"}
-FALLBACK_INSTANCE = {"vendor": "aws", "region": "us-east-1", "accelerator": "gpu",
-                     "instance_type": "nvidia-a100", "instance_size": "x8", "type": "protected"}
-COST_PER_H = 20.0
+# Account quota (support ticket 2026-07-04): rtx-pro-6000 ≤ 16 accelerators; h200 ≤ 2; a100 ≤ 4.
+# rtx-pro-6000-x8 = 768 GB VRAM (Blackwell, native FP8), $22/h — most VRAM per dollar and the
+# only ≥420 GB instance within quota. Fallback (quota-blocked as of today, kept for reference):
+# h200-x4 ap-northeast-2 (564 GB, $20/h).
+INSTANCE = {"vendor": "aws", "region": "us-east-2", "accelerator": "gpu",
+            "instance_type": "nvidia-rtx-pro-6000", "instance_size": "x8", "type": "protected"}
+FALLBACK_INSTANCE = {"vendor": "aws", "region": "ap-northeast-2", "accelerator": "gpu",
+                     "instance_type": "nvidia-h200", "instance_size": "x4", "type": "protected"}
+COST_PER_H = 22.0
 
 TRACE_SEED_TASKS = [
     "Book a table for {n} at a {cuisine} restaurant on {day} evening and text me the confirmation.",
