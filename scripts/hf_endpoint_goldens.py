@@ -19,9 +19,11 @@ What it does:
     rendered for imatrix) until --trace-tokens completion tokens are collected
  4. ALWAYS pause+delete the endpoint in a finally block.
 
-Cost estimate (verify against current https://huggingface.co/pricing#endpoints):
-  aws nvidia-h100 x8 ≈ $23.5/h. Load ~0.5 h + goldens ~1.5 h + 5M trace tokens ~2-3 h
-  => ~4-6 h ≈ $95-145. Teardown immediately after.
+Cost estimate (verify instance existence + price via
+https://api.endpoints.huggingface.cloud/v2/provider before every billable run):
+  aws nvidia-h200 x4 (ap-northeast-2) = $20/h as of 2026-07-04. Load ~0.5 h + goldens
+  ~1.5 h + 5M trace tokens ~2-3 h. Wrap real runs in a wall-clock `timeout` sized to the
+  budget cap (16200 s x $20/h = $90). Teardown immediately after.
 """
 import argparse
 import concurrent.futures as cf
@@ -36,9 +38,15 @@ sys.path.insert(0, os.path.join(REPO_ROOT, "harness"))
 
 ENDPOINT_NAME = "molt-ornith-fp8-goldens"
 DEFAULT_REPO = "deepreinforce-ai/Ornith-1.0-397B-FP8"
-INSTANCE = {"vendor": "aws", "region": "us-east-1", "accelerator": "gpu",
-            "instance_type": "nvidia-h100", "instance_size": "x8", "type": "protected"}
-COST_PER_H = 23.5
+# 2026-07-04: h100-x8/us-east-1 no longer exists in the endpoints catalog (verify instance
+# existence via api.endpoints.huggingface.cloud/v2/provider before every billable run).
+# h200-x4 = 564 GB VRAM, native FP8 W8A8, $20/h. Fallback if create/load fails: a100-x8
+# (640 GB, FP8 runs weight-only W8A16 via Marlin — slightly different numerics).
+INSTANCE = {"vendor": "aws", "region": "ap-northeast-2", "accelerator": "gpu",
+            "instance_type": "nvidia-h200", "instance_size": "x4", "type": "protected"}
+FALLBACK_INSTANCE = {"vendor": "aws", "region": "us-east-1", "accelerator": "gpu",
+                     "instance_type": "nvidia-a100", "instance_size": "x8", "type": "protected"}
+COST_PER_H = 20.0
 
 TRACE_SEED_TASKS = [
     "Book a table for {n} at a {cuisine} restaurant on {day} evening and text me the confirmation.",
@@ -166,15 +174,18 @@ def main(argv=None):
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--confirm-spend", action="store_true")
     ap.add_argument("--trace-tokens", type=int, default=5_000_000)
+    ap.add_argument("--fallback-instance", action="store_true",
+                    help="use FALLBACK_INSTANCE (a100-x8 us-east-1, W8A16) instead of h200-x4")
     ap.add_argument("--skip-traces", action="store_true")
     ap.add_argument("--limit", type=int, help="cases per suite (mock/testing)")
     ap.add_argument("--out-dir", default=os.path.join(REPO_ROOT, "refs_fp8"))
     a = ap.parse_args(argv)
+    instance = FALLBACK_INSTANCE if a.fallback_instance else INSTANCE
 
     est_h = 0.5 + 1.5 + (0 if a.skip_traces else 2.5 * a.trace_tokens / 5_000_000)
     if a.dry_run:
         print(f"[dry-run] create_inference_endpoint(name={ENDPOINT_NAME!r}, repository={a.repo!r},")
-        print(f"          framework='pytorch', task='text-generation', **{INSTANCE},")
+        print(f"          framework='pytorch', task='text-generation', **{instance},")
         print("          custom_image={'health_route': '/health', 'port': 8000,")
         print("            'url': 'vllm/vllm-openai:latest',")
         print("            'env': {'MODEL_ID': '/repository', 'MAX_MODEL_LEN': '32768'}})")
@@ -202,9 +213,9 @@ def main(argv=None):
     except Exception:
         ep = create_inference_endpoint(
             ENDPOINT_NAME, repository=a.repo, framework="pytorch", task="text-generation",
-            vendor=INSTANCE["vendor"], region=INSTANCE["region"],
-            accelerator=INSTANCE["accelerator"], instance_type=INSTANCE["instance_type"],
-            instance_size=INSTANCE["instance_size"], type=INSTANCE["type"],
+            vendor=instance["vendor"], region=instance["region"],
+            accelerator=instance["accelerator"], instance_type=instance["instance_type"],
+            instance_size=instance["instance_size"], type=instance["type"],
             custom_image={"health_route": "/health", "port": 8000,
                           "url": "vllm/vllm-openai:latest",
                           "env": {"MODEL_ID": "/repository", "MAX_MODEL_LEN": "32768"}},
