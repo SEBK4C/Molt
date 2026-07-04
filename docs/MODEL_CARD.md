@@ -86,8 +86,13 @@ Notes that save you a day of tuning:
   (129 t/s @2048 → 700+ @8192 with 10 GPU expert layers).
 - The model thinks unboundedly by default (9K+ chars on trivial prompts);
   `--reasoning-budget 1024` is part of the reference config.
-- MTP speculative decoding is **impossible** for this model: the config declares an MTP head
-  but neither the BF16 nor FP8 repo ships its weights.
+- MTP speculative decoding is **not available today**: Ornith's config declares an MTP head
+  but neither the BF16 nor FP8 repo ships its weights. Recovering that speedup means
+  *training* a draft head — the funded path on our roadmap is an **EAGLE-3 head** (~$1.2K of
+  external GPU compute, dominated by generating ~1B tokens of trunk hidden-states from the
+  FP8 model; the head itself is a few hundred million params). Estimated yield: 2.5–4
+  accepted tokens/step ≈ **35–55 t/s decode** on this box via llama.cpp's `--spec-type
+  draft-eagle3`. Until then, model-free `--spec-type ngram-*` is the only speculative option.
 
 ### Zero-install option: the llamafile sidecar
 
