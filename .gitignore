@@ -14,7 +14,8 @@ notes/logs/
 .molt.lock
 
 # regenerable corpora outputs (spec lives in recipes/imatrix.yaml + corpora/*.py)
+# NOTE: fp8_traces.jsonl is deliberately NOT ignored — regenerating it costs ~$70 of
+# endpoint time (HG1); it is a committed artifact, not a regenerable output.
 corpora/imatrix.txt
 corpora/kld_heldout.txt
 corpora/*.part
-corpora/fp8_traces.jsonl
