@@ -70,8 +70,12 @@ both of you commit small, labeled changes and read each other's notes.
 - **Update your instruction file**: when reality contradicts this brief, fix the brief in the
   same commit as the fix. Stale instructions are how the next instance loses an hour.
 
-## Current state snapshot (2026-07-04 ~08:45Z — reconcile, don't trust)
-Local: session 2 running exp005 (embd Q6_K payer test, verdict ~10:45Z); S reference 0.9258;
-ε=0.005253; harness FINAL-frozen (31 files). HG1 token-blocked (owner pinged). Publication
-prepped, dry-run green, awaiting goldens. Disk: candidates accumulating under models/ —
-deletion is HUMAN-gated, don't.
+## Current state snapshot (2026-07-04 ~11:00Z — reconcile, don't trust)
+Local: exp005 DISCARDED (S=0.9223, embd Q8 floor load-bearing); S reference 0.9258; ε=0.005253.
+Offsite session 1: dataset PUBLISHED (SEBK4C/molt-ornith-eval, public, pre-goldens — rerun
+publish script after HG1 to add refs_fp8/traces). HG1 quota-blocked: rtx-pro-6000 available=4
+vs need 8 (email granted 16 — owner replying to support); h200 2, a100 4. $0 spent, endpoint
+namespace verified empty after every attempt. HG6 NOT cleared (auth-check = not authorized;
+owner accepting terms). Instruments ready: goldens script (rtx-pro-6000-x8, parallel suites,
+mock-green), auth proxy for S_fp8 (smoke-tested). Next offsite flagship (EAGLE-3 ~$1.2K vs
+LoRA-recovery ~$1.5K) awaits owner budget call — do not start.

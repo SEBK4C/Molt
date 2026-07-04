@@ -33,8 +33,12 @@ States: `[pending]` `[in-progress]` `[blocked: <on-what>]` `[done]` `[HUMAN]`.
   BOTH creates failed 409 pre-billing — account quota `nvidia-h200: available 2, requested 4`
   and `nvidia-a100: available 4, requested 8`. No within-quota instance has ≥ ~420 GB VRAM
   (a100-x4 = 320, h200-x2 = 282). $0 spent, zero endpoints left (verified).
-  **OWNER ACTION**: email api-enterprise@huggingface.co to raise quota to h200 ≥ 4 (preferred,
-  native FP8) or a100 ≥ 8 — or approve a non-HF GPU provider (needs new credentials).
+  **OWNER ACTION (updated 10:53Z)**: support granted "up to 16x RTX PRO 6000" by email, but
+  the API enforces available=4 (x8 create 409s twice, incl. a propagation-lag retry). Reply to
+  the support thread (Megan): quota shows 4, need 8 applied for
+  `aws-us-east-2-nvidia-rtx-pro-6000-x8` — FP8 checkpoint is 405 GB, x8/768 GB is the minimum
+  fit (x4=384 GB can't hold it; cpu-offload unusable for a billed batch run). h200/a100 quotas
+  (2/4) also remain too small. Script already targets rtx-pro-6000-x8; relaunch as-is when applied.
   Relaunch when cleared: `export HF_TOKEN=$(cat ~/.cache/huggingface/token); timeout -s INT
   16200 .venv/bin/python -u scripts/hf_endpoint_goldens.py --confirm-spend --trace-tokens
   3000000` (add `--fallback-instance` for a100-x8). Wall bound $90. Sequence: goldens
@@ -43,8 +47,11 @@ States: `[pending]` `[in-progress]` `[blocked: <on-what>]` `[done]` `[HUMAN]`.
   exported: both datasets still refuse (not in authorized list) → output = v1 fallback mix,
   unchanged. After owner accepts terms: rerun both builders with `HF_TOKEN` exported
   (evidence → notes/logs/molt-corpora-v2.log); Tier-C remix scheduling = local loop's lane.
-- **M3 Dataset publication [pending]** — after goldens; public per owner authorization;
-  precondition: recipes/current.yaml adjudicated (exp005 verdict ~10:45–11:00Z).
+- **M3 Dataset publication [done 10:56Z]** — https://huggingface.co/datasets/SEBK4C/molt-ornith-eval
+  public, 21 files, README renders, honest-limitations intact. Published pre-goldens (HG1
+  quota-blocked indefinitely); `refs_fp8/` + `fp8_traces.jsonl` slot in via a rerun of
+  `scripts/publish_hf_dataset.py` once HG1 lands. Precondition held: exp005 adjudicated
+  (DISCARD, S=0.9223 — embd Q8 floor load-bearing) before upload of recipes/current.yaml.
 - **M4 Featherweight publication [blocked: local-loop keeper tag]**.
 - **M5 [blocked: owner budget call]** — next flagship after M1/M3: EAGLE-3 draft head
   (~$1.2K, speed: 2.5–4 accepted tok/step ≈ 35–55 t/s decode) vs LoRA-recovery (~$1.5K,
