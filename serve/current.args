@@ -9,8 +9,8 @@
 # total), 52 lean layers on GPU0 (~14.5 GB). Prefill ladder measured: cpu-moe ub2048 129 ->
 # ub8192 209 t/s (saturated); this split targets the G5=250 gate by offloading ~13% of
 # expert FLOPs. Fallback if OOM: --cpu-moe alone (G2-safe, 209 t/s).
---n-cpu-moe 52
--ts 52,8
+--n-cpu-moe 50
+-ts 50,10
 # batch geometry: prefill cost on this box = (streams of CPU-resident expert weights) —
 # bigger ubatch = fewer streams per token (P2 lesson; Phase-0 run 1 measured 129 t/s prefill
 # at ub 2048 cold — ub 4096 halves per-token streaming cost). Tier-A tunable.
