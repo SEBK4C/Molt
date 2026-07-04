@@ -36,4 +36,3 @@
 # but neither the BF16 nor the FP8 repo ships its weights (verified 2026-07-02, TODO decision
 # log). SPEC §3's draft-mtp A/B is off the table unless DeepReinforce publishes them.
 # Model-free speculative alternatives worth a Tier-A experiment instead:
-# --spec-type ngram-simple      # (or ngram-map-k / ngram-mod / ngram-cache)
