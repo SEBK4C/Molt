@@ -81,28 +81,33 @@ def golden_suites(server, out_dir, api_key=None, limit=None, log=print):
     H = os.path.join(REPO_ROOT, "harness")
 
     # single-turn suites: nested -> {name, arguments}; bfcl -> {calls, order}; smoke -> raw text
+    # cases run concurrently (results keyed by id, ordering irrelevant); serial was ~750
+    # thinking-model calls and blew the wall-clock budget on a billed-by-the-hour endpoint
+    def one_case(suite, c):
+        cid = str(c.get("id"))
+        try:
+            r = chat(server, c["messages"], c.get("tools"),
+                     max_tokens=c.get("max_tokens", 1024), api_key=api_key)
+            msg = r["choices"][0]["message"]
+            calls = extract_tool_calls(msg)
+            if suite == "nested":
+                res = ({"name": calls[0]["name"], "arguments": calls[0]["arguments"]}
+                       if len(calls) == 1 else {"error": f"{len(calls)} calls"})
+            elif suite == "bfcl":
+                res = ({"expect": "no_call"} if not calls else
+                       {"calls": [{"name": x["name"], "arguments": x["arguments"]}
+                                  for x in calls], "order": "any"})
+            else:
+                res = {"content": msg.get("content")}
+        except Exception as e:
+            res = {"error": f"{type(e).__name__}: {e}"}
+        log(f"[goldens] {suite} {cid} done")
+        return cid, res
+
     for suite in ("nested", "bfcl", "smoke"):
         cases = json.load(open(f"{H}/prompts/{suite}.json"))[:limit]
-        out = {}
-        for c in cases:
-            cid = str(c.get("id"))
-            try:
-                r = chat(server, c["messages"], c.get("tools"),
-                         max_tokens=c.get("max_tokens", 1024), api_key=api_key)
-                msg = r["choices"][0]["message"]
-                calls = extract_tool_calls(msg)
-                if suite == "nested":
-                    out[cid] = ({"name": calls[0]["name"], "arguments": calls[0]["arguments"]}
-                                if len(calls) == 1 else {"error": f"{len(calls)} calls"})
-                elif suite == "bfcl":
-                    out[cid] = ({"expect": "no_call"} if not calls else
-                                {"calls": [{"name": x["name"], "arguments": x["arguments"]}
-                                           for x in calls], "order": "any"})
-                else:
-                    out[cid] = {"content": msg.get("content")}
-            except Exception as e:
-                out[cid] = {"error": f"{type(e).__name__}: {e}"}
-            log(f"[goldens] {suite} {cid} done")
+        with cf.ThreadPoolExecutor(8) as ex:
+            out = dict(ex.map(lambda c: one_case(suite, c), cases))
         path = os.path.join(out_dir, f"{suite}.fp8.json")
         with open(path, "w") as f:
             json.dump(out, f, ensure_ascii=False, indent=1)
