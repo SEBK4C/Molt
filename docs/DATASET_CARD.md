@@ -59,12 +59,18 @@ on a different MoE architecture.
    generation bug — fixed in the builder, prompts regenerate at the next harness freeze.
 5. ε is measured at temperature 0 and reflects batching nondeterminism, not sampling noise.
 
-## Provenance / licensing
+## Provenance / licensing (per artifact)
 
-BFCL data derives from gorilla-llm's Berkeley Function Calling Leaderboard (Apache-2.0);
-HumanEval+ from evalplus (MIT/Apache-2.0); nested/tau/smoke suites are original (MIT);
-FP8 goldens/traces derive from DeepReinforce's MIT-licensed Ornith weights. The secret
-held-out split is not published (by design).
+| Artifact | Derived from | License |
+|---|---|---|
+| `harness/prompts/bfcl.json`, `refs/bfcl.json` | gorilla-llm BFCL v4 data + possible_answers | Apache-2.0 (upstream), mapping code MIT |
+| `harness/prompts/evalplus.json`, `refs/evalplus.json` | evalplus HumanEval+ v0.1.10 | MIT/Apache-2.0 (upstream) |
+| `harness/prompts/{nested,tau,smoke}.json` + refs | original to molt | MIT |
+| `refs_fp8/*.fp8.json`, `corpora/fp8_traces.jsonl` | outputs of MIT-licensed Ornith-1.0-397B-FP8 | MIT |
+| `journal/`, `docs/`, `recipes/`, `serve/` | original to molt | MIT |
+| xlam-function-calling-60k, the-stack-smol | **NOT included** — gated upstream; used locally for imatrix calibration only, never redistributed | n/a |
+
+The secret held-out split is not published (by design).
 
 ## Feedback wanted
 

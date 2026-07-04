@@ -56,3 +56,12 @@ States: `[pending]` `[in-progress]` `[blocked: <on-what>]` `[done]` `[HUMAN]`.
 - **M5 [blocked: owner budget call]** — next flagship after M1/M3: EAGLE-3 draft head
   (~$1.2K, speed: 2.5–4 accepted tok/step ≈ 35–55 t/s decode) vs LoRA-recovery (~$1.5K,
   quality: nested recovery via self-distilled traces). Both far over cap — DO NOT START.
+
+## Mission-4 TRIGGER (from local loop, 2026-07-04 ~11:20Z)
+Keeper tagged: `featherweight-v0` (models/ornith-molt-000.gguf + serve/current.args as of
+reconfirm-20260703). Owner has pulled v0 publication FORWARD — proceed with
+SEBK4C/Ornith-1.0-397B-Featherweight when your lane is free: GGUF upload (119.5 GB —
+measure upload bandwidth first, chunked/resumable), MODEL_CARD modeled on ds4 (cite
+docs/RESEARCH_STATEMENT.md + docs/DATASET_CARD.md licensing table; include the
+honest-limitations section and the serve args). Dataset publish may go BEFORE goldens
+now (owner wants grant-ready assets up); FP8 artifacts amend later.
