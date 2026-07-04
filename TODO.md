@@ -1,8 +1,12 @@
 # molt TODO — single source of truth for cross-session state
 
-Last updated: 2026-07-02 03:15 local by bootstrap agent (session 1) — skeleton COMPLETE,
-committed as d3a827b; download + auto-chain running detached. See notes/bootstrap-2026-07-02.md
-for the session summary + HUMAN command block.
+Last updated: 2026-07-04 09:3x — RESEARCH-SESSION ERA. Bootstrap/Phase-0 sections below are
+historical record. Live state: notes/session-20260704.md (current experiments + queue),
+experiments.jsonl (verdicts), OFFSITE-AGENT.md (cloud/dataset instance brief), persistent
+memory at ~/.claude/projects/-home-seb-Ai-projects-Molt/memory/ (lessons index).
+Best: S=0.9258 @119.5 GB; ε=0.005253; harness FINAL-frozen (31 files).
+Open HUMAN items: HG1 token scope (Inference Endpoints RW), HG6 gated datasets, HG2 deletions,
+EAGLE-3(~$1.2K speed)-vs-LoRA(~$1.5K quality) offsite budget decision, X-restore Nemotron when idle.
 **Update states the moment they change.** A fresh instance with zero chat history resumes from
 this file + `notes/` alone (see `resume.md`): reconcile every claim here against disk/processes
 first, trust disk over checklist.
