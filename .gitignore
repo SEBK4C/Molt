@@ -22,3 +22,6 @@ corpora/*.part
 
 # teacher-loop machine-local artifacts
 corpora/teacher/.cache/
+
+# built artifact, ships on HF (320MB > GitHub limit)
+*.llamafile
