@@ -22,6 +22,15 @@ research journal, and the documentation — published for community feedback.
 [`SEBK4C/Ornith-1.0-397B-Featherweight`](https://huggingface.co/SEBK4C/Ornith-1.0-397B-Featherweight)
 (119.5 GB GGUF + zero-install llamafile sidecar with the reference serving flags embedded).
 
+**→ Full findings: [`RESEARCH_REPORT.md`](RESEARCH_REPORT.md) (in this repo).** The search
+program is **complete** as of 2026-07-05: 14 journaled verdicts, one kept config improvement,
+five falsified hypotheses. Highlights you should read before spending compute: speculative
+decoding *inverts* on CPU-resident MoE (ngram −10%, model-drafter −34% — §3.1); imatrix
+activation energy does not predict behavioral value (§3.2); embeddings must stay Q8 at 248K
+vocab (measured, §3.2); and the recipe is locally optimal at 2.41 bpw under public-data
+calibration — the next quality levers are the FP8 golden anchor (~$100), imatrix v2, and
+LoRA recovery (~$1.5K), costed in §4.
+
 ## Headline result
 
 A 119 GB / **2.41 bits-per-weight** GGUF of a 397B model that keeps its RL'd agentic core:
@@ -46,7 +55,9 @@ on a different MoE architecture.
 - `refs_fp8/`, `corpora/fp8_traces.jsonl` — FP8-endpoint golden outputs + self-generated agent
   traces (present after the golden-generation run).
 - `journal/experiments.jsonl` + `journal/progress.png` — the append-only research journal:
-  every experiment with hypothesis, verdict, and a mechanism-lesson.
+  14 entries (3 ε-calibration baselines, 1 lite-tier calibration, 1 kept config, 5 falsified
+  hypotheses, infra events), each with hypothesis, verdict, and a mechanism-lesson. Discards
+  outnumber keeps 5:1 — that ratio is the point.
 - `docs/` — measured-reality constants (what SPEC assumed vs what the hardware did),
   a validation audit (including where our own suite is saturated and why absolute scores
   should not be read as capability claims), and lessons taken from ds4.
