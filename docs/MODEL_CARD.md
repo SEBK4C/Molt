@@ -132,7 +132,7 @@ Notes that save you a day of tuning:
 `Ornith-1.0-397B-Featherweight-serve.llamafile` (320 MB, single-user config embedded, sha256
 `97d775a2e3a3eebcc48c25f52ac66ee003a0035072297a34b0ecc91b73525ded`) is
 [llamafile](https://github.com/Mozilla-Ocho/llamafile) v0.10.3 (qwen3.5-MoE-capable) with the
-reference serving flags embedded — **weights are NOT inside it**. Download it next to the
+single-user serving flags embedded (the 18.93 t/s config above) — **weights are NOT inside it**. Download it next to the
 GGUF and run:
 
 ```
@@ -143,8 +143,8 @@ chmod +x Ornith-1.0-397B-Featherweight-serve.llamafile
 It expects `Ornith-1.0-397B-Featherweight-v0.gguf` in the working directory and serves the
 OpenAI-compatible API on `:8080` (chat template comes from the GGUF metadata). Anything you
 append **overrides** the baked-in defaults (last value wins) — e.g. a slow CPU-only sanity
-run on a GPU-less box: `./…serve.llamafile -ngl 0 -c 8192 -np 1`. The baked-in GPU split
-(`-ts 50,10`) assumes 2×24 GB cards; single-GPU users should pass their own
+run on a GPU-less box: `./…serve.llamafile -ngl 0 -c 8192 -np 1`. The baked-in single-user split
+(`-ts 52,8`, 11 GPU expert layers) assumes 2×24 GB cards; single-GPU users should pass their own
 `-ngl/-ts/--n-cpu-moe`. Verified end-to-end: boots from embedded args, loads via the relative
 model name, answers with bounded thinking.
 
