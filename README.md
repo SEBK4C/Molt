@@ -17,12 +17,17 @@ harness + journal: [`SEBK4C/molt-ornith-eval`](https://huggingface.co/datasets/S
 
 ## The ratchet, in one image
 
-![S versus experiment index — every scored run of the frozen suite; the green step is the sole
-surviving keep](notes/progress.png)
+![Two-panel ratchet chart. Top: full-suite S with the S_best reference stepping up at the sole
+keep, inside a ±ε noise band. Bottom: eval-lite screening runs in their own ±ε_lite
+band.](notes/progress.png)
 
-Twelve scored runs across two autonomous sessions: three baseline replicas (ε calibration), one
-kept config improvement, five falsified hypotheses, and calibration runs — discards outnumber
-keeps 5:1, which is what an honest search looks like.
+Twelve scored runs across two autonomous sessions, split by instrument. **Top — the frozen full
+suite:** three baseline replicas set the noise floor (ε = 2σ = 0.0053), three hypotheses were
+falsified, and the sole keep rebases `S_best` to 0.9258 — a *throughput* keep (+4% decode,
+−1 h/eval) with S held in-band (Δ +0.0010 < ε), per the journal. **Bottom — the eval-lite
+screen** (Tier-A speed runs, separate noise floor ε_lite = 0.041): two provisional keeps that
+became the final config, three discards. Six of eight hypotheses falsified — which is what an
+honest search looks like.
 
 ## Conclusions
 
