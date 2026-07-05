@@ -1,0 +1,8 @@
+holder: teacher-loop (Claude-Session session_01TSKkKoWM5abVgUnXUeEm1Y)
+purpose: texp001 arms A+B (paired lite, JSON-echo scaffold elicitation)
+granted-by: OWNER, in-session arbitration 2026-07-05 ~11:30Z ("Teacher window now")
+start: 2026-07-05T11:35Z
+ttl: 4h (expires 15:35Z; after expiry this claim is void regardless)
+rules: chat server :4242 stays down for the window; auto-restart queues via gpu_lock flock
+       (it will acquire the lock the moment the window ends — restoration is automatic);
+       NO signals to the holder's processes; owner word overrides everything.
