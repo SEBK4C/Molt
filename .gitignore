@@ -19,3 +19,6 @@ notes/logs/
 corpora/imatrix.txt
 corpora/kld_heldout.txt
 corpora/*.part
+
+# teacher-loop machine-local artifacts
+corpora/teacher/.cache/
