@@ -86,13 +86,17 @@ Notes that save you a day of tuning:
   (129 t/s @2048 → 700+ @8192 with 10 GPU expert layers).
 - The model thinks unboundedly by default (9K+ chars on trivial prompts);
   `--reasoning-budget 1024` is part of the reference config.
-- MTP speculative decoding is **not available today**: Ornith's config declares an MTP head
-  but neither the BF16 nor FP8 repo ships its weights. Recovering that speedup means
-  *training* a draft head — the funded path on our roadmap is an **EAGLE-3 head** (~$1.2K of
-  external GPU compute, dominated by generating ~1B tokens of trunk hidden-states from the
-  FP8 model; the head itself is a few hundred million params). Estimated yield: 2.5–4
-  accepted tokens/step ≈ **35–55 t/s decode** on this box via llama.cpp's `--spec-type
-  draft-eagle3`. Until then, model-free `--spec-type ngram-*` is the only speculative option.
+- **Do NOT enable speculative decoding on this class of box — we measured it, it makes
+  things worse.** With expert weights CPU/RAM-resident, verifying k drafted tokens batches
+  k tokens through the target, and each token routes to its own top-10 of 512 experts —
+  batch-verify streams up to k× the expert weights of plain decode, inverting speculation's
+  entire premise. Measured on this hardware: `--spec-type ngram-simple` = **−10% decode**;
+  a same-family 9B drafter (`draft-simple`, GPU-resident, quantized draft-KV) = **−34%**.
+  This extends to EAGLE/Medusa-class draft heads (we cancelled a planned ~$1.2K EAGLE-3
+  training on this result). If your experts fit fully in VRAM, the classic economics return —
+  re-measure before trusting either direction. (Ornith's declared MTP head is unreleased in
+  both upstream repos regardless; convert with `--no-mtp` or the GGUF is unloadable.)
+  Details: [RESEARCH_REPORT §3.1](https://huggingface.co/datasets/SEBK4C/molt-ornith-eval/blob/main/RESEARCH_REPORT.md).
 
 ### Zero-install option: the llamafile sidecar
 
@@ -139,6 +143,16 @@ Journal (append-only, in the dataset repo) — the v0 trail:
 | exp002/004 | expert-layer GPU placement ladder (→10 layers) | KEEP — +4% decode, −1 h/eval |
 | exp003 | halve thinking budget | DISCARD — no-op below 1024 |
 | exp005 | embeddings Q8→Q6_K | DISCARD — S −0.0035, Q8 embd floor is load-bearing |
+| exp007 | ngram speculation | DISCARD — decode −10% (think-streams aren't self-repetitive) |
+| exp008 | same-family 9B drafter | DISCARD — decode −34%; **speculation inverts on CPU-resident MoE** |
+| exp009 | top-energy gate/up layers → IQ2_XS | DISCARD — flat; imatrix energy ≠ behavioral value |
+
+**Search status**: the recipe is **locally optimal at 2.41 bpw under public-data calibration**
+— three surfaces falsified, placement saturated, speculation family closed. v0 is where the
+search *completed*, not where it gave up. Next quality levers (costed in the
+[research report](https://huggingface.co/datasets/SEBK4C/molt-ornith-eval/blob/main/RESEARCH_REPORT.md)):
+FP8 golden anchor (~$100), imatrix v2 from distribution-matched traces (reopens the search),
+LoRA recovery (~$1.5K).
 
 Built by an autonomous research loop (Claude) under human authorization on the owner's
 hardware; every decision and mistake is journaled. Licensing: MIT (base model MIT; molt's
