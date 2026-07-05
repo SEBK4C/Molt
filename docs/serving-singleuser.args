@@ -1,0 +1,20 @@
+# Ornith-Featherweight SINGLE-USER serving config — measured 18.93 t/s in the web UI on
+# 2x RTX 4090 (24 GB) + 90 GB DDR5 + Gen5 NVMe, page cache warm (2026-07-05).
+# This is the llamafile sidecar's embedded default. For multi-user/eval serving append:
+#   -c 163840 -np 4 --n-cpu-moe 50 -ts 50,10
+# Speed physics: 104 GB of experts vs ~85 GB page cache => speed follows cache warmth.
+# First generations after a cold start run ~8-9 t/s and climb; warm steady-state 15-19 t/s.
+# Pre-warm trick: dd if=<gguf> of=/dev/null bs=64M   (seconds on NVMe, doubles first-response speed)
+-ngl 99
+--n-cpu-moe 49
+-ts 52,8
+-b 8192
+-ub 8192
+-fa on
+--cache-type-k q8_0
+--cache-type-v q8_0
+-c 65536
+-np 1
+--jinja
+--reasoning-format auto
+--reasoning-budget 1024

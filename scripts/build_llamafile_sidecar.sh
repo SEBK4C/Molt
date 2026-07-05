@@ -25,21 +25,23 @@ cd "$WORK"
 curl -fsSL -o llamafile "$LLAMAFILE_URL"
 chmod +x llamafile
 
-# Reference config = serving.args minus box-specific -tb; -m is the repo GGUF filename.
+# SINGLE-USER config (measured 2026-07-05: 15-18.5 t/s warm on 2x24GB): -np 1 frees scratch
+# for an 11th GPU expert layer. Multi-user/eval config documented in the model card (append
+# args to override: -c 163840 -np 4 --n-cpu-moe 50 -ts 50,10).
 # The trailing `...` line makes user-supplied args append after (and thus override) these.
 printf '%s\n' \
   --server \
   -m Ornith-1.0-397B-Featherweight-v0.gguf \
   -ngl 99 \
-  --n-cpu-moe 50 \
-  -ts 50,10 \
+  --n-cpu-moe 49 \
+  -ts 52,8 \
   -b 8192 \
   -ub 8192 \
   -fa on \
   --cache-type-k q8_0 \
   --cache-type-v q8_0 \
-  -c 163840 \
-  -np 4 \
+  -c 65536 \
+  -np 1 \
   --reasoning-format auto \
   --reasoning-budget 1024 \
   ... \

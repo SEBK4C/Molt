@@ -65,7 +65,36 @@ Exact recipe: `recipe.yaml` in this repo (rendered to `llama-quantize --tensor-t
 `Ornith-1.0-397B-Featherweight-v0.gguf` — 119,517,476,064 bytes,
 sha256 `1499c2f2d84dcdbb4c243371522cc8f98ca4a76a0bc2f1e4801b9f64f0c57dc2`.
 
-## How to run
+## How to run — single-user chat (fastest, recommended)
+
+![Real capture: llama.cpp web UI serving this GGUF at 18.93 t/s](assets/webui-singleuser.png)
+
+*Unedited headless-browser capture, 2026-07-05: 17 tokens · 0.9 s · **18.93 t/s** on
+2×RTX 4090 + 90 GB DDR5, page cache warm.*
+
+The llamafile sidecar ships this config embedded — two commands and a browser:
+
+```
+chmod +x Ornith-1.0-397B-Featherweight-serve.llamafile
+./Ornith-1.0-397B-Featherweight-serve.llamafile   # UI on http://localhost:8080
+```
+
+Or with your own llama.cpp (config also shipped as `serving-singleuser.args`):
+
+```
+llama-server -m Ornith-1.0-397B-Featherweight-v0.gguf \
+  -ngl 99 --n-cpu-moe 49 -ts 52,8 -b 8192 -ub 8192 -fa on \
+  --cache-type-k q8_0 --cache-type-v q8_0 -c 65536 -np 1 \
+  --jinja --reasoning-format auto --reasoning-budget 1024
+```
+
+**Speed = cache warmth** (104 GB of experts vs typical RAM): first generations after a cold
+start run ~8–9 t/s and climb to 15–19 t/s as touched experts stay resident. Pre-warm in
+seconds on NVMe: `dd if=Ornith-1.0-397B-Featherweight-v0.gguf of=/dev/null bs=64M`.
+`-np 1` is what frees the scratch for an 11th GPU expert layer — for multi-user serving
+append `-c 163840 -np 4 --n-cpu-moe 50 -ts 50,10` (drops to 10 layers, still gate-passing).
+
+## How to run — reference/eval config
 
 Needs llama.cpp with `qwen3_5_moe` support (upstream commit `4fc4ec55` or later). The
 reference config (also shipped as `serving.args` with full per-flag rationale):
@@ -100,8 +129,8 @@ Notes that save you a day of tuning:
 
 ### Zero-install option: the llamafile sidecar
 
-`Ornith-1.0-397B-Featherweight-serve.llamafile` (320 MB, sha256
-`7583ea2f0e6ad2e9b57e2b3adce8ac20b95b84ddb626163bd9c444218fb089e5`) is
+`Ornith-1.0-397B-Featherweight-serve.llamafile` (320 MB, single-user config embedded, sha256
+`97d775a2e3a3eebcc48c25f52ac66ee003a0035072297a34b0ecc91b73525ded`) is
 [llamafile](https://github.com/Mozilla-Ocho/llamafile) v0.10.3 (qwen3.5-MoE-capable) with the
 reference serving flags embedded — **weights are NOT inside it**. Download it next to the
 GGUF and run:
