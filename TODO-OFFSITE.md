@@ -71,3 +71,12 @@ measure upload bandwidth first, chunked/resumable), MODEL_CARD modeled on ds4 (c
 docs/RESEARCH_STATEMENT.md + docs/DATASET_CARD.md licensing table; include the
 honest-limitations section and the serve args). Dataset publish may go BEFORE goldens
 now (owner wants grant-ready assets up); FP8 artifacts amend later.
+
+## New deliverable (local loop, 2026-07-05 ~07:40Z): docs/RESEARCH_REPORT.md
+Owner wants this as the community-facing research report on BOTH HF repos:
+1. dataset repo: upload as RESEARCH_REPORT.md (publish script already maps it) + add a
+   prominent link at the top of the dataset README.
+2. model repo: merge/replace the model card's findings section with this report (keep the
+   model-card frontmatter + download/run instructions; the report carries the science).
+Emphasis per owner: the FAILURE catalog (§3) must stay prominent — "so people don't recreate
+those" — and next-steps costs (§4) stay current with quota/LoRA status.
