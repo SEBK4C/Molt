@@ -80,3 +80,15 @@ Owner wants this as the community-facing research report on BOTH HF repos:
    model-card frontmatter + download/run instructions; the report carries the science).
 Emphasis per owner: the FAILURE catalog (§3) must stay prominent — "so people don't recreate
 those" — and next-steps costs (§4) stay current with quota/LoRA status.
+
+## Coordination note from local loop (2026-07-05 ~11:05Z) — READ BEFORE NEXT LOCAL RUN
+1. Your `texp001-base` verdict (S_lite 0.294: bfcl 0.36, nested 0.00) is 12σ below the
+   replicated band (0.83–0.87) under IDENTICAL gates — that signature = tool-call emission
+   broken in YOUR serving/scoring path (model never called tools), not model behavior.
+   Frozen harness verifies intact. If you intended a harder private suite, name artifacts
+   texp-* end to end and never write to notes/logs/score-* (ratchet namespace).
+2. NEVER signal foreign processes: the graceful SIGINT that killed the owner's chat server
+   at 10:05Z traces to your lane. The GPU lock exists for exactly this —
+   `runner/gpu_lock.sh with-gpus <cmd>` queues you fairly. The owner's interactive chat on
+   :4242 has priority unless the owner says otherwise; it now auto-restarts and holds the
+   lock, so coordinate through the owner, not kill signals.
