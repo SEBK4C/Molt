@@ -37,6 +37,7 @@ INCLUDE = [
     ("recipes/baseline.yaml", "recipes/baseline.yaml"),
     ("recipes/current.yaml", "recipes/current.yaml"),
     ("serve/current.args", "serve/current.args"),
+    ("docs/RESEARCH_STATEMENT.md", "docs/research-statement.md"),
     ("docs/RESEARCH_REPORT.md", "RESEARCH_REPORT.md"),
     ("docs/DATASET_CARD.md", "README.md"),
 ]
